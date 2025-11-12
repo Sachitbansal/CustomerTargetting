@@ -1,0 +1,9 @@
+# Easily add/edit product rules here
+product: home_loan
+min_age: 25
+max_age: 60
+min_balance: 50000
+min_income: 35000
+employment_required: yes
+previous_default: no
+# ... add more business rules
