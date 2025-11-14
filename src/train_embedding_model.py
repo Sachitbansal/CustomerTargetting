@@ -1,8 +1,3 @@
-"""
-Training script for embedding-based model.
-Trains the model on users without loans and generates similarity scores.
-Saves top users to train_output.csv.
-"""
 import pandas as pd
 import os
 import sys

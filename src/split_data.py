@@ -1,7 +1,3 @@
-"""
-Script to split data into train and test sets.
-Removes some users with loans from training set to simulate real-world scenario.
-"""
 import pandas as pd
 import numpy as np
 import os
