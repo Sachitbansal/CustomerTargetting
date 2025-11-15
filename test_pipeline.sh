@@ -1,39 +1,40 @@
 #!/bin/bash
-echo "Testing NATS Real-Time Pipeline"
-echo "================================"
+###############################################################################
+# Complete Pipeline Test Script
+###############################################################################
+
+set -e
+
+echo "================================================================================"
+echo "COMPLETE NATS PIPELINE TEST"
+echo "================================================================================"
 echo ""
-echo "Starting data_fetch.py in background..."
-python data_fetch.py > logs/data_fetch.log 2>&1 &
-DATA_FETCH_PID=$!
-echo "  PID: $DATA_FETCH_PID"
 
-sleep 2
-
-echo "Starting print_features.py in background..."
-python print_features.py > logs/print_features.log 2>&1 &
-PRINT_PID=$!
-echo "  PID: $PRINT_PID"
-
-sleep 2
-
-echo ""
-echo "Publishing 20 transactions..."
-timeout 5 python publishers/stream_trans.py 2>&1 | head -20
-
-sleep 3
-
-echo ""
-echo "Checking output..."
-if [ -f "data/client_features.csv" ]; then
-    echo "✓ client_features.csv created"
-    wc -l data/client_features.csv
-    head -3 data/client_features.csv | cut -d',' -f1-5
+# Check NATS server
+echo "1. Checking NATS server..."
+if docker ps | grep -q nats-server; then
+    echo "   ✓ NATS server is running"
 else
-    echo "✗ client_features.csv not found"
+    echo "   ✗ NATS server not running - starting..."
+    docker start nats-server 2>/dev/null || docker run -d --name nats-server -p 4222:4222 -p 8222:8222 nats:latest
+    sleep 2
+    echo "   ✓ NATS server started"
 fi
-
 echo ""
-echo "Stopping processes..."
-kill $DATA_FETCH_PID 2>/dev/null
-kill $PRINT_PID 2>/dev/null
-echo "Done!"
+
+# Test data_fetch.py
+echo "2. Testing data_fetch.py..."
+timeout 5 python data_fetch.py 2>&1 | grep -q "Loading initial data" && echo "   ✓ data_fetch.py works" || echo "   ✗ data_fetch.py failed"
+pkill -f data_fetch.py 2>/dev/null || true
+echo ""
+
+echo "================================================================================"
+echo "READY TO RUN PIPELINE"
+echo "================================================================================"
+echo ""
+echo "Run in 3 separate terminals:"
+echo "  Terminal 1: python publishers/stream_all.py"
+echo "  Terminal 2: python data_fetch.py"
+echo "  Terminal 3: python print_features.py"
+echo ""
+

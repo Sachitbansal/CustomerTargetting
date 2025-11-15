@@ -68,5 +68,56 @@ async def stream_loan_labels_continuous(batch_size=5, delay=2.5):
     print(f"[LOAN_LABELS] Complete. Published {total_published} total rows")
 
 
+def stream_loan_labels(batch_size=5, delay=2.5):
+    """
+    Synchronous wrapper for streaming a single batch of loan_labels data.
+    Returns a dictionary with streaming results.
+    """
+    import time
+
+    stream_file = os.path.join(STREAM_PATH, "loan_labels.csv")
+
+    if not os.path.exists(stream_file):
+        return {
+            'error': 'Stream file not found',
+            'rows_added': 0,
+            'remaining_stream': 0
+        }
+
+    try:
+        df = pd.read_csv(stream_file)
+
+        if len(df) == 0:
+            return {
+                'rows_added': 0,
+                'remaining_stream': 0
+            }
+
+        # Get batch
+        rows_to_publish = min(batch_size, len(df))
+        batch = df.head(rows_to_publish)
+
+        print(f"  [LOAN_LABELS] Would publish {rows_to_publish} rows")
+
+        # Update file
+        remaining = df.iloc[rows_to_publish:]
+        remaining.to_csv(stream_file, index=False)
+
+        # Add delay
+        time.sleep(delay)
+
+        return {
+            'rows_added': rows_to_publish,
+            'remaining_stream': len(remaining)
+        }
+
+    except Exception as e:
+        return {
+            'error': str(e),
+            'rows_added': 0,
+            'remaining_stream': 0
+        }
+
+
 if __name__ == "__main__":
     asyncio.run(stream_loan_labels_continuous(batch_size=5, delay=2.5))

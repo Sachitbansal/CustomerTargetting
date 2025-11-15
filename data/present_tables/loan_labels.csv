@@ -580,8 +580,3 @@ client_id,account_id,disp_id,loan_purpose,personal_loan,car_loan,home_loan,credi
 8356,6922,8356,debt_consolidation,1,0,0,0,0
 2342,1928,2342,other,1,0,0,0,0
 10662,8645,10354,debt_consolidation,1,0,0,0,0
-2522,2080,2522,debt_consolidation,1,0,0,0,0
-1662,1374,1662,credit_card,0,0,0,1,0
-6610,5477,6610,debt_consolidation,1,0,0,0,0
-13694,11141,13386,debt_consolidation,1,0,0,0,0
-4169,3448,4169,debt_consolidation,1,0,0,0,0
