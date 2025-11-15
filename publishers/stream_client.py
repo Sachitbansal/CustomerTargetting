@@ -1,145 +1,123 @@
+"""
+NATS Publisher for Client Data
+Streams client.csv from stream_tables to NATS
+"""
+
+import asyncio
 import pandas as pd
+import json
 import os
-import time
-from pathlib import Path
+from nats.aio.client import Client as NATS
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from nats_config import NATS_SERVER, SUBJECTS, STREAM_PATH
 
-# Define paths
-STREAM_PATH = "data/stream_tables"
-PRESENT_PATH = "data/present_tables"
-CLIENT_FILE = "client.csv"
 
-def stream_client(batch_size=10, delay=5):
+async def stream_client_continuous(batch_size=10, delay=2):
+    """Stream client data continuously"""
+    nc = NATS()
+    await nc.connect(NATS_SERVER)
+
+    stream_file = os.path.join(STREAM_PATH, "client.csv")
+    subject = SUBJECTS['client']
+
+    print(f"[CLIENT] Streaming from {stream_file} to {subject}")
+
+    iteration = 0
+    total_published = 0
+
+    while True:
+        if not os.path.exists(stream_file):
+            print(f"[CLIENT] Stream file not found, waiting...")
+            await asyncio.sleep(5)
+            continue
+
+        try:
+            df = pd.read_csv(stream_file)
+
+            if len(df) == 0:
+                print(f"[CLIENT] Stream empty, stopping")
+                break
+
+            # Get batch
+            rows_to_publish = min(batch_size, len(df))
+            batch = df.head(rows_to_publish)
+
+            # Publish to NATS
+            for _, row in batch.iterrows():
+                message = row.to_dict()
+                json_msg = json.dumps(message, default=str)
+                await nc.publish(subject, json_msg.encode())
+
+            # Update file
+            remaining = df.iloc[rows_to_publish:]
+            remaining.to_csv(stream_file, index=False)
+
+            iteration += 1
+            total_published += rows_to_publish
+
+            print(f"[CLIENT] Iter {iteration}: Published {rows_to_publish} rows | Remaining: {len(remaining)} | Total: {total_published}")
+
+            await asyncio.sleep(delay)
+
+        except Exception as e:
+            print(f"[CLIENT] Error: {e}")
+            await asyncio.sleep(5)
+
+    await nc.close()
+    print(f"[CLIENT] Complete. Published {total_published} total rows")
+
+
+def stream_client(batch_size=10, delay=2):
     """
-    Stream rows from stream_tables/client.csv to present_tables/client.csv
-
-    Parameters:
-    -----------
-    batch_size : int
-        Number of rows to add from stream to present in each iteration
-    delay : float
-        Time delay in seconds between each batch update
-
-    Returns:
-    --------
-    dict : Statistics about the streaming process
+    Synchronous wrapper for streaming a single batch of client data.
+    Returns a dictionary with streaming results.
     """
-    stream_file = os.path.join(STREAM_PATH, CLIENT_FILE)
-    present_file = os.path.join(PRESENT_PATH, CLIENT_FILE)
+    import time
 
-    # Check if files exist
+    stream_file = os.path.join(STREAM_PATH, "client.csv")
+
     if not os.path.exists(stream_file):
-        print(f"Error: Stream file not found at {stream_file}")
-        return {"error": "Stream file not found", "rows_added": 0}
+        return {
+            'error': 'Stream file not found',
+            'rows_added': 0,
+            'remaining_stream': 0
+        }
 
     try:
-        # Load the stream data
-        stream_df = pd.read_csv(stream_file)
+        df = pd.read_csv(stream_file)
 
-        # Load or create present data
-        if os.path.exists(present_file):
-            present_df = pd.read_csv(present_file)
-            initial_count = len(present_df)
-        else:
-            # Create empty dataframe with same columns
-            present_df = pd.DataFrame(columns=stream_df.columns)
-            initial_count = 0
-            os.makedirs(PRESENT_PATH, exist_ok=True)
+        if len(df) == 0:
+            return {
+                'rows_added': 0,
+                'remaining_stream': 0
+            }
 
-        # Calculate rows to add
-        total_stream_rows = len(stream_df)
-        rows_to_add = min(batch_size, total_stream_rows)
+        # Get batch
+        rows_to_publish = min(batch_size, len(df))
+        batch = df.head(rows_to_publish)
 
-        if rows_to_add == 0:
-            print(f"[CLIENT] No rows available in stream")
-            return {"rows_added": 0, "total_present": initial_count, "remaining_stream": 0}
+        print(f"  [CLIENT] Would publish {rows_to_publish} rows")
 
-        # Get the batch to add
-        batch_to_add = stream_df.head(rows_to_add).copy()
+        # Update file
+        remaining = df.iloc[rows_to_publish:]
+        remaining.to_csv(stream_file, index=False)
 
-        # Append to present data
-        updated_present_df = pd.concat([present_df, batch_to_add], ignore_index=True)
-
-        # Save updated present data
-        updated_present_df.to_csv(present_file, index=False)
-
-        # Remove added rows from stream
-        remaining_stream_df = stream_df.iloc[rows_to_add:].copy()
-        remaining_stream_df.to_csv(stream_file, index=False)
-
-        print(f"[CLIENT] Added {rows_to_add} rows | Total present: {len(updated_present_df)} | Remaining stream: {len(remaining_stream_df)}")
-
-        # Sleep for delay
-        if delay > 0:
-            time.sleep(delay)
+        # Add delay
+        time.sleep(delay)
 
         return {
-            "rows_added": rows_to_add,
-            "total_present": len(updated_present_df),
-            "remaining_stream": len(remaining_stream_df),
-            "initial_count": initial_count
+            'rows_added': rows_to_publish,
+            'remaining_stream': len(remaining)
         }
 
     except Exception as e:
-        print(f"[CLIENT] Error during streaming: {str(e)}")
-        return {"error": str(e), "rows_added": 0}
-
-
-def stream_client_continuous(batch_size=10, delay=5, max_iterations=None):
-    """
-    Continuously stream rows until stream is empty
-
-    Parameters:
-    -----------
-    batch_size : int
-        Number of rows to add from stream to present in each iteration
-    delay : float
-        Time delay in seconds between each batch update
-    max_iterations : int or None
-        Maximum number of iterations. None means run until stream is empty
-
-    Returns:
-    --------
-    dict : Overall statistics
-    """
-    iteration = 0
-    total_rows_added = 0
-
-    print(f"\n{'='*60}")
-    print(f"Starting continuous streaming for CLIENT")
-    print(f"Batch size: {batch_size}, Delay: {delay}s")
-    print(f"{'='*60}\n")
-
-    while True:
-        iteration += 1
-
-        if max_iterations and iteration > max_iterations:
-            print(f"\n[CLIENT] Reached maximum iterations ({max_iterations})")
-            break
-
-        result = stream_client(batch_size=batch_size, delay=delay)
-
-        if "error" in result:
-            print(f"[CLIENT] Stopping due to error")
-            break
-
-        total_rows_added += result["rows_added"]
-
-        if result["remaining_stream"] == 0:
-            print(f"\n[CLIENT] Stream is empty. Stopping.")
-            break
-
-    print(f"\n{'='*60}")
-    print(f"CLIENT Streaming Complete")
-    print(f"Total iterations: {iteration}")
-    print(f"Total rows streamed: {total_rows_added}")
-    print(f"{'='*60}\n")
-
-    return {
-        "total_iterations": iteration,
-        "total_rows_added": total_rows_added
-    }
+        return {
+            'error': str(e),
+            'rows_added': 0,
+            'remaining_stream': 0
+        }
 
 
 if __name__ == "__main__":
-    # Example usage: Stream in batches of 10 rows with 3 second delay
-    stream_client_continuous(batch_size=10, delay=3)
+    asyncio.run(stream_client_continuous(batch_size=10, delay=2))

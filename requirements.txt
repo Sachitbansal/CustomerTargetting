@@ -3,4 +3,6 @@ numpy>=1.21.0
 scikit-learn>=1.0.0
 torch>=1.9.0
 pathway>=0.7.0
+nats-py>=2.3.0
+asyncio-nats-streaming>=0.4.0
 
