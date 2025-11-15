@@ -1,145 +1,72 @@
+"""
+NATS Publisher for Card Labels Data
+Streams card_labels.csv from stream_tables to NATS
+"""
+
+import asyncio
 import pandas as pd
+import json
 import os
-import time
-from pathlib import Path
-
-# Define paths
-STREAM_PATH = "data/stream_tables"
-PRESENT_PATH = "data/present_tables"
-CARD_LABELS_FILE = "card_labels.csv"
-
-def stream_card_labels(batch_size=8, delay=5):
-    """
-    Stream rows from stream_tables/card_labels.csv to present_tables/card_labels.csv
-
-    Parameters:
-    -----------
-    batch_size : int
-        Number of rows to add from stream to present in each iteration
-    delay : float
-        Time delay in seconds between each batch update
-
-    Returns:
-    --------
-    dict : Statistics about the streaming process
-    """
-    stream_file = os.path.join(STREAM_PATH, CARD_LABELS_FILE)
-    present_file = os.path.join(PRESENT_PATH, CARD_LABELS_FILE)
-
-    # Check if files exist
-    if not os.path.exists(stream_file):
-        print(f"Error: Stream file not found at {stream_file}")
-        return {"error": "Stream file not found", "rows_added": 0}
-
-    try:
-        # Load the stream data
-        stream_df = pd.read_csv(stream_file)
-
-        # Load or create present data
-        if os.path.exists(present_file):
-            present_df = pd.read_csv(present_file)
-            initial_count = len(present_df)
-        else:
-            # Create empty dataframe with same columns
-            present_df = pd.DataFrame(columns=stream_df.columns)
-            initial_count = 0
-            os.makedirs(PRESENT_PATH, exist_ok=True)
-
-        # Calculate rows to add
-        total_stream_rows = len(stream_df)
-        rows_to_add = min(batch_size, total_stream_rows)
-
-        if rows_to_add == 0:
-            print(f"[CARD_LABELS] No rows available in stream")
-            return {"rows_added": 0, "total_present": initial_count, "remaining_stream": 0}
-
-        # Get the batch to add
-        batch_to_add = stream_df.head(rows_to_add).copy()
-
-        # Append to present data
-        updated_present_df = pd.concat([present_df, batch_to_add], ignore_index=True)
-
-        # Save updated present data
-        updated_present_df.to_csv(present_file, index=False)
-
-        # Remove added rows from stream
-        remaining_stream_df = stream_df.iloc[rows_to_add:].copy()
-        remaining_stream_df.to_csv(stream_file, index=False)
-
-        print(f"[CARD_LABELS] Added {rows_to_add} rows | Total present: {len(updated_present_df)} | Remaining stream: {len(remaining_stream_df)}")
-
-        # Sleep for delay
-        if delay > 0:
-            time.sleep(delay)
-
-        return {
-            "rows_added": rows_to_add,
-            "total_present": len(updated_present_df),
-            "remaining_stream": len(remaining_stream_df),
-            "initial_count": initial_count
-        }
-
-    except Exception as e:
-        print(f"[CARD_LABELS] Error during streaming: {str(e)}")
-        return {"error": str(e), "rows_added": 0}
+from nats.aio.client import Client as NATS
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from nats_config import NATS_SERVER, SUBJECTS, STREAM_PATH
 
 
-def stream_card_labels_continuous(batch_size=8, delay=5, max_iterations=None):
-    """
-    Continuously stream rows until stream is empty
+async def stream_card_labels_continuous(batch_size=5, delay=3):
+    """Stream card_labels data continuously"""
+    nc = NATS()
+    await nc.connect(NATS_SERVER)
 
-    Parameters:
-    -----------
-    batch_size : int
-        Number of rows to add from stream to present in each iteration
-    delay : float
-        Time delay in seconds between each batch update
-    max_iterations : int or None
-        Maximum number of iterations. None means run until stream is empty
+    stream_file = os.path.join(STREAM_PATH, "card_labels.csv")
+    subject = SUBJECTS['card_labels']
 
-    Returns:
-    --------
-    dict : Overall statistics
-    """
+    print(f"[CARD_LABELS] Streaming from {stream_file} to {subject}")
+
     iteration = 0
-    total_rows_added = 0
-
-    print(f"\n{'='*60}")
-    print(f"Starting continuous streaming for CARD_LABELS")
-    print(f"Batch size: {batch_size}, Delay: {delay}s")
-    print(f"{'='*60}\n")
+    total_published = 0
 
     while True:
-        iteration += 1
+        if not os.path.exists(stream_file):
+            print(f"[CARD_LABELS] Stream file not found, waiting...")
+            await asyncio.sleep(5)
+            continue
 
-        if max_iterations and iteration > max_iterations:
-            print(f"\n[CARD_LABELS] Reached maximum iterations ({max_iterations})")
-            break
+        try:
+            df = pd.read_csv(stream_file)
 
-        result = stream_card_labels(batch_size=batch_size, delay=delay)
+            if len(df) == 0:
+                print(f"[CARD_LABELS] Stream empty, stopping")
+                break
 
-        if "error" in result:
-            print(f"[CARD_LABELS] Stopping due to error")
-            break
+            # Get batch
+            rows_to_publish = min(batch_size, len(df))
+            batch = df.head(rows_to_publish)
 
-        total_rows_added += result["rows_added"]
+            # Publish to NATS
+            for _, row in batch.iterrows():
+                message = row.to_dict()
+                json_msg = json.dumps(message, default=str)
+                await nc.publish(subject, json_msg.encode())
 
-        if result["remaining_stream"] == 0:
-            print(f"\n[CARD_LABELS] Stream is empty. Stopping.")
-            break
+            # Update file
+            remaining = df.iloc[rows_to_publish:]
+            remaining.to_csv(stream_file, index=False)
 
-    print(f"\n{'='*60}")
-    print(f"CARD_LABELS Streaming Complete")
-    print(f"Total iterations: {iteration}")
-    print(f"Total rows streamed: {total_rows_added}")
-    print(f"{'='*60}\n")
+            iteration += 1
+            total_published += rows_to_publish
 
-    return {
-        "total_iterations": iteration,
-        "total_rows_added": total_rows_added
-    }
+            print(f"[CARD_LABELS] Iter {iteration}: Published {rows_to_publish} rows | Remaining: {len(remaining)} | Total: {total_published}")
+
+            await asyncio.sleep(delay)
+
+        except Exception as e:
+            print(f"[CARD_LABELS] Error: {e}")
+            await asyncio.sleep(5)
+
+    await nc.close()
+    print(f"[CARD_LABELS] Complete. Published {total_published} total rows")
 
 
 if __name__ == "__main__":
-    # Example usage: Stream in batches of 8 rows with 3 second delay
-    stream_card_labels_continuous(batch_size=8, delay=3)
+    asyncio.run(stream_card_labels_continuous(batch_size=5, delay=3))
