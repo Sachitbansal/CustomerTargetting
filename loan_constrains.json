@@ -1,0 +1,34 @@
+{
+  "home_loan": {
+    "min_age": 25,
+    "max_age": 60,
+    "min_balance": 50000,
+    "min_income": 35000,
+    "employment_required": "yes",
+    "previous_default": "no"
+  },
+  "car_loan": {
+    "min_age": 21,
+    "max_age": 65,
+    "min_balance": 20000,
+    "min_income": 25000,
+    "employment_required": "yes",
+    "previous_default": "no"
+  },
+  "personal_loan": {
+    "min_age": 21,
+    "max_age": 65,
+    "min_balance": 10000,
+    "min_income": 20000,
+    "employment_required": "yes",
+    "previous_default": "no"
+  },
+  "business_loan": {
+    "min_age": 25,
+    "max_age": 65,
+    "min_balance": 100000,
+    "min_income": 50000,
+    "employment_required": "yes",
+    "previous_default": "no"
+  }
+}
