@@ -1,14 +1,16 @@
 # publisher/run_publisher.py
 
+from pathlib import Path
+import sys
+
+# Add parent directory to path BEFORE importing transactionPublisher modules
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.append(str(ROOT))
+
 import threading
 import pathway as pw
 from transactionPublisher.schema import TxnSchema
 from transactionPublisher.streamer import stream_csv_as_file
-from pathlib import Path
-import sys
-
-ROOT = Path(__file__).resolve().parent.parent
-sys.path.append(str(ROOT))
 
 CSV_PATH = './streaming_transactions.csv'
 
