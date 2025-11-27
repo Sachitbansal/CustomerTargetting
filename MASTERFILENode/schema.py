@@ -1,9 +1,8 @@
 # MASTERFILENode/schema.py
 import pathway as pw
-from datetime import datetime
 
 class MasterSchema(pw.Schema):
-    # Static & Semi-Static Features from Data Generation
+    # Static & Semi-Static Features
     customer_id: str
     age: int
     gender: str
@@ -25,7 +24,7 @@ class MasterSchema(pw.Schema):
     has_existing_auto_loan: int
     has_existing_investment_account: int
 
-    # Final-state aggregated features (will be dynamically updated)
+    # Final-state aggregated features
     txn_count_last_30d: float
     high_value_txn_count_30d: float
     bounced_txn_count: float
@@ -35,7 +34,7 @@ class MasterSchema(pw.Schema):
     avg_monthly_investment_debit: float
     final_credit_score: float
 
-    # Final-state ratio/interaction features (will be dynamically updated)
+    # Final-state ratio/interaction features
     dti_ratio: float
     savings_rate: float
     income_to_limit: float
@@ -43,7 +42,7 @@ class MasterSchema(pw.Schema):
     age_x_dependents: float
     score_x_log_income: float
 
-    # Target columns (will be updated by the feedback loop later)
+    # Target columns
     opted_home_loan: int
     opted_car_loan: int
     recommend_nifty50: int
@@ -54,8 +53,12 @@ class MasterSchema(pw.Schema):
     volTransLastStreamed_car: float
     volTransLastStreamed_elss: float
     volTransLastStreamed_nifty50: float
-    last_reach_out_home_loan: str # Can be datetime string or 'never'
+    
+    # Tracking columns
+    last_reach_out_home_loan: str 
     last_reach_out_car_loan: str
     last_reach_out_nifty50: str
     last_reach_out_elss: str
-    last_update_timestamp: datetime
+    
+    # FIX: Use str here for CSV loading (Convert to datetime in run_enrichment_node.py)
+    last_update_timestamp: str

@@ -3,7 +3,7 @@ import pathway as pw
 
 class TxnSchema(pw.Schema):
     customer_id: str
-    txn_datetime: str  # Using str for CSV compatibility
+    txn_datetime: str  # <--- Changed from str to datetime
     txn_amount: float
     txn_type: str
     balance_after_txn: float

@@ -1,13 +1,15 @@
-# MASTERFILENode/run_dispatcher_node.py (Updated)
+# MASTERFILENode/run_dispatcher_node.py (Fixed)
 import pathway as pw
-from MASTERFILENode.schema import MasterSchema
+# --- PATH SETUP ---
 from pathlib import Path
 import sys
-
-# ... (imports remain the same) ...
+CURRENT_DIR = Path(__file__).resolve().parent
+PARENT_DIR = CURRENT_DIR.parent
+sys.path.append(str(PARENT_DIR))
+from MASTERFILENode.schema import MasterSchema
 
 # --- Configuration ---
-INPUT_STREAM_FILE = "./MASTERFILENode/temp_MASTERFILE_stream.csv"
+INPUT_STREAM_FILE = "./temp_MASTERFILE_stream.csv"
 NATS_URI = "nats://localhost:4222"
 HOME_LOAN_LEADS_TOPIC = "leads.checkHomeLoan"
 CAR_LOAN_LEADS_TOPIC = "leads.checkCarLoan"
@@ -39,19 +41,54 @@ def run_dispatcher_node():
     )
     print(f"✓ Listening for updated customer profiles from '{INPUT_STREAM_FILE}'")
 
-    # --- Helper function for dynamic cooldown logic ---
-    def create_cooldown_filter(last_reach_out_col, cooldown_days):
-        cooldown_seconds = cooldown_days * 24 * 3600
+    # Convert last_update_timestamp from string to datetime
+    updated_customers = updated_customers.with_columns(
+        last_update_timestamp=updated_customers.last_update_timestamp.dt.strptime(fmt="%Y-%m-%d")
+    )
+    
+    # Convert all last_reach_out columns from string to datetime (handling "never")
+    # First, we'll add columns that parse the dates when they're not "never"
+    updated_customers = updated_customers.with_columns(
+        last_reach_out_home_loan_dt=pw.if_else(
+            updated_customers.last_reach_out_home_loan == "never",
+            None,  # None for never reached out
+            updated_customers.last_reach_out_home_loan.dt.strptime(fmt="%Y-%m-%d")
+        ),
+        last_reach_out_car_loan_dt=pw.if_else(
+            updated_customers.last_reach_out_car_loan == "never",
+            None,
+            updated_customers.last_reach_out_car_loan.dt.strptime(fmt="%Y-%m-%d")
+        ),
+        last_reach_out_nifty50_dt=pw.if_else(
+            updated_customers.last_reach_out_nifty50 == "never",
+            None,
+            updated_customers.last_reach_out_nifty50.dt.strptime(fmt="%Y-%m-%d")
+        ),
+        last_reach_out_elss_dt=pw.if_else(
+            updated_customers.last_reach_out_elss == "never",
+            None,
+            updated_customers.last_reach_out_elss.dt.strptime(fmt="%Y-%m-%d")
+        ),
+    )
+
+    # --- Helper function for dynamic cooldown logic (FIXED) ---
+    def create_cooldown_filter(last_reach_out_col, last_reach_out_dt_col, cooldown_days):
+        # Condition 1: We have never reached out to them (datetime column is None)
+        is_new_lead = pw.this[last_reach_out_dt_col].is_none()
         
-        # Condition 1: We have never reached out to them.
-        is_new_lead = pw.this[last_reach_out_col] == 'never'
+        # Condition 2: We HAVE reached out, but enough time has passed
+        # FIX: Only calculate time_diff when last_reach_out_dt_col is NOT None
+        # We use pw.if_else to handle the nullable datetime
+        days_since_last_contact = pw.if_else(
+            pw.this[last_reach_out_dt_col].is_none(),
+            999999,  # Set a very large number if never contacted (will pass cooldown)
+            (pw.this.last_update_timestamp - pw.this[last_reach_out_dt_col]).dt.days()
+        )
         
-        # Condition 2: We HAVE reached out, but enough time has passed.
-        # We parse the string date and check the time difference in seconds.
-        is_ready_for_retry = (pw.this[last_reach_out_col] != 'never') & \
-                             ((pw.this.last_update_timestamp - pw.functions.from_iso_format(pw.this[last_reach_out_col])).total_seconds() > cooldown_seconds)
+        # Check if enough days have passed
+        is_ready_for_retry = days_since_last_contact >= cooldown_days
         
-        return is_new_lead | is_ready_for_retry
+        return is_ready_for_retry
 
     # 2. --- Apply the business rules for each campaign stream ---
     
@@ -59,7 +96,7 @@ def run_dispatcher_node():
     home_loan_leads = updated_customers.filter(
         (pw.this.volTransLastStreamed_home > HOME_LOAN_VOLUME_THRESHOLD) &
         (pw.this.opted_home_loan == 0) &
-        create_cooldown_filter('last_reach_out_home_loan', HOME_LOAN_COOLDOWN_DAYS)
+        create_cooldown_filter('last_reach_out_home_loan', 'last_reach_out_home_loan_dt', HOME_LOAN_COOLDOWN_DAYS)
     )
     print(f"✓ Home Loan lead rule configured (vol > {HOME_LOAN_VOLUME_THRESHOLD}, cooldown: {HOME_LOAN_COOLDOWN_DAYS} days)")
 
@@ -67,7 +104,7 @@ def run_dispatcher_node():
     car_loan_leads = updated_customers.filter(
         (pw.this.volTransLastStreamed_car > CAR_LOAN_VOLUME_THRESHOLD) &
         (pw.this.opted_car_loan == 0) &
-        create_cooldown_filter('last_reach_out_car_loan', CAR_LOAN_COOLDOWN_DAYS)
+        create_cooldown_filter('last_reach_out_car_loan', 'last_reach_out_car_loan_dt', CAR_LOAN_COOLDOWN_DAYS)
     )
     print(f"✓ Car Loan lead rule configured (vol > {CAR_LOAN_VOLUME_THRESHOLD}, cooldown: {CAR_LOAN_COOLDOWN_DAYS} days)")
 
@@ -75,7 +112,7 @@ def run_dispatcher_node():
     nifty50_leads = updated_customers.filter(
         (pw.this.volTransLastStreamed_nifty50 > NIFTY50_VOLUME_THRESHOLD) &
         (pw.this.recommend_nifty50 == 0) &
-        create_cooldown_filter('last_reach_out_nifty50', NIFTY50_COOLDOWN_DAYS)
+        create_cooldown_filter('last_reach_out_nifty50', 'last_reach_out_nifty50_dt', NIFTY50_COOLDOWN_DAYS)
     )
     print(f"✓ Nifty50 lead rule configured (vol > {NIFTY50_VOLUME_THRESHOLD}, cooldown: {NIFTY50_COOLDOWN_DAYS} days)")
 
@@ -83,12 +120,11 @@ def run_dispatcher_node():
     elss_leads = updated_customers.filter(
         (pw.this.volTransLastStreamed_elss > ELSS_VOLUME_THRESHOLD) &
         (pw.this.recommend_elss == 0) &
-        create_cooldown_filter('last_reach_out_elss', ELSS_COOLDOWN_DAYS)
+        create_cooldown_filter('last_reach_out_elss', 'last_reach_out_elss_dt', ELSS_COOLDOWN_DAYS)
     )
     print(f"✓ ELSS lead rule configured (vol > {ELSS_VOLUME_THRESHOLD}, cooldown: {ELSS_COOLDOWN_DAYS} days)")
 
     # 3. --- Write the qualified leads to their respective NATS topics ---
-    # ... (This section remains exactly the same) ...
     pw.io.nats.write(home_loan_leads, uri=NATS_URI, topic=HOME_LOAN_LEADS_TOPIC, format="json")
     pw.io.nats.write(car_loan_leads, uri=NATS_URI, topic=CAR_LOAN_LEADS_TOPIC, format="json")
     pw.io.nats.write(nifty50_leads, uri=NATS_URI, topic=NIFTY50_LEADS_TOPIC, format="json")

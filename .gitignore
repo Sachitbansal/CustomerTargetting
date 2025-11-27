@@ -1,2 +1,3 @@
 *.csv
 interiit
+*__pycache__/

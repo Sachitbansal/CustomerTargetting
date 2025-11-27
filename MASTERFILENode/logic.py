@@ -1,79 +1,111 @@
-# MASTERFILENode/logic.py
+# MASTERFILENode/logic.py (Fixed - Complete Columns)
 import pathway as pw
 import numpy as np
 
-def update_customer_profile(customer_state, transactions):
+# Define UDFs with proper type annotations to avoid ANY type issues
+@pw.udf
+def decay_func(n: int) -> float:
+    """Calculate decay factor as 0.98^n"""
+    return 0.98 ** float(n)
+
+@pw.udf
+def log1p_func(x: float) -> float:
+    """Calculate log(1 + x) safely"""
+    return float(np.log1p(x))
+
+def calculate_new_state(joined_data):
     """
-    This function defines the logic for updating a customer's profile
-    based on a stream of their transactions. It's designed to be used
-    with Pathway's `update` method on a stateful table.
+    Takes a table that results from joining Master Data + Transaction Aggregations.
+    Returns a dictionary of Column Expressions for the .select() method.
     
-    Args:
-        customer_state: A Pathway Table representing the current state of a single customer.
-        transactions: A Pathway Table representing all new transactions for that customer.
+    IMPORTANT: This must return ALL columns needed by the dispatcher node.
+    
+    Note: This join only includes customers who had transactions in this batch,
+    which is appropriate since we're only enriching on new transaction events.
     """
     
-    # --- Step 1: Iterate through new transactions to update raw 'vitals' ---
-    # We will aggregate changes from all new transactions for this customer.
+    # --- LOGIC START ---
     
-    # Calculate the sum of transaction amounts to update the balance
-    total_amount_change = pw.this.sum(transactions.txn_amount)
+    # 1. Update Balance
+    current_balance = joined_data.final_avg_monthly_balance + joined_data.total_amount_change
     
-    # Count bounced transactions
-    bounced_count_change = pw.this.sum(transactions.bounced_flag.cast(int))
-    
-    # Count successful debits (for credit score reward)
-    successful_debits_count = pw.this.sum(
-        ((transactions.txn_amount < 0) & (transactions.bounced_flag == False)).cast(int)
-    )
-    
-    max_txn_time = pw.this.max(transactions.txn_datetime)
+    # 2. Credit Score Logic
+    score_penalty = joined_data.bounced_count_change * 10
+    score_reward = joined_data.successful_debits_count * 0.5
+    new_credit_score = joined_data.final_credit_score - score_penalty + score_reward
 
-    # Calculate total spend by category
-    fuel_spend_change = pw.this.sum(
-        pw.if_else(transactions.txn_category == "Fuel", abs(transactions.txn_amount), 0)
-    )
-    transport_spend_change = pw.this.sum(
-        pw.if_else(transactions.txn_category == "Transport", abs(transactions.txn_amount), 0)
-    )
-    investment_debit_change = pw.this.sum(
-        pw.if_else(transactions.txn_category == "Investment", abs(transactions.txn_amount), 0)
-    )
+    # 3. Decay Logic (0.98 ^ num_new_txns)
+    decay_factor = decay_func(joined_data.num_new_txns)
 
-    # --- Step 2: Apply updates to the customer state ---
-    
-    # Update balance and volume trackers
-    current_balance = customer_state.final_avg_monthly_balance + total_amount_change
-    vol_increase = pw.this.sum(abs(transactions.txn_amount))
-    
-    customer_state.final_avg_monthly_balance = current_balance
-    customer_state.volTransLastStreamed_home += vol_increase
-    customer_state.volTransLastStreamed_car += vol_increase
-    customer_state.volTransLastStreamed_elss += vol_increase
-    customer_state.volTransLastStreamed_nifty50 += vol_increase
-    
-    # Update credit score (using a simplified version of the simulation's logic)
-    # The min/max logic is slightly different in SQL-like operations.
-    score_penalty = bounced_count_change * 10
-    score_reward = successful_debits_count * 0.5
-    customer_state.final_credit_score = customer_state.final_credit_score - score_penalty + score_reward
-    
-    # Update rolling counts with decay (approximated for streaming)
-    # A simple increment is more robust in many streaming setups. We will add decay later if needed.
-    decay = 0.98 
-    num_new_txns = pw.this.count(transactions.customer_id)
-    customer_state.txn_count_last_30d = customer_state.txn_count_last_30d * (decay**num_new_txns) + num_new_txns
-    customer_state.bounced_txn_count += bounced_count_change
-    customer_state.monthly_fuel_spend = customer_state.monthly_fuel_spend * (decay**num_new_txns) + fuel_spend_change
-    customer_state.monthly_transport_service_spend = customer_state.monthly_transport_service_spend * (decay**num_new_txns) + transport_spend_change
-    customer_state.avg_monthly_investment_debit = customer_state.avg_monthly_investment_debit * (decay**num_new_txns) + investment_debit_change
+    # Log income
+    log_income = log1p_func(joined_data.yearly_income)
 
-    customer_state.last_update_timestamp = max_txn_time
-    
-    # --- Step 3: Re-calculate derived features ---
-    monthly_income = customer_state.yearly_income / 12
-    customer_state.savings_rate = current_balance / (monthly_income + 1)
-    customer_state.txn_intensity = customer_state.txn_count_last_30d / (customer_state.yearly_income / 10000 + 1)
-    customer_state.score_x_log_income = customer_state.final_credit_score * np.log1p(customer_state.yearly_income)
-    
-    return customer_state
+    # Pre-compute decayed values
+    decayed_txn_count = (joined_data.txn_count_last_30d * decay_factor) + joined_data.num_new_txns
+    decayed_fuel_spend = (joined_data.monthly_fuel_spend * decay_factor) + joined_data.fuel_spend_change
+    decayed_transport_spend = (joined_data.monthly_transport_service_spend * decay_factor) + joined_data.transport_spend_change
+    decayed_investment_debit = (joined_data.avg_monthly_investment_debit * decay_factor) + joined_data.investment_debit_change
+
+    # 4. Return Dictionary for .select() - COMPLETE COLUMN SET
+    return {
+        # --- CRITICAL: ID & Timestamp (Required by dispatcher) ---
+        "customer_id": joined_data.customer_id,
+        "last_update_timestamp": joined_data.max_txn_time,
+        
+        # --- Static/Semi-Static Features ---
+        "age": joined_data.age,
+        "gender": joined_data.gender,
+        "marital_status": joined_data.marital_status,
+        "dependents_count": joined_data.dependents_count,
+        "employment_type": joined_data.employment_type,
+        "occupation": joined_data.occupation,
+        "education_level": joined_data.education_level,
+        "city_tier": joined_data.city_tier,
+        "yearly_income": joined_data.yearly_income,
+        "account_age_months": joined_data.account_age_months,
+        "initial_credit_score": joined_data.initial_credit_score,
+        "existing_loans_count": joined_data.existing_loans_count,
+        "existing_loan_monthly_EMI_total": joined_data.existing_loan_monthly_EMI_total,
+        "total_credit_limit": joined_data.total_credit_limit,
+        "initial_credit_utilization_ratio": joined_data.initial_credit_utilization_ratio,
+        "initial_avg_monthly_balance": joined_data.initial_avg_monthly_balance,
+        "initial_savings_rate": joined_data.initial_savings_rate,
+        "has_existing_auto_loan": joined_data.has_existing_auto_loan,
+        "has_existing_investment_account": joined_data.has_existing_investment_account,
+
+        # --- Updated Aggregated Features ---
+        "txn_count_last_30d": decayed_txn_count,
+        "high_value_txn_count_30d": joined_data.high_value_txn_count_30d,
+        "bounced_txn_count": joined_data.bounced_txn_count + joined_data.bounced_count_change,
+        "final_avg_monthly_balance": current_balance,
+        "monthly_fuel_spend": decayed_fuel_spend,
+        "monthly_transport_service_spend": decayed_transport_spend,
+        "avg_monthly_investment_debit": decayed_investment_debit,
+        "final_credit_score": new_credit_score,
+
+        # --- Updated Ratio/Interaction Features ---
+        "dti_ratio": joined_data.dti_ratio,
+        "savings_rate": current_balance / ((joined_data.yearly_income / 12) + 1),
+        "income_to_limit": joined_data.income_to_limit,
+        "txn_intensity": decayed_txn_count / ((joined_data.yearly_income / 10000) + 1),
+        "age_x_dependents": joined_data.age_x_dependents,
+        "score_x_log_income": new_credit_score * log_income,
+
+        # --- CRITICAL: Target Columns (Required by dispatcher) ---
+        "opted_home_loan": joined_data.opted_home_loan,
+        "opted_car_loan": joined_data.opted_car_loan,
+        "recommend_nifty50": joined_data.recommend_nifty50,
+        "recommend_elss": joined_data.recommend_elss,
+
+        # --- CRITICAL: Volume Trackers (Required by dispatcher) ---
+        "volTransLastStreamed_home": joined_data.volTransLastStreamed_home + joined_data.vol_increase,
+        "volTransLastStreamed_car": joined_data.volTransLastStreamed_car + joined_data.vol_increase,
+        "volTransLastStreamed_elss": joined_data.volTransLastStreamed_elss + joined_data.vol_increase,
+        "volTransLastStreamed_nifty50": joined_data.volTransLastStreamed_nifty50 + joined_data.vol_increase,
+        
+        # --- CRITICAL: Tracking Columns (Required by dispatcher) ---
+        "last_reach_out_home_loan": joined_data.last_reach_out_home_loan,
+        "last_reach_out_car_loan": joined_data.last_reach_out_car_loan,
+        "last_reach_out_nifty50": joined_data.last_reach_out_nifty50,
+        "last_reach_out_elss": joined_data.last_reach_out_elss,
+    }
