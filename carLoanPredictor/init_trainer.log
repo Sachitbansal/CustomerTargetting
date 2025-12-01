@@ -1,0 +1,43 @@
+[2025-12-02 02:25:31] ═══════════════════════════════════════════════
+[2025-12-02 02:25:31]     Initializing Trainer for opted_car_loan        
+[2025-12-02 02:25:31] ═══════════════════════════════════════════════
+[2025-12-02 02:25:31] Data File:      /home/crazy_warlord/TargettedCalling/MASTERFILE.csv
+[2025-12-02 02:25:31] Model Path:     /home/crazy_warlord/TargettedCalling/Persistence/model_car.json
+[2025-12-02 02:25:31] Log File:       /home/crazy_warlord/TargettedCalling/carLoanPredictor/init_trainer.log
+[2025-12-02 02:25:31] ═══════════════════════════════════════════════
+
+[2025-12-02 02:25:31] Loading data from /home/crazy_warlord/TargettedCalling/MASTERFILE.csv...
+[2025-12-02 02:25:31] ✓ Data loaded. Total rows: 12500
+[2025-12-02 02:25:31] 
+Training Data Statistics:
+[2025-12-02 02:25:31]   Total Rows: 12500
+[2025-12-02 02:25:31]   Positive Samples (target=1): 8637
+[2025-12-02 02:25:31]   Negative/Streaming Samples (target=0): 3863
+[2025-12-02 02:25:31] 
+📊 Fitting Preprocessors...
+[2025-12-02 02:25:31]   Numerical Features (6): ['dti_ratio', 'savings_rate', 'score_x_log_income', 'final_avg_monthly_balance', 'monthly_fuel_spend', 'monthly_transport_service_spend']
+[2025-12-02 02:25:31]   Categorical Features (3): ['city_tier', 'marital_status', 'employment_type']
+[2025-12-02 02:25:31]   ✓ StandardScaler fitted on 8637 samples
+[2025-12-02 02:25:31]   ✓ OrdinalEncoder fitted. Category dimensions: [3, 2, 2]
+[2025-12-02 02:25:31] 
+🧠 Fitting StreamingHybridAdvanced GMM...
+[2025-12-02 02:25:31]   Model Configuration:
+[2025-12-02 02:25:31]     - Numerical Dimensions: 6
+[2025-12-02 02:25:31]     - Categorical Dimensions: 3
+[2025-12-02 02:25:31]     - Max Components (kMax): 8
+[2025-12-02 02:25:31]     - Learning Rate: 0.05
+[2025-12-02 02:25:31]     - Max Exemplars per Cluster: 6
+[2025-12-02 02:25:31]   ✓ Model Initialized. Components: 8
+[2025-12-02 02:25:31] 
+💾 Saving model system to /home/crazy_warlord/TargettedCalling/Persistence/model_car.json...
+[2025-12-02 02:25:31] ✓ Model system saved successfully!
+[2025-12-02 02:25:31] 
+==================================================
+[2025-12-02 02:25:31] TRAINING COMPLETE - SUMMARY
+[2025-12-02 02:25:31] ==================================================
+[2025-12-02 02:25:31] Training Samples:     8637
+[2025-12-02 02:25:31] GMM Components:       8
+[2025-12-02 02:25:31] Model Location:       /home/crazy_warlord/TargettedCalling/Persistence/model_car.json
+[2025-12-02 02:25:31] Log Location:         /home/crazy_warlord/TargettedCalling/carLoanPredictor/init_trainer.log
+[2025-12-02 02:25:31] ==================================================
+
