@@ -7,7 +7,7 @@ import random
 from datetime import datetime, timedelta
 
 fake = Faker('en_IN')
-NUM_CUSTOMERS = 1250 # Kept at 12500 for the 10000/2500 split
+NUM_CUSTOMERS = 12500 # Kept at 12500 for the 10000/2500 split
 MONTHS_OF_DATA = 4
 START_DATE = datetime(2023, 1, 1)
 HIGH_VALUE_TXN_THRESHOLD = 75000
