@@ -13,13 +13,13 @@ import time
 from datetime import datetime
 
 # --- PATH SETUP ---
+
 CURRENT_DIR = Path(__file__).resolve().parent
 PARENT_DIR = CURRENT_DIR.parent
 sys.path.append(str(PARENT_DIR))
-sys.path.append(str(CURRENT_DIR))
 
-from persistence_utils import load_model_system, save_model_system
-from pipeline_config import CAR_LOAN_CONFIG as CONFIG
+from persistenceUtils.persistence_utils import load_model_system, save_model_system
+from pipelineConfigs.pipeline_configs import CAR_LOAN_CONFIG as CONFIG
 
 # --- CONFIGURATION ---
 NATS_URI = "nats://localhost:4222"

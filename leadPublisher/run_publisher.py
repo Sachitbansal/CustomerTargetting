@@ -1,4 +1,4 @@
-# MASTERFILENode/run_dispatcher_node.py (Fixed)
+# MASTERFILENode/run_dispatcher_node.py (NATS Input Version)
 import pathway as pw
 # --- PATH SETUP ---
 from pathlib import Path
@@ -6,11 +6,11 @@ import sys
 CURRENT_DIR = Path(__file__).resolve().parent
 PARENT_DIR = CURRENT_DIR.parent
 sys.path.append(str(PARENT_DIR))
-from MASTERFILENode.schema import MasterSchema
+from leadPublisher.schema import MasterSchema
 
 # --- Configuration ---
-INPUT_STREAM_FILE = "./temp_MASTERFILE_stream.csv"
 NATS_URI = "nats://localhost:4222"
+NATS_INPUT_TOPIC = "updated.Customer"
 HOME_LOAN_LEADS_TOPIC = "leads.checkHomeLoan"
 CAR_LOAN_LEADS_TOPIC = "leads.checkCarLoan"
 NIFTY50_LEADS_TOPIC = "leads.checkNifty50"
@@ -22,7 +22,7 @@ CAR_LOAN_VOLUME_THRESHOLD = 50_000
 NIFTY50_VOLUME_THRESHOLD = 25_000
 ELSS_VOLUME_THRESHOLD = 40_000
 
-# NEW: Cooldown periods in days
+# Cooldown periods in days
 HOME_LOAN_COOLDOWN_DAYS = 90
 CAR_LOAN_COOLDOWN_DAYS = 45
 NIFTY50_COOLDOWN_DAYS = 30
@@ -33,13 +33,15 @@ def run_dispatcher_node():
     print("        LEAD DISPATCHER NODE                   ")
     print("═══════════════════════════════════════════════")
 
-    updated_customers = pw.io.csv.read(
-        INPUT_STREAM_FILE,
+    # Read updated customers from NATS instead of CSV
+    updated_customers = pw.io.nats.read(
+        uri=NATS_URI,
+        topic=NATS_INPUT_TOPIC,
         schema=MasterSchema,
-        mode="streaming",
+        format="json",
         autocommit_duration_ms=100
     )
-    print(f"✓ Listening for updated customer profiles from '{INPUT_STREAM_FILE}'")
+    print(f"✓ Listening for updated customer profiles from NATS topic '{NATS_INPUT_TOPIC}'")
 
     # Convert last_update_timestamp from string to datetime
     updated_customers = updated_customers.with_columns(
@@ -71,14 +73,13 @@ def run_dispatcher_node():
         ),
     )
 
-    # --- Helper function for dynamic cooldown logic (FIXED) ---
+    # --- Helper function for dynamic cooldown logic ---
     def create_cooldown_filter(last_reach_out_col, last_reach_out_dt_col, cooldown_days):
         # Condition 1: We have never reached out to them (datetime column is None)
         is_new_lead = pw.this[last_reach_out_dt_col].is_none()
         
         # Condition 2: We HAVE reached out, but enough time has passed
-        # FIX: Only calculate time_diff when last_reach_out_dt_col is NOT None
-        # We use pw.if_else to handle the nullable datetime
+        # Only calculate time_diff when last_reach_out_dt_col is NOT None
         days_since_last_contact = pw.if_else(
             pw.this[last_reach_out_dt_col].is_none(),
             999999,  # Set a very large number if never contacted (will pass cooldown)

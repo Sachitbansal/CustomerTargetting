@@ -5,7 +5,7 @@ from sklearn.mixture import GaussianMixture
 from scipy.stats import multivariate_normal, chi2
 from scipy.linalg import inv, det
 
-class StreamingHybridAdvanced:
+class onlineGMMv1:
     def __init__(self, num_dim, cat_dims, kMax, 
                  significance_level=0.05, learning_rate=0.02, neg_learning_rate=0.05,
                  max_idle_iterations=500, fn_buffer_size=50, fn_buffer_kMax=3,

@@ -1,4 +1,4 @@
-# MASTERFILENode/run_enrichment_node.py (Fixed - Proper CSV Headers)
+# MASTERFILENode/run_enrichment_node.py (NATS Output Version)
 import pathway as pw
 from pathlib import Path
 import sys
@@ -9,16 +9,16 @@ PARENT_DIR = CURRENT_DIR.parent
 sys.path.append(str(PARENT_DIR))
 
 # --- IMPORTS ---
-from MASTERFILENode.schema import MasterSchema
-from MASTERFILENode.logic import calculate_new_state
+from dataUpdater.schema import MasterSchema
+from dataUpdater.logic import calculate_new_state
 from transactionPublisher.schema import TxnSchema
 
 # --- Configuration ---
 MASTERFILE_PATH = PARENT_DIR / "MASTERFILE.csv" 
-TEMP_OUTPUT_STREAM_FILE = CURRENT_DIR / "temp_MASTERFILE_stream.csv"
 
 NATS_URI = "nats://localhost:4222"
-NATS_TOPIC = "transactions.stream"
+NATS_INPUT_TOPIC = "transactions.stream"
+NATS_OUTPUT_TOPIC = "updated.Customer"
 
 def run_enrichment_node():
     print("═══════════════════════════════════════════════")
@@ -26,7 +26,7 @@ def run_enrichment_node():
     print("═══════════════════════════════════════════════")
 
     if not MASTERFILE_PATH.exists():
-        print(f"❌ ERROR: Could not find {MASTERFILE_PATH}")
+        print(f"ERROR: Could not find {MASTERFILE_PATH}")
         return
 
     # 1. --- Load MASTERFILE ---
@@ -44,7 +44,7 @@ def run_enrichment_node():
     # 2. --- Load TRANSACTIONS ---
     transactions = pw.io.nats.read(
         uri=NATS_URI,
-        topic=NATS_TOPIC,
+        topic=NATS_INPUT_TOPIC,
         schema=TxnSchema,
         format="json",
         autocommit_duration_ms=100
@@ -56,7 +56,7 @@ def run_enrichment_node():
         txn_datetime=transactions.txn_datetime.dt.strptime(fmt="%Y-%m-%d")
     )
     
-    print(f"✓ Connected to NATS '{NATS_TOPIC}' and MASTERFILE")
+    print(f"✓ Connected to NATS '{NATS_INPUT_TOPIC}' and MASTERFILE")
 
     # 3. --- AGGREGATE Transactions ---
     # First, add absolute value column for easier aggregation
@@ -110,23 +110,22 @@ def run_enrichment_node():
         **calculate_new_state(combined_data)
     )
     
-    # 5b. --- Convert datetime back to simple date string format ---
-    # This ensures the CSV has YYYY-MM-DD format, not ISO format
+    # 5b. --- Convert datetime back to simple date string format for JSON ---
+    # This ensures consistent date format in NATS messages
     updated_customers = updated_customers.with_columns(
         last_update_timestamp=updated_customers.last_update_timestamp.dt.strftime(fmt="%Y-%m-%d")
     )
     
     print("✓ Enrichment pipeline configured (Group -> Reduce -> Join -> Select)")
     
-    # 6. --- Write OUTPUT with proper headers ---
-    # CRITICAL FIX: Ensure headers are written
-    pw.io.csv.write(
+    # 6. --- Write OUTPUT to NATS ---
+    pw.io.nats.write(
         updated_customers,
-        str(TEMP_OUTPUT_STREAM_FILE)
+        uri=NATS_URI,
+        topic=NATS_OUTPUT_TOPIC,
+        format="json"
     )
-    print(f"✓ Streaming updates to '{TEMP_OUTPUT_STREAM_FILE}'\n")
-    print("NOTE: If CSV has no headers, delete temp_MASTERFILE_stream.csv and restart")
-    print()
+    print(f"✓ Publishing updated customers to NATS topic '{NATS_OUTPUT_TOPIC}'\n")
 
     pw.run()
 

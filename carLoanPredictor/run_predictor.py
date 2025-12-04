@@ -16,10 +16,10 @@ PARENT_DIR = CURRENT_DIR.parent
 sys.path.append(str(PARENT_DIR))
 sys.path.append(str(CURRENT_DIR))
 
-# Import MasterSchema from MASTERFILENode
-from MASTERFILENode.schema import MasterSchema
-from persistence_utils import load_model_system
-from pipeline_config import CAR_LOAN_CONFIG as CONFIG
+# Import MasterSchema from dataUpdater
+from dataUpdater.schema import MasterSchema
+from persistenceUtils.persistence_utils import load_model_system
+from pipelineConfigs.pipeline_configs import CAR_LOAN_CONFIG as CONFIG
 
 # --- CONFIGURATION ---
 NATS_URI = "nats://localhost:4222"

@@ -1,11 +1,17 @@
-# persistence_utils.py
-# Location: ./TargettedCalling/carLoanPredictor/persistence_utils.py
-
 import json
 import numpy as np
 import os
 from sklearn.preprocessing import StandardScaler, OrdinalEncoder
-from streaming_hybrid_advanced import StreamingHybridAdvanced
+
+from pathlib import Path
+import sys
+
+# --- PATH SETUP ---
+CURRENT_DIR = Path(__file__).resolve().parent
+PARENT_DIR = CURRENT_DIR.parent
+sys.path.append(str(PARENT_DIR))
+
+from models.online_GMM_v1 import onlineGMMv1
 
 class NumpyEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -115,7 +121,7 @@ def load_model_system(filepath):
 
     # 3. Reconstruct GMM
     gmm_data = data['gmm']
-    model = StreamingHybridAdvanced(
+    model = onlineGMMv1(
         num_dim=gmm_data['num_dim'],
         cat_dims=gmm_data['cat_dims'],
         kMax=gmm_data['kMax']
