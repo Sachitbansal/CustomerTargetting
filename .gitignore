@@ -2,3 +2,4 @@ node_modules/
 Backend/*.db
 *.log
 Backend/CSV's/transactions_history_categorized.csv
+Backend/CSV's/transactions_history_categorized.csv
