@@ -88,17 +88,20 @@ export function Reports() {
     });
 
     socket.on('customer_update', async (data: any) => {
-      console.log('🔔 Received customer update:', data);
+      console.log('🔔 Received WebSocket update:', data);
 
-      const { is_new_report, report, category, customer } = data;
+      const { type, is_new_report, report, category, batch_number } = data;
 
-      setLastUpdate(customer?.user_id || 'Unknown');
+      // Update last update indicator with batch info
+      if (report?.batch_id) {
+        setLastUpdate(`Batch #${batch_number || '?'}: ${report.batch_id}`);
+      }
 
       // Only process if it's for the current category
       if (category === selectedCategory) {
-        if (is_new_report) {
+        if (type === 'new_batch' && is_new_report && report) {
           // New batch created - add it instantly with animation
-          console.log('✨ New batch created:', report.batch_id);
+          console.log('✨ New batch received:', report.batch_id);
 
           const newReport: Report = {
             id: report.id,
@@ -111,12 +114,21 @@ export function Reports() {
             reportFile: report.report_file,
           };
 
-          // Add to the beginning of the reports array
-          setReports(prev => [newReport, ...prev]);
+          // Add to the beginning of the reports array (most recent first)
+          setReports(prev => {
+            // Check if batch already exists to prevent duplicates
+            const exists = prev.some(r => r.id === newReport.id);
+            if (exists) {
+              console.log('⚠️ Batch already exists, skipping:', newReport.batchId);
+              return prev;
+            }
+            console.log('✅ Adding new batch to reports:', newReport.batchId);
+            return [newReport, ...prev];
+          });
 
-        } else {
-          // Update existing batch
-          console.log('🔄 Updating batch:', report.batch_id);
+        } else if (!is_new_report && report) {
+          // Update existing batch (if needed)
+          console.log('🔄 Updating existing batch:', report.batch_id);
 
           setReports(prev => prev.map(r => {
             if (r.id === report.id) {
@@ -131,6 +143,8 @@ export function Reports() {
             return r;
           }));
         }
+      } else {
+        console.log(`📌 Ignoring update for category '${category}' (current: '${selectedCategory}')`);
       }
     });
 

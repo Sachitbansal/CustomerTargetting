@@ -1,0 +1,30 @@
+Werkzeug appears to be used in a production deployment. Consider switching to a production web server instead.
+Database initialized successfully!
+Categories seeded!
+Starting Flask server with WebSocket support...
+API available at http://localhost:5000
+WebSocket available for real-time updates
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.49.28.28:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+Werkzeug appears to be used in a production deployment. Consider switching to a production web server instead.
+ * Debugger is active!
+ * Debugger PIN: 297-267-412
+127.0.0.1 - - [06/Dec/2025 02:08:37] "POST /api/notify-update HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2025 02:08:40] "POST /api/notify-update HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2025 02:08:43] "POST /api/notify-update HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2025 02:08:46] "POST /api/notify-update HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2025 02:08:49] "POST /api/notify-update HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2025 02:08:52] "POST /api/notify-update HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2025 02:08:55] "POST /api/notify-update HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2025 02:08:58] "POST /api/notify-update HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2025 02:09:01] "POST /api/notify-update HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2025 02:09:04] "POST /api/notify-update HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2025 02:09:07] "POST /api/notify-update HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2025 02:09:10] "POST /api/notify-update HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2025 02:09:13] "POST /api/notify-update HTTP/1.1" 200 -

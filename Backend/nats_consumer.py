@@ -1,5 +1,5 @@
 """
-NATS Consumer - Subscribes to customer data and updates SQLite database
+NATS Consumer - Subscribes to COMPLETE BATCH data and updates SQLite database
 Also emits WebSocket events for real-time frontend updates
 """
 import asyncio
@@ -12,55 +12,38 @@ import requests
 WEBSOCKET_NOTIFY_URL = "http://localhost:5000/api/notify-update"
 
 
-def save_customer_to_db(customer_data):
-    """Save customer data to SQLite and update/create report"""
+def save_batch_to_db(batch_data):
+    """Save complete batch data to SQLite"""
     conn = get_db_connection()
     cursor = conn.cursor()
     
     try:
-        # Check if report exists
-        report = cursor.execute('''
-            SELECT id FROM reports WHERE batch_id = ?
-        ''', (customer_data['batch_id'],)).fetchone()
+        report_id = batch_data['report_id']
+        batch_id = batch_data['batch_id']
+        category = batch_data['category']
         
-        if not report:
-            # Create new report
-            report_id = f"{customer_data['category']}-{customer_data['batch_id'].split('-')[-1]}"
+        # Insert report
+        cursor.execute('''
+            INSERT OR REPLACE INTO reports (id, batch_id, category_id, timestamp, total_calls, successful_calls, report_file)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+        ''', (report_id, batch_id, category, batch_data['timestamp'], 
+              batch_data['total_calls'], batch_data['successful_calls'], batch_data['report_file']))
+        
+        # Insert all customers in this batch
+        user_ids = []
+        for customer in batch_data['customers']:
             cursor.execute('''
-                INSERT INTO reports (id, batch_id, category_id, timestamp, total_calls, successful_calls, report_file)
-                VALUES (?, ?, ?, ?, ?, ?, ?)
-            ''', (report_id, customer_data['batch_id'], customer_data['category'], 
-                  customer_data['timestamp'], 0, 0, customer_data['report_file']))
-            report_id = report_id
-            is_new_report = True
-        else:
-            report_id = report['id']
-            is_new_report = False
-        
-        # Insert user
-        cursor.execute('''
-            INSERT OR REPLACE INTO users 
-            (id, user_id, report_id, name, agreed, call_duration, call_date, 
-             loan_amount, credit_score, risk_level, audio_file)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        ''', (customer_data['id'], customer_data['user_id'], report_id, 
-              customer_data['name'], 1 if customer_data['agreed'] else 0, 
-              customer_data['call_duration'], customer_data['call_date'],
-              customer_data['loan_amount'], customer_data['credit_score'], 
-              customer_data['risk_level'], customer_data['audio_file']))
-        
-        # Update report stats
-        stats = cursor.execute('''
-            SELECT COUNT(*) as total, 
-                   SUM(CASE WHEN agreed = 1 THEN 1 ELSE 0 END) as successful
-            FROM users WHERE report_id = ?
-        ''', (report_id,)).fetchone()
-        
-        cursor.execute('''
-            UPDATE reports 
-            SET total_calls = ?, successful_calls = ?
-            WHERE id = ?
-        ''', (stats['total'], stats['successful'], report_id))
+                INSERT OR REPLACE INTO users 
+                (id, user_id, report_id, name, agreed, call_duration, call_date, 
+                 loan_amount, credit_score, risk_level, audio_file)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ''', (customer['id'], customer['user_id'], report_id, 
+                  customer['name'], 1 if customer['agreed'] else 0, 
+                  customer['call_duration'], customer['call_date'],
+                  customer['loan_amount'], customer['credit_score'], 
+                  customer['risk_level'], customer['audio_file']))
+            
+            user_ids.append(customer['user_id'])
         
         conn.commit()
         
@@ -72,17 +55,12 @@ def save_customer_to_db(customer_data):
             WHERE r.id = ?
         ''', (report_id,)).fetchone()
         
-        # Get all user IDs for this report
-        user_ids = cursor.execute('''
-            SELECT user_id FROM users WHERE report_id = ?
-        ''', (report_id,)).fetchall()
-        
-        # Notify WebSocket clients with complete report data
+        # Notify WebSocket clients with complete NEW batch
         try:
             notification_data = {
-                'type': 'customer_added',
-                'is_new_report': is_new_report,
-                'customer': customer_data,
+                'type': 'new_batch',
+                'is_new_report': True,  # Always new batch
+                'batch_number': batch_data['batch_number'],
                 'report': {
                     'id': report_data['id'],
                     'batch_id': report_data['batch_id'],
@@ -93,79 +71,92 @@ def save_customer_to_db(customer_data):
                     'report_file': report_data['report_file'],
                     'category_label': report_data['category_label'],
                     'category_prefix': report_data['category_prefix'],
-                    'userIds': [u['user_id'] for u in user_ids]
+                    'userIds': user_ids
                 },
-                'category': customer_data['category']
+                'category': category,
+                'customer_count': len(batch_data['customers'])
             }
             
             requests.post(WEBSOCKET_NOTIFY_URL, json=notification_data, timeout=1)
-        except:
-            pass  # Silently fail if WebSocket server is not available
+        except Exception as e:
+            print(f"⚠️  WebSocket notification failed: {e}")
         
-        return True
+        return True, len(batch_data['customers'])
         
     except Exception as e:
         print(f"❌ Database error: {e}")
         conn.rollback()
-        return False
+        return False, 0
     finally:
         conn.close()
 
 
-async def subscribe_to_customers():
-    """Subscribe to NATS and process incoming customer data"""
+async def subscribe_to_batches():
+    """Subscribe to NATS and process incoming batch data"""
     nc = NATS()
     
     try:
         # Connect to NATS
         await nc.connect("nats://localhost:4222")
         print("✅ Connected to NATS server")
-        print("👂 Subscribing to customer.calls.* topics")
-        print("💾 Ready to save data to SQLite\n")
+        print("👂 Subscribing to batch.calls.* topics")
+        print("💾 Ready to save COMPLETE batches to SQLite\n")
+        
+        batch_count = 0
+        total_customers = 0
         
         async def message_handler(msg):
-            """Handle incoming messages"""
+            """Handle incoming batch messages"""
+            nonlocal batch_count, total_customers
+            
             try:
-                customer_data = json.loads(msg.data.decode())
+                batch_data = json.loads(msg.data.decode())
                 
-                # Save to database
-                success = save_customer_to_db(customer_data)
+                # Save complete batch to database
+                success, customer_count = save_batch_to_db(batch_data)
                 
                 if success:
-                    print(f"✅ Saved: {customer_data['user_id']} | "
-                          f"{customer_data['name']} | "
-                          f"Batch: {customer_data['batch_id']} | "
-                          f"Category: {customer_data['category']}")
+                    batch_count += 1
+                    total_customers += customer_count
+                    
+                    print(f" Batch #{batch_count}: {batch_data['batch_id']}")
+                    print(f"   Category: {batch_data['category']}")
+                    print(f"   Customers: {customer_count}")
+                    print(f"   Agreed: {batch_data['successful_calls']}/{batch_data['total_calls']}")
+                    print(f"   Total saved: {total_customers} customers in {batch_count} batches")
+                    print()
                 else:
-                    print(f"❌ Failed to save: {customer_data['user_id']}")
+                    print(f"Failed to save batch: {batch_data['batch_id']}")
                     
             except Exception as e:
-                print(f"❌ Error processing message: {e}")
+                print(f" Error processing message: {e}")
         
-        # Subscribe to all customer call topics
-        await nc.subscribe("customer.calls.*", cb=message_handler)
+        # Subscribe to all batch call topics
+        await nc.subscribe("batch.calls.*", cb=message_handler)
         
-        print("🎧 Listening for messages... (Press Ctrl+C to stop)\n")
+        print("🎧 Listening for COMPLETE batches... (Press Ctrl+C to stop)\n")
         
         # Keep running
         while True:
             await asyncio.sleep(1)
             
     except KeyboardInterrupt:
-        print("\n👋 Shutting down consumer...")
+        print(f"\nShutting down consumer...")
+        print(f" Final Stats: {batch_count} batches, {total_customers} customers saved")
     except Exception as e:
-        print(f"❌ Error: {e}")
+        print(f" Error: {e}")
     finally:
         await nc.close()
 
 
 if __name__ == '__main__':
-    print("="*60)
-    print("🎧 NATS Customer Data Consumer")
-    print("="*60)
-    print("💾 Saves to SQLite database")
-    print("📡 Sends real-time updates via WebSocket")
-    print("="*60)
+    print("="*70)
+    print("NATS BATCH Consumer")
+    print("="*70)
+    print("Saves COMPLETE batches to SQLite database")
+    print("Sends real-time updates via WebSocket")
+    print("Each batch = NEW report card on frontend")
+    print("="*70)
     print()
     
-    asyncio.run(subscribe_to_customers())
+    asyncio.run(subscribe_to_batches())

@@ -48,8 +48,8 @@ def notify_update():
     """Receive update notifications from NATS consumer and broadcast via WebSocket"""
     data = request.json
     
-    # Broadcast to all connected clients
-    socketio.emit('customer_update', data, broadcast=True)
+    # Broadcast to all connected clients (Flask-SocketIO 5.x compatible)
+    socketio.emit('customer_update', data, namespace='/')
     
     return jsonify({'status': 'notified'})
 
