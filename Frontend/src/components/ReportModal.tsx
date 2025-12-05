@@ -1,16 +1,10 @@
-import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Card } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { X, Download, FileText, Phone, CheckCircle, XCircle, User, Calendar, Clock } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
-import { Document, Page, pdfjs } from 'react-pdf';
-import 'react-pdf/dist/Page/AnnotationLayer.css';
-import 'react-pdf/dist/Page/TextLayer.css';
-
-// Configure PDF.js worker
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+import { PDFScroll } from './PDF-Scroll';
 
 interface Report {
   id: string;
@@ -45,15 +39,9 @@ const generateUserData = (userId: string) => {
 };
 
 export function ReportModal({ report, onClose }: ReportModalProps) {
-  const [numPages, setNumPages] = useState<number | null>(null);
-
   if (!report) return null;
 
   const userData = report.userIds.map(generateUserData);
-
-  function onDocumentLoadSuccess({ numPages }: { numPages: number }) {
-    setNumPages(numPages);
-  }
 
   return (
     <AnimatePresence>
@@ -123,53 +111,18 @@ export function ReportModal({ report, onClose }: ReportModalProps) {
                 })}
               </div>
 
-              {/* PDF Report Viewer - Scrollable */}
+              {/* PDF Report Viewer - Fixed Height with Internal Scroll */}
               <div className="mb-6">
                 <h3 className="mb-4 flex items-center gap-2">
                   <FileText className="w-5 h-5" />
                   Full Report
                 </h3>
-                <Card className="p-4 bg-accent/30">
-                  <div className="relative bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-900 dark:to-slate-800 rounded-lg overflow-hidden">
-                    <div className="max-h-[600px] overflow-y-auto scroll-smooth p-4">
-                      <Document
-                        file="/Report_exapmle.pdf"
-                        onLoadSuccess={onDocumentLoadSuccess}
-                        loading={
-                          <div className="flex items-center justify-center py-20">
-                            <div className="text-center">
-                              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-3"></div>
-                              <p className="text-sm text-muted-foreground">Loading report...</p>
-                            </div>
-                          </div>
-                        }
-                        error={
-                          <div className="flex items-center justify-center py-20">
-                            <div className="text-center">
-                              <FileText className="w-16 h-16 mx-auto mb-3 text-muted-foreground" />
-                              <p className="text-sm text-muted-foreground">Unable to load report</p>
-                            </div>
-                          </div>
-                        }
-                        className="flex flex-col items-center gap-4"
-                      >
-                        {numPages && Array.from({ length: numPages }, (_, index) => (
-                          <div key={index} className="bg-white shadow-lg">
-                            <Page
-                              pageNumber={index + 1}
-                              width={Math.min(window.innerWidth * 0.6, 700)}
-                              renderTextLayer={true}
-                              renderAnnotationLayer={true}
-                              className="transition-opacity duration-300"
-                            />
-                            <div className="text-center py-2 bg-slate-100 dark:bg-slate-800 text-xs text-muted-foreground">
-                              Page {index + 1} of {numPages}
-                            </div>
-                          </div>
-                        ))}
-                      </Document>
-                    </div>
-                  </div>
+                <Card className="bg-accent/30 overflow-hidden">
+                  <PDFScroll
+                    file="/Report_exapmle.pdf"
+                    height="40vh"
+                    width={600}
+                  />
                 </Card>
               </div>
 
