@@ -82,6 +82,6 @@ vite.config.js.timestamp-*
 # Temporary files
 *.tmp
 *.temp
-
+/node_modules
 # OS Files
 Thumbs.db
