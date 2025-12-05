@@ -323,3 +323,337 @@
    Users: CL-051-01, CL-051-02, CL-051-03...
 
 [52/150] 📦 Published BATCH: BATCH-CL-0052
+   Category: carLoans
+   Customers: 7
+   Agreed: 3 (42%)
+   Users: CL-052-01, CL-052-02, CL-052-03...
+
+[53/150] 📦 Published BATCH: BATCH-NF-0053
+   Category: nifty
+   Customers: 8
+   Agreed: 6 (75%)
+   Users: NF-053-01, NF-053-02, NF-053-03...
+
+[54/150] 📦 Published BATCH: BATCH-CL-0054
+   Category: carLoans
+   Customers: 8
+   Agreed: 6 (75%)
+   Users: CL-054-01, CL-054-02, CL-054-03...
+
+[55/150] 📦 Published BATCH: BATCH-NF-0055
+   Category: nifty
+   Customers: 7
+   Agreed: 4 (57%)
+   Users: NF-055-01, NF-055-02, NF-055-03...
+
+[56/150] 📦 Published BATCH: BATCH-OT-0056
+   Category: others
+   Customers: 6
+   Agreed: 3 (50%)
+   Users: OT-056-01, OT-056-02, OT-056-03...
+
+[57/150] 📦 Published BATCH: BATCH-MF-0057
+   Category: mutualFunds
+   Customers: 8
+   Agreed: 4 (50%)
+   Users: MF-057-01, MF-057-02, MF-057-03...
+
+[58/150] 📦 Published BATCH: BATCH-MF-0058
+   Category: mutualFunds
+   Customers: 7
+   Agreed: 3 (42%)
+   Users: MF-058-01, MF-058-02, MF-058-03...
+
+[59/150] 📦 Published BATCH: BATCH-NF-0059
+   Category: nifty
+   Customers: 6
+   Agreed: 5 (83%)
+   Users: NF-059-01, NF-059-02, NF-059-03...
+
+[60/150] 📦 Published BATCH: BATCH-NF-0060
+   Category: nifty
+   Customers: 8
+   Agreed: 5 (62%)
+   Users: NF-060-01, NF-060-02, NF-060-03...
+
+[61/150] 📦 Published BATCH: BATCH-MF-0061
+   Category: mutualFunds
+   Customers: 7
+   Agreed: 3 (42%)
+   Users: MF-061-01, MF-061-02, MF-061-03...
+
+[62/150] 📦 Published BATCH: BATCH-CL-0062
+   Category: carLoans
+   Customers: 6
+   Agreed: 4 (66%)
+   Users: CL-062-01, CL-062-02, CL-062-03...
+
+[63/150] 📦 Published BATCH: BATCH-OT-0063
+   Category: others
+   Customers: 7
+   Agreed: 4 (57%)
+   Users: OT-063-01, OT-063-02, OT-063-03...
+
+[64/150] 📦 Published BATCH: BATCH-NF-0064
+   Category: nifty
+   Customers: 6
+   Agreed: 3 (50%)
+   Users: NF-064-01, NF-064-02, NF-064-03...
+
+[65/150] 📦 Published BATCH: BATCH-CL-0065
+   Category: carLoans
+   Customers: 6
+   Agreed: 4 (66%)
+   Users: CL-065-01, CL-065-02, CL-065-03...
+
+[66/150] 📦 Published BATCH: BATCH-OT-0066
+   Category: others
+   Customers: 8
+   Agreed: 6 (75%)
+   Users: OT-066-01, OT-066-02, OT-066-03...
+
+[67/150] 📦 Published BATCH: BATCH-CL-0067
+   Category: carLoans
+   Customers: 6
+   Agreed: 3 (50%)
+   Users: CL-067-01, CL-067-02, CL-067-03...
+
+[68/150] 📦 Published BATCH: BATCH-NF-0068
+   Category: nifty
+   Customers: 8
+   Agreed: 3 (37%)
+   Users: NF-068-01, NF-068-02, NF-068-03...
+
+[69/150] 📦 Published BATCH: BATCH-MF-0069
+   Category: mutualFunds
+   Customers: 7
+   Agreed: 4 (57%)
+   Users: MF-069-01, MF-069-02, MF-069-03...
+
+[70/150] 📦 Published BATCH: BATCH-MF-0070
+   Category: mutualFunds
+   Customers: 8
+   Agreed: 5 (62%)
+   Users: MF-070-01, MF-070-02, MF-070-03...
+
+[71/150] 📦 Published BATCH: BATCH-OT-0071
+   Category: others
+   Customers: 8
+   Agreed: 5 (62%)
+   Users: OT-071-01, OT-071-02, OT-071-03...
+
+[72/150] 📦 Published BATCH: BATCH-MF-0072
+   Category: mutualFunds
+   Customers: 7
+   Agreed: 6 (85%)
+   Users: MF-072-01, MF-072-02, MF-072-03...
+
+[73/150] 📦 Published BATCH: BATCH-NF-0073
+   Category: nifty
+   Customers: 6
+   Agreed: 5 (83%)
+   Users: NF-073-01, NF-073-02, NF-073-03...
+
+[74/150] 📦 Published BATCH: BATCH-NF-0074
+   Category: nifty
+   Customers: 7
+   Agreed: 3 (42%)
+   Users: NF-074-01, NF-074-02, NF-074-03...
+
+[75/150] 📦 Published BATCH: BATCH-NF-0075
+   Category: nifty
+   Customers: 8
+   Agreed: 5 (62%)
+   Users: NF-075-01, NF-075-02, NF-075-03...
+
+🎯 Milestone: 75 batches published!
+
+[76/150] 📦 Published BATCH: BATCH-OT-0076
+   Category: others
+   Customers: 7
+   Agreed: 3 (42%)
+   Users: OT-076-01, OT-076-02, OT-076-03...
+
+[77/150] 📦 Published BATCH: BATCH-CL-0077
+   Category: carLoans
+   Customers: 7
+   Agreed: 1 (14%)
+   Users: CL-077-01, CL-077-02, CL-077-03...
+
+[78/150] 📦 Published BATCH: BATCH-NF-0078
+   Category: nifty
+   Customers: 8
+   Agreed: 5 (62%)
+   Users: NF-078-01, NF-078-02, NF-078-03...
+
+[79/150] 📦 Published BATCH: BATCH-OT-0079
+   Category: others
+   Customers: 7
+   Agreed: 2 (28%)
+   Users: OT-079-01, OT-079-02, OT-079-03...
+
+[80/150] 📦 Published BATCH: BATCH-MF-0080
+   Category: mutualFunds
+   Customers: 8
+   Agreed: 3 (37%)
+   Users: MF-080-01, MF-080-02, MF-080-03...
+
+[81/150] 📦 Published BATCH: BATCH-CL-0081
+   Category: carLoans
+   Customers: 8
+   Agreed: 5 (62%)
+   Users: CL-081-01, CL-081-02, CL-081-03...
+
+[82/150] 📦 Published BATCH: BATCH-MF-0082
+   Category: mutualFunds
+   Customers: 7
+   Agreed: 6 (85%)
+   Users: MF-082-01, MF-082-02, MF-082-03...
+
+[83/150] 📦 Published BATCH: BATCH-MF-0083
+   Category: mutualFunds
+   Customers: 7
+   Agreed: 3 (42%)
+   Users: MF-083-01, MF-083-02, MF-083-03...
+
+[84/150] 📦 Published BATCH: BATCH-CL-0084
+   Category: carLoans
+   Customers: 6
+   Agreed: 4 (66%)
+   Users: CL-084-01, CL-084-02, CL-084-03...
+
+[85/150] 📦 Published BATCH: BATCH-MF-0085
+   Category: mutualFunds
+   Customers: 6
+   Agreed: 2 (33%)
+   Users: MF-085-01, MF-085-02, MF-085-03...
+
+[86/150] 📦 Published BATCH: BATCH-MF-0086
+   Category: mutualFunds
+   Customers: 6
+   Agreed: 3 (50%)
+   Users: MF-086-01, MF-086-02, MF-086-03...
+
+[87/150] 📦 Published BATCH: BATCH-CL-0087
+   Category: carLoans
+   Customers: 6
+   Agreed: 2 (33%)
+   Users: CL-087-01, CL-087-02, CL-087-03...
+
+[88/150] 📦 Published BATCH: BATCH-NF-0088
+   Category: nifty
+   Customers: 7
+   Agreed: 4 (57%)
+   Users: NF-088-01, NF-088-02, NF-088-03...
+
+[89/150] 📦 Published BATCH: BATCH-NF-0089
+   Category: nifty
+   Customers: 7
+   Agreed: 6 (85%)
+   Users: NF-089-01, NF-089-02, NF-089-03...
+
+[90/150] 📦 Published BATCH: BATCH-MF-0090
+   Category: mutualFunds
+   Customers: 6
+   Agreed: 3 (50%)
+   Users: MF-090-01, MF-090-02, MF-090-03...
+
+[91/150] 📦 Published BATCH: BATCH-CL-0091
+   Category: carLoans
+   Customers: 8
+   Agreed: 7 (87%)
+   Users: CL-091-01, CL-091-02, CL-091-03...
+
+[92/150] 📦 Published BATCH: BATCH-MF-0092
+   Category: mutualFunds
+   Customers: 6
+   Agreed: 5 (83%)
+   Users: MF-092-01, MF-092-02, MF-092-03...
+
+[93/150] 📦 Published BATCH: BATCH-CL-0093
+   Category: carLoans
+   Customers: 8
+   Agreed: 6 (75%)
+   Users: CL-093-01, CL-093-02, CL-093-03...
+
+[94/150] 📦 Published BATCH: BATCH-OT-0094
+   Category: others
+   Customers: 6
+   Agreed: 6 (100%)
+   Users: OT-094-01, OT-094-02, OT-094-03...
+
+[95/150] 📦 Published BATCH: BATCH-MF-0095
+   Category: mutualFunds
+   Customers: 7
+   Agreed: 3 (42%)
+   Users: MF-095-01, MF-095-02, MF-095-03...
+
+[96/150] 📦 Published BATCH: BATCH-MF-0096
+   Category: mutualFunds
+   Customers: 7
+   Agreed: 2 (28%)
+   Users: MF-096-01, MF-096-02, MF-096-03...
+
+[97/150] 📦 Published BATCH: BATCH-CL-0097
+   Category: carLoans
+   Customers: 7
+   Agreed: 4 (57%)
+   Users: CL-097-01, CL-097-02, CL-097-03...
+
+[98/150] 📦 Published BATCH: BATCH-MF-0098
+   Category: mutualFunds
+   Customers: 7
+   Agreed: 5 (71%)
+   Users: MF-098-01, MF-098-02, MF-098-03...
+
+[99/150] 📦 Published BATCH: BATCH-NF-0099
+   Category: nifty
+   Customers: 6
+   Agreed: 3 (50%)
+   Users: NF-099-01, NF-099-02, NF-099-03...
+
+[100/150] 📦 Published BATCH: BATCH-OT-0100
+   Category: others
+   Customers: 7
+   Agreed: 6 (85%)
+   Users: OT-100-01, OT-100-02, OT-100-03...
+
+🎯 Milestone: 100 batches published!
+
+[101/150] 📦 Published BATCH: BATCH-NF-0101
+   Category: nifty
+   Customers: 6
+   Agreed: 2 (33%)
+   Users: NF-101-01, NF-101-02, NF-101-03...
+
+[102/150] 📦 Published BATCH: BATCH-NF-0102
+   Category: nifty
+   Customers: 7
+   Agreed: 4 (57%)
+   Users: NF-102-01, NF-102-02, NF-102-03...
+
+[103/150] 📦 Published BATCH: BATCH-NF-0103
+   Category: nifty
+   Customers: 8
+   Agreed: 2 (25%)
+   Users: NF-103-01, NF-103-02, NF-103-03...
+
+[104/150] 📦 Published BATCH: BATCH-NF-0104
+   Category: nifty
+   Customers: 6
+   Agreed: 3 (50%)
+   Users: NF-104-01, NF-104-02, NF-104-03...
+
+[105/150] 📦 Published BATCH: BATCH-MF-0105
+   Category: mutualFunds
+   Customers: 7
+   Agreed: 4 (57%)
+   Users: MF-105-01, MF-105-02, MF-105-03...
+
+[106/150] 📦 Published BATCH: BATCH-CL-0106
+   Category: carLoans
+   Customers: 6
+   Agreed: 1 (16%)
+   Users: CL-106-01, CL-106-02, CL-106-03...
+
+[107/150] 📦 Published BATCH: BATCH-CL-0107

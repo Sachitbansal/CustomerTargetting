@@ -387,3 +387,397 @@ Each batch = NEW report card on frontend
  Batch #63: BATCH-OT-0063
    Category: others
    Customers: 7
+   Agreed: 4/7
+   Total saved: 454 customers in 63 batches
+
+ Batch #64: BATCH-NF-0064
+   Category: nifty
+   Customers: 6
+   Agreed: 3/6
+   Total saved: 460 customers in 64 batches
+
+ Batch #65: BATCH-CL-0065
+   Category: carLoans
+   Customers: 6
+   Agreed: 4/6
+   Total saved: 466 customers in 65 batches
+
+ Batch #66: BATCH-OT-0066
+   Category: others
+   Customers: 8
+   Agreed: 6/8
+   Total saved: 474 customers in 66 batches
+
+ Batch #67: BATCH-CL-0067
+   Category: carLoans
+   Customers: 6
+   Agreed: 3/6
+   Total saved: 480 customers in 67 batches
+
+ Batch #68: BATCH-NF-0068
+   Category: nifty
+   Customers: 8
+   Agreed: 3/8
+   Total saved: 488 customers in 68 batches
+
+ Batch #69: BATCH-MF-0069
+   Category: mutualFunds
+   Customers: 7
+   Agreed: 4/7
+   Total saved: 495 customers in 69 batches
+
+ Batch #70: BATCH-MF-0070
+   Category: mutualFunds
+   Customers: 8
+   Agreed: 5/8
+   Total saved: 503 customers in 70 batches
+
+ Batch #71: BATCH-OT-0071
+   Category: others
+   Customers: 8
+   Agreed: 5/8
+   Total saved: 511 customers in 71 batches
+
+ Batch #72: BATCH-MF-0072
+   Category: mutualFunds
+   Customers: 7
+   Agreed: 6/7
+   Total saved: 518 customers in 72 batches
+
+ Batch #73: BATCH-NF-0073
+   Category: nifty
+   Customers: 6
+   Agreed: 5/6
+   Total saved: 524 customers in 73 batches
+
+ Batch #74: BATCH-NF-0074
+   Category: nifty
+   Customers: 7
+   Agreed: 3/7
+   Total saved: 531 customers in 74 batches
+
+ Batch #75: BATCH-NF-0075
+   Category: nifty
+   Customers: 8
+   Agreed: 5/8
+   Total saved: 539 customers in 75 batches
+
+ Batch #76: BATCH-OT-0076
+   Category: others
+   Customers: 7
+   Agreed: 3/7
+   Total saved: 546 customers in 76 batches
+
+ Batch #77: BATCH-CL-0077
+   Category: carLoans
+   Customers: 7
+   Agreed: 1/7
+   Total saved: 553 customers in 77 batches
+
+ Batch #78: BATCH-NF-0078
+   Category: nifty
+   Customers: 8
+   Agreed: 5/8
+   Total saved: 561 customers in 78 batches
+
+ Batch #79: BATCH-OT-0079
+   Category: others
+   Customers: 7
+   Agreed: 2/7
+   Total saved: 568 customers in 79 batches
+
+ Batch #80: BATCH-MF-0080
+   Category: mutualFunds
+   Customers: 8
+   Agreed: 3/8
+   Total saved: 576 customers in 80 batches
+
+ Batch #81: BATCH-CL-0081
+   Category: carLoans
+   Customers: 8
+   Agreed: 5/8
+   Total saved: 584 customers in 81 batches
+
+ Batch #82: BATCH-MF-0082
+   Category: mutualFunds
+   Customers: 7
+   Agreed: 6/7
+   Total saved: 591 customers in 82 batches
+
+ Batch #83: BATCH-MF-0083
+   Category: mutualFunds
+   Customers: 7
+   Agreed: 3/7
+   Total saved: 598 customers in 83 batches
+
+ Batch #84: BATCH-CL-0084
+   Category: carLoans
+   Customers: 6
+   Agreed: 4/6
+   Total saved: 604 customers in 84 batches
+
+ Batch #85: BATCH-MF-0085
+   Category: mutualFunds
+   Customers: 6
+   Agreed: 2/6
+   Total saved: 610 customers in 85 batches
+
+ Batch #86: BATCH-MF-0086
+   Category: mutualFunds
+   Customers: 6
+   Agreed: 3/6
+   Total saved: 616 customers in 86 batches
+
+ Batch #87: BATCH-CL-0087
+   Category: carLoans
+   Customers: 6
+   Agreed: 2/6
+   Total saved: 622 customers in 87 batches
+
+ Batch #88: BATCH-NF-0088
+   Category: nifty
+   Customers: 7
+   Agreed: 4/7
+   Total saved: 629 customers in 88 batches
+
+ Batch #89: BATCH-NF-0089
+   Category: nifty
+   Customers: 7
+   Agreed: 6/7
+   Total saved: 636 customers in 89 batches
+
+ Batch #90: BATCH-MF-0090
+   Category: mutualFunds
+   Customers: 6
+   Agreed: 3/6
+   Total saved: 642 customers in 90 batches
+
+ Batch #91: BATCH-CL-0091
+   Category: carLoans
+   Customers: 8
+   Agreed: 7/8
+   Total saved: 650 customers in 91 batches
+
+ Batch #92: BATCH-MF-0092
+   Category: mutualFunds
+   Customers: 6
+   Agreed: 5/6
+   Total saved: 656 customers in 92 batches
+
+ Batch #93: BATCH-CL-0093
+   Category: carLoans
+   Customers: 8
+   Agreed: 6/8
+   Total saved: 664 customers in 93 batches
+
+ Batch #94: BATCH-OT-0094
+   Category: others
+   Customers: 6
+   Agreed: 6/6
+   Total saved: 670 customers in 94 batches
+
+ Batch #95: BATCH-MF-0095
+   Category: mutualFunds
+   Customers: 7
+   Agreed: 3/7
+   Total saved: 677 customers in 95 batches
+
+ Batch #96: BATCH-MF-0096
+   Category: mutualFunds
+   Customers: 7
+   Agreed: 2/7
+   Total saved: 684 customers in 96 batches
+
+ Batch #97: BATCH-CL-0097
+   Category: carLoans
+   Customers: 7
+   Agreed: 4/7
+   Total saved: 691 customers in 97 batches
+
+ Batch #98: BATCH-MF-0098
+   Category: mutualFunds
+   Customers: 7
+   Agreed: 5/7
+   Total saved: 698 customers in 98 batches
+
+ Batch #99: BATCH-NF-0099
+   Category: nifty
+   Customers: 6
+   Agreed: 3/6
+   Total saved: 704 customers in 99 batches
+
+ Batch #100: BATCH-OT-0100
+   Category: others
+   Customers: 7
+   Agreed: 6/7
+   Total saved: 711 customers in 100 batches
+
+ Batch #101: BATCH-NF-0101
+   Category: nifty
+   Customers: 6
+   Agreed: 2/6
+   Total saved: 717 customers in 101 batches
+
+ Batch #102: BATCH-NF-0102
+   Category: nifty
+   Customers: 7
+   Agreed: 4/7
+   Total saved: 724 customers in 102 batches
+
+ Batch #103: BATCH-NF-0103
+   Category: nifty
+   Customers: 8
+   Agreed: 2/8
+   Total saved: 732 customers in 103 batches
+
+ Batch #104: BATCH-NF-0104
+   Category: nifty
+   Customers: 6
+   Agreed: 3/6
+   Total saved: 738 customers in 104 batches
+
+ Batch #105: BATCH-MF-0105
+   Category: mutualFunds
+   Customers: 7
+   Agreed: 4/7
+   Total saved: 745 customers in 105 batches
+
+ Batch #106: BATCH-CL-0106
+   Category: carLoans
+   Customers: 6
+   Agreed: 1/6
+   Total saved: 751 customers in 106 batches
+
+ Batch #107: BATCH-CL-0107
+   Category: carLoans
+   Customers: 7
+   Agreed: 4/7
+   Total saved: 758 customers in 107 batches
+
+ Batch #108: BATCH-OT-0108
+   Category: others
+   Customers: 8
+   Agreed: 3/8
+   Total saved: 766 customers in 108 batches
+
+ Batch #109: BATCH-NF-0109
+   Category: nifty
+   Customers: 6
+   Agreed: 5/6
+   Total saved: 772 customers in 109 batches
+
+ Batch #110: BATCH-MF-0110
+   Category: mutualFunds
+   Customers: 7
+   Agreed: 4/7
+   Total saved: 779 customers in 110 batches
+
+ Batch #111: BATCH-MF-0111
+   Category: mutualFunds
+   Customers: 8
+   Agreed: 6/8
+   Total saved: 787 customers in 111 batches
+
+ Batch #112: BATCH-MF-0112
+   Category: mutualFunds
+   Customers: 7
+   Agreed: 5/7
+   Total saved: 794 customers in 112 batches
+
+ Batch #113: BATCH-NF-0113
+   Category: nifty
+   Customers: 6
+   Agreed: 3/6
+   Total saved: 800 customers in 113 batches
+
+ Batch #114: BATCH-OT-0114
+   Category: others
+   Customers: 7
+   Agreed: 6/7
+   Total saved: 807 customers in 114 batches
+
+ Batch #115: BATCH-OT-0115
+   Category: others
+   Customers: 7
+   Agreed: 5/7
+   Total saved: 814 customers in 115 batches
+
+ Batch #116: BATCH-MF-0116
+   Category: mutualFunds
+   Customers: 7
+   Agreed: 6/7
+   Total saved: 821 customers in 116 batches
+
+ Batch #117: BATCH-NF-0117
+   Category: nifty
+   Customers: 8
+   Agreed: 5/8
+   Total saved: 829 customers in 117 batches
+
+ Batch #118: BATCH-MF-0118
+   Category: mutualFunds
+   Customers: 8
+   Agreed: 6/8
+   Total saved: 837 customers in 118 batches
+
+ Batch #119: BATCH-MF-0119
+   Category: mutualFunds
+   Customers: 8
+   Agreed: 4/8
+   Total saved: 845 customers in 119 batches
+
+ Batch #120: BATCH-CL-0120
+   Category: carLoans
+   Customers: 7
+   Agreed: 1/7
+   Total saved: 852 customers in 120 batches
+
+ Batch #121: BATCH-NF-0121
+   Category: nifty
+   Customers: 7
+   Agreed: 3/7
+   Total saved: 859 customers in 121 batches
+
+ Batch #122: BATCH-CL-0122
+   Category: carLoans
+   Customers: 7
+   Agreed: 5/7
+   Total saved: 866 customers in 122 batches
+
+ Batch #123: BATCH-CL-0123
+   Category: carLoans
+   Customers: 6
+   Agreed: 1/6
+   Total saved: 872 customers in 123 batches
+
+ Batch #124: BATCH-CL-0124
+   Category: carLoans
+   Customers: 6
+   Agreed: 4/6
+   Total saved: 878 customers in 124 batches
+
+ Batch #125: BATCH-NF-0125
+   Category: nifty
+   Customers: 8
+   Agreed: 5/8
+   Total saved: 886 customers in 125 batches
+
+ Batch #126: BATCH-OT-0126
+   Category: others
+   Customers: 6
+   Agreed: 3/6
+   Total saved: 892 customers in 126 batches
+
+ Batch #127: BATCH-MF-0127
+   Category: mutualFunds
+   Customers: 6
+   Agreed: 4/6
+   Total saved: 898 customers in 127 batches
+
+ Batch #128: BATCH-MF-0128
+   Category: mutualFunds
+   Customers: 6
+   Agreed: 6/6
+   Total saved: 904 customers in 128 batches
+
+ Batch #129: BATCH-OT-0129
