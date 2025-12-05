@@ -39,19 +39,19 @@ export function Sidebar({ currentPage, setCurrentPage, isDark, toggleTheme }: Si
           transition={{ duration: 0.2 }}
         >
           <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground">
-            <span className="text-sm">JD</span>
+            <span className="text-sm">AB</span>
           </div>
           {isExpanded && (
             <div className="overflow-hidden">
-              <p className="text-sm text-sidebar-foreground whitespace-nowrap">John Doe</p>
-              <p className="text-xs text-muted-foreground whitespace-nowrap">Senior Analyst</p>
+              <p className="text-sm text-sidebar-foreground whitespace-nowrap">Empolyee</p>
+              <p className="text-xs text-muted-foreground whitespace-nowrap">Bank Agent</p>
             </div>
           )}
         </motion.div>
         {!isExpanded && (
           <div className="flex justify-center mt-2">
             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground">
-              <span className="text-sm">JD</span>
+              <span className="text-sm">AB</span>
             </div>
           </div>
         )}
@@ -63,15 +63,15 @@ export function Sidebar({ currentPage, setCurrentPage, isDark, toggleTheme }: Si
           {menuItems.map((item) => {
             const Icon = item.icon;
             const isActive = currentPage === item.id;
-            
+
             return (
               <li key={item.id}>
                 <button
                   onClick={() => setCurrentPage(item.id)}
                   className={`
                     w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200
-                    ${isActive 
-                      ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/20' 
+                    ${isActive
+                      ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/20'
                       : 'text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground'
                     }
                   `}
@@ -112,7 +112,7 @@ export function Sidebar({ currentPage, setCurrentPage, isDark, toggleTheme }: Si
             </motion.span>
           )}
         </button>
-        
+
         <Button
           variant="destructive"
           className="w-full flex items-center gap-3 justify-start px-4 py-3"

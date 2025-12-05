@@ -1,10 +1,12 @@
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Card } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
-import { X, Download, FileText, Phone, CheckCircle, XCircle, User, Calendar, Clock } from 'lucide-react';
+import { X, Download, FileText, CheckCircle, XCircle, User, Calendar, Clock, Loader2, Play, Volume2 } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
 import { PDFScroll } from './PDF-Scroll';
+import { getReportUsers, getAudioUrl, getReportFileUrl, User as ApiUser } from '../services/api';
 
 interface Report {
   id: string;
@@ -14,6 +16,7 @@ interface Report {
   timestamp: Date;
   totalCalls: number;
   successfulCalls: number;
+  reportFile?: string | null;
 }
 
 interface ReportModalProps {
@@ -21,27 +24,71 @@ interface ReportModalProps {
   onClose: () => void;
 }
 
-// Generate mock user data
-const generateUserData = (userId: string) => {
-  const agreed = Math.random() > 0.35;
-  const callDuration = Math.floor(Math.random() * 300) + 60; // 60-360 seconds
+interface UserData {
+  id: string;
+  userId: string;
+  name: string;
+  agreed: boolean;
+  callDuration: number;
+  callDate: Date;
+  loanAmount: number;
+  creditScore: number;
+  riskLevel: string;
+  audioFile: string | null;
+}
 
-  return {
-    userId,
-    name: `Customer ${userId.split('-')[2]}`,
-    agreed,
-    callDuration,
-    callDate: new Date(Date.now() - Math.random() * 24 * 60 * 60 * 1000),
-    loanAmount: Math.floor(Math.random() * 500000) + 100000,
-    creditScore: Math.floor(Math.random() * 200) + 650,
-    riskLevel: agreed ? 'Low' : 'Medium',
-  };
-};
+// Transform API user to frontend format
+const transformUser = (apiUser: ApiUser): UserData => ({
+  id: apiUser.id,
+  userId: apiUser.user_id,
+  name: apiUser.name,
+  agreed: apiUser.agreed === 1,
+  callDuration: apiUser.call_duration,
+  callDate: new Date(apiUser.call_date),
+  loanAmount: apiUser.loan_amount,
+  creditScore: apiUser.credit_score,
+  riskLevel: apiUser.risk_level,
+  audioFile: apiUser.audio_file,
+});
 
 export function ReportModal({ report, onClose }: ReportModalProps) {
+  const [userData, setUserData] = useState<UserData[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [playingAudio, setPlayingAudio] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (report) {
+      const fetchUsers = async () => {
+        setLoading(true);
+        try {
+          const users = await getReportUsers(report.id);
+          setUserData(users.map(transformUser));
+        } catch (err) {
+          console.error('Failed to fetch users:', err);
+        } finally {
+          setLoading(false);
+        }
+      };
+      fetchUsers();
+    }
+  }, [report]);
+
   if (!report) return null;
 
-  const userData = report.userIds.map(generateUserData);
+  const handlePlayAudio = (audioFile: string, userId: string) => {
+    if (playingAudio === userId) {
+      setPlayingAudio(null);
+    } else {
+      setPlayingAudio(userId);
+      const audio = new Audio(getAudioUrl(audioFile));
+      audio.play();
+      audio.onended = () => setPlayingAudio(null);
+    }
+  };
+
+  const pdfUrl = report.reportFile
+    ? getReportFileUrl(report.reportFile)
+    : '/Report_exapmle.pdf';
 
   return (
     <AnimatePresence>
@@ -119,7 +166,7 @@ export function ReportModal({ report, onClose }: ReportModalProps) {
                 </h3>
                 <Card className="bg-accent/30 overflow-hidden">
                   <PDFScroll
-                    file="/Report_exapmle.pdf"
+                    file={pdfUrl}
                     height="40vh"
                     width={600}
                   />
@@ -129,103 +176,118 @@ export function ReportModal({ report, onClose }: ReportModalProps) {
               {/* User Details */}
               <div>
                 <h3 className="mb-4">User Details</h3>
-                <div className="space-y-3">
-                  {userData.map((user) => (
-                    <TooltipProvider key={user.userId}>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            whileHover={{ scale: 1.01 }}
-                            className="cursor-pointer"
-                          >
-                            <Card
-                              className={`p-4 border-l-4 transition-all hover:shadow-lg ${user.agreed
-                                ? 'border-l-green-500 bg-green-500/5'
-                                : 'border-l-red-500 bg-red-500/5'
-                                }`}
+
+                {loading ? (
+                  <div className="flex items-center justify-center py-10">
+                    <Loader2 className="w-8 h-8 animate-spin text-primary" />
+                  </div>
+                ) : (
+                  <div className="space-y-3">
+                    {userData.map((user) => (
+                      <TooltipProvider key={user.userId}>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <motion.div
+                              initial={{ opacity: 0, x: -20 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              whileHover={{ scale: 1.01 }}
+                              className="cursor-pointer"
                             >
-                              <div className="flex items-center justify-between">
-                                <div className="flex items-center gap-4 flex-1">
-                                  <div className={`w-10 h-10 rounded-full flex items-center justify-center ${user.agreed ? 'bg-green-500' : 'bg-red-500'
-                                    }`}>
-                                    {user.agreed ? (
-                                      <CheckCircle className="w-5 h-5 text-white" />
-                                    ) : (
-                                      <XCircle className="w-5 h-5 text-white" />
-                                    )}
-                                  </div>
-
-                                  <div className="flex-1">
-                                    <div className="flex items-center gap-2 mb-1">
-                                      <Badge variant="outline" className="text-xs">
-                                        {user.userId}
-                                      </Badge>
-                                      <Badge
-                                        variant={user.agreed ? 'default' : 'destructive'}
-                                        className="text-xs"
-                                      >
-                                        {user.agreed ? 'Agreed' : 'Declined'}
-                                      </Badge>
+                              <Card
+                                className={`p-4 border-l-4 transition-all hover:shadow-lg ${user.agreed
+                                  ? 'border-l-green-500 bg-green-500/5'
+                                  : 'border-l-red-500 bg-red-500/5'
+                                  }`}
+                              >
+                                <div className="flex items-center justify-between">
+                                  <div className="flex items-center gap-4 flex-1">
+                                    <div className={`w-10 h-10 rounded-full flex items-center justify-center ${user.agreed ? 'bg-green-500' : 'bg-red-500'
+                                      }`}>
+                                      {user.agreed ? (
+                                        <CheckCircle className="w-5 h-5 text-white" />
+                                      ) : (
+                                        <XCircle className="w-5 h-5 text-white" />
+                                      )}
                                     </div>
-                                    <p className="text-sm text-muted-foreground">
-                                      {user.name} • {Math.floor(user.callDuration / 60)}m {user.callDuration % 60}s
-                                    </p>
-                                  </div>
 
-                                  <div className="flex items-center gap-2">
-                                    <Button
-                                      size="sm"
-                                      variant="outline"
-                                      className="gap-2"
-                                      onClick={() => alert(`Generating detailed report for ${user.userId}`)}
-                                    >
-                                      <FileText className="w-4 h-4" />
-                                      Detailed Report
-                                    </Button>
+                                    <div className="flex-1">
+                                      <div className="flex items-center gap-2 mb-1">
+                                        <Badge variant="outline" className="text-xs">
+                                          {user.userId}
+                                        </Badge>
+                                        <Badge
+                                          variant={user.agreed ? 'default' : 'destructive'}
+                                          className="text-xs"
+                                        >
+                                          {user.agreed ? 'Agreed' : 'Declined'}
+                                        </Badge>
+                                      </div>
+                                      <p className="text-sm text-muted-foreground">
+                                        {user.name} • {Math.floor(user.callDuration / 60)}m {user.callDuration % 60}s
+                                      </p>
+                                    </div>
 
-                                    <Button
-                                      size="sm"
-                                      variant="outline"
-                                      className="gap-2"
-                                      onClick={() => alert(`Downloading call recording for ${user.userId}`)}
-                                    >
-                                      <Download className="w-4 h-4" />
-                                      Recording
-                                    </Button>
+                                    <div className="flex items-center gap-2">
+                                      <Button
+                                        size="sm"
+                                        variant="outline"
+                                        className="gap-2"
+                                        onClick={() => alert(`Generating detailed report for ${user.userId}`)}
+                                      >
+                                        <FileText className="w-4 h-4" />
+                                        Generate Report
+                                      </Button>
+
+                                      {user.audioFile && (
+                                        <Button
+                                          size="sm"
+                                          variant="outline"
+                                          className="gap-2"
+                                          onClick={() => {
+                                            const link = document.createElement('a');
+                                            link.href = getAudioUrl(user.audioFile!);
+                                            link.download = user.audioFile!;
+                                            link.click();
+                                          }}
+                                        >
+                                          <Download className="w-4 h-4" />
+                                          Recording
+                                        </Button>
+                                      )}
+                                    </div>
+
                                   </div>
                                 </div>
+                              </Card>
+                            </motion.div>
+                          </TooltipTrigger>
+                          <TooltipContent side="left" className="w-64 p-4">
+                            <div className="space-y-2">
+                              <div className="flex justify-between">
+                                <span className="text-xs text-muted-foreground">Loan Amount:</span>
+                                <span className="text-xs">₹{user.loanAmount.toLocaleString()}</span>
                               </div>
-                            </Card>
-                          </motion.div>
-                        </TooltipTrigger>
-                        <TooltipContent side="left" className="w-64 p-4">
-                          <div className="space-y-2">
-                            <div className="flex justify-between">
-                              <span className="text-xs text-muted-foreground">Loan Amount:</span>
-                              <span className="text-xs">₹{user.loanAmount.toLocaleString()}</span>
+                              <div className="flex justify-between">
+                                <span className="text-xs text-muted-foreground">Credit Score:</span>
+                                <span className="text-xs">{user.creditScore}</span>
+                              </div>
+                              <div className="flex justify-between">
+                                <span className="text-xs text-muted-foreground">Risk Level:</span>
+                                <Badge variant="outline" className="text-xs h-5">
+                                  {user.riskLevel}
+                                </Badge>
+                              </div>
+                              <div className="flex justify-between">
+                                <span className="text-xs text-muted-foreground">Call Date:</span>
+                                <span className="text-xs">{user.callDate.toLocaleDateString()}</span>
+                              </div>
                             </div>
-                            <div className="flex justify-between">
-                              <span className="text-xs text-muted-foreground">Credit Score:</span>
-                              <span className="text-xs">{user.creditScore}</span>
-                            </div>
-                            <div className="flex justify-between">
-                              <span className="text-xs text-muted-foreground">Risk Level:</span>
-                              <Badge variant="outline" className="text-xs h-5">
-                                {user.riskLevel}
-                              </Badge>
-                            </div>
-                            <div className="flex justify-between">
-                              <span className="text-xs text-muted-foreground">Call Date:</span>
-                              <span className="text-xs">{user.callDate.toLocaleDateString()}</span>
-                            </div>
-                          </div>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                  ))}
-                </div>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Footer Actions */}
