@@ -1,4 +1,4 @@
-# create_masterfile.py
+# create_masterfile_v2.py
 
 import pandas as pd
 import os
@@ -8,54 +8,45 @@ TRAIN_FILE = 'initial_training_data.csv'
 STREAM_FILE = 'streaming_customers_initial_state.csv'
 OUTPUT_FILE = 'MASTERFILE.csv'
 
-# These are the columns that will be "reset" to 0 for the streaming customers
-TARGET_COLUMNS = ['opted_home_loan', 'opted_car_loan', 'recommend_nifty50', 'recommend_elss']
-
-def create_combined_masterfile():
+def initialize_masterfile_with_new_columns():
     """
-    Combines the initial training data with the streaming customer data.
-    The streaming data's target columns are set to 0 to simulate a state
-    before any recommendations have been made or accepted.
+    Combines training and streaming data and initializes the 8 new columns
+    required for the granular, multi-stream marketing architecture.
     """
     # 1. --- Check for required input files ---
     print("Checking for required input files...")
     if not os.path.exists(TRAIN_FILE) or not os.path.exists(STREAM_FILE):
-        print(f"Error: Make sure '{TRAIN_FILE}' and '{STREAM_FILE}' exist in the current directory.")
+        print(f"Error: Make sure '{TRAIN_FILE}' and '{STREAM_FILE}' exist.")
         print("Please run generate_data.py and then split_data.py first.")
         return
 
     # 2. --- Load the datasets ---
-    print(f"Loading training data from '{TRAIN_FILE}'...")
+    print(f"Loading data from '{TRAIN_FILE}' and '{STREAM_FILE}'...")
     train_df = pd.read_csv(TRAIN_FILE)
-    print(f"Loaded {len(train_df)} training customers.")
-
-    print(f"Loading streaming data from '{STREAM_FILE}'...")
     stream_df = pd.read_csv(STREAM_FILE)
-    print(f"Loaded {len(stream_df)} streaming customers.")
+    print(f"Loaded {len(train_df)} training and {len(stream_df)} streaming customers.")
 
-    # 3. --- Modify the streaming data ---
-    print(f"Setting target columns {TARGET_COLUMNS} to 0 for the streaming data...")
-    
-    # A quick check to ensure the target columns exist before modification
-    for col in TARGET_COLUMNS:
-        if col not in stream_df.columns:
-            print(f"Warning: Target column '{col}' not found in '{STREAM_FILE}'. Skipping.")
-            continue
-        # Set the column to 0
-        stream_df[col] = 0
-        
-    print("Modification complete.")
-    print("Original target value counts in streaming data (before reset):")
-    # This just reads the file again to show the original state for verification
-    temp_df = pd.read_csv(STREAM_FILE)
-    print(temp_df[TARGET_COLUMNS].sum())
-
-
-    # 4. --- Combine the two dataframes ---
-    print("\nCombining the two datasets...")
-    # The training data comes first, followed by the modified streaming data
+    # 3. --- Combine into a single dataframe ---
+    print("Combining datasets...")
     master_df = pd.concat([train_df, stream_df], ignore_index=True)
     
+    # 4. --- Initialize the 8 New Columns ---
+    print("Initializing 8 new columns for the streaming architecture...")
+
+    # Initialize all four volume trackers to 0.0 (as float)
+    master_df['volTransLastStreamed_home'] = 0.0
+    master_df['volTransLastStreamed_car'] = 0.0
+    master_df['volTransLastStreamed_elss'] = 0.0
+    master_df['volTransLastStreamed_nifty50'] = 0.0
+    print("  - Initialized 4 'volTransLastStreamed_*' columns to 0.0")
+
+    # Initialize all four cooldown trackers to 'never'
+    master_df['last_reach_out_home_loan'] = 'never'
+    master_df['last_reach_out_car_loan'] = 'never'
+    master_df['last_reach_out_nifty50'] = 'never'
+    master_df['last_reach_out_elss'] = 'never'
+    print("  - Initialized 4 'last_reach_out_*' columns to 'never'")
+
     # 5. --- Verification ---
     print("\nVerifying the combined master file...")
     expected_rows = len(train_df) + len(stream_df)
@@ -67,19 +58,22 @@ def create_combined_masterfile():
     else:
         print("  - Row count matches. OK.")
         
-    # Verify that the last N rows (the streaming part) have 0s in target columns
-    streaming_part_in_master = master_df.tail(len(stream_df))
-    targets_sum = streaming_part_in_master[TARGET_COLUMNS].sum().sum()
-    if targets_sum == 0:
-        print(f"  - Verified that all {len(stream_df)} streaming customers have target values of 0. OK.")
+    # Verify a couple of the new columns to be sure
+    if master_df['volTransLastStreamed_home'].sum() == 0.0:
+        print("  - Verified 'volTransLastStreamed_home' is all zeros. OK.")
     else:
-        print("  - ERROR: Streaming customers in the master file have non-zero target values!")
+        print("  - ERROR: 'volTransLastStreamed_home' column has non-zero values!")
+
+    if (master_df['last_reach_out_car_loan'] == 'never').all():
+         print("  - Verified 'last_reach_out_car_loan' is all 'never'. OK.")
+    else:
+        print("  - ERROR: 'last_reach_out_car_loan' has values other than 'never'!")
 
     # 6. --- Save the final master file ---
-    print(f"\nSaving the combined data to '{OUTPUT_FILE}'...")
+    print(f"\nSaving the final master file to '{OUTPUT_FILE}'...")
     master_df.to_csv(OUTPUT_FILE, index=False)
-    print(f"Successfully created '{OUTPUT_FILE}'.")
+    print(f"Successfully created '{OUTPUT_FILE}' with the required architecture columns.")
 
 
 if __name__ == '__main__':
-    create_combined_masterfile()
+    initialize_masterfile_with_new_columns()
