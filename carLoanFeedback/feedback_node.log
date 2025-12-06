@@ -46,3 +46,2756 @@
 
 [2025-12-06 21:43:55] ✓ Car Loan Feedback Node is running.
 
+[2025-12-06 23:36:17] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-06 23:36:17] ✓ Model loaded. Components: 8
+[2025-12-06 23:36:17] Loading MASTERFILE from /home/sachit/Documents/VSCProjects/TargettedCalling/MASTERFILE.csv...
+[2025-12-06 23:36:17] ✓ MASTERFILE loaded. 12500 customers indexed.
+[2025-12-06 23:36:17] ═══════════════════════════════════════════════
+[2025-12-06 23:36:17]     CAR LOAN FEEDBACK NODE (PATHWAY)          
+[2025-12-06 23:36:17] ═══════════════════════════════════════════════
+[2025-12-06 23:36:17] Feedback Topic: feedback.carLoan
+[2025-12-06 23:36:17] Model Path:     /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json
+[2025-12-06 23:36:17] MASTERFILE:     /home/sachit/Documents/VSCProjects/TargettedCalling/MASTERFILE.csv
+[2025-12-06 23:36:17] Log File:       /home/sachit/Documents/VSCProjects/TargettedCalling/carLoanFeedback/feedback_node.log
+[2025-12-06 23:36:17] Metrics:        DISABLED
+[2025-12-06 23:36:17] Batch Config:   Update every 5 feedbacks
+[2025-12-06 23:36:17] Auto-save:      Every 30 seconds
+[2025-12-06 23:36:17] ═══════════════════════════════════════════════
+
+[2025-12-06 23:36:17] ✓ Listening for feedback on 'feedback.carLoan'...
+[2025-12-06 23:36:17] ✓ LISTENING TO: feedback.carLoan
+
+[2025-12-06 23:36:17] ✓ Car Loan Feedback Node is running.
+
+[2025-12-06 23:45:30] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:30] Buffer size: 1/5
+[2025-12-06 23:45:30] 
+============================================================
+[2025-12-06 23:45:30] 🔄 Processing batch of 1 feedback points
+[2025-12-06 23:45:30] ============================================================
+[2025-12-06 23:45:30] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: -3.00 | Update #1 | Latency: 46.10ms
+[2025-12-06 23:45:30] 
+💾 Saving model after 1 updates...
+[2025-12-06 23:45:30] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.020s
+[2025-12-06 23:45:31] ✓ Current state: Components=8, Positive=1, Negative=0
+
+[2025-12-06 23:45:31] ✓ Batch complete: 1 updates, 0 errors
+[2025-12-06 23:45:31] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:31] Buffer size: 1/5
+[2025-12-06 23:45:31] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:31] Buffer size: 2/5
+[2025-12-06 23:45:31] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:31] Buffer size: 3/5
+[2025-12-06 23:45:31] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:31] Buffer size: 4/5
+[2025-12-06 23:45:31] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: False
+[2025-12-06 23:45:31] Buffer size: 5/5
+[2025-12-06 23:45:31] 
+============================================================
+[2025-12-06 23:45:31] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:31] ============================================================
+[2025-12-06 23:45:31] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: -0.91 | Update #2 | Latency: 42.40ms
+[2025-12-06 23:45:31] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 0.10 | Update #3 | Latency: 41.54ms
+[2025-12-06 23:45:31] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 0.72 | Update #4 | Latency: 40.50ms
+[2025-12-06 23:45:31] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 1.17 | Update #5 | Latency: 62.41ms
+[2025-12-06 23:45:31] ✗ NEGATIVE | Customer: CUST_000280 | Cluster: 3 | Score: 1.52 | Update #6 | Latency: 40.35ms
+[2025-12-06 23:45:31] 
+💾 Saving model after 6 updates...
+[2025-12-06 23:45:31] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.019s
+[2025-12-06 23:45:31] ✓ Current state: Components=8, Positive=5, Negative=1
+
+[2025-12-06 23:45:31] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:31] 📥 RECEIVED FEEDBACK | Customer: CUST_000277 | Bought: True
+[2025-12-06 23:45:31] Buffer size: 1/5
+[2025-12-06 23:45:31] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: False
+[2025-12-06 23:45:31] Buffer size: 2/5
+[2025-12-06 23:45:31] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:31] Buffer size: 3/5
+[2025-12-06 23:45:31] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:31] Buffer size: 4/5
+[2025-12-06 23:45:31] 📥 RECEIVED FEEDBACK | Customer: CUST_000277 | Bought: False
+[2025-12-06 23:45:31] Buffer size: 5/5
+[2025-12-06 23:45:31] 
+============================================================
+[2025-12-06 23:45:32] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:32] ============================================================
+[2025-12-06 23:45:32] ✓ POSITIVE | Customer: CUST_000277 | Cluster: 7 | Score: 1.55 | Update #7 | Latency: 48.48ms
+[2025-12-06 23:45:32] ✗ NEGATIVE | Customer: CUST_000280 | Cluster: 3 | Score: 1.52 | Update #8 | Latency: 41.75ms
+[2025-12-06 23:45:32] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 1.52 | Update #9 | Latency: 40.49ms
+[2025-12-06 23:45:32] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 1.81 | Update #10 | Latency: 39.38ms
+[2025-12-06 23:45:32] ✗ NEGATIVE | Customer: CUST_000277 | Cluster: 7 | Score: 1.93 | Update #11 | Latency: 44.64ms
+[2025-12-06 23:45:32] 
+💾 Saving model after 11 updates...
+[2025-12-06 23:45:32] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.020s
+[2025-12-06 23:45:32] ✓ Current state: Components=8, Positive=8, Negative=3
+
+[2025-12-06 23:45:32] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:32] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: False
+[2025-12-06 23:45:32] Buffer size: 1/5
+[2025-12-06 23:45:32] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: False
+[2025-12-06 23:45:32] Buffer size: 2/5
+[2025-12-06 23:45:32] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:32] Buffer size: 3/5
+[2025-12-06 23:45:32] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:32] Buffer size: 4/5
+[2025-12-06 23:45:32] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:32] Buffer size: 5/5
+[2025-12-06 23:45:32] 
+============================================================
+[2025-12-06 23:45:32] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:32] ============================================================
+[2025-12-06 23:45:32] ✗ NEGATIVE | Customer: CUST_000280 | Cluster: 3 | Score: 2.07 | Update #12 | Latency: 40.54ms
+[2025-12-06 23:45:32] ✗ NEGATIVE | Customer: CUST_000280 | Cluster: 3 | Score: 2.07 | Update #13 | Latency: 44.72ms
+[2025-12-06 23:45:32] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 2.07 | Update #14 | Latency: 59.56ms
+[2025-12-06 23:45:33] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 2.30 | Update #15 | Latency: 40.16ms
+[2025-12-06 23:45:33] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 2.51 | Update #16 | Latency: 43.67ms
+[2025-12-06 23:45:33] 
+💾 Saving model after 16 updates...
+[2025-12-06 23:45:33] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.046s
+[2025-12-06 23:45:33] ✓ Current state: Components=8, Positive=11, Negative=5
+
+[2025-12-06 23:45:33] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:33] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: False
+[2025-12-06 23:45:33] Buffer size: 1/5
+[2025-12-06 23:45:33] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:33] Buffer size: 2/5
+[2025-12-06 23:45:33] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: False
+[2025-12-06 23:45:33] Buffer size: 3/5
+[2025-12-06 23:45:33] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:33] Buffer size: 4/5
+[2025-12-06 23:45:33] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:33] Buffer size: 5/5
+[2025-12-06 23:45:33] 
+============================================================
+[2025-12-06 23:45:33] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:33] ============================================================
+[2025-12-06 23:45:33] ✗ NEGATIVE | Customer: CUST_000280 | Cluster: 3 | Score: 2.72 | Update #17 | Latency: 39.57ms
+[2025-12-06 23:45:33] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 2.72 | Update #18 | Latency: 44.30ms
+[2025-12-06 23:45:33] ✗ NEGATIVE | Customer: CUST_000280 | Cluster: 3 | Score: 2.91 | Update #19 | Latency: 43.97ms
+[2025-12-06 23:45:33] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 2.91 | Update #20 | Latency: 63.87ms
+[2025-12-06 23:45:33] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 3.09 | Update #21 | Latency: 44.22ms
+[2025-12-06 23:45:33] 
+💾 Saving model after 21 updates...
+[2025-12-06 23:45:33] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.020s
+[2025-12-06 23:45:33] ✓ Current state: Components=8, Positive=14, Negative=7
+
+[2025-12-06 23:45:34] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:34] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:34] Buffer size: 1/5
+[2025-12-06 23:45:34] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:34] Buffer size: 2/5
+[2025-12-06 23:45:34] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:34] Buffer size: 3/5
+[2025-12-06 23:45:34] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:34] Buffer size: 4/5
+[2025-12-06 23:45:34] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:34] Buffer size: 5/5
+[2025-12-06 23:45:34] 
+============================================================
+[2025-12-06 23:45:34] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:34] ============================================================
+[2025-12-06 23:45:34] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 3.27 | Update #22 | Latency: 43.73ms
+[2025-12-06 23:45:34] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 3.45 | Update #23 | Latency: 39.64ms
+[2025-12-06 23:45:34] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 3.62 | Update #24 | Latency: 41.02ms
+[2025-12-06 23:45:34] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 3.79 | Update #25 | Latency: 42.89ms
+[2025-12-06 23:45:34] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 3.96 | Update #26 | Latency: 59.31ms
+[2025-12-06 23:45:34] 
+💾 Saving model after 26 updates...
+[2025-12-06 23:45:34] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.019s
+[2025-12-06 23:45:34] ✓ Current state: Components=8, Positive=19, Negative=7
+
+[2025-12-06 23:45:34] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:34] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:34] Buffer size: 1/5
+[2025-12-06 23:45:34] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: False
+[2025-12-06 23:45:34] Buffer size: 2/5
+[2025-12-06 23:45:34] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:34] Buffer size: 3/5
+[2025-12-06 23:45:34] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: False
+[2025-12-06 23:45:34] Buffer size: 4/5
+[2025-12-06 23:45:34] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: False
+[2025-12-06 23:45:34] Buffer size: 5/5
+[2025-12-06 23:45:34] 
+============================================================
+[2025-12-06 23:45:34] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:35] ============================================================
+[2025-12-06 23:45:35] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 4.12 | Update #27 | Latency: 43.79ms
+[2025-12-06 23:45:35] ✗ NEGATIVE | Customer: CUST_000280 | Cluster: 3 | Score: 4.28 | Update #28 | Latency: 64.77ms
+[2025-12-06 23:45:35] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 4.28 | Update #29 | Latency: 42.34ms
+[2025-12-06 23:45:35] ✗ NEGATIVE | Customer: CUST_000280 | Cluster: 3 | Score: 4.45 | Update #30 | Latency: 43.32ms
+[2025-12-06 23:45:35] ✗ NEGATIVE | Customer: CUST_000280 | Cluster: 3 | Score: 4.45 | Update #31 | Latency: 53.13ms
+[2025-12-06 23:45:35] 
+💾 Saving model after 31 updates...
+[2025-12-06 23:45:35] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.047s
+[2025-12-06 23:45:35] ✓ Current state: Components=8, Positive=21, Negative=10
+
+[2025-12-06 23:45:35] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:35] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:35] Buffer size: 1/5
+[2025-12-06 23:45:35] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:35] Buffer size: 2/5
+[2025-12-06 23:45:35] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:35] Buffer size: 3/5
+[2025-12-06 23:45:35] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: False
+[2025-12-06 23:45:35] Buffer size: 4/5
+[2025-12-06 23:45:35] 📥 RECEIVED FEEDBACK | Customer: CUST_000277 | Bought: True
+[2025-12-06 23:45:35] Buffer size: 5/5
+[2025-12-06 23:45:35] 
+============================================================
+[2025-12-06 23:45:35] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:35] ============================================================
+[2025-12-06 23:45:35] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 4.45 | Update #32 | Latency: 43.87ms
+[2025-12-06 23:45:35] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 4.61 | Update #33 | Latency: 42.28ms
+[2025-12-06 23:45:35] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 4.77 | Update #34 | Latency: 61.12ms
+[2025-12-06 23:45:36] ✗ NEGATIVE | Customer: CUST_000280 | Cluster: 3 | Score: 4.93 | Update #35 | Latency: 39.30ms
+[2025-12-06 23:45:36] ✓ POSITIVE | Customer: CUST_000277 | Cluster: 7 | Score: 1.93 | Update #36 | Latency: 40.67ms
+[2025-12-06 23:45:36] 
+💾 Saving model after 36 updates...
+[2025-12-06 23:45:36] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.020s
+[2025-12-06 23:45:36] ✓ Current state: Components=8, Positive=25, Negative=11
+
+[2025-12-06 23:45:36] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:36] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:36] Buffer size: 1/5
+[2025-12-06 23:45:36] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:36] Buffer size: 2/5
+[2025-12-06 23:45:36] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:36] Buffer size: 3/5
+[2025-12-06 23:45:36] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:36] Buffer size: 4/5
+[2025-12-06 23:45:36] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: False
+[2025-12-06 23:45:36] Buffer size: 5/5
+[2025-12-06 23:45:36] 
+============================================================
+[2025-12-06 23:45:36] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:36] ============================================================
+[2025-12-06 23:45:36] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 4.93 | Update #37 | Latency: 46.93ms
+[2025-12-06 23:45:36] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 5.09 | Update #38 | Latency: 44.29ms
+[2025-12-06 23:45:36] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 5.24 | Update #39 | Latency: 46.29ms
+[2025-12-06 23:45:36] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 5.40 | Update #40 | Latency: 42.81ms
+[2025-12-06 23:45:36] ✗ NEGATIVE | Customer: CUST_000280 | Cluster: 3 | Score: 5.56 | Update #41 | Latency: 59.98ms
+[2025-12-06 23:45:36] 
+💾 Saving model after 41 updates...
+[2025-12-06 23:45:36] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.022s
+[2025-12-06 23:45:36] ✓ Current state: Components=8, Positive=29, Negative=12
+
+[2025-12-06 23:45:37] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: False
+[2025-12-06 23:45:37] Buffer size: 1/5
+[2025-12-06 23:45:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: False
+[2025-12-06 23:45:37] Buffer size: 2/5
+[2025-12-06 23:45:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000277 | Bought: True
+[2025-12-06 23:45:37] Buffer size: 3/5
+[2025-12-06 23:45:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000277 | Bought: True
+[2025-12-06 23:45:37] Buffer size: 4/5
+[2025-12-06 23:45:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:37] Buffer size: 5/5
+[2025-12-06 23:45:37] 
+============================================================
+[2025-12-06 23:45:37] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:37] ============================================================
+[2025-12-06 23:45:37] ✗ NEGATIVE | Customer: CUST_000280 | Cluster: 3 | Score: 5.56 | Update #42 | Latency: 41.03ms
+[2025-12-06 23:45:37] ✗ NEGATIVE | Customer: CUST_000280 | Cluster: 3 | Score: 5.56 | Update #43 | Latency: 41.13ms
+[2025-12-06 23:45:37] ✓ POSITIVE | Customer: CUST_000277 | Cluster: 7 | Score: 2.25 | Update #44 | Latency: 45.66ms
+[2025-12-06 23:45:37] ✓ POSITIVE | Customer: CUST_000277 | Cluster: 7 | Score: 2.54 | Update #45 | Latency: 49.98ms
+[2025-12-06 23:45:37] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 5.56 | Update #46 | Latency: 43.96ms
+[2025-12-06 23:45:37] 
+💾 Saving model after 46 updates...
+[2025-12-06 23:45:37] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.020s
+[2025-12-06 23:45:37] ✓ Current state: Components=8, Positive=32, Negative=14
+
+[2025-12-06 23:45:37] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:37] Buffer size: 1/5
+[2025-12-06 23:45:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000277 | Bought: True
+[2025-12-06 23:45:37] Buffer size: 2/5
+[2025-12-06 23:45:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:37] Buffer size: 3/5
+[2025-12-06 23:45:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: False
+[2025-12-06 23:45:37] Buffer size: 4/5
+[2025-12-06 23:45:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: False
+[2025-12-06 23:45:37] Buffer size: 5/5
+[2025-12-06 23:45:38] 
+============================================================
+[2025-12-06 23:45:38] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:38] ============================================================
+[2025-12-06 23:45:38] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 5.72 | Update #47 | Latency: 46.12ms
+[2025-12-06 23:45:38] ✓ POSITIVE | Customer: CUST_000277 | Cluster: 7 | Score: 2.80 | Update #48 | Latency: 41.34ms
+[2025-12-06 23:45:38] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 5.87 | Update #49 | Latency: 58.93ms
+[2025-12-06 23:45:38] ✗ NEGATIVE | Customer: CUST_000280 | Cluster: 3 | Score: 6.03 | Update #50 | Latency: 41.85ms
+[2025-12-06 23:45:38] ✗ NEGATIVE | Customer: CUST_000280 | Cluster: 3 | Score: 6.03 | Update #51 | Latency: 40.45ms
+[2025-12-06 23:45:38] 
+💾 Saving model after 51 updates...
+[2025-12-06 23:45:38] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.020s
+[2025-12-06 23:45:38] ✓ Current state: Components=8, Positive=35, Negative=16
+
+[2025-12-06 23:45:38] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:38] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: False
+[2025-12-06 23:45:38] Buffer size: 1/5
+[2025-12-06 23:45:38] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:38] Buffer size: 2/5
+[2025-12-06 23:45:38] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:38] Buffer size: 3/5
+[2025-12-06 23:45:38] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:38] Buffer size: 4/5
+[2025-12-06 23:45:38] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:38] Buffer size: 5/5
+[2025-12-06 23:45:38] 
+============================================================
+[2025-12-06 23:45:38] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:38] ============================================================
+[2025-12-06 23:45:38] ✗ NEGATIVE | Customer: CUST_000280 | Cluster: 3 | Score: 6.03 | Update #52 | Latency: 46.96ms
+[2025-12-06 23:45:38] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 6.03 | Update #53 | Latency: 41.95ms
+[2025-12-06 23:45:38] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 6.19 | Update #54 | Latency: 43.06ms
+[2025-12-06 23:45:39] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 6.34 | Update #55 | Latency: 42.38ms
+[2025-12-06 23:45:39] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 6.50 | Update #56 | Latency: 59.60ms
+[2025-12-06 23:45:39] 
+💾 Saving model after 56 updates...
+[2025-12-06 23:45:39] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.025s
+[2025-12-06 23:45:39] ✓ Current state: Components=8, Positive=39, Negative=17
+
+[2025-12-06 23:45:39] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:39] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:39] Buffer size: 1/5
+[2025-12-06 23:45:39] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:39] Buffer size: 2/5
+[2025-12-06 23:45:39] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:39] Buffer size: 3/5
+[2025-12-06 23:45:39] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: False
+[2025-12-06 23:45:39] Buffer size: 4/5
+[2025-12-06 23:45:39] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: False
+[2025-12-06 23:45:39] Buffer size: 5/5
+[2025-12-06 23:45:39] 
+============================================================
+[2025-12-06 23:45:39] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:39] ============================================================
+[2025-12-06 23:45:39] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 6.65 | Update #57 | Latency: 44.99ms
+[2025-12-06 23:45:39] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 6.81 | Update #58 | Latency: 40.40ms
+[2025-12-06 23:45:39] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 6.96 | Update #59 | Latency: 43.40ms
+[2025-12-06 23:45:39] ✗ NEGATIVE | Customer: CUST_000280 | Cluster: 3 | Score: 7.12 | Update #60 | Latency: 57.51ms
+[2025-12-06 23:45:39] ✗ NEGATIVE | Customer: CUST_000280 | Cluster: 3 | Score: 7.12 | Update #61 | Latency: 42.68ms
+[2025-12-06 23:45:40] 
+💾 Saving model after 61 updates...
+[2025-12-06 23:45:40] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.019s
+[2025-12-06 23:45:40] ✓ Current state: Components=8, Positive=42, Negative=19
+
+[2025-12-06 23:45:40] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:40] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:40] Buffer size: 1/5
+[2025-12-06 23:45:40] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:40] Buffer size: 2/5
+[2025-12-06 23:45:40] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: False
+[2025-12-06 23:45:40] Buffer size: 3/5
+[2025-12-06 23:45:40] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: False
+[2025-12-06 23:45:40] Buffer size: 4/5
+[2025-12-06 23:45:40] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:40] Buffer size: 5/5
+[2025-12-06 23:45:40] 
+============================================================
+[2025-12-06 23:45:40] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:40] ============================================================
+[2025-12-06 23:45:40] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 7.12 | Update #62 | Latency: 40.33ms
+[2025-12-06 23:45:40] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 7.27 | Update #63 | Latency: 44.60ms
+[2025-12-06 23:45:40] ✗ NEGATIVE | Customer: CUST_000280 | Cluster: 3 | Score: 7.43 | Update #64 | Latency: 40.84ms
+[2025-12-06 23:45:40] ✗ NEGATIVE | Customer: CUST_000280 | Cluster: 3 | Score: 7.43 | Update #65 | Latency: 44.01ms
+[2025-12-06 23:45:40] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 7.43 | Update #66 | Latency: 39.78ms
+[2025-12-06 23:45:40] 
+💾 Saving model after 66 updates...
+[2025-12-06 23:45:40] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.019s
+[2025-12-06 23:45:40] ✓ Current state: Components=8, Positive=45, Negative=21
+
+[2025-12-06 23:45:40] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:40] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:40] Buffer size: 1/5
+[2025-12-06 23:45:40] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:40] Buffer size: 2/5
+[2025-12-06 23:45:40] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:40] Buffer size: 3/5
+[2025-12-06 23:45:40] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: False
+[2025-12-06 23:45:40] Buffer size: 4/5
+[2025-12-06 23:45:41] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:41] Buffer size: 5/5
+[2025-12-06 23:45:41] 
+============================================================
+[2025-12-06 23:45:41] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:41] ============================================================
+[2025-12-06 23:45:41] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 7.58 | Update #67 | Latency: 42.94ms
+[2025-12-06 23:45:41] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 7.74 | Update #68 | Latency: 42.39ms
+[2025-12-06 23:45:41] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 7.89 | Update #69 | Latency: 63.96ms
+[2025-12-06 23:45:41] ✗ NEGATIVE | Customer: CUST_000280 | Cluster: 3 | Score: 8.04 | Update #70 | Latency: 40.81ms
+[2025-12-06 23:45:41] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 8.04 | Update #71 | Latency: 40.96ms
+[2025-12-06 23:45:41] 
+💾 Saving model after 71 updates...
+[2025-12-06 23:45:41] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.020s
+[2025-12-06 23:45:41] ✓ Current state: Components=8, Positive=49, Negative=22
+
+[2025-12-06 23:45:41] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:41] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:41] Buffer size: 1/5
+[2025-12-06 23:45:41] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: False
+[2025-12-06 23:45:41] Buffer size: 2/5
+[2025-12-06 23:45:41] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: False
+[2025-12-06 23:45:41] Buffer size: 3/5
+[2025-12-06 23:45:41] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:41] Buffer size: 4/5
+[2025-12-06 23:45:41] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: True
+[2025-12-06 23:45:41] Buffer size: 5/5
+[2025-12-06 23:45:41] 
+============================================================
+[2025-12-06 23:45:41] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:41] ============================================================
+[2025-12-06 23:45:41] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 8.20 | Update #72 | Latency: 59.15ms
+[2025-12-06 23:45:41] ✗ NEGATIVE | Customer: CUST_000280 | Cluster: 3 | Score: 8.35 | Update #73 | Latency: 40.63ms
+[2025-12-06 23:45:42] ✗ NEGATIVE | Customer: CUST_000280 | Cluster: 3 | Score: 8.35 | Update #74 | Latency: 43.83ms
+[2025-12-06 23:45:42] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 8.35 | Update #75 | Latency: 57.41ms
+[2025-12-06 23:45:42] ✓ POSITIVE | Customer: CUST_000280 | Cluster: 3 | Score: 8.51 | Update #76 | Latency: 68.79ms
+[2025-12-06 23:45:42] 
+💾 Saving model after 76 updates...
+[2025-12-06 23:45:42] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.019s
+[2025-12-06 23:45:42] ✓ Current state: Components=8, Positive=52, Negative=24
+
+[2025-12-06 23:45:42] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:42] 📥 RECEIVED FEEDBACK | Customer: CUST_000280 | Bought: False
+[2025-12-06 23:45:42] Buffer size: 1/5
+[2025-12-06 23:45:42] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:42] Buffer size: 2/5
+[2025-12-06 23:45:47] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: False
+[2025-12-06 23:45:47] Buffer size: 3/5
+[2025-12-06 23:45:47] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:47] Buffer size: 4/5
+[2025-12-06 23:45:47] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:47] Buffer size: 5/5
+[2025-12-06 23:45:47] 
+============================================================
+[2025-12-06 23:45:47] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:47] ============================================================
+[2025-12-06 23:45:47] ✗ NEGATIVE | Customer: CUST_000280 | Cluster: 3 | Score: 8.66 | Update #77 | Latency: 46.09ms
+[2025-12-06 23:45:47] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: -3.09 | Update #78 | Latency: 47.16ms
+[2025-12-06 23:45:47] ✗ NEGATIVE | Customer: CUST_000302 | Cluster: 2 | Score: -1.44 | Update #79 | Latency: 71.62ms
+[2025-12-06 23:45:47] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: -1.44 | Update #80 | Latency: 46.57ms
+[2025-12-06 23:45:47] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: -0.58 | Update #81 | Latency: 48.98ms
+[2025-12-06 23:45:47] 
+💾 Saving model after 81 updates...
+[2025-12-06 23:45:47] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.024s
+[2025-12-06 23:45:47] ✓ Current state: Components=8, Positive=55, Negative=26
+
+[2025-12-06 23:45:47] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:47] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:48] Buffer size: 1/5
+[2025-12-06 23:45:48] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:48] Buffer size: 2/5
+[2025-12-06 23:45:48] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:48] Buffer size: 3/5
+[2025-12-06 23:45:48] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:48] Buffer size: 4/5
+[2025-12-06 23:45:48] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:48] Buffer size: 5/5
+[2025-12-06 23:45:48] 
+============================================================
+[2025-12-06 23:45:48] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:48] ============================================================
+[2025-12-06 23:45:48] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: -0.02 | Update #82 | Latency: 46.19ms
+[2025-12-06 23:45:48] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 0.39 | Update #83 | Latency: 46.83ms
+[2025-12-06 23:45:48] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 0.72 | Update #84 | Latency: 71.78ms
+[2025-12-06 23:45:48] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 1.00 | Update #85 | Latency: 46.54ms
+[2025-12-06 23:45:48] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 1.25 | Update #86 | Latency: 46.41ms
+[2025-12-06 23:45:48] 
+💾 Saving model after 86 updates...
+[2025-12-06 23:45:48] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.033s
+[2025-12-06 23:45:48] ✓ Current state: Components=8, Positive=60, Negative=26
+
+[2025-12-06 23:45:48] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:48] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:48] Buffer size: 1/5
+[2025-12-06 23:45:48] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: False
+[2025-12-06 23:45:48] Buffer size: 2/5
+[2025-12-06 23:45:48] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:49] Buffer size: 3/5
+[2025-12-06 23:45:49] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:49] Buffer size: 4/5
+[2025-12-06 23:45:49] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:49] Buffer size: 5/5
+[2025-12-06 23:45:49] 
+============================================================
+[2025-12-06 23:45:49] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:49] ============================================================
+[2025-12-06 23:45:49] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 1.47 | Update #87 | Latency: 57.63ms
+[2025-12-06 23:45:49] ✗ NEGATIVE | Customer: CUST_000302 | Cluster: 2 | Score: 1.68 | Update #88 | Latency: 64.41ms
+[2025-12-06 23:45:49] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 1.68 | Update #89 | Latency: 55.73ms
+[2025-12-06 23:45:49] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 1.88 | Update #90 | Latency: 55.34ms
+[2025-12-06 23:45:49] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 2.07 | Update #91 | Latency: 90.88ms
+[2025-12-06 23:45:49] 
+💾 Saving model after 91 updates...
+[2025-12-06 23:45:49] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.028s
+[2025-12-06 23:45:49] ✓ Current state: Components=8, Positive=64, Negative=27
+
+[2025-12-06 23:45:49] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:49] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:49] Buffer size: 1/5
+[2025-12-06 23:45:50] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:50] Buffer size: 2/5
+[2025-12-06 23:45:50] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:50] Buffer size: 3/5
+[2025-12-06 23:45:50] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:50] Buffer size: 4/5
+[2025-12-06 23:45:50] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:50] Buffer size: 5/5
+[2025-12-06 23:45:50] 
+============================================================
+[2025-12-06 23:45:50] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:50] ============================================================
+[2025-12-06 23:45:50] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 2.25 | Update #92 | Latency: 47.87ms
+[2025-12-06 23:45:50] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 2.43 | Update #93 | Latency: 53.27ms
+[2025-12-06 23:45:50] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 2.60 | Update #94 | Latency: 47.10ms
+[2025-12-06 23:45:50] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 2.77 | Update #95 | Latency: 69.74ms
+[2025-12-06 23:45:50] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 2.94 | Update #96 | Latency: 50.15ms
+[2025-12-06 23:45:50] 
+💾 Saving model after 96 updates...
+[2025-12-06 23:45:50] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.024s
+[2025-12-06 23:45:50] ✓ Current state: Components=8, Positive=69, Negative=27
+
+[2025-12-06 23:45:50] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:50] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: False
+[2025-12-06 23:45:50] Buffer size: 1/5
+[2025-12-06 23:45:50] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:50] Buffer size: 2/5
+[2025-12-06 23:45:50] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:50] Buffer size: 3/5
+[2025-12-06 23:45:50] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:51] Buffer size: 4/5
+[2025-12-06 23:45:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:51] Buffer size: 5/5
+[2025-12-06 23:45:51] 
+============================================================
+[2025-12-06 23:45:51] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:51] ============================================================
+[2025-12-06 23:45:51] ✗ NEGATIVE | Customer: CUST_000302 | Cluster: 2 | Score: 3.11 | Update #97 | Latency: 46.92ms
+[2025-12-06 23:45:51] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 3.11 | Update #98 | Latency: 46.41ms
+[2025-12-06 23:45:51] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 3.27 | Update #99 | Latency: 44.90ms
+[2025-12-06 23:45:51] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 3.43 | Update #100 | Latency: 64.12ms
+[2025-12-06 23:45:51] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 3.59 | Update #101 | Latency: 47.31ms
+[2025-12-06 23:45:51] 
+💾 Saving model after 101 updates...
+[2025-12-06 23:45:51] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.020s
+[2025-12-06 23:45:51] ✓ Current state: Components=8, Positive=73, Negative=28
+
+[2025-12-06 23:45:51] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:51] Buffer size: 1/5
+[2025-12-06 23:45:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:51] Buffer size: 2/5
+[2025-12-06 23:45:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: False
+[2025-12-06 23:45:51] Buffer size: 3/5
+[2025-12-06 23:45:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:51] Buffer size: 4/5
+[2025-12-06 23:45:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:51] Buffer size: 5/5
+[2025-12-06 23:45:51] 
+============================================================
+[2025-12-06 23:45:51] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:51] ============================================================
+[2025-12-06 23:45:52] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 3.75 | Update #102 | Latency: 55.17ms
+[2025-12-06 23:45:52] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 3.91 | Update #103 | Latency: 52.97ms
+[2025-12-06 23:45:52] ✗ NEGATIVE | Customer: CUST_000302 | Cluster: 2 | Score: 4.07 | Update #104 | Latency: 59.85ms
+[2025-12-06 23:45:52] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 4.07 | Update #105 | Latency: 80.85ms
+[2025-12-06 23:45:52] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 4.23 | Update #106 | Latency: 53.63ms
+[2025-12-06 23:45:52] 
+💾 Saving model after 106 updates...
+[2025-12-06 23:45:52] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.025s
+[2025-12-06 23:45:52] ✓ Current state: Components=8, Positive=77, Negative=29
+
+[2025-12-06 23:45:52] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:52] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:52] Buffer size: 1/5
+[2025-12-06 23:45:52] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:52] Buffer size: 2/5
+[2025-12-06 23:45:52] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:52] Buffer size: 3/5
+[2025-12-06 23:45:52] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:52] Buffer size: 4/5
+[2025-12-06 23:45:52] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:52] Buffer size: 5/5
+[2025-12-06 23:45:52] 
+============================================================
+[2025-12-06 23:45:52] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:52] ============================================================
+[2025-12-06 23:45:53] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 4.39 | Update #107 | Latency: 49.25ms
+[2025-12-06 23:45:53] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 4.54 | Update #108 | Latency: 51.97ms
+[2025-12-06 23:45:53] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 4.70 | Update #109 | Latency: 56.74ms
+[2025-12-06 23:45:53] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 4.86 | Update #110 | Latency: 49.85ms
+[2025-12-06 23:45:53] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 5.01 | Update #111 | Latency: 49.79ms
+[2025-12-06 23:45:53] 
+💾 Saving model after 111 updates...
+[2025-12-06 23:45:53] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.025s
+[2025-12-06 23:45:53] ✓ Current state: Components=8, Positive=82, Negative=29
+
+[2025-12-06 23:45:53] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:53] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:53] Buffer size: 1/5
+[2025-12-06 23:45:53] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:53] Buffer size: 2/5
+[2025-12-06 23:45:53] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: False
+[2025-12-06 23:45:53] Buffer size: 3/5
+[2025-12-06 23:45:53] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: False
+[2025-12-06 23:45:53] Buffer size: 4/5
+[2025-12-06 23:45:53] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: False
+[2025-12-06 23:45:53] Buffer size: 5/5
+[2025-12-06 23:45:53] 
+============================================================
+[2025-12-06 23:45:53] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:53] ============================================================
+[2025-12-06 23:45:53] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 5.17 | Update #112 | Latency: 46.75ms
+[2025-12-06 23:45:54] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 5.32 | Update #113 | Latency: 73.78ms
+[2025-12-06 23:45:54] ✗ NEGATIVE | Customer: CUST_000302 | Cluster: 2 | Score: 5.48 | Update #114 | Latency: 47.27ms
+[2025-12-06 23:45:54] ✗ NEGATIVE | Customer: CUST_000302 | Cluster: 2 | Score: 5.48 | Update #115 | Latency: 51.40ms
+[2025-12-06 23:45:54] ✗ NEGATIVE | Customer: CUST_000302 | Cluster: 2 | Score: 5.48 | Update #116 | Latency: 49.25ms
+[2025-12-06 23:45:54] 
+💾 Saving model after 116 updates...
+[2025-12-06 23:45:54] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.024s
+[2025-12-06 23:45:54] ✓ Current state: Components=8, Positive=84, Negative=32
+
+[2025-12-06 23:45:54] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:54] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:54] Buffer size: 1/5
+[2025-12-06 23:45:54] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:54] Buffer size: 2/5
+[2025-12-06 23:45:54] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:54] Buffer size: 3/5
+[2025-12-06 23:45:54] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:54] Buffer size: 4/5
+[2025-12-06 23:45:54] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: False
+[2025-12-06 23:45:54] Buffer size: 5/5
+[2025-12-06 23:45:54] 
+============================================================
+[2025-12-06 23:45:54] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:54] ============================================================
+[2025-12-06 23:45:54] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 5.48 | Update #117 | Latency: 54.57ms
+[2025-12-06 23:45:54] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 5.63 | Update #118 | Latency: 87.03ms
+[2025-12-06 23:45:55] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 5.79 | Update #119 | Latency: 58.39ms
+[2025-12-06 23:45:55] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 5.94 | Update #120 | Latency: 60.77ms
+[2025-12-06 23:45:55] ✗ NEGATIVE | Customer: CUST_000302 | Cluster: 2 | Score: 6.10 | Update #121 | Latency: 50.03ms
+[2025-12-06 23:45:55] 
+💾 Saving model after 121 updates...
+[2025-12-06 23:45:55] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.024s
+[2025-12-06 23:45:55] ✓ Current state: Components=8, Positive=88, Negative=33
+
+[2025-12-06 23:45:55] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:55] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:55] Buffer size: 1/5
+[2025-12-06 23:45:55] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:55] Buffer size: 2/5
+[2025-12-06 23:45:55] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: False
+[2025-12-06 23:45:55] Buffer size: 3/5
+[2025-12-06 23:45:55] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:55] Buffer size: 4/5
+[2025-12-06 23:45:55] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: False
+[2025-12-06 23:45:55] Buffer size: 5/5
+[2025-12-06 23:45:55] 
+============================================================
+[2025-12-06 23:45:55] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:55] ============================================================
+[2025-12-06 23:45:55] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 6.10 | Update #122 | Latency: 73.24ms
+[2025-12-06 23:45:55] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 6.25 | Update #123 | Latency: 58.68ms
+[2025-12-06 23:45:55] ✗ NEGATIVE | Customer: CUST_000302 | Cluster: 2 | Score: 6.41 | Update #124 | Latency: 69.32ms
+[2025-12-06 23:45:56] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 6.41 | Update #125 | Latency: 83.17ms
+[2025-12-06 23:45:56] ✗ NEGATIVE | Customer: CUST_000302 | Cluster: 2 | Score: 6.56 | Update #126 | Latency: 56.58ms
+[2025-12-06 23:45:56] 
+💾 Saving model after 126 updates...
+[2025-12-06 23:45:56] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.026s
+[2025-12-06 23:45:56] ✓ Current state: Components=8, Positive=91, Negative=35
+
+[2025-12-06 23:45:56] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:56] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:56] Buffer size: 1/5
+[2025-12-06 23:45:56] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:56] Buffer size: 2/5
+[2025-12-06 23:45:56] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: False
+[2025-12-06 23:45:56] Buffer size: 3/5
+[2025-12-06 23:45:56] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:56] Buffer size: 4/5
+[2025-12-06 23:45:56] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:56] Buffer size: 5/5
+[2025-12-06 23:45:56] 
+============================================================
+[2025-12-06 23:45:56] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:56] ============================================================
+[2025-12-06 23:45:56] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 6.56 | Update #127 | Latency: 54.83ms
+[2025-12-06 23:45:56] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 6.72 | Update #128 | Latency: 50.14ms
+[2025-12-06 23:45:56] ✗ NEGATIVE | Customer: CUST_000302 | Cluster: 2 | Score: 6.87 | Update #129 | Latency: 71.63ms
+[2025-12-06 23:45:57] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 6.87 | Update #130 | Latency: 47.81ms
+[2025-12-06 23:45:57] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 7.03 | Update #131 | Latency: 50.45ms
+[2025-12-06 23:45:57] 
+💾 Saving model after 131 updates...
+[2025-12-06 23:45:57] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.044s
+[2025-12-06 23:45:57] ✓ Current state: Components=8, Positive=95, Negative=36
+
+[2025-12-06 23:45:57] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:57] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: False
+[2025-12-06 23:45:57] Buffer size: 1/5
+[2025-12-06 23:45:57] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:57] Buffer size: 2/5
+[2025-12-06 23:45:57] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: False
+[2025-12-06 23:45:57] Buffer size: 3/5
+[2025-12-06 23:45:57] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:57] Buffer size: 4/5
+[2025-12-06 23:45:57] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:57] Buffer size: 5/5
+[2025-12-06 23:45:57] 
+============================================================
+[2025-12-06 23:45:57] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:57] ============================================================
+[2025-12-06 23:45:57] ✗ NEGATIVE | Customer: CUST_000302 | Cluster: 2 | Score: 7.18 | Update #132 | Latency: 49.23ms
+[2025-12-06 23:45:57] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 7.18 | Update #133 | Latency: 53.09ms
+[2025-12-06 23:45:57] ✗ NEGATIVE | Customer: CUST_000302 | Cluster: 2 | Score: 7.33 | Update #134 | Latency: 62.33ms
+[2025-12-06 23:45:57] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 7.33 | Update #135 | Latency: 58.36ms
+[2025-12-06 23:45:58] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 7.49 | Update #136 | Latency: 60.81ms
+[2025-12-06 23:45:58] 
+💾 Saving model after 136 updates...
+[2025-12-06 23:45:58] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.030s
+[2025-12-06 23:45:58] ✓ Current state: Components=8, Positive=98, Negative=38
+
+[2025-12-06 23:45:58] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:58] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:58] Buffer size: 1/5
+[2025-12-06 23:45:58] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: False
+[2025-12-06 23:45:58] Buffer size: 2/5
+[2025-12-06 23:45:58] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:58] Buffer size: 3/5
+[2025-12-06 23:45:58] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:58] Buffer size: 4/5
+[2025-12-06 23:45:58] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:58] Buffer size: 5/5
+[2025-12-06 23:45:58] 
+============================================================
+[2025-12-06 23:45:58] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:58] ============================================================
+[2025-12-06 23:45:58] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 7.64 | Update #137 | Latency: 49.18ms
+[2025-12-06 23:45:58] ✗ NEGATIVE | Customer: CUST_000302 | Cluster: 2 | Score: 7.80 | Update #138 | Latency: 51.58ms
+[2025-12-06 23:45:58] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 7.80 | Update #139 | Latency: 54.13ms
+[2025-12-06 23:45:58] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 7.95 | Update #140 | Latency: 50.14ms
+[2025-12-06 23:45:59] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 8.10 | Update #141 | Latency: 55.97ms
+[2025-12-06 23:45:59] 
+💾 Saving model after 141 updates...
+[2025-12-06 23:45:59] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.031s
+[2025-12-06 23:45:59] ✓ Current state: Components=8, Positive=102, Negative=39
+
+[2025-12-06 23:45:59] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:45:59] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:59] Buffer size: 1/5
+[2025-12-06 23:45:59] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:59] Buffer size: 2/5
+[2025-12-06 23:45:59] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: False
+[2025-12-06 23:45:59] Buffer size: 3/5
+[2025-12-06 23:45:59] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:59] Buffer size: 4/5
+[2025-12-06 23:45:59] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:45:59] Buffer size: 5/5
+[2025-12-06 23:45:59] 
+============================================================
+[2025-12-06 23:45:59] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:45:59] ============================================================
+[2025-12-06 23:45:59] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 8.26 | Update #142 | Latency: 50.84ms
+[2025-12-06 23:45:59] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 8.41 | Update #143 | Latency: 50.58ms
+[2025-12-06 23:45:59] ✗ NEGATIVE | Customer: CUST_000302 | Cluster: 2 | Score: 8.57 | Update #144 | Latency: 50.59ms
+[2025-12-06 23:45:59] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 8.57 | Update #145 | Latency: 50.62ms
+[2025-12-06 23:46:00] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 8.72 | Update #146 | Latency: 54.04ms
+[2025-12-06 23:46:00] 
+💾 Saving model after 146 updates...
+[2025-12-06 23:46:00] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.026s
+[2025-12-06 23:46:00] ✓ Current state: Components=8, Positive=106, Negative=40
+
+[2025-12-06 23:46:00] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:46:00] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:46:00] Buffer size: 1/5
+[2025-12-06 23:46:00] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:46:00] Buffer size: 2/5
+[2025-12-06 23:46:00] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:46:00] Buffer size: 3/5
+[2025-12-06 23:46:00] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:46:00] Buffer size: 4/5
+[2025-12-06 23:46:00] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:46:00] Buffer size: 5/5
+[2025-12-06 23:46:00] 
+============================================================
+[2025-12-06 23:46:00] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:46:00] ============================================================
+[2025-12-06 23:46:00] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 8.87 | Update #147 | Latency: 51.79ms
+[2025-12-06 23:46:00] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 9.03 | Update #148 | Latency: 51.41ms
+[2025-12-06 23:46:00] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 9.18 | Update #149 | Latency: 49.34ms
+[2025-12-06 23:46:00] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 9.33 | Update #150 | Latency: 65.10ms
+[2025-12-06 23:46:01] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 9.49 | Update #151 | Latency: 97.19ms
+[2025-12-06 23:46:01] 
+💾 Saving model after 151 updates...
+[2025-12-06 23:46:01] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.027s
+[2025-12-06 23:46:01] ✓ Current state: Components=8, Positive=111, Negative=40
+
+[2025-12-06 23:46:01] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:46:01] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:46:01] Buffer size: 1/5
+[2025-12-06 23:46:01] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:46:01] Buffer size: 2/5
+[2025-12-06 23:46:01] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:46:01] Buffer size: 3/5
+[2025-12-06 23:46:01] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:46:01] Buffer size: 4/5
+[2025-12-06 23:46:01] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:46:01] Buffer size: 5/5
+[2025-12-06 23:46:01] 
+============================================================
+[2025-12-06 23:46:01] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:46:01] ============================================================
+[2025-12-06 23:46:01] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 9.64 | Update #152 | Latency: 58.80ms
+[2025-12-06 23:46:01] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 9.79 | Update #153 | Latency: 56.94ms
+[2025-12-06 23:46:01] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 9.95 | Update #154 | Latency: 81.28ms
+[2025-12-06 23:46:02] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 10.10 | Update #155 | Latency: 85.60ms
+[2025-12-06 23:46:02] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 10.25 | Update #156 | Latency: 124.18ms
+[2025-12-06 23:46:02] 
+💾 Saving model after 156 updates...
+[2025-12-06 23:46:02] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.038s
+[2025-12-06 23:46:02] ✓ Current state: Components=8, Positive=116, Negative=40
+
+[2025-12-06 23:46:02] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:46:02] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: False
+[2025-12-06 23:46:02] Buffer size: 1/5
+[2025-12-06 23:46:02] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: False
+[2025-12-06 23:46:02] Buffer size: 2/5
+[2025-12-06 23:46:02] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:46:02] Buffer size: 3/5
+[2025-12-06 23:46:02] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:46:02] Buffer size: 4/5
+[2025-12-06 23:46:02] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:46:02] Buffer size: 5/5
+[2025-12-06 23:46:02] 
+============================================================
+[2025-12-06 23:46:02] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:46:02] ============================================================
+[2025-12-06 23:46:03] ✗ NEGATIVE | Customer: CUST_000302 | Cluster: 2 | Score: 10.41 | Update #157 | Latency: 99.49ms
+[2025-12-06 23:46:03] ✗ NEGATIVE | Customer: CUST_000302 | Cluster: 2 | Score: 10.41 | Update #158 | Latency: 53.89ms
+[2025-12-06 23:46:03] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 10.41 | Update #159 | Latency: 50.68ms
+[2025-12-06 23:46:03] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 10.56 | Update #160 | Latency: 89.78ms
+[2025-12-06 23:46:03] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 10.71 | Update #161 | Latency: 88.74ms
+[2025-12-06 23:46:03] 
+💾 Saving model after 161 updates...
+[2025-12-06 23:46:03] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.039s
+[2025-12-06 23:46:03] ✓ Current state: Components=8, Positive=119, Negative=42
+
+[2025-12-06 23:46:03] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:46:03] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:46:03] Buffer size: 1/5
+[2025-12-06 23:46:03] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: False
+[2025-12-06 23:46:03] Buffer size: 2/5
+[2025-12-06 23:46:04] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:46:04] Buffer size: 3/5
+[2025-12-06 23:46:04] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:46:04] Buffer size: 4/5
+[2025-12-06 23:46:04] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:46:04] Buffer size: 5/5
+[2025-12-06 23:46:04] 
+============================================================
+[2025-12-06 23:46:04] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:46:04] ============================================================
+[2025-12-06 23:46:04] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 10.87 | Update #162 | Latency: 58.55ms
+[2025-12-06 23:46:04] ✗ NEGATIVE | Customer: CUST_000302 | Cluster: 2 | Score: 11.02 | Update #163 | Latency: 129.16ms
+[2025-12-06 23:46:04] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 11.02 | Update #164 | Latency: 60.35ms
+[2025-12-06 23:46:04] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 11.17 | Update #165 | Latency: 48.98ms
+[2025-12-06 23:46:04] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 11.33 | Update #166 | Latency: 54.62ms
+[2025-12-06 23:46:04] 
+💾 Saving model after 166 updates...
+[2025-12-06 23:46:04] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.026s
+[2025-12-06 23:46:04] ✓ Current state: Components=8, Positive=123, Negative=43
+
+[2025-12-06 23:46:05] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:46:05] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: False
+[2025-12-06 23:46:05] Buffer size: 1/5
+[2025-12-06 23:46:05] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: False
+[2025-12-06 23:46:05] Buffer size: 2/5
+[2025-12-06 23:46:05] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:46:05] Buffer size: 3/5
+[2025-12-06 23:46:05] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:46:05] Buffer size: 4/5
+[2025-12-06 23:46:05] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:46:05] Buffer size: 5/5
+[2025-12-06 23:46:05] 
+============================================================
+[2025-12-06 23:46:05] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:46:05] ============================================================
+[2025-12-06 23:46:05] ✗ NEGATIVE | Customer: CUST_000302 | Cluster: 2 | Score: 11.48 | Update #167 | Latency: 110.71ms
+[2025-12-06 23:46:05] ✗ NEGATIVE | Customer: CUST_000302 | Cluster: 2 | Score: 11.48 | Update #168 | Latency: 52.65ms
+[2025-12-06 23:46:05] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 11.48 | Update #169 | Latency: 57.36ms
+[2025-12-06 23:46:06] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 11.63 | Update #170 | Latency: 52.90ms
+[2025-12-06 23:46:06] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 11.78 | Update #171 | Latency: 48.96ms
+[2025-12-06 23:46:06] 
+💾 Saving model after 171 updates...
+[2025-12-06 23:46:06] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.023s
+[2025-12-06 23:46:06] ✓ Current state: Components=8, Positive=126, Negative=45
+
+[2025-12-06 23:46:06] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-06 23:46:06] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:46:06] Buffer size: 1/5
+[2025-12-06 23:46:06] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:46:06] Buffer size: 2/5
+[2025-12-06 23:46:06] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: False
+[2025-12-06 23:46:06] Buffer size: 3/5
+[2025-12-06 23:46:06] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: True
+[2025-12-06 23:46:06] Buffer size: 4/5
+[2025-12-06 23:46:06] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Bought: False
+[2025-12-06 23:46:06] Buffer size: 5/5
+[2025-12-06 23:46:06] 
+============================================================
+[2025-12-06 23:46:06] 🔄 Processing batch of 5 feedback points
+[2025-12-06 23:46:06] ============================================================
+[2025-12-06 23:46:06] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 11.94 | Update #172 | Latency: 48.60ms
+[2025-12-06 23:46:06] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 12.09 | Update #173 | Latency: 48.03ms
+[2025-12-06 23:46:06] ✗ NEGATIVE | Customer: CUST_000302 | Cluster: 2 | Score: 12.24 | Update #174 | Latency: 47.76ms
+[2025-12-06 23:46:06] ✓ POSITIVE | Customer: CUST_000302 | Cluster: 2 | Score: 12.24 | Update #175 | Latency: 56.82ms
+[2025-12-06 23:46:06] ✗ NEGATIVE | Customer: CUST_000302 | Cluster: 2 | Score: 12.39 | Update #176 | Latency: 46.38ms
+[2025-12-06 23:46:06] 
+💾 Saving model after 176 updates...
+[2025-12-07 00:40:23] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 00:40:23] ✓ Model loaded. Components: 8
+[2025-12-07 00:40:23] 📊 Metric recorded: Model components = 8
+[2025-12-07 00:40:23] Initializing Redis data manager (db=1)...
+[2025-12-07 00:40:23] ✓ Data manager initialized. 12500 customers available.
+[2025-12-07 00:40:23] ✓ Background metrics updater started
+[2025-12-07 00:40:23] ═══════════════════════════════════════════════
+[2025-12-07 00:40:23]     CAR LOAN FEEDBACK NODE (PATHWAY)          
+[2025-12-07 00:40:23] ═══════════════════════════════════════════════
+[2025-12-07 00:40:23] Feedback Topic: feedback.carLoan
+[2025-12-07 00:40:23] Model Path:     /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json
+[2025-12-07 00:52:33] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 00:52:33] ✓ Model loaded. Components: 8
+[2025-12-07 00:52:33] 📊 Metric recorded: Model components = 8
+[2025-12-07 00:52:33] Loading MASTERFILE from /home/sachit/Documents/VSCProjects/TargettedCalling/MASTERFILE.csv...
+[2025-12-07 00:52:33] ✓ MASTERFILE loaded. 12500 customers indexed.
+[2025-12-07 00:52:33] ✓ Background metrics updater started
+[2025-12-07 00:52:33] ═══════════════════════════════════════════════
+[2025-12-07 00:52:33]     CAR LOAN FEEDBACK NODE (PATHWAY)          
+[2025-12-07 00:52:33] ═══════════════════════════════════════════════
+[2025-12-07 00:52:33] Feedback Topic: feedback.carLoan
+[2025-12-07 00:52:33] Model Path:     /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json
+[2025-12-07 00:52:33] MASTERFILE:     /home/sachit/Documents/VSCProjects/TargettedCalling/MASTERFILE.csv
+[2025-12-07 00:52:33] Log File:       /home/sachit/Documents/VSCProjects/TargettedCalling/carLoanFeedback/feedback_node.log
+[2025-12-07 00:52:33] Metrics:        ENABLED on port 8006
+[2025-12-07 00:52:33] Batch Config:   Update every 5 feedbacks
+[2025-12-07 00:52:33] Auto-save:      Every 30 seconds
+[2025-12-07 00:52:33] ═══════════════════════════════════════════════
+
+[2025-12-07 00:52:33] ✓ Metrics server initialized on port 8006
+[2025-12-07 00:52:33] ✓ Listening for feedback on 'feedback.carLoan'...
+[2025-12-07 00:52:33] ✓ LISTENING TO: feedback.carLoan
+
+[2025-12-07 00:52:33] ✓ Car Loan Feedback Node is running.
+
+[2025-12-07 00:53:38] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 00:53:38] ✓ Model loaded. Components: 8
+[2025-12-07 00:53:38] 📊 Metric recorded: Model components = 8
+[2025-12-07 00:53:38] Loading MASTERFILE from /home/sachit/Documents/VSCProjects/TargettedCalling/MASTERFILE.csv...
+[2025-12-07 00:53:39] ✓ MASTERFILE loaded. 12500 customers indexed.
+[2025-12-07 00:53:39] ✓ Background metrics updater started
+[2025-12-07 00:53:39] ═══════════════════════════════════════════════
+[2025-12-07 00:53:39]     CAR LOAN FEEDBACK NODE (PATHWAY)          
+[2025-12-07 00:53:39] ═══════════════════════════════════════════════
+[2025-12-07 00:53:39] Feedback Topic: feedback.carLoan
+[2025-12-07 00:53:39] Model Path:     /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json
+[2025-12-07 00:53:39] MASTERFILE:     /home/sachit/Documents/VSCProjects/TargettedCalling/MASTERFILE.csv
+[2025-12-07 00:53:39] Log File:       /home/sachit/Documents/VSCProjects/TargettedCalling/carLoanFeedback/feedback_node.log
+[2025-12-07 00:53:39] Metrics:        ENABLED on port 8006
+[2025-12-07 00:53:39] Batch Config:   Update every 5 feedbacks
+[2025-12-07 00:53:39] Auto-save:      Every 30 seconds
+[2025-12-07 00:53:39] ═══════════════════════════════════════════════
+
+[2025-12-07 00:53:39] ✓ Metrics server initialized on port 8006
+[2025-12-07 00:53:39] ✓ Listening for feedback on 'feedback.carLoan'...
+[2025-12-07 00:53:39] ✓ LISTENING TO: feedback.carLoan
+
+[2025-12-07 00:53:39] ✓ Car Loan Feedback Node is running.
+
+[2025-12-07 00:56:12] 📥 RECEIVED FEEDBACK | Customer: CUST_000053 | Bought: True
+[2025-12-07 00:56:12] Buffer size: 1/5
+[2025-12-07 00:56:12] 
+============================================================
+[2025-12-07 00:56:12] 🔄 Processing batch of 1 feedback points
+[2025-12-07 00:56:12] ============================================================
+[2025-12-07 00:56:12] ✓ POSITIVE | Customer: CUST_000053 | Cluster: 4 | Score: 1.84 | Update #1 | Latency: 77.95ms
+[2025-12-07 00:56:12] 
+💾 Saving model after 1 updates...
+[2025-12-07 00:56:12] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.025s
+[2025-12-07 00:56:12] ✓ Current state: Components=8, Positive=1, Negative=0
+
+[2025-12-07 00:56:12] 📊 Metric recorded: Save time = 0.025s, Components = 8
+[2025-12-07 00:56:12] ✓ Batch complete: 1 updates, 0 errors
+[2025-12-07 00:56:13] 📥 RECEIVED FEEDBACK | Customer: CUST_000053 | Bought: True
+[2025-12-07 00:56:13] Buffer size: 1/5
+[2025-12-07 00:56:13] 📥 RECEIVED FEEDBACK | Customer: CUST_000053 | Bought: True
+[2025-12-07 00:56:13] Buffer size: 2/5
+[2025-12-07 00:56:13] 📥 RECEIVED FEEDBACK | Customer: CUST_000053 | Bought: True
+[2025-12-07 00:56:13] Buffer size: 3/5
+[2025-12-07 00:56:13] 📥 RECEIVED FEEDBACK | Customer: CUST_000053 | Bought: True
+[2025-12-07 00:56:13] Buffer size: 4/5
+[2025-12-07 00:56:13] 📥 RECEIVED FEEDBACK | Customer: CUST_000053 | Bought: False
+[2025-12-07 00:56:13] Buffer size: 5/5
+[2025-12-07 00:56:13] 
+============================================================
+[2025-12-07 00:56:13] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:56:13] ============================================================
+[2025-12-07 00:56:13] ✓ POSITIVE | Customer: CUST_000053 | Cluster: 4 | Score: 2.33 | Update #2 | Latency: 51.26ms
+[2025-12-07 00:56:14] ✓ POSITIVE | Customer: CUST_000053 | Cluster: 4 | Score: 2.71 | Update #3 | Latency: 50.10ms
+[2025-12-07 00:56:14] ✓ POSITIVE | Customer: CUST_000053 | Cluster: 4 | Score: 3.04 | Update #4 | Latency: 73.68ms
+[2025-12-07 00:56:14] ✓ POSITIVE | Customer: CUST_000053 | Cluster: 4 | Score: 3.33 | Update #5 | Latency: 82.71ms
+[2025-12-07 00:56:14] ✗ NEGATIVE | Customer: CUST_000053 | Cluster: 4 | Score: 3.59 | Update #6 | Latency: 42.75ms
+[2025-12-07 00:56:14] 
+💾 Saving model after 6 updates...
+[2025-12-07 00:56:14] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.019s
+[2025-12-07 00:56:14] ✓ Current state: Components=8, Positive=5, Negative=1
+
+[2025-12-07 00:56:14] 📊 Metric recorded: Save time = 0.019s, Components = 8
+[2025-12-07 00:56:14] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:56:14] 📥 RECEIVED FEEDBACK | Customer: CUST_000053 | Bought: True
+[2025-12-07 00:56:14] Buffer size: 1/5
+[2025-12-07 00:56:15] 📥 RECEIVED FEEDBACK | Customer: CUST_000053 | Bought: True
+[2025-12-07 00:56:15] Buffer size: 2/5
+[2025-12-07 00:56:15] 📥 RECEIVED FEEDBACK | Customer: CUST_000053 | Bought: True
+[2025-12-07 00:56:15] Buffer size: 3/5
+[2025-12-07 00:56:15] 📥 RECEIVED FEEDBACK | Customer: CUST_000053 | Bought: True
+[2025-12-07 00:56:15] Buffer size: 4/5
+[2025-12-07 00:56:15] 📥 RECEIVED FEEDBACK | Customer: CUST_000053 | Bought: True
+[2025-12-07 00:56:15] Buffer size: 5/5
+[2025-12-07 00:56:15] 
+============================================================
+[2025-12-07 00:56:15] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:56:15] ============================================================
+[2025-12-07 00:56:15] ✓ POSITIVE | Customer: CUST_000053 | Cluster: 4 | Score: 3.59 | Update #7 | Latency: 50.34ms
+[2025-12-07 00:56:15] ✓ POSITIVE | Customer: CUST_000053 | Cluster: 4 | Score: 3.83 | Update #8 | Latency: 42.34ms
+[2025-12-07 00:56:15] ✓ POSITIVE | Customer: CUST_000053 | Cluster: 4 | Score: 4.06 | Update #9 | Latency: 37.62ms
+[2025-12-07 00:56:15] ✓ POSITIVE | Customer: CUST_000053 | Cluster: 4 | Score: 4.27 | Update #10 | Latency: 61.68ms
+[2025-12-07 00:56:15] ✓ POSITIVE | Customer: CUST_000053 | Cluster: 4 | Score: 4.48 | Update #11 | Latency: 36.85ms
+[2025-12-07 00:56:15] 
+💾 Saving model after 11 updates...
+[2025-12-07 00:56:15] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.018s
+[2025-12-07 00:56:15] ✓ Current state: Components=8, Positive=10, Negative=1
+
+[2025-12-07 00:56:15] 📊 Metric recorded: Save time = 0.018s, Components = 8
+[2025-12-07 00:56:15] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:56:15] 📥 RECEIVED FEEDBACK | Customer: CUST_000053 | Bought: True
+[2025-12-07 00:56:15] Buffer size: 1/5
+[2025-12-07 00:56:15] 📥 RECEIVED FEEDBACK | Customer: CUST_000053 | Bought: True
+[2025-12-07 00:56:15] Buffer size: 2/5
+[2025-12-07 00:56:15] 📥 RECEIVED FEEDBACK | Customer: CUST_000053 | Bought: True
+[2025-12-07 00:56:15] Buffer size: 3/5
+[2025-12-07 00:56:15] 📥 RECEIVED FEEDBACK | Customer: CUST_000053 | Bought: True
+[2025-12-07 00:56:16] Buffer size: 4/5
+[2025-12-07 00:56:16] 📥 RECEIVED FEEDBACK | Customer: CUST_000053 | Bought: False
+[2025-12-07 00:56:16] Buffer size: 5/5
+[2025-12-07 00:56:16] 
+============================================================
+[2025-12-07 00:56:16] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:56:16] ============================================================
+[2025-12-07 00:56:16] ✓ POSITIVE | Customer: CUST_000053 | Cluster: 4 | Score: 4.68 | Update #12 | Latency: 61.01ms
+[2025-12-07 00:56:16] ✓ POSITIVE | Customer: CUST_000053 | Cluster: 4 | Score: 4.87 | Update #13 | Latency: 49.84ms
+[2025-12-07 00:56:16] ✓ POSITIVE | Customer: CUST_000053 | Cluster: 4 | Score: 5.06 | Update #14 | Latency: 61.49ms
+[2025-12-07 00:56:17] ✓ POSITIVE | Customer: CUST_000053 | Cluster: 4 | Score: 5.25 | Update #15 | Latency: 36.20ms
+[2025-12-07 00:56:17] ✗ NEGATIVE | Customer: CUST_000053 | Cluster: 4 | Score: 5.43 | Update #16 | Latency: 43.20ms
+[2025-12-07 00:56:17] 
+💾 Saving model after 16 updates...
+[2025-12-07 00:56:17] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.029s
+[2025-12-07 00:56:17] ✓ Current state: Components=8, Positive=14, Negative=2
+
+[2025-12-07 00:56:17] 📊 Metric recorded: Save time = 0.029s, Components = 8
+[2025-12-07 00:56:17] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:56:17] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: True
+[2025-12-07 00:56:17] Buffer size: 1/5
+[2025-12-07 00:56:17] 📥 RECEIVED FEEDBACK | Customer: CUST_000053 | Bought: True
+[2025-12-07 00:56:17] Buffer size: 2/5
+[2025-12-07 00:56:17] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: False
+[2025-12-07 00:56:17] Buffer size: 3/5
+[2025-12-07 00:56:17] 📥 RECEIVED FEEDBACK | Customer: CUST_000053 | Bought: False
+[2025-12-07 00:56:17] Buffer size: 4/5
+[2025-12-07 00:56:17] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: True
+[2025-12-07 00:56:17] Buffer size: 5/5
+[2025-12-07 00:56:17] 
+============================================================
+[2025-12-07 00:56:17] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:56:17] ============================================================
+[2025-12-07 00:56:17] ✓ POSITIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #17 | Latency: 57.19ms
+[2025-12-07 00:56:17] ✓ POSITIVE | Customer: CUST_000053 | Cluster: 4 | Score: 5.43 | Update #18 | Latency: 58.59ms
+[2025-12-07 00:56:17] ✗ NEGATIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #19 | Latency: 49.37ms
+[2025-12-07 00:56:17] ✗ NEGATIVE | Customer: CUST_000053 | Cluster: 4 | Score: 5.61 | Update #20 | Latency: 40.96ms
+[2025-12-07 00:56:18] ✓ POSITIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #21 | Latency: 43.56ms
+[2025-12-07 00:56:18] 
+💾 Saving model after 21 updates...
+[2025-12-07 00:56:18] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.045s
+[2025-12-07 00:56:18] ✓ Current state: Components=8, Positive=17, Negative=4
+
+[2025-12-07 00:56:18] 📊 Metric recorded: Save time = 0.045s, Components = 8
+[2025-12-07 00:56:18] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:56:18] 📥 RECEIVED FEEDBACK | Customer: CUST_000053 | Bought: True
+[2025-12-07 00:56:18] Buffer size: 1/5
+[2025-12-07 00:56:19] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: False
+[2025-12-07 00:56:19] Buffer size: 2/5
+[2025-12-07 00:56:19] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: True
+[2025-12-07 00:56:19] Buffer size: 3/5
+[2025-12-07 00:56:19] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: False
+[2025-12-07 00:56:19] Buffer size: 4/5
+[2025-12-07 00:56:19] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: False
+[2025-12-07 00:56:19] Buffer size: 5/5
+[2025-12-07 00:56:19] 
+============================================================
+[2025-12-07 00:56:19] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:56:19] ============================================================
+[2025-12-07 00:56:20] ✓ POSITIVE | Customer: CUST_000053 | Cluster: 4 | Score: 5.61 | Update #22 | Latency: 103.48ms
+[2025-12-07 00:56:20] ✗ NEGATIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #23 | Latency: 54.56ms
+[2025-12-07 00:56:20] ✓ POSITIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #24 | Latency: 49.45ms
+[2025-12-07 00:56:20] ✗ NEGATIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #25 | Latency: 60.58ms
+[2025-12-07 00:56:20] ✗ NEGATIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #26 | Latency: 38.60ms
+[2025-12-07 00:56:20] 
+💾 Saving model after 26 updates...
+[2025-12-07 00:56:20] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.017s
+[2025-12-07 00:56:20] ✓ Current state: Components=8, Positive=19, Negative=7
+
+[2025-12-07 00:56:20] 📊 Metric recorded: Save time = 0.017s, Components = 8
+[2025-12-07 00:56:20] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:56:20] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: True
+[2025-12-07 00:56:20] Buffer size: 1/5
+[2025-12-07 00:56:20] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: False
+[2025-12-07 00:56:20] Buffer size: 2/5
+[2025-12-07 00:56:20] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: True
+[2025-12-07 00:56:20] Buffer size: 3/5
+[2025-12-07 00:56:20] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: True
+[2025-12-07 00:56:20] Buffer size: 4/5
+[2025-12-07 00:56:20] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: True
+[2025-12-07 00:56:20] Buffer size: 5/5
+[2025-12-07 00:56:20] 
+============================================================
+[2025-12-07 00:56:20] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:56:20] ============================================================
+[2025-12-07 00:56:20] ✓ POSITIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #27 | Latency: 54.42ms
+[2025-12-07 00:56:20] ✗ NEGATIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #28 | Latency: 39.72ms
+[2025-12-07 00:56:21] ✓ POSITIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #29 | Latency: 38.88ms
+[2025-12-07 00:56:21] ✓ POSITIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #30 | Latency: 40.99ms
+[2025-12-07 00:56:21] ✓ POSITIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #31 | Latency: 53.75ms
+[2025-12-07 00:56:21] 
+💾 Saving model after 31 updates...
+[2025-12-07 00:56:21] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.032s
+[2025-12-07 00:56:21] ✓ Current state: Components=8, Positive=23, Negative=8
+
+[2025-12-07 00:56:21] 📊 Metric recorded: Save time = 0.032s, Components = 8
+[2025-12-07 00:56:21] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:56:21] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: False
+[2025-12-07 00:56:21] Buffer size: 1/5
+[2025-12-07 00:56:21] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: False
+[2025-12-07 00:56:21] Buffer size: 2/5
+[2025-12-07 00:56:21] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: False
+[2025-12-07 00:56:21] Buffer size: 3/5
+[2025-12-07 00:56:21] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: True
+[2025-12-07 00:56:21] Buffer size: 4/5
+[2025-12-07 00:56:21] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: True
+[2025-12-07 00:56:21] Buffer size: 5/5
+[2025-12-07 00:56:21] 
+============================================================
+[2025-12-07 00:56:21] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:56:21] ============================================================
+[2025-12-07 00:56:21] ✗ NEGATIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #32 | Latency: 44.34ms
+[2025-12-07 00:56:21] ✗ NEGATIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #33 | Latency: 58.87ms
+[2025-12-07 00:56:21] ✗ NEGATIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #34 | Latency: 39.93ms
+[2025-12-07 00:56:21] ✓ POSITIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #35 | Latency: 38.03ms
+[2025-12-07 00:56:21] ✓ POSITIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #36 | Latency: 48.60ms
+[2025-12-07 00:56:21] 
+💾 Saving model after 36 updates...
+[2025-12-07 00:56:22] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.022s
+[2025-12-07 00:56:22] ✓ Current state: Components=8, Positive=25, Negative=11
+
+[2025-12-07 00:56:22] 📊 Metric recorded: Save time = 0.022s, Components = 8
+[2025-12-07 00:56:22] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:56:22] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: False
+[2025-12-07 00:56:22] Buffer size: 1/5
+[2025-12-07 00:56:22] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: True
+[2025-12-07 00:56:22] Buffer size: 2/5
+[2025-12-07 00:56:22] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: True
+[2025-12-07 00:56:22] Buffer size: 3/5
+[2025-12-07 00:56:22] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: True
+[2025-12-07 00:56:22] Buffer size: 4/5
+[2025-12-07 00:56:22] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: True
+[2025-12-07 00:56:22] Buffer size: 5/5
+[2025-12-07 00:56:22] 
+============================================================
+[2025-12-07 00:56:22] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:56:22] ============================================================
+[2025-12-07 00:56:22] ✗ NEGATIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #37 | Latency: 37.94ms
+[2025-12-07 00:56:22] ✓ POSITIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #38 | Latency: 38.84ms
+[2025-12-07 00:56:23] ✓ POSITIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #39 | Latency: 36.86ms
+[2025-12-07 00:56:23] ✓ POSITIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #40 | Latency: 40.05ms
+[2025-12-07 00:56:23] ✓ POSITIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #41 | Latency: 37.46ms
+[2025-12-07 00:56:23] 
+💾 Saving model after 41 updates...
+[2025-12-07 00:56:23] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.026s
+[2025-12-07 00:56:23] ✓ Current state: Components=8, Positive=29, Negative=12
+
+[2025-12-07 00:56:23] 📊 Metric recorded: Save time = 0.026s, Components = 8
+[2025-12-07 00:56:23] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:56:23] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: True
+[2025-12-07 00:56:23] Buffer size: 1/5
+[2025-12-07 00:56:23] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: True
+[2025-12-07 00:56:23] Buffer size: 2/5
+[2025-12-07 00:56:23] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: True
+[2025-12-07 00:56:23] Buffer size: 3/5
+[2025-12-07 00:56:23] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: False
+[2025-12-07 00:56:23] Buffer size: 4/5
+[2025-12-07 00:56:23] 📥 RECEIVED FEEDBACK | Customer: CUST_000054 | Bought: True
+[2025-12-07 00:56:23] Buffer size: 5/5
+[2025-12-07 00:56:23] 
+============================================================
+[2025-12-07 00:56:23] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:56:23] ============================================================
+[2025-12-07 00:56:23] ✓ POSITIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #42 | Latency: 43.80ms
+[2025-12-07 00:56:23] ✓ POSITIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #43 | Latency: 100.46ms
+[2025-12-07 00:56:23] ✓ POSITIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #44 | Latency: 69.36ms
+[2025-12-07 00:56:23] ✗ NEGATIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #45 | Latency: 73.08ms
+[2025-12-07 00:56:24] ✓ POSITIVE | Customer: CUST_000054 | Cluster: 7 | Score: -10.86 | Update #46 | Latency: 71.91ms
+[2025-12-07 00:56:24] 
+💾 Saving model after 46 updates...
+[2025-12-07 00:56:24] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.035s
+[2025-12-07 00:56:24] ✓ Current state: Components=8, Positive=33, Negative=13
+
+[2025-12-07 00:56:24] 📊 Metric recorded: Save time = 0.035s, Components = 8
+[2025-12-07 00:56:24] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:56:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: True
+[2025-12-07 00:56:37] Buffer size: 1/5
+[2025-12-07 00:56:39] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: True
+[2025-12-07 00:56:39] Buffer size: 2/5
+[2025-12-07 00:56:39] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: True
+[2025-12-07 00:56:39] Buffer size: 3/5
+[2025-12-07 00:56:39] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: True
+[2025-12-07 00:56:39] Buffer size: 4/5
+[2025-12-07 00:56:39] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: False
+[2025-12-07 00:56:39] Buffer size: 5/5
+[2025-12-07 00:56:39] 
+============================================================
+[2025-12-07 00:56:39] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:56:39] ============================================================
+[2025-12-07 00:56:39] ✓ POSITIVE | Customer: CUST_000090 | Cluster: 5 | Score: 2.39 | Update #47 | Latency: 69.93ms
+[2025-12-07 00:56:39] ✓ POSITIVE | Customer: CUST_000090 | Cluster: 5 | Score: 2.72 | Update #48 | Latency: 46.84ms
+[2025-12-07 00:56:39] ✓ POSITIVE | Customer: CUST_000090 | Cluster: 5 | Score: 3.01 | Update #49 | Latency: 49.13ms
+[2025-12-07 00:56:39] ✓ POSITIVE | Customer: CUST_000090 | Cluster: 5 | Score: 3.25 | Update #50 | Latency: 41.75ms
+[2025-12-07 00:56:39] ✗ NEGATIVE | Customer: CUST_000090 | Cluster: 5 | Score: 3.48 | Update #51 | Latency: 41.10ms
+[2025-12-07 00:56:39] 
+💾 Saving model after 51 updates...
+[2025-12-07 00:56:39] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.018s
+[2025-12-07 00:56:39] ✓ Current state: Components=8, Positive=37, Negative=14
+
+[2025-12-07 00:56:39] 📊 Metric recorded: Save time = 0.018s, Components = 8
+[2025-12-07 00:56:40] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:56:40] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: True
+[2025-12-07 00:56:40] Buffer size: 1/5
+[2025-12-07 00:56:40] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: False
+[2025-12-07 00:56:40] Buffer size: 2/5
+[2025-12-07 00:56:40] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: True
+[2025-12-07 00:56:40] Buffer size: 3/5
+[2025-12-07 00:56:40] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: True
+[2025-12-07 00:56:40] Buffer size: 4/5
+[2025-12-07 00:56:40] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: False
+[2025-12-07 00:56:40] Buffer size: 5/5
+[2025-12-07 00:56:40] 
+============================================================
+[2025-12-07 00:56:40] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:56:40] ============================================================
+[2025-12-07 00:56:40] ✓ POSITIVE | Customer: CUST_000090 | Cluster: 5 | Score: 3.48 | Update #52 | Latency: 74.12ms
+[2025-12-07 00:56:41] ✗ NEGATIVE | Customer: CUST_000090 | Cluster: 5 | Score: 3.69 | Update #53 | Latency: 99.94ms
+[2025-12-07 00:56:41] ✓ POSITIVE | Customer: CUST_000090 | Cluster: 5 | Score: 3.69 | Update #54 | Latency: 53.86ms
+[2025-12-07 00:56:41] ✓ POSITIVE | Customer: CUST_000090 | Cluster: 5 | Score: 3.89 | Update #55 | Latency: 38.91ms
+[2025-12-07 00:56:41] ✗ NEGATIVE | Customer: CUST_000090 | Cluster: 5 | Score: 4.08 | Update #56 | Latency: 52.90ms
+[2025-12-07 00:56:41] 
+💾 Saving model after 56 updates...
+[2025-12-07 00:56:41] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.024s
+[2025-12-07 00:56:41] ✓ Current state: Components=8, Positive=40, Negative=16
+
+[2025-12-07 00:56:41] 📊 Metric recorded: Save time = 0.024s, Components = 8
+[2025-12-07 00:56:41] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:56:41] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: False
+[2025-12-07 00:56:41] Buffer size: 1/5
+[2025-12-07 00:56:41] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: True
+[2025-12-07 00:56:41] Buffer size: 2/5
+[2025-12-07 00:56:41] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: True
+[2025-12-07 00:56:41] Buffer size: 3/5
+[2025-12-07 00:56:42] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: True
+[2025-12-07 00:56:42] Buffer size: 4/5
+[2025-12-07 00:56:42] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: True
+[2025-12-07 00:56:42] Buffer size: 5/5
+[2025-12-07 00:56:42] 
+============================================================
+[2025-12-07 00:56:42] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:56:42] ============================================================
+[2025-12-07 00:56:42] ✗ NEGATIVE | Customer: CUST_000090 | Cluster: 5 | Score: 4.08 | Update #57 | Latency: 113.13ms
+[2025-12-07 00:56:42] ✓ POSITIVE | Customer: CUST_000090 | Cluster: 5 | Score: 4.08 | Update #58 | Latency: 112.32ms
+[2025-12-07 00:56:42] ✓ POSITIVE | Customer: CUST_000090 | Cluster: 5 | Score: 4.27 | Update #59 | Latency: 122.19ms
+[2025-12-07 00:56:42] ✓ POSITIVE | Customer: CUST_000090 | Cluster: 5 | Score: 4.45 | Update #60 | Latency: 62.75ms
+[2025-12-07 00:56:43] ✓ POSITIVE | Customer: CUST_000090 | Cluster: 5 | Score: 4.62 | Update #61 | Latency: 61.22ms
+[2025-12-07 00:56:43] 
+💾 Saving model after 61 updates...
+[2025-12-07 00:56:43] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.029s
+[2025-12-07 00:56:43] ✓ Current state: Components=8, Positive=44, Negative=17
+
+[2025-12-07 00:56:43] 📊 Metric recorded: Save time = 0.029s, Components = 8
+[2025-12-07 00:56:43] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:56:43] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: True
+[2025-12-07 00:56:43] Buffer size: 1/5
+[2025-12-07 00:56:43] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: False
+[2025-12-07 00:56:43] Buffer size: 2/5
+[2025-12-07 00:56:43] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: False
+[2025-12-07 00:56:43] Buffer size: 3/5
+[2025-12-07 00:56:43] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: False
+[2025-12-07 00:56:43] Buffer size: 4/5
+[2025-12-07 00:56:43] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: True
+[2025-12-07 00:56:43] Buffer size: 5/5
+[2025-12-07 00:56:43] 
+============================================================
+[2025-12-07 00:56:43] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:56:43] ============================================================
+[2025-12-07 00:56:43] ✓ POSITIVE | Customer: CUST_000090 | Cluster: 5 | Score: 4.80 | Update #62 | Latency: 42.64ms
+[2025-12-07 00:56:43] ✗ NEGATIVE | Customer: CUST_000090 | Cluster: 5 | Score: 4.96 | Update #63 | Latency: 59.05ms
+[2025-12-07 00:56:43] ✗ NEGATIVE | Customer: CUST_000090 | Cluster: 5 | Score: 4.96 | Update #64 | Latency: 44.86ms
+[2025-12-07 00:56:43] ✗ NEGATIVE | Customer: CUST_000090 | Cluster: 5 | Score: 4.96 | Update #65 | Latency: 46.42ms
+[2025-12-07 00:56:43] ✓ POSITIVE | Customer: CUST_000090 | Cluster: 5 | Score: 4.96 | Update #66 | Latency: 51.23ms
+[2025-12-07 00:56:43] 
+💾 Saving model after 66 updates...
+[2025-12-07 00:56:43] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.019s
+[2025-12-07 00:56:44] ✓ Current state: Components=8, Positive=46, Negative=20
+
+[2025-12-07 00:56:44] 📊 Metric recorded: Save time = 0.019s, Components = 8
+[2025-12-07 00:56:44] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:56:44] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: True
+[2025-12-07 00:56:44] Buffer size: 1/5
+[2025-12-07 00:56:45] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: True
+[2025-12-07 00:56:45] Buffer size: 2/5
+[2025-12-07 00:56:45] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: False
+[2025-12-07 00:56:45] Buffer size: 3/5
+[2025-12-07 00:56:45] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: True
+[2025-12-07 00:56:45] Buffer size: 4/5
+[2025-12-07 00:56:45] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: True
+[2025-12-07 00:56:45] Buffer size: 5/5
+[2025-12-07 00:56:45] 
+============================================================
+[2025-12-07 00:56:45] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:56:45] ============================================================
+[2025-12-07 00:56:45] ✓ POSITIVE | Customer: CUST_000090 | Cluster: 5 | Score: 5.13 | Update #67 | Latency: 37.91ms
+[2025-12-07 00:56:45] ✓ POSITIVE | Customer: CUST_000090 | Cluster: 5 | Score: 5.30 | Update #68 | Latency: 43.03ms
+[2025-12-07 00:56:45] ✗ NEGATIVE | Customer: CUST_000090 | Cluster: 5 | Score: 5.46 | Update #69 | Latency: 39.82ms
+[2025-12-07 00:56:45] ✓ POSITIVE | Customer: CUST_000090 | Cluster: 5 | Score: 5.46 | Update #70 | Latency: 42.07ms
+[2025-12-07 00:56:45] ✓ POSITIVE | Customer: CUST_000090 | Cluster: 5 | Score: 5.62 | Update #71 | Latency: 56.13ms
+[2025-12-07 00:56:45] 
+💾 Saving model after 71 updates...
+[2025-12-07 00:56:45] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.022s
+[2025-12-07 00:56:45] ✓ Current state: Components=8, Positive=50, Negative=21
+
+[2025-12-07 00:56:45] 📊 Metric recorded: Save time = 0.022s, Components = 8
+[2025-12-07 00:56:45] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:56:45] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: True
+[2025-12-07 00:56:45] Buffer size: 1/5
+[2025-12-07 00:56:45] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: False
+[2025-12-07 00:56:45] Buffer size: 2/5
+[2025-12-07 00:56:45] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: False
+[2025-12-07 00:56:45] Buffer size: 3/5
+[2025-12-07 00:56:45] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: True
+[2025-12-07 00:56:45] Buffer size: 4/5
+[2025-12-07 00:56:45] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: True
+[2025-12-07 00:56:45] Buffer size: 5/5
+[2025-12-07 00:56:45] 
+============================================================
+[2025-12-07 00:56:46] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:56:46] ============================================================
+[2025-12-07 00:56:46] ✓ POSITIVE | Customer: CUST_000090 | Cluster: 5 | Score: 5.79 | Update #72 | Latency: 40.74ms
+[2025-12-07 00:56:46] ✗ NEGATIVE | Customer: CUST_000090 | Cluster: 5 | Score: 5.95 | Update #73 | Latency: 37.78ms
+[2025-12-07 00:56:46] ✗ NEGATIVE | Customer: CUST_000090 | Cluster: 5 | Score: 5.95 | Update #74 | Latency: 38.66ms
+[2025-12-07 00:56:46] ✓ POSITIVE | Customer: CUST_000090 | Cluster: 5 | Score: 5.95 | Update #75 | Latency: 46.38ms
+[2025-12-07 00:56:46] ✓ POSITIVE | Customer: CUST_000090 | Cluster: 5 | Score: 6.11 | Update #76 | Latency: 41.31ms
+[2025-12-07 00:56:46] 
+💾 Saving model after 76 updates...
+[2025-12-07 00:56:46] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.018s
+[2025-12-07 00:56:46] ✓ Current state: Components=8, Positive=53, Negative=23
+
+[2025-12-07 00:56:46] 📊 Metric recorded: Save time = 0.018s, Components = 8
+[2025-12-07 00:56:46] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:56:46] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Bought: False
+[2025-12-07 00:56:46] Buffer size: 1/5
+[2025-12-07 00:57:03] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: True
+[2025-12-07 00:57:03] Buffer size: 2/5
+[2025-12-07 00:57:03] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: True
+[2025-12-07 00:57:03] Buffer size: 3/5
+[2025-12-07 00:57:03] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: False
+[2025-12-07 00:57:03] Buffer size: 4/5
+[2025-12-07 00:57:03] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: True
+[2025-12-07 00:57:03] Buffer size: 5/5
+[2025-12-07 00:57:03] 
+============================================================
+[2025-12-07 00:57:03] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:03] ============================================================
+[2025-12-07 00:57:03] ✗ NEGATIVE | Customer: CUST_000090 | Cluster: 5 | Score: 6.26 | Update #77 | Latency: 41.77ms
+[2025-12-07 00:57:03] ✓ POSITIVE | Customer: CUST_000099 | Cluster: 0 | Score: 4.89 | Update #78 | Latency: 44.37ms
+[2025-12-07 00:57:03] ✓ POSITIVE | Customer: CUST_000099 | Cluster: 0 | Score: 5.32 | Update #79 | Latency: 64.18ms
+[2025-12-07 00:57:03] ✗ NEGATIVE | Customer: CUST_000099 | Cluster: 0 | Score: 5.70 | Update #80 | Latency: 42.35ms
+[2025-12-07 00:57:03] ✓ POSITIVE | Customer: CUST_000099 | Cluster: 0 | Score: 5.70 | Update #81 | Latency: 46.16ms
+[2025-12-07 00:57:03] 
+💾 Saving model after 81 updates...
+[2025-12-07 00:57:03] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.023s
+[2025-12-07 00:57:03] ✓ Current state: Components=8, Positive=56, Negative=25
+
+[2025-12-07 00:57:03] 📊 Metric recorded: Save time = 0.023s, Components = 8
+[2025-12-07 00:57:03] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:03] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: True
+[2025-12-07 00:57:03] Buffer size: 1/5
+[2025-12-07 00:57:06] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: False
+[2025-12-07 00:57:06] Buffer size: 2/5
+[2025-12-07 00:57:06] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: True
+[2025-12-07 00:57:06] Buffer size: 3/5
+[2025-12-07 00:57:06] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: True
+[2025-12-07 00:57:06] Buffer size: 4/5
+[2025-12-07 00:57:06] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: True
+[2025-12-07 00:57:06] Buffer size: 5/5
+[2025-12-07 00:57:06] 
+============================================================
+[2025-12-07 00:57:06] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:06] ============================================================
+[2025-12-07 00:57:06] ✓ POSITIVE | Customer: CUST_000099 | Cluster: 0 | Score: 6.05 | Update #82 | Latency: 92.39ms
+[2025-12-07 00:57:06] ✗ NEGATIVE | Customer: CUST_000099 | Cluster: 0 | Score: 6.37 | Update #83 | Latency: 81.85ms
+[2025-12-07 00:57:06] ✓ POSITIVE | Customer: CUST_000099 | Cluster: 0 | Score: 6.37 | Update #84 | Latency: 48.18ms
+[2025-12-07 00:57:06] ✓ POSITIVE | Customer: CUST_000099 | Cluster: 0 | Score: 6.67 | Update #85 | Latency: 37.92ms
+[2025-12-07 00:57:06] ✓ POSITIVE | Customer: CUST_000099 | Cluster: 0 | Score: 6.96 | Update #86 | Latency: 45.63ms
+[2025-12-07 00:57:07] 
+💾 Saving model after 86 updates...
+[2025-12-07 00:57:07] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.024s
+[2025-12-07 00:57:07] ✓ Current state: Components=8, Positive=60, Negative=26
+
+[2025-12-07 00:57:07] 📊 Metric recorded: Save time = 0.024s, Components = 8
+[2025-12-07 00:57:07] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:07] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: True
+[2025-12-07 00:57:07] Buffer size: 1/5
+[2025-12-07 00:57:07] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: False
+[2025-12-07 00:57:07] Buffer size: 2/5
+[2025-12-07 00:57:07] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: True
+[2025-12-07 00:57:07] Buffer size: 3/5
+[2025-12-07 00:57:07] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: True
+[2025-12-07 00:57:07] Buffer size: 4/5
+[2025-12-07 00:57:07] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: True
+[2025-12-07 00:57:07] Buffer size: 5/5
+[2025-12-07 00:57:07] 
+============================================================
+[2025-12-07 00:57:07] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:07] ============================================================
+[2025-12-07 00:57:07] ✓ POSITIVE | Customer: CUST_000099 | Cluster: 0 | Score: 7.23 | Update #87 | Latency: 37.71ms
+[2025-12-07 00:57:07] ✗ NEGATIVE | Customer: CUST_000099 | Cluster: 0 | Score: 7.48 | Update #88 | Latency: 43.56ms
+[2025-12-07 00:57:07] ✓ POSITIVE | Customer: CUST_000099 | Cluster: 0 | Score: 7.48 | Update #89 | Latency: 41.88ms
+[2025-12-07 00:57:07] ✓ POSITIVE | Customer: CUST_000099 | Cluster: 0 | Score: 7.73 | Update #90 | Latency: 40.78ms
+[2025-12-07 00:57:07] ✓ POSITIVE | Customer: CUST_000099 | Cluster: 0 | Score: 7.96 | Update #91 | Latency: 45.67ms
+[2025-12-07 00:57:07] 
+💾 Saving model after 91 updates...
+[2025-12-07 00:57:07] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.025s
+[2025-12-07 00:57:07] ✓ Current state: Components=8, Positive=64, Negative=27
+
+[2025-12-07 00:57:07] 📊 Metric recorded: Save time = 0.025s, Components = 8
+[2025-12-07 00:57:07] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:07] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: False
+[2025-12-07 00:57:07] Buffer size: 1/5
+[2025-12-07 00:57:08] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: False
+[2025-12-07 00:57:08] Buffer size: 2/5
+[2025-12-07 00:57:08] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: False
+[2025-12-07 00:57:08] Buffer size: 3/5
+[2025-12-07 00:57:08] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: True
+[2025-12-07 00:57:08] Buffer size: 4/5
+[2025-12-07 00:57:08] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: False
+[2025-12-07 00:57:08] Buffer size: 5/5
+[2025-12-07 00:57:08] 
+============================================================
+[2025-12-07 00:57:08] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:08] ============================================================
+[2025-12-07 00:57:08] ✗ NEGATIVE | Customer: CUST_000099 | Cluster: 0 | Score: 8.19 | Update #92 | Latency: 44.92ms
+[2025-12-07 00:57:08] ✗ NEGATIVE | Customer: CUST_000099 | Cluster: 0 | Score: 8.19 | Update #93 | Latency: 45.51ms
+[2025-12-07 00:57:08] ✗ NEGATIVE | Customer: CUST_000099 | Cluster: 0 | Score: 8.19 | Update #94 | Latency: 40.24ms
+[2025-12-07 00:57:08] ✓ POSITIVE | Customer: CUST_000099 | Cluster: 0 | Score: 8.19 | Update #95 | Latency: 43.45ms
+[2025-12-07 00:57:08] ✗ NEGATIVE | Customer: CUST_000099 | Cluster: 0 | Score: 8.41 | Update #96 | Latency: 82.53ms
+[2025-12-07 00:57:08] 
+💾 Saving model after 96 updates...
+[2025-12-07 00:57:08] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.028s
+[2025-12-07 00:57:08] ✓ Current state: Components=8, Positive=65, Negative=31
+
+[2025-12-07 00:57:08] 📊 Metric recorded: Save time = 0.028s, Components = 8
+[2025-12-07 00:57:08] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:08] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: True
+[2025-12-07 00:57:08] Buffer size: 1/5
+[2025-12-07 00:57:08] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: True
+[2025-12-07 00:57:08] Buffer size: 2/5
+[2025-12-07 00:57:08] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: True
+[2025-12-07 00:57:09] Buffer size: 3/5
+[2025-12-07 00:57:09] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: False
+[2025-12-07 00:57:09] Buffer size: 4/5
+[2025-12-07 00:57:09] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: False
+[2025-12-07 00:57:09] Buffer size: 5/5
+[2025-12-07 00:57:09] 
+============================================================
+[2025-12-07 00:57:09] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:09] ============================================================
+[2025-12-07 00:57:09] ✓ POSITIVE | Customer: CUST_000099 | Cluster: 0 | Score: 8.41 | Update #97 | Latency: 37.81ms
+[2025-12-07 00:57:09] ✓ POSITIVE | Customer: CUST_000099 | Cluster: 0 | Score: 8.62 | Update #98 | Latency: 37.41ms
+[2025-12-07 00:57:09] ✓ POSITIVE | Customer: CUST_000099 | Cluster: 0 | Score: 8.83 | Update #99 | Latency: 41.62ms
+[2025-12-07 00:57:09] ✗ NEGATIVE | Customer: CUST_000099 | Cluster: 0 | Score: 9.03 | Update #100 | Latency: 37.80ms
+[2025-12-07 00:57:09] ✗ NEGATIVE | Customer: CUST_000099 | Cluster: 0 | Score: 9.03 | Update #101 | Latency: 59.68ms
+[2025-12-07 00:57:09] 
+💾 Saving model after 101 updates...
+[2025-12-07 00:57:09] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.018s
+[2025-12-07 00:57:09] ✓ Current state: Components=8, Positive=68, Negative=33
+
+[2025-12-07 00:57:09] 📊 Metric recorded: Save time = 0.018s, Components = 8
+[2025-12-07 00:57:09] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:09] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: True
+[2025-12-07 00:57:09] Buffer size: 1/5
+[2025-12-07 00:57:09] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: False
+[2025-12-07 00:57:09] Buffer size: 2/5
+[2025-12-07 00:57:09] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: True
+[2025-12-07 00:57:09] Buffer size: 3/5
+[2025-12-07 00:57:09] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: True
+[2025-12-07 00:57:09] Buffer size: 4/5
+[2025-12-07 00:57:09] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: True
+[2025-12-07 00:57:09] Buffer size: 5/5
+[2025-12-07 00:57:09] 
+============================================================
+[2025-12-07 00:57:09] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:09] ============================================================
+[2025-12-07 00:57:09] ✓ POSITIVE | Customer: CUST_000099 | Cluster: 0 | Score: 9.03 | Update #102 | Latency: 40.34ms
+[2025-12-07 00:57:10] ✗ NEGATIVE | Customer: CUST_000099 | Cluster: 0 | Score: 9.22 | Update #103 | Latency: 69.87ms
+[2025-12-07 00:57:10] ✓ POSITIVE | Customer: CUST_000099 | Cluster: 0 | Score: 9.22 | Update #104 | Latency: 44.79ms
+[2025-12-07 00:57:10] ✓ POSITIVE | Customer: CUST_000099 | Cluster: 0 | Score: 9.41 | Update #105 | Latency: 43.03ms
+[2025-12-07 00:57:10] ✓ POSITIVE | Customer: CUST_000099 | Cluster: 0 | Score: 9.60 | Update #106 | Latency: 37.59ms
+[2025-12-07 00:57:10] 
+💾 Saving model after 106 updates...
+[2025-12-07 00:57:10] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.020s
+[2025-12-07 00:57:10] ✓ Current state: Components=8, Positive=72, Negative=34
+
+[2025-12-07 00:57:10] 📊 Metric recorded: Save time = 0.020s, Components = 8
+[2025-12-07 00:57:10] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:10] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: True
+[2025-12-07 00:57:10] Buffer size: 1/5
+[2025-12-07 00:57:10] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Bought: False
+[2025-12-07 00:57:10] Buffer size: 2/5
+[2025-12-07 00:57:19] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: False
+[2025-12-07 00:57:19] Buffer size: 3/5
+[2025-12-07 00:57:19] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: False
+[2025-12-07 00:57:19] Buffer size: 4/5
+[2025-12-07 00:57:19] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:19] Buffer size: 5/5
+[2025-12-07 00:57:19] 
+============================================================
+[2025-12-07 00:57:19] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:19] ============================================================
+[2025-12-07 00:57:20] ✓ POSITIVE | Customer: CUST_000099 | Cluster: 0 | Score: 9.78 | Update #107 | Latency: 74.78ms
+[2025-12-07 00:57:20] ✗ NEGATIVE | Customer: CUST_000099 | Cluster: 0 | Score: 9.96 | Update #108 | Latency: 77.22ms
+[2025-12-07 00:57:20] ✗ NEGATIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #109 | Latency: 49.44ms
+[2025-12-07 00:57:20] ✗ NEGATIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #110 | Latency: 37.34ms
+[2025-12-07 00:57:20] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #111 | Latency: 75.64ms
+[2025-12-07 00:57:20] 
+💾 Saving model after 111 updates...
+[2025-12-07 00:57:20] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.023s
+[2025-12-07 00:57:20] ✓ Current state: Components=8, Positive=74, Negative=37
+
+[2025-12-07 00:57:20] 📊 Metric recorded: Save time = 0.023s, Components = 8
+[2025-12-07 00:57:20] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:20] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:20] Buffer size: 1/5
+[2025-12-07 00:57:20] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:20] Buffer size: 2/5
+[2025-12-07 00:57:20] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: False
+[2025-12-07 00:57:20] Buffer size: 3/5
+[2025-12-07 00:57:20] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: False
+[2025-12-07 00:57:20] Buffer size: 4/5
+[2025-12-07 00:57:21] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:21] Buffer size: 5/5
+[2025-12-07 00:57:21] 
+============================================================
+[2025-12-07 00:57:21] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:21] ============================================================
+[2025-12-07 00:57:21] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #112 | Latency: 106.57ms
+[2025-12-07 00:57:21] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #113 | Latency: 75.50ms
+[2025-12-07 00:57:21] ✗ NEGATIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #114 | Latency: 74.40ms
+[2025-12-07 00:57:21] ✗ NEGATIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #115 | Latency: 117.69ms
+[2025-12-07 00:57:21] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #116 | Latency: 56.84ms
+[2025-12-07 00:57:21] 
+💾 Saving model after 116 updates...
+[2025-12-07 00:57:21] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.028s
+[2025-12-07 00:57:21] ✓ Current state: Components=8, Positive=77, Negative=39
+
+[2025-12-07 00:57:22] 📊 Metric recorded: Save time = 0.028s, Components = 8
+[2025-12-07 00:57:22] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:22] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:22] Buffer size: 1/5
+[2025-12-07 00:57:22] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:22] Buffer size: 2/5
+[2025-12-07 00:57:22] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:22] Buffer size: 3/5
+[2025-12-07 00:57:22] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:22] Buffer size: 4/5
+[2025-12-07 00:57:22] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: False
+[2025-12-07 00:57:22] Buffer size: 5/5
+[2025-12-07 00:57:22] 
+============================================================
+[2025-12-07 00:57:23] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:23] ============================================================
+[2025-12-07 00:57:23] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #117 | Latency: 45.47ms
+[2025-12-07 00:57:23] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #118 | Latency: 55.19ms
+[2025-12-07 00:57:23] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #119 | Latency: 45.02ms
+[2025-12-07 00:57:23] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #120 | Latency: 41.17ms
+[2025-12-07 00:57:23] ✗ NEGATIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #121 | Latency: 49.74ms
+[2025-12-07 00:57:23] 
+💾 Saving model after 121 updates...
+[2025-12-07 00:57:23] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.021s
+[2025-12-07 00:57:23] ✓ Current state: Components=8, Positive=81, Negative=40
+
+[2025-12-07 00:57:23] 📊 Metric recorded: Save time = 0.021s, Components = 8
+[2025-12-07 00:57:23] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:23] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: False
+[2025-12-07 00:57:23] Buffer size: 1/5
+[2025-12-07 00:57:23] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:23] Buffer size: 2/5
+[2025-12-07 00:57:23] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: False
+[2025-12-07 00:57:23] Buffer size: 3/5
+[2025-12-07 00:57:23] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: False
+[2025-12-07 00:57:23] Buffer size: 4/5
+[2025-12-07 00:57:23] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: False
+[2025-12-07 00:57:23] Buffer size: 5/5
+[2025-12-07 00:57:23] 
+============================================================
+[2025-12-07 00:57:23] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:23] ============================================================
+[2025-12-07 00:57:24] ✗ NEGATIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #122 | Latency: 43.44ms
+[2025-12-07 00:57:24] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #123 | Latency: 42.99ms
+[2025-12-07 00:57:24] ✗ NEGATIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #124 | Latency: 43.61ms
+[2025-12-07 00:57:24] ✗ NEGATIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #125 | Latency: 62.05ms
+[2025-12-07 00:57:24] ✗ NEGATIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #126 | Latency: 57.29ms
+[2025-12-07 00:57:24] 
+💾 Saving model after 126 updates...
+[2025-12-07 00:57:24] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.050s
+[2025-12-07 00:57:24] ✓ Current state: Components=8, Positive=82, Negative=44
+
+[2025-12-07 00:57:24] 📊 Metric recorded: Save time = 0.050s, Components = 8
+[2025-12-07 00:57:24] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:24] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: False
+[2025-12-07 00:57:24] Buffer size: 1/5
+[2025-12-07 00:57:24] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:24] Buffer size: 2/5
+[2025-12-07 00:57:24] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:24] Buffer size: 3/5
+[2025-12-07 00:57:24] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:24] Buffer size: 4/5
+[2025-12-07 00:57:24] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: False
+[2025-12-07 00:57:24] Buffer size: 5/5
+[2025-12-07 00:57:24] 
+============================================================
+[2025-12-07 00:57:24] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:24] ============================================================
+[2025-12-07 00:57:25] ✗ NEGATIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #127 | Latency: 59.07ms
+[2025-12-07 00:57:25] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #128 | Latency: 43.68ms
+[2025-12-07 00:57:25] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #129 | Latency: 46.47ms
+[2025-12-07 00:57:25] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #130 | Latency: 59.81ms
+[2025-12-07 00:57:25] ✗ NEGATIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #131 | Latency: 90.01ms
+[2025-12-07 00:57:25] 
+💾 Saving model after 131 updates...
+[2025-12-07 00:57:25] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.026s
+[2025-12-07 00:57:25] ✓ Current state: Components=8, Positive=85, Negative=46
+
+[2025-12-07 00:57:25] 📊 Metric recorded: Save time = 0.026s, Components = 8
+[2025-12-07 00:57:25] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:25] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:25] Buffer size: 1/5
+[2025-12-07 00:57:25] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:25] Buffer size: 2/5
+[2025-12-07 00:57:25] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:25] Buffer size: 3/5
+[2025-12-07 00:57:25] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:25] Buffer size: 4/5
+[2025-12-07 00:57:25] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:25] Buffer size: 5/5
+[2025-12-07 00:57:25] 
+============================================================
+[2025-12-07 00:57:25] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:25] ============================================================
+[2025-12-07 00:57:26] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #132 | Latency: 47.23ms
+[2025-12-07 00:57:26] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #133 | Latency: 50.33ms
+[2025-12-07 00:57:26] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #134 | Latency: 42.47ms
+[2025-12-07 00:57:26] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #135 | Latency: 64.99ms
+[2025-12-07 00:57:26] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #136 | Latency: 55.70ms
+[2025-12-07 00:57:26] 
+💾 Saving model after 136 updates...
+[2025-12-07 00:57:26] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.024s
+[2025-12-07 00:57:26] ✓ Current state: Components=8, Positive=90, Negative=46
+
+[2025-12-07 00:57:26] 📊 Metric recorded: Save time = 0.024s, Components = 8
+[2025-12-07 00:57:26] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:26] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: False
+[2025-12-07 00:57:26] Buffer size: 1/5
+[2025-12-07 00:57:26] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:26] Buffer size: 2/5
+[2025-12-07 00:57:26] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:26] Buffer size: 3/5
+[2025-12-07 00:57:26] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:26] Buffer size: 4/5
+[2025-12-07 00:57:26] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:26] Buffer size: 5/5
+[2025-12-07 00:57:26] 
+============================================================
+[2025-12-07 00:57:26] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:26] ============================================================
+[2025-12-07 00:57:26] ✗ NEGATIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #137 | Latency: 58.23ms
+[2025-12-07 00:57:26] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #138 | Latency: 42.25ms
+[2025-12-07 00:57:26] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #139 | Latency: 44.65ms
+[2025-12-07 00:57:27] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #140 | Latency: 65.59ms
+[2025-12-07 00:57:27] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #141 | Latency: 46.27ms
+[2025-12-07 00:57:27] 
+💾 Saving model after 141 updates...
+[2025-12-07 00:57:27] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.024s
+[2025-12-07 00:57:27] ✓ Current state: Components=8, Positive=94, Negative=47
+
+[2025-12-07 00:57:27] 📊 Metric recorded: Save time = 0.024s, Components = 8
+[2025-12-07 00:57:27] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:27] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:27] Buffer size: 1/5
+[2025-12-07 00:57:27] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:27] Buffer size: 2/5
+[2025-12-07 00:57:27] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: False
+[2025-12-07 00:57:27] Buffer size: 3/5
+[2025-12-07 00:57:27] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: False
+[2025-12-07 00:57:27] Buffer size: 4/5
+[2025-12-07 00:57:27] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:27] Buffer size: 5/5
+[2025-12-07 00:57:27] 
+============================================================
+[2025-12-07 00:57:27] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:27] ============================================================
+[2025-12-07 00:57:27] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #142 | Latency: 57.04ms
+[2025-12-07 00:57:27] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #143 | Latency: 87.03ms
+[2025-12-07 00:57:28] ✗ NEGATIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #144 | Latency: 102.77ms
+[2025-12-07 00:57:28] ✗ NEGATIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #145 | Latency: 80.36ms
+[2025-12-07 00:57:28] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #146 | Latency: 57.74ms
+[2025-12-07 00:57:28] 
+💾 Saving model after 146 updates...
+[2025-12-07 00:57:28] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.020s
+[2025-12-07 00:57:28] ✓ Current state: Components=8, Positive=97, Negative=49
+
+[2025-12-07 00:57:28] 📊 Metric recorded: Save time = 0.020s, Components = 8
+[2025-12-07 00:57:28] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:28] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:28] Buffer size: 1/5
+[2025-12-07 00:57:28] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:28] Buffer size: 2/5
+[2025-12-07 00:57:28] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: False
+[2025-12-07 00:57:28] Buffer size: 3/5
+[2025-12-07 00:57:28] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:28] Buffer size: 4/5
+[2025-12-07 00:57:28] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:28] Buffer size: 5/5
+[2025-12-07 00:57:28] 
+============================================================
+[2025-12-07 00:57:28] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:28] ============================================================
+[2025-12-07 00:57:28] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #147 | Latency: 51.71ms
+[2025-12-07 00:57:29] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #148 | Latency: 53.73ms
+[2025-12-07 00:57:29] ✗ NEGATIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #149 | Latency: 75.47ms
+[2025-12-07 00:57:29] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #150 | Latency: 41.25ms
+[2025-12-07 00:57:29] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #151 | Latency: 37.03ms
+[2025-12-07 00:57:29] 
+💾 Saving model after 151 updates...
+[2025-12-07 00:57:29] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.028s
+[2025-12-07 00:57:29] ✓ Current state: Components=8, Positive=101, Negative=50
+
+[2025-12-07 00:57:29] 📊 Metric recorded: Save time = 0.028s, Components = 8
+[2025-12-07 00:57:29] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:29] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:29] Buffer size: 1/5
+[2025-12-07 00:57:29] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:29] Buffer size: 2/5
+[2025-12-07 00:57:29] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: True
+[2025-12-07 00:57:29] Buffer size: 3/5
+[2025-12-07 00:57:29] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Bought: False
+[2025-12-07 00:57:29] Buffer size: 4/5
+[2025-12-07 00:57:29] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:29] Buffer size: 5/5
+[2025-12-07 00:57:29] 
+============================================================
+[2025-12-07 00:57:29] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:29] ============================================================
+[2025-12-07 00:57:29] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #152 | Latency: 37.68ms
+[2025-12-07 00:57:29] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #153 | Latency: 44.81ms
+[2025-12-07 00:57:29] ✓ POSITIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #154 | Latency: 54.11ms
+[2025-12-07 00:57:29] ✗ NEGATIVE | Customer: CUST_000113 | Cluster: 5 | Score: -9.23 | Update #155 | Latency: 79.42ms
+[2025-12-07 00:57:30] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: -5.00 | Update #156 | Latency: 51.54ms
+[2025-12-07 00:57:30] 
+💾 Saving model after 156 updates...
+[2025-12-07 00:57:30] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.022s
+[2025-12-07 00:57:30] ✓ Current state: Components=8, Positive=105, Negative=51
+
+[2025-12-07 00:57:30] 📊 Metric recorded: Save time = 0.022s, Components = 8
+[2025-12-07 00:57:30] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:30] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:30] Buffer size: 1/5
+[2025-12-07 00:57:30] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:30] Buffer size: 2/5
+[2025-12-07 00:57:30] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:30] Buffer size: 3/5
+[2025-12-07 00:57:30] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:30] Buffer size: 4/5
+[2025-12-07 00:57:30] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: False
+[2025-12-07 00:57:30] Buffer size: 5/5
+[2025-12-07 00:57:30] 
+============================================================
+[2025-12-07 00:57:30] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:30] ============================================================
+[2025-12-07 00:57:30] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: -1.06 | Update #157 | Latency: 41.93ms
+[2025-12-07 00:57:30] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 0.28 | Update #158 | Latency: 37.71ms
+[2025-12-07 00:57:30] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 1.13 | Update #159 | Latency: 38.29ms
+[2025-12-07 00:57:30] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 1.76 | Update #160 | Latency: 39.64ms
+[2025-12-07 00:57:30] ✗ NEGATIVE | Customer: CUST_000116 | Cluster: 1 | Score: 2.26 | Update #161 | Latency: 63.04ms
+[2025-12-07 00:57:30] 
+💾 Saving model after 161 updates...
+[2025-12-07 00:57:30] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.018s
+[2025-12-07 00:57:30] ✓ Current state: Components=8, Positive=109, Negative=52
+
+[2025-12-07 00:57:30] 📊 Metric recorded: Save time = 0.018s, Components = 8
+[2025-12-07 00:57:30] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:30] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: False
+[2025-12-07 00:57:30] Buffer size: 1/5
+[2025-12-07 00:57:30] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: False
+[2025-12-07 00:57:31] Buffer size: 2/5
+[2025-12-07 00:57:31] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:31] Buffer size: 3/5
+[2025-12-07 00:57:31] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:31] Buffer size: 4/5
+[2025-12-07 00:57:31] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:31] Buffer size: 5/5
+[2025-12-07 00:57:31] 
+============================================================
+[2025-12-07 00:57:31] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:31] ============================================================
+[2025-12-07 00:57:31] ✗ NEGATIVE | Customer: CUST_000116 | Cluster: 1 | Score: 2.26 | Update #162 | Latency: 45.43ms
+[2025-12-07 00:57:31] ✗ NEGATIVE | Customer: CUST_000116 | Cluster: 1 | Score: 2.26 | Update #163 | Latency: 64.04ms
+[2025-12-07 00:57:31] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 2.26 | Update #164 | Latency: 37.67ms
+[2025-12-07 00:57:31] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 2.68 | Update #165 | Latency: 37.77ms
+[2025-12-07 00:57:31] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 3.04 | Update #166 | Latency: 38.25ms
+[2025-12-07 00:57:31] 
+💾 Saving model after 166 updates...
+[2025-12-07 00:57:31] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.035s
+[2025-12-07 00:57:31] ✓ Current state: Components=8, Positive=112, Negative=54
+
+[2025-12-07 00:57:31] 📊 Metric recorded: Save time = 0.035s, Components = 8
+[2025-12-07 00:57:31] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:31] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:31] Buffer size: 1/5
+[2025-12-07 00:57:31] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: False
+[2025-12-07 00:57:31] Buffer size: 2/5
+[2025-12-07 00:57:31] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:31] Buffer size: 3/5
+[2025-12-07 00:57:31] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: False
+[2025-12-07 00:57:31] Buffer size: 4/5
+[2025-12-07 00:57:31] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:31] Buffer size: 5/5
+[2025-12-07 00:57:31] 
+============================================================
+[2025-12-07 00:57:31] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:31] ============================================================
+[2025-12-07 00:57:32] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 3.37 | Update #167 | Latency: 38.50ms
+[2025-12-07 00:57:32] ✗ NEGATIVE | Customer: CUST_000116 | Cluster: 1 | Score: 3.66 | Update #168 | Latency: 43.78ms
+[2025-12-07 00:57:32] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 3.66 | Update #169 | Latency: 37.66ms
+[2025-12-07 00:57:32] ✗ NEGATIVE | Customer: CUST_000116 | Cluster: 1 | Score: 3.94 | Update #170 | Latency: 43.12ms
+[2025-12-07 00:57:32] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 3.94 | Update #171 | Latency: 37.34ms
+[2025-12-07 00:57:32] 
+💾 Saving model after 171 updates...
+[2025-12-07 00:57:32] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.021s
+[2025-12-07 00:57:32] ✓ Current state: Components=8, Positive=115, Negative=56
+
+[2025-12-07 00:57:32] 📊 Metric recorded: Save time = 0.021s, Components = 8
+[2025-12-07 00:57:32] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:32] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: False
+[2025-12-07 00:57:32] Buffer size: 1/5
+[2025-12-07 00:57:32] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:32] Buffer size: 2/5
+[2025-12-07 00:57:32] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:32] Buffer size: 3/5
+[2025-12-07 00:57:32] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: False
+[2025-12-07 00:57:32] Buffer size: 4/5
+[2025-12-07 00:57:32] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:32] Buffer size: 5/5
+[2025-12-07 00:57:32] 
+============================================================
+[2025-12-07 00:57:32] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:32] ============================================================
+[2025-12-07 00:57:32] ✗ NEGATIVE | Customer: CUST_000116 | Cluster: 1 | Score: 4.20 | Update #172 | Latency: 50.92ms
+[2025-12-07 00:57:32] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 4.20 | Update #173 | Latency: 44.44ms
+[2025-12-07 00:57:32] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 4.44 | Update #174 | Latency: 37.33ms
+[2025-12-07 00:57:33] ✗ NEGATIVE | Customer: CUST_000116 | Cluster: 1 | Score: 4.67 | Update #175 | Latency: 68.72ms
+[2025-12-07 00:57:33] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 4.67 | Update #176 | Latency: 44.65ms
+[2025-12-07 00:57:33] 
+💾 Saving model after 176 updates...
+[2025-12-07 00:57:33] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.021s
+[2025-12-07 00:57:33] ✓ Current state: Components=8, Positive=118, Negative=58
+
+[2025-12-07 00:57:33] 📊 Metric recorded: Save time = 0.021s, Components = 8
+[2025-12-07 00:57:33] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:33] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:33] Buffer size: 1/5
+[2025-12-07 00:57:33] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:33] Buffer size: 2/5
+[2025-12-07 00:57:33] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:33] Buffer size: 3/5
+[2025-12-07 00:57:33] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: False
+[2025-12-07 00:57:33] Buffer size: 4/5
+[2025-12-07 00:57:33] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:33] Buffer size: 5/5
+[2025-12-07 00:57:33] 
+============================================================
+[2025-12-07 00:57:33] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:33] ============================================================
+[2025-12-07 00:57:33] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 4.89 | Update #177 | Latency: 45.31ms
+[2025-12-07 00:57:33] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 5.11 | Update #178 | Latency: 46.85ms
+[2025-12-07 00:57:33] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 5.32 | Update #179 | Latency: 47.65ms
+[2025-12-07 00:57:33] ✗ NEGATIVE | Customer: CUST_000116 | Cluster: 1 | Score: 5.52 | Update #180 | Latency: 44.09ms
+[2025-12-07 00:57:33] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 5.52 | Update #181 | Latency: 66.30ms
+[2025-12-07 00:57:33] 
+💾 Saving model after 181 updates...
+[2025-12-07 00:57:33] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.018s
+[2025-12-07 00:57:33] ✓ Current state: Components=8, Positive=122, Negative=59
+
+[2025-12-07 00:57:33] 📊 Metric recorded: Save time = 0.018s, Components = 8
+[2025-12-07 00:57:34] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:34] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: False
+[2025-12-07 00:57:34] Buffer size: 1/5
+[2025-12-07 00:57:34] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: False
+[2025-12-07 00:57:34] Buffer size: 2/5
+[2025-12-07 00:57:34] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:34] Buffer size: 3/5
+[2025-12-07 00:57:34] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:34] Buffer size: 4/5
+[2025-12-07 00:57:34] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:34] Buffer size: 5/5
+[2025-12-07 00:57:34] 
+============================================================
+[2025-12-07 00:57:34] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:34] ============================================================
+[2025-12-07 00:57:34] ✗ NEGATIVE | Customer: CUST_000116 | Cluster: 1 | Score: 5.72 | Update #182 | Latency: 48.51ms
+[2025-12-07 00:57:34] ✗ NEGATIVE | Customer: CUST_000116 | Cluster: 1 | Score: 5.72 | Update #183 | Latency: 46.11ms
+[2025-12-07 00:57:34] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 5.72 | Update #184 | Latency: 38.03ms
+[2025-12-07 00:57:34] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 5.91 | Update #185 | Latency: 53.22ms
+[2025-12-07 00:57:34] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 6.10 | Update #186 | Latency: 41.58ms
+[2025-12-07 00:57:34] 
+💾 Saving model after 186 updates...
+[2025-12-07 00:57:34] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.024s
+[2025-12-07 00:57:34] ✓ Current state: Components=8, Positive=125, Negative=61
+
+[2025-12-07 00:57:34] 📊 Metric recorded: Save time = 0.024s, Components = 8
+[2025-12-07 00:57:34] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:35] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:35] Buffer size: 1/5
+[2025-12-07 00:57:35] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:35] Buffer size: 2/5
+[2025-12-07 00:57:35] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: False
+[2025-12-07 00:57:35] Buffer size: 3/5
+[2025-12-07 00:57:35] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:35] Buffer size: 4/5
+[2025-12-07 00:57:35] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: False
+[2025-12-07 00:57:35] Buffer size: 5/5
+[2025-12-07 00:57:35] 
+============================================================
+[2025-12-07 00:57:35] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:35] ============================================================
+[2025-12-07 00:57:35] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 6.29 | Update #187 | Latency: 64.34ms
+[2025-12-07 00:57:35] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 6.47 | Update #188 | Latency: 67.43ms
+[2025-12-07 00:57:35] ✗ NEGATIVE | Customer: CUST_000116 | Cluster: 1 | Score: 6.65 | Update #189 | Latency: 39.19ms
+[2025-12-07 00:57:35] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 6.65 | Update #190 | Latency: 51.89ms
+[2025-12-07 00:57:35] ✗ NEGATIVE | Customer: CUST_000116 | Cluster: 1 | Score: 6.83 | Update #191 | Latency: 38.34ms
+[2025-12-07 00:57:35] 
+💾 Saving model after 191 updates...
+[2025-12-07 00:57:35] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.018s
+[2025-12-07 00:57:35] ✓ Current state: Components=8, Positive=128, Negative=63
+
+[2025-12-07 00:57:35] 📊 Metric recorded: Save time = 0.018s, Components = 8
+[2025-12-07 00:57:35] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:35] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:35] Buffer size: 1/5
+[2025-12-07 00:57:35] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:35] Buffer size: 2/5
+[2025-12-07 00:57:35] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: False
+[2025-12-07 00:57:35] Buffer size: 3/5
+[2025-12-07 00:57:35] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:35] Buffer size: 4/5
+[2025-12-07 00:57:35] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:35] Buffer size: 5/5
+[2025-12-07 00:57:35] 
+============================================================
+[2025-12-07 00:57:36] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:36] ============================================================
+[2025-12-07 00:57:36] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 6.83 | Update #192 | Latency: 45.29ms
+[2025-12-07 00:57:36] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 7.01 | Update #193 | Latency: 39.41ms
+[2025-12-07 00:57:36] ✗ NEGATIVE | Customer: CUST_000116 | Cluster: 1 | Score: 7.19 | Update #194 | Latency: 50.61ms
+[2025-12-07 00:57:36] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 7.19 | Update #195 | Latency: 49.06ms
+[2025-12-07 00:57:36] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 7.36 | Update #196 | Latency: 49.37ms
+[2025-12-07 00:57:36] 
+💾 Saving model after 196 updates...
+[2025-12-07 00:57:36] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.020s
+[2025-12-07 00:57:36] ✓ Current state: Components=8, Positive=132, Negative=64
+
+[2025-12-07 00:57:36] 📊 Metric recorded: Save time = 0.020s, Components = 8
+[2025-12-07 00:57:36] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:36] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: False
+[2025-12-07 00:57:36] Buffer size: 1/5
+[2025-12-07 00:57:36] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:36] Buffer size: 2/5
+[2025-12-07 00:57:36] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: False
+[2025-12-07 00:57:36] Buffer size: 3/5
+[2025-12-07 00:57:36] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: False
+[2025-12-07 00:57:36] Buffer size: 4/5
+[2025-12-07 00:57:36] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:36] Buffer size: 5/5
+[2025-12-07 00:57:36] 
+============================================================
+[2025-12-07 00:57:37] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:37] ============================================================
+[2025-12-07 00:57:37] ✗ NEGATIVE | Customer: CUST_000116 | Cluster: 1 | Score: 7.53 | Update #197 | Latency: 46.73ms
+[2025-12-07 00:57:37] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 7.53 | Update #198 | Latency: 54.45ms
+[2025-12-07 00:57:37] ✗ NEGATIVE | Customer: CUST_000116 | Cluster: 1 | Score: 7.70 | Update #199 | Latency: 58.31ms
+[2025-12-07 00:57:37] ✗ NEGATIVE | Customer: CUST_000116 | Cluster: 1 | Score: 7.70 | Update #200 | Latency: 38.61ms
+[2025-12-07 00:57:37] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 7.70 | Update #201 | Latency: 42.26ms
+[2025-12-07 00:57:37] 
+💾 Saving model after 201 updates...
+[2025-12-07 00:57:37] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.021s
+[2025-12-07 00:57:37] ✓ Current state: Components=8, Positive=134, Negative=67
+
+[2025-12-07 00:57:37] 📊 Metric recorded: Save time = 0.021s, Components = 8
+[2025-12-07 00:57:37] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:37] Buffer size: 1/5
+[2025-12-07 00:57:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: False
+[2025-12-07 00:57:37] Buffer size: 2/5
+[2025-12-07 00:57:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:37] Buffer size: 3/5
+[2025-12-07 00:57:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:37] Buffer size: 4/5
+[2025-12-07 00:57:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:37] Buffer size: 5/5
+[2025-12-07 00:57:37] 
+============================================================
+[2025-12-07 00:57:37] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:37] ============================================================
+[2025-12-07 00:57:37] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 7.87 | Update #202 | Latency: 43.50ms
+[2025-12-07 00:57:38] ✗ NEGATIVE | Customer: CUST_000116 | Cluster: 1 | Score: 8.04 | Update #203 | Latency: 41.34ms
+[2025-12-07 00:57:38] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 8.04 | Update #204 | Latency: 37.56ms
+[2025-12-07 00:57:38] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 8.21 | Update #205 | Latency: 48.50ms
+[2025-12-07 00:57:38] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 8.38 | Update #206 | Latency: 39.74ms
+[2025-12-07 00:57:38] 
+💾 Saving model after 206 updates...
+[2025-12-07 00:57:38] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.021s
+[2025-12-07 00:57:38] ✓ Current state: Components=8, Positive=138, Negative=68
+
+[2025-12-07 00:57:38] 📊 Metric recorded: Save time = 0.021s, Components = 8
+[2025-12-07 00:57:38] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:38] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:38] Buffer size: 1/5
+[2025-12-07 00:57:38] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: False
+[2025-12-07 00:57:38] Buffer size: 2/5
+[2025-12-07 00:57:38] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: False
+[2025-12-07 00:57:38] Buffer size: 3/5
+[2025-12-07 00:57:38] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: False
+[2025-12-07 00:57:38] Buffer size: 4/5
+[2025-12-07 00:57:38] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: False
+[2025-12-07 00:57:38] Buffer size: 5/5
+[2025-12-07 00:57:38] 
+============================================================
+[2025-12-07 00:57:38] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:38] ============================================================
+[2025-12-07 00:57:38] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 8.54 | Update #207 | Latency: 43.63ms
+[2025-12-07 00:57:38] ✗ NEGATIVE | Customer: CUST_000116 | Cluster: 1 | Score: 8.71 | Update #208 | Latency: 38.79ms
+[2025-12-07 00:57:38] ✗ NEGATIVE | Customer: CUST_000116 | Cluster: 1 | Score: 8.71 | Update #209 | Latency: 43.65ms
+[2025-12-07 00:57:38] ✗ NEGATIVE | Customer: CUST_000116 | Cluster: 1 | Score: 8.71 | Update #210 | Latency: 56.21ms
+[2025-12-07 00:57:39] ✗ NEGATIVE | Customer: CUST_000116 | Cluster: 1 | Score: 8.71 | Update #211 | Latency: 59.51ms
+[2025-12-07 00:57:39] 
+💾 Saving model after 211 updates...
+[2025-12-07 00:57:39] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.021s
+[2025-12-07 00:57:39] ✓ Current state: Components=8, Positive=139, Negative=72
+
+[2025-12-07 00:57:39] 📊 Metric recorded: Save time = 0.021s, Components = 8
+[2025-12-07 00:57:39] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:39] 📥 RECEIVED FEEDBACK | Customer: CUST_000116 | Bought: True
+[2025-12-07 00:57:39] Buffer size: 1/5
+[2025-12-07 00:57:49] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:49] Buffer size: 2/5
+[2025-12-07 00:57:49] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: False
+[2025-12-07 00:57:49] Buffer size: 3/5
+[2025-12-07 00:57:49] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:49] Buffer size: 4/5
+[2025-12-07 00:57:49] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:49] Buffer size: 5/5
+[2025-12-07 00:57:49] 
+============================================================
+[2025-12-07 00:57:49] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:49] ============================================================
+[2025-12-07 00:57:49] ✓ POSITIVE | Customer: CUST_000116 | Cluster: 1 | Score: 8.71 | Update #212 | Latency: 65.53ms
+[2025-12-07 00:57:50] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 5 | Score: -0.00 | Update #213 | Latency: 78.32ms
+[2025-12-07 00:57:50] ✗ NEGATIVE | Customer: CUST_000143 | Cluster: 5 | Score: -0.00 | Update #214 | Latency: 47.52ms
+[2025-12-07 00:57:50] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 5 | Score: -0.00 | Update #215 | Latency: 161.37ms
+[2025-12-07 00:57:50] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 26.76 | Update #216 | Latency: 77.50ms
+[2025-12-07 00:57:50] 
+💾 Saving model after 216 updates...
+[2025-12-07 00:57:50] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.023s
+[2025-12-07 00:57:50] ✓ Current state: Components=11, Positive=143, Negative=73
+
+[2025-12-07 00:57:50] 📊 Metric recorded: Save time = 0.023s, Components = 11
+[2025-12-07 00:57:50] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:50] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:50] Buffer size: 1/5
+[2025-12-07 00:57:50] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:50] Buffer size: 2/5
+[2025-12-07 00:57:50] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:50] Buffer size: 3/5
+[2025-12-07 00:57:52] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:52] Buffer size: 4/5
+[2025-12-07 00:57:52] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: False
+[2025-12-07 00:57:52] Buffer size: 5/5
+[2025-12-07 00:57:52] 
+============================================================
+[2025-12-07 00:57:52] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:52] ============================================================
+[2025-12-07 00:57:52] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 26.85 | Update #217 | Latency: 44.65ms
+[2025-12-07 00:57:52] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 26.93 | Update #218 | Latency: 48.48ms
+[2025-12-07 00:57:52] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 27.01 | Update #219 | Latency: 87.04ms
+[2025-12-07 00:57:53] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 27.09 | Update #220 | Latency: 68.65ms
+[2025-12-07 00:57:53] ✗ NEGATIVE | Customer: CUST_000143 | Cluster: 10 | Score: 27.16 | Update #221 | Latency: 47.57ms
+[2025-12-07 00:57:53] 
+💾 Saving model after 221 updates...
+[2025-12-07 00:57:53] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.048s
+[2025-12-07 00:57:53] ✓ Current state: Components=11, Positive=147, Negative=74
+
+[2025-12-07 00:57:53] 📊 Metric recorded: Save time = 0.048s, Components = 11
+[2025-12-07 00:57:53] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:53] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:53] Buffer size: 1/5
+[2025-12-07 00:57:53] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: False
+[2025-12-07 00:57:53] Buffer size: 2/5
+[2025-12-07 00:57:53] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:53] Buffer size: 3/5
+[2025-12-07 00:57:53] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: False
+[2025-12-07 00:57:53] Buffer size: 4/5
+[2025-12-07 00:57:53] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:53] Buffer size: 5/5
+[2025-12-07 00:57:53] 
+============================================================
+[2025-12-07 00:57:53] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:53] ============================================================
+[2025-12-07 00:57:53] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 27.16 | Update #222 | Latency: 49.77ms
+[2025-12-07 00:57:53] ✗ NEGATIVE | Customer: CUST_000143 | Cluster: 10 | Score: 27.24 | Update #223 | Latency: 50.34ms
+[2025-12-07 00:57:53] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 27.24 | Update #224 | Latency: 137.26ms
+[2025-12-07 00:57:54] ✗ NEGATIVE | Customer: CUST_000143 | Cluster: 10 | Score: 27.31 | Update #225 | Latency: 86.50ms
+[2025-12-07 00:57:54] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 27.31 | Update #226 | Latency: 89.01ms
+[2025-12-07 00:57:54] 
+💾 Saving model after 226 updates...
+[2025-12-07 00:57:54] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.029s
+[2025-12-07 00:57:54] ✓ Current state: Components=11, Positive=150, Negative=76
+
+[2025-12-07 00:57:54] 📊 Metric recorded: Save time = 0.029s, Components = 11
+[2025-12-07 00:57:54] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:54] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:54] Buffer size: 1/5
+[2025-12-07 00:57:54] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:54] Buffer size: 2/5
+[2025-12-07 00:57:54] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: False
+[2025-12-07 00:57:54] Buffer size: 3/5
+[2025-12-07 00:57:54] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: False
+[2025-12-07 00:57:54] Buffer size: 4/5
+[2025-12-07 00:57:54] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:54] Buffer size: 5/5
+[2025-12-07 00:57:54] 
+============================================================
+[2025-12-07 00:57:54] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:54] ============================================================
+[2025-12-07 00:57:54] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 27.38 | Update #227 | Latency: 44.73ms
+[2025-12-07 00:57:54] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 27.44 | Update #228 | Latency: 43.01ms
+[2025-12-07 00:57:55] ✗ NEGATIVE | Customer: CUST_000143 | Cluster: 10 | Score: 27.51 | Update #229 | Latency: 50.78ms
+[2025-12-07 00:57:55] ✗ NEGATIVE | Customer: CUST_000143 | Cluster: 10 | Score: 27.51 | Update #230 | Latency: 45.31ms
+[2025-12-07 00:57:55] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 27.51 | Update #231 | Latency: 43.87ms
+[2025-12-07 00:57:55] 
+💾 Saving model after 231 updates...
+[2025-12-07 00:57:55] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.021s
+[2025-12-07 00:57:55] ✓ Current state: Components=11, Positive=153, Negative=78
+
+[2025-12-07 00:57:55] 📊 Metric recorded: Save time = 0.021s, Components = 11
+[2025-12-07 00:57:55] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:55] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:55] Buffer size: 1/5
+[2025-12-07 00:57:55] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:55] Buffer size: 2/5
+[2025-12-07 00:57:55] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:55] Buffer size: 3/5
+[2025-12-07 00:57:55] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:55] Buffer size: 4/5
+[2025-12-07 00:57:55] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: False
+[2025-12-07 00:57:55] Buffer size: 5/5
+[2025-12-07 00:57:55] 
+============================================================
+[2025-12-07 00:57:55] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:55] ============================================================
+[2025-12-07 00:57:55] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 27.57 | Update #232 | Latency: 39.82ms
+[2025-12-07 00:57:55] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 27.63 | Update #233 | Latency: 47.94ms
+[2025-12-07 00:57:55] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 27.69 | Update #234 | Latency: 60.39ms
+[2025-12-07 00:57:55] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 27.75 | Update #235 | Latency: 78.45ms
+[2025-12-07 00:57:55] ✗ NEGATIVE | Customer: CUST_000143 | Cluster: 10 | Score: 27.80 | Update #236 | Latency: 61.78ms
+[2025-12-07 00:57:56] 
+💾 Saving model after 236 updates...
+[2025-12-07 00:57:56] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.026s
+[2025-12-07 00:57:56] ✓ Current state: Components=11, Positive=157, Negative=79
+
+[2025-12-07 00:57:56] 📊 Metric recorded: Save time = 0.026s, Components = 11
+[2025-12-07 00:57:56] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:56] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:56] Buffer size: 1/5
+[2025-12-07 00:57:56] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:56] Buffer size: 2/5
+[2025-12-07 00:57:56] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:56] Buffer size: 3/5
+[2025-12-07 00:57:56] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:56] Buffer size: 4/5
+[2025-12-07 00:57:56] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:56] Buffer size: 5/5
+[2025-12-07 00:57:56] 
+============================================================
+[2025-12-07 00:57:56] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:56] ============================================================
+[2025-12-07 00:57:56] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 27.80 | Update #237 | Latency: 47.25ms
+[2025-12-07 00:57:56] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 27.85 | Update #238 | Latency: 45.76ms
+[2025-12-07 00:57:56] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 27.90 | Update #239 | Latency: 69.87ms
+[2025-12-07 00:57:56] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 27.95 | Update #240 | Latency: 44.73ms
+[2025-12-07 00:57:56] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.00 | Update #241 | Latency: 42.60ms
+[2025-12-07 00:57:56] 
+💾 Saving model after 241 updates...
+[2025-12-07 00:57:57] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.026s
+[2025-12-07 00:57:57] ✓ Current state: Components=11, Positive=162, Negative=79
+
+[2025-12-07 00:57:57] 📊 Metric recorded: Save time = 0.026s, Components = 11
+[2025-12-07 00:57:57] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:57] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:57:57] Buffer size: 1/5
+[2025-12-07 00:57:57] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:57] Buffer size: 2/5
+[2025-12-07 00:57:57] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:57] Buffer size: 3/5
+[2025-12-07 00:57:57] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:57] Buffer size: 4/5
+[2025-12-07 00:57:57] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: False
+[2025-12-07 00:57:57] Buffer size: 5/5
+[2025-12-07 00:57:57] 
+============================================================
+[2025-12-07 00:57:57] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:57] ============================================================
+[2025-12-07 00:57:57] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #242 | Latency: 43.45ms
+[2025-12-07 00:57:57] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.04 | Update #243 | Latency: 71.73ms
+[2025-12-07 00:57:57] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.08 | Update #244 | Latency: 44.57ms
+[2025-12-07 00:57:57] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.13 | Update #245 | Latency: 43.20ms
+[2025-12-07 00:57:57] ✗ NEGATIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.17 | Update #246 | Latency: 45.83ms
+[2025-12-07 00:57:57] 
+💾 Saving model after 246 updates...
+[2025-12-07 00:57:57] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.044s
+[2025-12-07 00:57:57] ✓ Current state: Components=11, Positive=166, Negative=80
+
+[2025-12-07 00:57:57] 📊 Metric recorded: Save time = 0.044s, Components = 11
+[2025-12-07 00:57:57] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:58] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:58] Buffer size: 1/5
+[2025-12-07 00:57:58] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:58] Buffer size: 2/5
+[2025-12-07 00:57:58] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: False
+[2025-12-07 00:57:58] Buffer size: 3/5
+[2025-12-07 00:57:58] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: False
+[2025-12-07 00:57:58] Buffer size: 4/5
+[2025-12-07 00:57:58] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:58] Buffer size: 5/5
+[2025-12-07 00:57:58] 
+============================================================
+[2025-12-07 00:57:58] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:58] ============================================================
+[2025-12-07 00:57:58] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.17 | Update #247 | Latency: 43.11ms
+[2025-12-07 00:57:58] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.20 | Update #248 | Latency: 45.26ms
+[2025-12-07 00:57:58] ✗ NEGATIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.24 | Update #249 | Latency: 61.06ms
+[2025-12-07 00:57:58] ✗ NEGATIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #250 | Latency: 52.89ms
+[2025-12-07 00:57:58] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.24 | Update #251 | Latency: 46.92ms
+[2025-12-07 00:57:58] 
+💾 Saving model after 251 updates...
+[2025-12-07 00:57:58] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.023s
+[2025-12-07 00:57:58] ✓ Current state: Components=11, Positive=169, Negative=82
+
+[2025-12-07 00:57:58] 📊 Metric recorded: Save time = 0.023s, Components = 11
+[2025-12-07 00:57:58] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:58] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: False
+[2025-12-07 00:57:58] Buffer size: 1/5
+[2025-12-07 00:57:58] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:58] Buffer size: 2/5
+[2025-12-07 00:57:58] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: False
+[2025-12-07 00:57:58] Buffer size: 3/5
+[2025-12-07 00:57:58] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:58] Buffer size: 4/5
+[2025-12-07 00:57:58] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: False
+[2025-12-07 00:57:58] Buffer size: 5/5
+[2025-12-07 00:57:59] 
+============================================================
+[2025-12-07 00:57:59] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:59] ============================================================
+[2025-12-07 00:57:59] ✗ NEGATIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.28 | Update #252 | Latency: 38.29ms
+[2025-12-07 00:57:59] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.28 | Update #253 | Latency: 43.81ms
+[2025-12-07 00:57:59] ✗ NEGATIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.31 | Update #254 | Latency: 45.02ms
+[2025-12-07 00:57:59] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.31 | Update #255 | Latency: 68.80ms
+[2025-12-07 00:57:59] ✗ NEGATIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #256 | Latency: 38.36ms
+[2025-12-07 00:57:59] 
+💾 Saving model after 256 updates...
+[2025-12-07 00:57:59] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.021s
+[2025-12-07 00:57:59] ✓ Current state: Components=11, Positive=171, Negative=85
+
+[2025-12-07 00:57:59] 📊 Metric recorded: Save time = 0.021s, Components = 11
+[2025-12-07 00:57:59] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:57:59] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:59] Buffer size: 1/5
+[2025-12-07 00:57:59] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:57:59] Buffer size: 2/5
+[2025-12-07 00:57:59] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:57:59] Buffer size: 3/5
+[2025-12-07 00:57:59] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: False
+[2025-12-07 00:57:59] Buffer size: 4/5
+[2025-12-07 00:57:59] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:57:59] Buffer size: 5/5
+[2025-12-07 00:57:59] 
+============================================================
+[2025-12-07 00:57:59] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:57:59] ============================================================
+[2025-12-07 00:58:00] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.34 | Update #257 | Latency: 77.24ms
+[2025-12-07 00:58:00] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #258 | Latency: 59.52ms
+[2025-12-07 00:58:00] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #259 | Latency: 68.98ms
+[2025-12-07 00:58:00] ✗ NEGATIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.37 | Update #260 | Latency: 65.48ms
+[2025-12-07 00:58:00] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.37 | Update #261 | Latency: 70.51ms
+[2025-12-07 00:58:00] 
+💾 Saving model after 261 updates...
+[2025-12-07 00:58:00] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.031s
+[2025-12-07 00:58:00] ✓ Current state: Components=11, Positive=175, Negative=86
+
+[2025-12-07 00:58:00] 📊 Metric recorded: Save time = 0.031s, Components = 11
+[2025-12-07 00:58:00] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:58:00] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:58:00] Buffer size: 1/5
+[2025-12-07 00:58:00] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:58:00] Buffer size: 2/5
+[2025-12-07 00:58:00] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:58:00] Buffer size: 3/5
+[2025-12-07 00:58:00] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:58:01] Buffer size: 4/5
+[2025-12-07 00:58:01] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: False
+[2025-12-07 00:58:01] Buffer size: 5/5
+[2025-12-07 00:58:01] 
+============================================================
+[2025-12-07 00:58:01] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:58:01] ============================================================
+[2025-12-07 00:58:01] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.40 | Update #262 | Latency: 54.36ms
+[2025-12-07 00:58:01] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.43 | Update #263 | Latency: 52.93ms
+[2025-12-07 00:58:01] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.46 | Update #264 | Latency: 53.59ms
+[2025-12-07 00:58:01] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.49 | Update #265 | Latency: 50.05ms
+[2025-12-07 00:58:01] ✗ NEGATIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #266 | Latency: 38.16ms
+[2025-12-07 00:58:01] 
+💾 Saving model after 266 updates...
+[2025-12-07 00:58:01] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.022s
+[2025-12-07 00:58:01] ✓ Current state: Components=11, Positive=179, Negative=87
+
+[2025-12-07 00:58:01] 📊 Metric recorded: Save time = 0.022s, Components = 11
+[2025-12-07 00:58:01] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:58:01] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:58:01] Buffer size: 1/5
+[2025-12-07 00:58:01] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: False
+[2025-12-07 00:58:01] Buffer size: 2/5
+[2025-12-07 00:58:01] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:01] Buffer size: 3/5
+[2025-12-07 00:58:02] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:58:02] Buffer size: 4/5
+[2025-12-07 00:58:02] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:58:02] Buffer size: 5/5
+[2025-12-07 00:58:02] 
+============================================================
+[2025-12-07 00:58:02] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:58:02] ============================================================
+[2025-12-07 00:58:02] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.51 | Update #267 | Latency: 47.63ms
+[2025-12-07 00:58:02] ✗ NEGATIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #268 | Latency: 50.42ms
+[2025-12-07 00:58:02] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #269 | Latency: 37.87ms
+[2025-12-07 00:58:02] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.53 | Update #270 | Latency: 37.87ms
+[2025-12-07 00:58:02] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.56 | Update #271 | Latency: 66.68ms
+[2025-12-07 00:58:02] 
+💾 Saving model after 271 updates...
+[2025-12-07 00:58:02] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.031s
+[2025-12-07 00:58:02] ✓ Current state: Components=11, Positive=183, Negative=88
+
+[2025-12-07 00:58:02] 📊 Metric recorded: Save time = 0.031s, Components = 11
+[2025-12-07 00:58:02] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:58:02] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:02] Buffer size: 1/5
+[2025-12-07 00:58:02] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: False
+[2025-12-07 00:58:02] Buffer size: 2/5
+[2025-12-07 00:58:02] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:58:02] Buffer size: 3/5
+[2025-12-07 00:58:03] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:58:03] Buffer size: 4/5
+[2025-12-07 00:58:03] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Bought: True
+[2025-12-07 00:58:03] Buffer size: 5/5
+[2025-12-07 00:58:03] 
+============================================================
+[2025-12-07 00:58:03] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:58:03] ============================================================
+[2025-12-07 00:58:03] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #272 | Latency: 43.39ms
+[2025-12-07 00:58:03] ✗ NEGATIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.58 | Update #273 | Latency: 43.18ms
+[2025-12-07 00:58:03] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.58 | Update #274 | Latency: 43.31ms
+[2025-12-07 00:58:03] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.60 | Update #275 | Latency: 46.75ms
+[2025-12-07 00:58:03] ✓ POSITIVE | Customer: CUST_000143 | Cluster: 10 | Score: 28.62 | Update #276 | Latency: 41.55ms
+[2025-12-07 00:58:03] 
+💾 Saving model after 276 updates...
+[2025-12-07 00:58:03] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.030s
+[2025-12-07 00:58:03] ✓ Current state: Components=11, Positive=187, Negative=89
+
+[2025-12-07 00:58:03] 📊 Metric recorded: Save time = 0.030s, Components = 11
+[2025-12-07 00:58:03] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:58:03] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:03] Buffer size: 1/5
+[2025-12-07 00:58:03] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: False
+[2025-12-07 00:58:03] Buffer size: 2/5
+[2025-12-07 00:58:03] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:03] Buffer size: 3/5
+[2025-12-07 00:58:03] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:03] Buffer size: 4/5
+[2025-12-07 00:58:03] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:03] Buffer size: 5/5
+[2025-12-07 00:58:03] 
+============================================================
+[2025-12-07 00:58:04] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:58:04] ============================================================
+[2025-12-07 00:58:04] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #277 | Latency: 47.88ms
+[2025-12-07 00:58:04] ✗ NEGATIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #278 | Latency: 42.79ms
+[2025-12-07 00:58:04] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #279 | Latency: 64.28ms
+[2025-12-07 00:58:04] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #280 | Latency: 43.60ms
+[2025-12-07 00:58:04] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #281 | Latency: 45.52ms
+[2025-12-07 00:58:04] 
+💾 Saving model after 281 updates...
+[2025-12-07 00:58:04] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.023s
+[2025-12-07 00:58:04] ✓ Current state: Components=11, Positive=191, Negative=90
+
+[2025-12-07 00:58:04] 📊 Metric recorded: Save time = 0.023s, Components = 11
+[2025-12-07 00:58:04] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:58:04] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:04] Buffer size: 1/5
+[2025-12-07 00:58:04] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:04] Buffer size: 2/5
+[2025-12-07 00:58:04] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:04] Buffer size: 3/5
+[2025-12-07 00:58:04] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:04] Buffer size: 4/5
+[2025-12-07 00:58:04] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: True
+[2025-12-07 00:58:04] Buffer size: 5/5
+[2025-12-07 00:58:04] 
+============================================================
+[2025-12-07 00:58:04] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:58:05] ============================================================
+[2025-12-07 00:58:05] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #282 | Latency: 68.62ms
+[2025-12-07 00:58:05] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #283 | Latency: 60.51ms
+[2025-12-07 00:58:05] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #284 | Latency: 51.98ms
+[2025-12-07 00:58:05] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #285 | Latency: 54.53ms
+[2025-12-07 00:58:05] ✓ POSITIVE | Customer: CUST_000150 | Cluster: 3 | Score: -9.06 | Update #286 | Latency: 61.27ms
+[2025-12-07 00:58:05] 
+💾 Saving model after 286 updates...
+[2025-12-07 00:58:05] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.029s
+[2025-12-07 00:58:05] ✓ Current state: Components=11, Positive=196, Negative=90
+
+[2025-12-07 00:58:05] 📊 Metric recorded: Save time = 0.029s, Components = 11
+[2025-12-07 00:58:05] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:58:05] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: False
+[2025-12-07 00:58:05] Buffer size: 1/5
+[2025-12-07 00:58:05] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: True
+[2025-12-07 00:58:05] Buffer size: 2/5
+[2025-12-07 00:58:05] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: True
+[2025-12-07 00:58:05] Buffer size: 3/5
+[2025-12-07 00:58:05] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: False
+[2025-12-07 00:58:06] Buffer size: 4/5
+[2025-12-07 00:58:06] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: False
+[2025-12-07 00:58:06] Buffer size: 5/5
+[2025-12-07 00:58:06] 
+============================================================
+[2025-12-07 00:58:06] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:58:06] ============================================================
+[2025-12-07 00:58:06] ✗ NEGATIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #287 | Latency: 76.77ms
+[2025-12-07 00:58:06] ✓ POSITIVE | Customer: CUST_000150 | Cluster: 3 | Score: -9.06 | Update #288 | Latency: 81.47ms
+[2025-12-07 00:58:06] ✓ POSITIVE | Customer: CUST_000150 | Cluster: 3 | Score: -9.06 | Update #289 | Latency: 107.85ms
+[2025-12-07 00:58:06] ✗ NEGATIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #290 | Latency: 79.96ms
+[2025-12-07 00:58:06] ✗ NEGATIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #291 | Latency: 58.70ms
+[2025-12-07 00:58:06] 
+💾 Saving model after 291 updates...
+[2025-12-07 00:58:06] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.030s
+[2025-12-07 00:58:06] ✓ Current state: Components=11, Positive=198, Negative=93
+
+[2025-12-07 00:58:07] 📊 Metric recorded: Save time = 0.030s, Components = 11
+[2025-12-07 00:58:07] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:58:07] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: True
+[2025-12-07 00:58:07] Buffer size: 1/5
+[2025-12-07 00:58:07] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: False
+[2025-12-07 00:58:07] Buffer size: 2/5
+[2025-12-07 00:58:07] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:07] Buffer size: 3/5
+[2025-12-07 00:58:07] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: True
+[2025-12-07 00:58:07] Buffer size: 4/5
+[2025-12-07 00:58:07] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:07] Buffer size: 5/5
+[2025-12-07 00:58:07] 
+============================================================
+[2025-12-07 00:58:07] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:58:07] ============================================================
+[2025-12-07 00:58:07] ✓ POSITIVE | Customer: CUST_000150 | Cluster: 3 | Score: -9.06 | Update #292 | Latency: 40.21ms
+[2025-12-07 00:58:07] ✗ NEGATIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #293 | Latency: 42.37ms
+[2025-12-07 00:58:07] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #294 | Latency: 44.02ms
+[2025-12-07 00:58:07] ✓ POSITIVE | Customer: CUST_000150 | Cluster: 3 | Score: -9.06 | Update #295 | Latency: 48.80ms
+[2025-12-07 00:58:07] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #296 | Latency: 38.26ms
+[2025-12-07 00:58:07] 
+💾 Saving model after 296 updates...
+[2025-12-07 00:58:07] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.023s
+[2025-12-07 00:58:07] ✓ Current state: Components=11, Positive=202, Negative=94
+
+[2025-12-07 00:58:07] 📊 Metric recorded: Save time = 0.023s, Components = 11
+[2025-12-07 00:58:07] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:58:07] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:07] Buffer size: 1/5
+[2025-12-07 00:58:08] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: True
+[2025-12-07 00:58:08] Buffer size: 2/5
+[2025-12-07 00:58:08] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:08] Buffer size: 3/5
+[2025-12-07 00:58:08] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:08] Buffer size: 4/5
+[2025-12-07 00:58:08] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:08] Buffer size: 5/5
+[2025-12-07 00:58:08] 
+============================================================
+[2025-12-07 00:58:08] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:58:08] ============================================================
+[2025-12-07 00:58:08] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #297 | Latency: 56.23ms
+[2025-12-07 00:58:08] ✓ POSITIVE | Customer: CUST_000150 | Cluster: 3 | Score: -9.06 | Update #298 | Latency: 38.09ms
+[2025-12-07 00:58:08] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #299 | Latency: 44.88ms
+[2025-12-07 00:58:08] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #300 | Latency: 42.42ms
+[2025-12-07 00:58:08] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #301 | Latency: 37.84ms
+[2025-12-07 00:58:08] 
+💾 Saving model after 301 updates...
+[2025-12-07 00:58:08] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.023s
+[2025-12-07 00:58:08] ✓ Current state: Components=11, Positive=207, Negative=94
+
+[2025-12-07 00:58:08] 📊 Metric recorded: Save time = 0.023s, Components = 11
+[2025-12-07 00:58:08] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:58:08] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:08] Buffer size: 1/5
+[2025-12-07 00:58:08] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: True
+[2025-12-07 00:58:08] Buffer size: 2/5
+[2025-12-07 00:58:08] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:08] Buffer size: 3/5
+[2025-12-07 00:58:08] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: False
+[2025-12-07 00:58:08] Buffer size: 4/5
+[2025-12-07 00:58:08] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:08] Buffer size: 5/5
+[2025-12-07 00:58:08] 
+============================================================
+[2025-12-07 00:58:08] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:58:09] ============================================================
+[2025-12-07 00:58:09] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #302 | Latency: 38.02ms
+[2025-12-07 00:58:09] ✓ POSITIVE | Customer: CUST_000150 | Cluster: 3 | Score: -9.06 | Update #303 | Latency: 54.56ms
+[2025-12-07 00:58:09] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #304 | Latency: 53.51ms
+[2025-12-07 00:58:09] ✗ NEGATIVE | Customer: CUST_000150 | Cluster: 3 | Score: -9.06 | Update #305 | Latency: 42.11ms
+[2025-12-07 00:58:09] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #306 | Latency: 50.25ms
+[2025-12-07 00:58:09] 
+💾 Saving model after 306 updates...
+[2025-12-07 00:58:09] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.041s
+[2025-12-07 00:58:09] ✓ Current state: Components=11, Positive=211, Negative=95
+
+[2025-12-07 00:58:09] 📊 Metric recorded: Save time = 0.041s, Components = 11
+[2025-12-07 00:58:09] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:58:09] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: True
+[2025-12-07 00:58:09] Buffer size: 1/5
+[2025-12-07 00:58:09] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:09] Buffer size: 2/5
+[2025-12-07 00:58:09] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: True
+[2025-12-07 00:58:09] Buffer size: 3/5
+[2025-12-07 00:58:09] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: False
+[2025-12-07 00:58:09] Buffer size: 4/5
+[2025-12-07 00:58:09] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:09] Buffer size: 5/5
+[2025-12-07 00:58:09] 
+============================================================
+[2025-12-07 00:58:09] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:58:09] ============================================================
+[2025-12-07 00:58:09] ✓ POSITIVE | Customer: CUST_000150 | Cluster: 3 | Score: -9.06 | Update #307 | Latency: 38.40ms
+[2025-12-07 00:58:09] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #308 | Latency: 39.43ms
+[2025-12-07 00:58:09] ✓ POSITIVE | Customer: CUST_000150 | Cluster: 3 | Score: -9.06 | Update #309 | Latency: 45.89ms
+[2025-12-07 00:58:10] ✗ NEGATIVE | Customer: CUST_000150 | Cluster: 3 | Score: -9.06 | Update #310 | Latency: 48.73ms
+[2025-12-07 00:58:10] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #311 | Latency: 46.73ms
+[2025-12-07 00:58:10] 
+💾 Saving model after 311 updates...
+[2025-12-07 00:58:10] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.028s
+[2025-12-07 00:58:10] ✓ Current state: Components=11, Positive=215, Negative=96
+
+[2025-12-07 00:58:10] 📊 Metric recorded: Save time = 0.028s, Components = 11
+[2025-12-07 00:58:10] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:58:10] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:10] Buffer size: 1/5
+[2025-12-07 00:58:10] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:10] Buffer size: 2/5
+[2025-12-07 00:58:10] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:10] Buffer size: 3/5
+[2025-12-07 00:58:10] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:10] Buffer size: 4/5
+[2025-12-07 00:58:10] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:10] Buffer size: 5/5
+[2025-12-07 00:58:10] 
+============================================================
+[2025-12-07 00:58:10] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:58:10] ============================================================
+[2025-12-07 00:58:10] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #312 | Latency: 54.88ms
+[2025-12-07 00:58:10] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #313 | Latency: 63.73ms
+[2025-12-07 00:58:10] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #314 | Latency: 49.19ms
+[2025-12-07 00:58:10] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #315 | Latency: 46.15ms
+[2025-12-07 00:58:11] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #316 | Latency: 49.20ms
+[2025-12-07 00:58:11] 
+💾 Saving model after 316 updates...
+[2025-12-07 00:58:11] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.022s
+[2025-12-07 00:58:11] ✓ Current state: Components=11, Positive=220, Negative=96
+
+[2025-12-07 00:58:11] 📊 Metric recorded: Save time = 0.022s, Components = 11
+[2025-12-07 00:58:11] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:58:11] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: True
+[2025-12-07 00:58:11] Buffer size: 1/5
+[2025-12-07 00:58:11] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:11] Buffer size: 2/5
+[2025-12-07 00:58:11] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:11] Buffer size: 3/5
+[2025-12-07 00:58:11] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: False
+[2025-12-07 00:58:11] Buffer size: 4/5
+[2025-12-07 00:58:11] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: False
+[2025-12-07 00:58:11] Buffer size: 5/5
+[2025-12-07 00:58:11] 
+============================================================
+[2025-12-07 00:58:11] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:58:11] ============================================================
+[2025-12-07 00:58:11] ✓ POSITIVE | Customer: CUST_000150 | Cluster: 3 | Score: -9.06 | Update #317 | Latency: 44.96ms
+[2025-12-07 00:58:11] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #318 | Latency: 46.39ms
+[2025-12-07 00:58:11] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #319 | Latency: 81.20ms
+[2025-12-07 00:58:11] ✗ NEGATIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #320 | Latency: 59.99ms
+[2025-12-07 00:58:11] ✗ NEGATIVE | Customer: CUST_000150 | Cluster: 3 | Score: -9.06 | Update #321 | Latency: 48.56ms
+[2025-12-07 00:58:11] 
+💾 Saving model after 321 updates...
+[2025-12-07 00:58:11] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.046s
+[2025-12-07 00:58:11] ✓ Current state: Components=11, Positive=223, Negative=98
+
+[2025-12-07 00:58:12] 📊 Metric recorded: Save time = 0.046s, Components = 11
+[2025-12-07 00:58:12] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:58:12] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: False
+[2025-12-07 00:58:12] Buffer size: 1/5
+[2025-12-07 00:58:12] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: False
+[2025-12-07 00:58:12] Buffer size: 2/5
+[2025-12-07 00:58:12] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:12] Buffer size: 3/5
+[2025-12-07 00:58:12] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: True
+[2025-12-07 00:58:12] Buffer size: 4/5
+[2025-12-07 00:58:12] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:12] Buffer size: 5/5
+[2025-12-07 00:58:12] 
+============================================================
+[2025-12-07 00:58:12] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:58:12] ============================================================
+[2025-12-07 00:58:12] ✗ NEGATIVE | Customer: CUST_000150 | Cluster: 3 | Score: -9.06 | Update #322 | Latency: 55.26ms
+[2025-12-07 00:58:12] ✗ NEGATIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #323 | Latency: 90.09ms
+[2025-12-07 00:58:12] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #324 | Latency: 60.29ms
+[2025-12-07 00:58:12] ✓ POSITIVE | Customer: CUST_000150 | Cluster: 3 | Score: -9.06 | Update #325 | Latency: 74.32ms
+[2025-12-07 00:58:12] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #326 | Latency: 46.21ms
+[2025-12-07 00:58:12] 
+💾 Saving model after 326 updates...
+[2025-12-07 00:58:12] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.022s
+[2025-12-07 00:58:12] ✓ Current state: Components=11, Positive=226, Negative=100
+
+[2025-12-07 00:58:13] 📊 Metric recorded: Save time = 0.022s, Components = 11
+[2025-12-07 00:58:13] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:58:13] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: False
+[2025-12-07 00:58:13] Buffer size: 1/5
+[2025-12-07 00:58:13] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: True
+[2025-12-07 00:58:13] Buffer size: 2/5
+[2025-12-07 00:58:13] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:13] Buffer size: 3/5
+[2025-12-07 00:58:13] 📥 RECEIVED FEEDBACK | Customer: CUST_000147 | Bought: True
+[2025-12-07 00:58:13] Buffer size: 4/5
+[2025-12-07 00:58:13] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: False
+[2025-12-07 00:58:13] Buffer size: 5/5
+[2025-12-07 00:58:13] 
+============================================================
+[2025-12-07 00:58:13] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:58:13] ============================================================
+[2025-12-07 00:58:13] ✗ NEGATIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #327 | Latency: 47.54ms
+[2025-12-07 00:58:13] ✓ POSITIVE | Customer: CUST_000150 | Cluster: 3 | Score: -9.06 | Update #328 | Latency: 47.53ms
+[2025-12-07 00:58:13] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #329 | Latency: 52.87ms
+[2025-12-07 00:58:13] ✓ POSITIVE | Customer: CUST_000147 | Cluster: 3 | Score: -25.71 | Update #330 | Latency: 62.29ms
+[2025-12-07 00:58:13] ✗ NEGATIVE | Customer: CUST_000150 | Cluster: 3 | Score: -9.06 | Update #331 | Latency: 52.10ms
+[2025-12-07 00:58:13] 
+💾 Saving model after 331 updates...
+[2025-12-07 00:58:13] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.024s
+[2025-12-07 00:58:13] ✓ Current state: Components=11, Positive=229, Negative=102
+
+[2025-12-07 00:58:13] 📊 Metric recorded: Save time = 0.024s, Components = 11
+[2025-12-07 00:58:13] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:58:13] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: True
+[2025-12-07 00:58:14] Buffer size: 1/5
+[2025-12-07 00:58:14] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: True
+[2025-12-07 00:58:14] Buffer size: 2/5
+[2025-12-07 00:58:14] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: False
+[2025-12-07 00:58:14] Buffer size: 3/5
+[2025-12-07 00:58:14] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: False
+[2025-12-07 00:58:14] Buffer size: 4/5
+[2025-12-07 00:58:14] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: True
+[2025-12-07 00:58:14] Buffer size: 5/5
+[2025-12-07 00:58:14] 
+============================================================
+[2025-12-07 00:58:14] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:58:14] ============================================================
+[2025-12-07 00:58:14] ✓ POSITIVE | Customer: CUST_000150 | Cluster: 3 | Score: -9.06 | Update #332 | Latency: 75.92ms
+[2025-12-07 00:58:14] ✓ POSITIVE | Customer: CUST_000150 | Cluster: 3 | Score: -9.06 | Update #333 | Latency: 113.76ms
+[2025-12-07 00:58:14] ✗ NEGATIVE | Customer: CUST_000150 | Cluster: 3 | Score: -9.06 | Update #334 | Latency: 76.28ms
+[2025-12-07 00:58:14] ✗ NEGATIVE | Customer: CUST_000150 | Cluster: 3 | Score: -9.06 | Update #335 | Latency: 52.78ms
+[2025-12-07 00:58:15] ✓ POSITIVE | Customer: CUST_000150 | Cluster: 3 | Score: -9.06 | Update #336 | Latency: 224.79ms
+[2025-12-07 00:58:15] 
+💾 Saving model after 336 updates...
+[2025-12-07 00:58:15] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.029s
+[2025-12-07 00:58:15] ✓ Current state: Components=13, Positive=232, Negative=104
+
+[2025-12-07 00:58:15] 📊 Metric recorded: Save time = 0.029s, Components = 13
+[2025-12-07 00:58:15] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:58:15] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: True
+[2025-12-07 00:58:15] Buffer size: 1/5
+[2025-12-07 00:58:15] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: True
+[2025-12-07 00:58:15] Buffer size: 2/5
+[2025-12-07 00:58:15] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: True
+[2025-12-07 00:58:15] Buffer size: 3/5
+[2025-12-07 00:58:15] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: True
+[2025-12-07 00:58:15] Buffer size: 4/5
+[2025-12-07 00:58:15] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: False
+[2025-12-07 00:58:15] Buffer size: 5/5
+[2025-12-07 00:58:15] 
+============================================================
+[2025-12-07 00:58:15] 🔄 Processing batch of 5 feedback points
+[2025-12-07 00:58:15] ============================================================
+[2025-12-07 00:58:15] ✓ POSITIVE | Customer: CUST_000150 | Cluster: 12 | Score: 26.92 | Update #337 | Latency: 51.12ms
+[2025-12-07 00:58:15] ✓ POSITIVE | Customer: CUST_000150 | Cluster: 12 | Score: 27.00 | Update #338 | Latency: 40.84ms
+[2025-12-07 00:58:16] ✓ POSITIVE | Customer: CUST_000150 | Cluster: 12 | Score: 27.07 | Update #339 | Latency: 65.02ms
+[2025-12-07 00:58:16] ✓ POSITIVE | Customer: CUST_000150 | Cluster: 12 | Score: 27.15 | Update #340 | Latency: 61.42ms
+[2025-12-07 00:58:16] ✗ NEGATIVE | Customer: CUST_000150 | Cluster: 12 | Score: 27.22 | Update #341 | Latency: 53.61ms
+[2025-12-07 00:58:16] 
+💾 Saving model after 341 updates...
+[2025-12-07 00:58:16] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.050s
+[2025-12-07 00:58:16] ✓ Current state: Components=13, Positive=236, Negative=105
+
+[2025-12-07 00:58:16] 📊 Metric recorded: Save time = 0.050s, Components = 13
+[2025-12-07 00:58:16] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 00:58:16] 📥 RECEIVED FEEDBACK | Customer: CUST_000155 | Bought: False
+[2025-12-07 00:58:16] Buffer size: 1/5
+[2025-12-07 00:58:16] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: True
+[2025-12-07 00:58:16] Buffer size: 2/5
+[2025-12-07 00:58:16] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: False
+[2025-12-07 00:58:16] Buffer size: 3/5
+[2025-12-07 00:58:16] 📥 RECEIVED FEEDBACK | Customer: CUST_000150 | Bought: True

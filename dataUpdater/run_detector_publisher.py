@@ -17,6 +17,7 @@ sys.path.append(str(PARENT_DIR))
 from dataUpdater.schema import MasterSchema
 from dataUpdater.logic import calculate_new_state
 from transactionPublisher.schema import TxnSchema
+from dataManager import get_data_manager
 
 # Import metrics
 from monitoring.metrics import (
@@ -36,7 +37,9 @@ from monitoring.metrics import (
 )
 
 # --- Configuration ---
-MASTERFILE_PATH = PARENT_DIR / "MASTERFILE.csv" 
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 1  # Customer data in db=1
 
 NATS_URI = "nats://localhost:4222"
 NATS_INPUT_TOPIC = "transactions.stream"
@@ -94,20 +97,34 @@ def run_enrichment_node():
     memory_thread = threading.Thread(target=monitor_memory, daemon=True)
     memory_thread.start()
 
-    if not MASTERFILE_PATH.exists():
-        logger.error(f"MASTERFILE not found: {MASTERFILE_PATH}")
-        print(f"ERROR: Could not find {MASTERFILE_PATH}")
-        metrics_manager.record_error("masterfile_not_found")
-        return
-
     try:
         # Set NATS connection status
         set_nats_connection_status("enrichment", True)
         
-        # 1. --- Load MASTERFILE ---
-        logger.info(f"Loading MASTERFILE from: {MASTERFILE_PATH}")
+        # 1. --- Load Customer Data from Redis ---
+        logger.info(f"Loading customer data from Redis (db={REDIS_DB})...")
+        data_manager = get_data_manager(REDIS_HOST, REDIS_PORT, REDIS_DB)
+        
+        # Verify data exists
+        metadata = data_manager.get_metadata()
+        if not metadata:
+            logger.error("No data found in Redis. Please run: python dataManager/load_masterfile_to_redis.py")
+            print("ERROR: No customer data in Redis. Run: python dataManager/load_masterfile_to_redis.py")
+            metrics_manager.record_error("masterfile_not_found")
+            return
+        
+        logger.info(f"✓ Found {metadata.get('num_rows', 0)} customers in Redis")
+        
+        # Export Redis data to temporary CSV for Pathway to read
+        # (Pathway needs a file-based input, doesn't support direct Redis)
+        temp_csv_path = PARENT_DIR / "temp_masterfile_from_redis.csv"
+        logger.info(f"Exporting Redis data to temporary CSV: {temp_csv_path}")
+        data_manager.export_to_csv(str(temp_csv_path))
+        logger.info("✓ Temporary CSV created")
+        
+        # Load into Pathway from the temporary CSV
         master_data = pw.io.csv.read(
-            str(MASTERFILE_PATH),
+            str(temp_csv_path),
             schema=MasterSchema,
             mode="static"
         ).with_id_from(pw.this.customer_id)
@@ -128,7 +145,7 @@ def run_enrichment_node():
             last_update_timestamp=master_data.last_update_timestamp.dt.strptime(fmt="%Y-%m-%d")
         )
         
-        logger.info("✓ MASTERFILE loaded and date conversion complete")
+        logger.info("✓ Customer data loaded and date conversion complete")
 
         # 2. --- Load TRANSACTIONS (streaming data) ---
         logger.info(f"Connecting to NATS: {NATS_URI}, topic: {NATS_INPUT_TOPIC}")
@@ -164,7 +181,7 @@ def run_enrichment_node():
         )
         
         logger.info("✓ Connected to NATS and transaction logging enabled")
-        print(f"✓ Connected to NATS '{NATS_INPUT_TOPIC}' and MASTERFILE")
+        print(f"✓ Connected to NATS '{NATS_INPUT_TOPIC}' and loaded customer data from Redis")
 
         # 3. --- AGGREGATE Transactions with Metrics Tracking ---
         logger.info("Setting up transaction aggregation...")

@@ -1,3 +1,4 @@
 *.csv
 interiit
 *__pycache__/
+venv
