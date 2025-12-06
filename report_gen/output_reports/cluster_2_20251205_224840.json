@@ -1,0 +1,31 @@
+{
+  "cluster_id": 2,
+  "count": 5,
+  "cluster_summary": "This cluster consists of high-income, self-employed individuals residing in tier1 cities. They have excellent credit scores, making them strong candidates for car loans despite the negative confidence scores for some. The cluster is characterized by financial stability and a mature age group.",
+  "avg_confidence": -0.37877895699392333,
+  "confidence_distribution": {
+    "min": -1.5463177084986797,
+    "max": 1.317510836036284,
+    "median": -0.5802740454211348
+  },
+  "prediction_factors": [
+    "High income levels indicating financial stability",
+    "Excellent credit scores suggesting responsible financial behavior",
+    "Residence in tier1 cities which often correlates with better financial opportunities"
+  ],
+  "customer_behavior_patterns": [
+    "All customers are self-employed, indicating entrepreneurial tendencies",
+    "High income levels across the board suggest a focus on affluent individuals",
+    "Mature age group, indicating potential for stable financial management"
+  ],
+  "exemplar_insights": [
+    "Customer CUST_009455, despite a low confidence score, has a very high income and credit score, making them a viable candidate.",
+    "Customer CUST_008560 has the highest confidence score and a strong financial profile, indicating a high likelihood of loan approval."
+  ],
+  "recommendations": [
+    "Focus on personalized loan offers highlighting benefits for self-employed individuals.",
+    "Emphasize the advantages of car loans for high-income earners in tier1 cities.",
+    "Develop marketing strategies targeting mature, financially stable customers."
+  ],
+  "admin_summary": "This cluster of customers is characterized by high income and excellent credit scores, predominantly self-employed and residing in tier1 cities. Despite some negative confidence scores, their financial profiles make them strong candidates for car loans. The sales team should focus on personalized offers and marketing strategies that appeal to their entrepreneurial and affluent nature. Emphasizing the benefits of car loans tailored to their financial status could increase loan uptake."
+}

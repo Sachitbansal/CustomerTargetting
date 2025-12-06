@@ -1,0 +1,108 @@
+{
+  "passing_count": 6,
+  "failing_count": 0,
+  "passing_schemes": [
+    {
+      "product_id": "PREM-HL-2025-001",
+      "scheme_name": "Premium Home Loan",
+      "prescreen": {
+        "passed": true,
+        "reasons": [
+          "All checks passed"
+        ],
+        "checked_rules": [
+          "max_dti_ratio",
+          "max_existing_emi_pct_of_income",
+          "max_bounced_txns_last_90d",
+          "require_final_credit_score_min",
+          "allowed_city_tiers"
+        ]
+      }
+    },
+    {
+      "product_id": "BUS-HL-2025-001",
+      "scheme_name": "Business Owner Home Loan",
+      "prescreen": {
+        "passed": true,
+        "reasons": [
+          "All checks passed"
+        ],
+        "checked_rules": [
+          "max_dti_ratio",
+          "max_existing_emi_pct_of_income",
+          "max_bounced_txns_last_90d",
+          "require_final_credit_score_min",
+          "allowed_city_tiers"
+        ]
+      }
+    },
+    {
+      "product_id": "AFF-HL-2025-001",
+      "scheme_name": "Affordable Housing Loan",
+      "prescreen": {
+        "passed": true,
+        "reasons": [
+          "All checks passed"
+        ],
+        "checked_rules": [
+          "max_dti_ratio",
+          "max_existing_emi_pct_of_income",
+          "max_bounced_txns_last_90d",
+          "require_final_credit_score_min",
+          "allowed_city_tiers"
+        ]
+      }
+    },
+    {
+      "product_id": "GOV-HL-2025-001",
+      "scheme_name": "Government Employee Special",
+      "prescreen": {
+        "passed": true,
+        "reasons": [
+          "All checks passed"
+        ],
+        "checked_rules": [
+          "max_dti_ratio",
+          "max_existing_emi_pct_of_income",
+          "max_bounced_txns_last_90d",
+          "require_final_credit_score_min",
+          "allowed_city_tiers"
+        ]
+      }
+    },
+    {
+      "product_id": "SMART-HL-2025-001",
+      "scheme_name": "Smart Professional Home Loan",
+      "prescreen": {
+        "passed": true,
+        "reasons": [
+          "All checks passed"
+        ],
+        "checked_rules": [
+          "max_dti_ratio",
+          "max_existing_emi_pct_of_income",
+          "max_bounced_txns_last_90d",
+          "require_final_credit_score_min",
+          "allowed_city_tiers"
+        ]
+      }
+    },
+    {
+      "product_id": "FHB-HL-2025-001",
+      "scheme_name": "First Home Buyer Advantage",
+      "prescreen": {
+        "passed": true,
+        "reasons": [
+          "All checks passed"
+        ],
+        "checked_rules": [
+          "max_dti_ratio",
+          "max_existing_emi_pct_of_income",
+          "max_bounced_txns_last_90d",
+          "require_final_credit_score_min",
+          "allowed_city_tiers"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "eligibility": true,
+  "chosen_product_id": "BUS-HL-2025-001",
+  "computed_values": {
+    "estimated_max_loan": 3517525.8000000003,
+    "estimated_monthly_emi": 32967.72570643097,
+    "ltv_ratio": 0.75
+  },
+  "rationale": [
+    "Income meets minimum requirements",
+    "Credit score above threshold",
+    "DTI ratio within acceptable range",
+    "Similar customers have been approved"
+  ],
+  "audit": {
+    "product_ids_considered": [
+      "BUS-HL-2025-001",
+      "AFF-HL-2025-001",
+      "GOV-HL-2025-001"
+    ],
+    "analysis_timestamp": "2025-12-02T02:03:16.888040"
+  },
+  "prescreen_summary": [
+    {
+      "product_id": "BUS-HL-2025-001",
+      "scheme_name": "Business Owner Home Loan",
+      "passed": false,
+      "reasons": [
+        "bounced_txn_count 100 > allowed 1",
+        "final_credit_score 626 < required 690"
+      ]
+    },
+    {
+      "product_id": "AFF-HL-2025-001",
+      "scheme_name": "Affordable Housing Loan",
+      "passed": false,
+      "reasons": [
+        "bounced_txn_count 100 > allowed 1",
+        "final_credit_score 626 < required 650"
+      ]
+    },
+    {
+      "product_id": "GOV-HL-2025-001",
+      "scheme_name": "Government Employee Special",
+      "passed": false,
+      "reasons": [
+        "bounced_txn_count 100 > allowed 0",
+        "final_credit_score 626 < required 660"
+      ]
+    },
+    {
+      "product_id": "SMART-HL-2025-001",
+      "scheme_name": "Smart Professional Home Loan",
+      "passed": false,
+      "reasons": [
+        "bounced_txn_count 100 > allowed 0",
+        "final_credit_score 626 < required 700"
+      ]
+    },
+    {
+      "product_id": "FHB-HL-2025-001",
+      "scheme_name": "First Home Buyer Advantage",
+      "passed": false,
+      "reasons": [
+        "bounced_txn_count 100 > allowed 0",
+        "final_credit_score 626 < required 680"
+      ]
+    }
+  ],
+  "product_ids_considered": [
+    "BUS-HL-2025-001",
+    "AFF-HL-2025-001",
+    "GOV-HL-2025-001"
+  ]
+}

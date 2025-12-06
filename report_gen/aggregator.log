@@ -1,0 +1,70 @@
+[ClusterAgg] === Cluster Aggregator Started ===
+[ClusterAgg] Listening on topic: leads.callCarLoan
+[ClusterAgg] Publishing batches to: reports.cluster.ready
+[ClusterAgg] K_BATCH = 5
+[ClusterAgg] Cache file: /root/interiit/TargettedCalling/report_gen/prediction_cache.csv
+
+[ClusterAgg] CUST CUST_004643 → CL 2 | score=-2.202 | 1/5
+[ClusterAgg] CUST CUST_008502 → CL 2 | score=-0.501 | 2/5
+[ClusterAgg] CUST CUST_008697 → CL 4 | score=-0.518 | 1/5
+[ClusterAgg] CUST CUST_003631 → CL 2 | score=-2.583 | 3/5
+[ClusterAgg] CUST CUST_004643 → CL 2 | score=-2.202 | 4/5
+[ClusterAgg] CUST CUST_004643 → CL 2 | score=-2.143 | 5/5
+[ClusterAgg] ✔ CLUSTER 2 READY → sending 5 customers to Step-2
+
+[ClusterAgg] CUST CUST_008400 → CL 2 | score=-0.590 | 1/5
+[ClusterAgg] CUST CUST_003303 → CL 2 | score=0.867 | 2/5
+[ClusterAgg] CUST CUST_000449 → CL 6 | score=1.510 | 1/5
+[ClusterAgg] CUST CUST_008560 → CL 2 | score=1.197 | 3/5
+[ClusterAgg] CUST CUST_008809 → CL 4 | score=-1.980 | 2/5
+[ClusterAgg] CUST CUST_002188 → CL 2 | score=0.768 | 4/5
+[ClusterAgg] CUST CUST_001287 → CL 3 | score=-0.601 | 1/5
+[ClusterAgg] CUST CUST_000385 → CL 4 | score=-0.648 | 3/5
+[ClusterAgg] CUST CUST_003303 → CL 2 | score=1.057 | 5/5
+[ClusterAgg] ✔ CLUSTER 2 READY → sending 5 customers to Step-2
+
+[ClusterAgg] CUST CUST_009455 → CL 2 | score=-1.546 | 1/5
+[ClusterAgg] CUST CUST_011017 → CL 6 | score=1.860 | 2/5
+[ClusterAgg] CUST CUST_003631 → CL 2 | score=-0.580 | 2/5
+[ClusterAgg] CUST CUST_008697 → CL 4 | score=-0.015 | 4/5
+[ClusterAgg] CUST CUST_008502 → CL 2 | score=-0.501 | 3/5
+[ClusterAgg] CUST CUST_003631 → CL 2 | score=-0.580 | 4/5
+[ClusterAgg] CUST CUST_000449 → CL 6 | score=1.085 | 3/5
+[ClusterAgg] CUST CUST_008560 → CL 2 | score=1.318 | 5/5
+[ClusterAgg] ✔ CLUSTER 2 READY → sending 5 customers to Step-2
+
+[ClusterAgg] CUST CUST_006950 → CL 2 | score=-0.550 | 1/5
+[ClusterAgg] CUST CUST_006950 → CL 2 | score=-0.343 | 2/5
+[ClusterAgg] CUST CUST_008502 → CL 2 | score=-0.377 | 3/5
+[ClusterAgg] CUST CUST_008697 → CL 4 | score=-0.518 | 5/5
+[ClusterAgg] ✔ CLUSTER 4 READY → sending 5 customers to Step-2
+
+[ClusterAgg] CUST CUST_000449 → CL 6 | score=1.510 | 4/5
+[ClusterAgg] CUST CUST_008400 → CL 2 | score=-2.083 | 4/5
+[ClusterAgg] CUST CUST_002188 → CL 2 | score=-0.723 | 5/5
+[ClusterAgg] ✔ CLUSTER 2 READY → sending 5 customers to Step-2
+
+[ClusterAgg] CUST CUST_006950 → CL 2 | score=-0.550 | 1/5
+[ClusterAgg] CUST CUST_011366 → CL 6 | score=-0.873 | 5/5
+[ClusterAgg] ✔ CLUSTER 6 READY → sending 5 customers to Step-2
+
+[ClusterAgg] CUST CUST_008502 → CL 2 | score=-0.964 | 2/5
+[ClusterAgg] CUST CUST_004643 → CL 2 | score=-1.592 | 3/5
+[ClusterAgg] CUST CUST_002188 → CL 2 | score=-0.723 | 4/5
+[ClusterAgg] CUST CUST_008400 → CL 2 | score=-0.720 | 5/5
+[ClusterAgg] ✔ CLUSTER 2 READY → sending 5 customers to Step-2
+
+[ClusterAgg] CUST CUST_001287 → CL 3 | score=-0.601 | 2/5
+[ClusterAgg] CUST CUST_004643 → CL 2 | score=-2.143 | 1/5
+[ClusterAgg] CUST CUST_003303 → CL 2 | score=1.057 | 2/5
+[ClusterAgg] CUST CUST_008400 → CL 2 | score=-0.720 | 3/5
+[ClusterAgg] CUST CUST_002879 → CL 2 | score=-3.038 | 4/5
+[ClusterAgg] CUST CUST_008400 → CL 2 | score=-0.590 | 5/5
+[ClusterAgg] ✔ CLUSTER 2 READY → sending 5 customers to Step-2
+
+[ClusterAgg] CUST CUST_003631 → CL 2 | score=1.264 | 1/5
+[ClusterAgg] CUST CUST_008560 → CL 2 | score=1.318 | 2/5
+[ClusterAgg] CUST CUST_000385 → CL 4 | score=-0.648 | 1/5
+[ClusterAgg] CUST CUST_000385 → CL 4 | score=1.160 | 2/5
+[ClusterAgg] CUST CUST_008502 → CL 2 | score=-0.377 | 3/5
+[ClusterAgg] CUST CUST_003631 → CL 2 | score=-2.583 | 4/5
