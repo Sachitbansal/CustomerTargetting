@@ -1,0 +1,31 @@
+{
+  "cluster_id": 4,
+  "count": 5,
+  "cluster_summary": "This cluster consists of high-income individuals predominantly in their early 30s, with strong credit scores and stable salaried employment. Despite the negative confidence scores, their financial profiles suggest they are viable candidates for car loans.",
+  "avg_confidence": -0.7354627295815015,
+  "confidence_distribution": {
+    "min": -1.9796442776068048,
+    "max": -0.01548203036442719,
+    "median": -0.5181642679765093
+  },
+  "prediction_factors": [
+    "High income levels",
+    "Strong credit scores",
+    "Stable salaried employment"
+  ],
+  "customer_behavior_patterns": [
+    "All customers are salaried employees",
+    "Majority reside in tier 2 cities",
+    "Consistent high-income brackets"
+  ],
+  "exemplar_insights": [
+    "Customer CUST_008809 has the highest credit score and resides in a tier 1 city, indicating a potentially lower risk profile.",
+    "Customer CUST_000385, despite a lower income, maintains an excellent credit score, suggesting strong financial management."
+  ],
+  "recommendations": [
+    "Focus on personalized loan offers highlighting competitive interest rates.",
+    "Emphasize benefits of loan products tailored for high-income salaried individuals.",
+    "Consider targeted marketing in tier 2 cities where most customers reside."
+  ],
+  "admin_summary": "The cluster comprises high-income, salaried individuals with excellent credit scores, making them prime candidates for car loans. Despite negative confidence scores, their financial stability and employment status suggest a low risk for default. The sales team should focus on personalized loan offerings and emphasize competitive interest rates. Management should consider expanding marketing efforts in tier 2 cities, where a majority of these potential customers are located, to maximize loan uptake."
+}

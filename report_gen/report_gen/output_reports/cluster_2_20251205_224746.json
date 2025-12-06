@@ -1,0 +1,31 @@
+{
+  "cluster_id": 2,
+  "count": 5,
+  "cluster_summary": "This cluster consists of high-income, self-employed individuals residing in tier1 cities. They have excellent credit scores, making them strong candidates for car loans despite low confidence scores.",
+  "avg_confidence": -1.9258232615772999,
+  "confidence_distribution": {
+    "min": -2.5826734536769766,
+    "max": -0.5005358206609574,
+    "median": -2.201920667018233
+  },
+  "prediction_factors": [
+    "High income levels",
+    "Excellent credit scores",
+    "Residence in tier1 cities"
+  ],
+  "customer_behavior_patterns": [
+    "All customers are self-employed",
+    "Majority are middle-aged",
+    "High income is consistent across the cluster"
+  ],
+  "exemplar_insights": [
+    "Customer CUST_008502 has the highest income and credit score, making them a prime candidate for loan offers.",
+    "Customer CUST_003631 shows the highest credit score, indicating strong financial responsibility."
+  ],
+  "recommendations": [
+    "Focus on personalized loan offers highlighting benefits for self-employed individuals.",
+    "Emphasize flexible repayment options to accommodate self-employment income variability.",
+    "Target marketing efforts in tier1 cities where these customers reside."
+  ],
+  "admin_summary": "This cluster represents a group of financially robust individuals with high incomes and excellent credit scores, primarily self-employed and residing in tier1 cities. Despite low confidence scores, their financial metrics suggest strong eligibility for car loans. The sales team should focus on tailored loan products that cater to the self-employed demographic, emphasizing flexibility and benefits. Marketing efforts should be concentrated in tier1 cities to maximize engagement with this cluster."
+}

@@ -1,0 +1,31 @@
+{
+  "cluster_id": 2,
+  "count": 5,
+  "cluster_summary": "This cluster consists of high-income, self-employed individuals residing in tier1 cities, with excellent credit scores. Despite one outlier with a negative confidence score, the majority of customers show strong potential for loan eligibility.",
+  "avg_confidence": 0.6594266184875974,
+  "confidence_distribution": {
+    "min": -0.5897682621533173,
+    "max": 1.1966092308830278,
+    "median": 0.8668599253508509
+  },
+  "prediction_factors": [
+    "High income levels above 9 million",
+    "Excellent credit scores above 800",
+    "Residing in tier1 cities with better access to financial services"
+  ],
+  "customer_behavior_patterns": [
+    "All customers are self-employed, indicating entrepreneurial tendencies",
+    "Majority are middle-aged, suggesting financial stability",
+    "High credit scores reflect responsible financial behavior"
+  ],
+  "exemplar_insights": [
+    "Customer CUST_008560 has the highest confidence score and income, indicating strong loan eligibility",
+    "Customer CUST_003303 appears twice, suggesting data duplication but consistently shows high eligibility"
+  ],
+  "recommendations": [
+    "Focus marketing efforts on high-income, self-employed individuals in tier1 cities",
+    "Address the negative confidence score outlier to understand potential risks",
+    "Ensure data accuracy to prevent duplication in customer records"
+  ],
+  "admin_summary": "This cluster represents a group of financially stable, self-employed individuals with high incomes and excellent credit scores, predominantly residing in tier1 cities. The average confidence score is positive, indicating strong potential for loan eligibility. The sales team should target similar demographics for car loan products. Addressing data accuracy and understanding outliers will enhance customer insights and improve targeting strategies."
+}
