@@ -35,6 +35,9 @@ try:
         record_feedback_error,
         record_batch_update,
         update_memory_usage,
+        record_model_weight_update,
+        record_call_api_conversion,
+        update_call_conversion_rate,
         MetricsTimer
     )
     METRICS_ENABLED = True
@@ -243,13 +246,32 @@ class FeedbackProcessor:
                 self.update_count += 1
                 success_count += 1
                 
-                # Track statistics
+                # Track statistics and record metrics
                 if bought_loan:
                     self.positive_feedback_count += 1
                     feedback_type = "✓ POSITIVE"
+                    
+                    # 📊 METRIC: Record model weight update and conversion
+                    if METRICS_ENABLED:
+                        record_model_weight_update('car_loan', 'positive', update_duration)
+                        record_call_api_conversion('car_loan')
+                        # Update conversion rate
+                        total_feedback = self.positive_feedback_count + self.negative_feedback_count
+                        if total_feedback > 0:
+                            conversion_rate = self.positive_feedback_count / total_feedback
+                            update_call_conversion_rate('car_loan', conversion_rate)
                 else:
                     self.negative_feedback_count += 1
                     feedback_type = "✗ NEGATIVE"
+                    
+                    # 📊 METRIC: Record negative weight update
+                    if METRICS_ENABLED:
+                        record_model_weight_update('car_loan', 'negative', update_duration)
+                        # Update conversion rate
+                        total_feedback = self.positive_feedback_count + self.negative_feedback_count
+                        if total_feedback > 0:
+                            conversion_rate = self.positive_feedback_count / total_feedback
+                            update_call_conversion_rate('car_loan', conversion_rate)
                 
                 log_message(f"{feedback_type} | Customer: {customer_id} | Cluster: {k} | Score: {score:.2f} | "
                           f"Update #{self.update_count} | Latency: {update_duration*1000:.2f}ms")

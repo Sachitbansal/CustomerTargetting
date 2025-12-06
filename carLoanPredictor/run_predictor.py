@@ -9,17 +9,39 @@ from pathlib import Path
 import sys
 from datetime import datetime
 import json
+import time
 
 # --- PATH SETUP ---
 CURRENT_DIR = Path(__file__).resolve().parent
 PARENT_DIR = CURRENT_DIR.parent
+MONITORING_DIR = PARENT_DIR / "monitoring"
 sys.path.append(str(PARENT_DIR))
 sys.path.append(str(CURRENT_DIR))
+sys.path.append(str(MONITORING_DIR))
 
 # Import MasterSchema from dataUpdater
 from dataUpdater.schema import MasterSchema
 from persistenceUtils.persistence_utils import load_model_system
 from pipelineConfigs.pipeline_configs import CAR_LOAN_CONFIG as CONFIG
+
+# Import metrics
+try:
+    from metrics import (
+        initialize_metrics,
+        record_prediction,
+        record_inference_time,
+        record_lead_qualification,
+        record_car_loan_funnel,
+        record_call_api_attempt,
+        record_node_to_node_latency,
+        update_qualified_leads_count,
+        update_memory_usage,
+        MetricsTimer
+    )
+    METRICS_ENABLED = True
+except ImportError:
+    print("⚠️  Warning: metrics module not found. Metrics will not be recorded.")
+    METRICS_ENABLED = False
 
 # --- CONFIGURATION ---
 NATS_URI = "nats://localhost:4222"
@@ -28,6 +50,7 @@ OUTPUT_TOPIC = "leads.callCarLoan"
 MODEL_PATH = os.path.join(PARENT_DIR, "Persistence", "model_car.json")
 LOG_ENABLED = True  # Set to False to disable logging
 LOG_FILE = os.path.join(CURRENT_DIR, "prediction_node.log")
+METRICS_PORT = 8005  # Dedicated port for predictor metrics
 
 NUM_FEATURES = CONFIG["gmm_num_features"]
 CAT_FEATURES = CONFIG["gmm_cat_features"]
@@ -82,6 +105,7 @@ class CarLoanPredictor:
             self.load_model()
         
         self.prediction_count += 1
+        inference_start = time.time()
         
         try:
             # Split into numerical and categorical based on CONFIG
@@ -98,17 +122,34 @@ class CarLoanPredictor:
             # Predict - now returns exemplars too!
             is_in, k, score, _, exemplars = self.model.predict_score(x_num, x_cat)
             
+            # 📊 METRIC: Record inference time
+            inference_duration = time.time() - inference_start
+            if METRICS_ENABLED:
+                record_inference_time(inference_duration)
+            
             # Convert exemplars list to JSON string
             exemplars_str = json.dumps(exemplars) if exemplars else "[]"
             
-            # Track statistics
+            # Track statistics and record metrics
             if is_in:
                 self.qualified_count += 1
                 log_message(f"✓ PREDICTED YES | Customer: {customer_id} | Cluster: {k} | Score: {score:.2f} | "
                           f"Exemplars: {exemplars} | Total Predicted Yes: {self.qualified_count}")
+                
+                # 📊 METRIC: Record ML qualification and call attempt
+                if METRICS_ENABLED:
+                    record_lead_qualification('car_loan', 'ml_approved')
+                    record_car_loan_funnel('ml_qualified')
+                    record_call_api_attempt('car_loan')
+                    update_qualified_leads_count('car_loan', self.qualified_count)
+                    record_prediction(qualified=True, cluster_id=k, confidence=score, exemplar_count=len(exemplars) if exemplars else 0)
             else:
                 self.rejected_count += 1
                 log_message(f"✗ PREDICTED NO | Customer: {customer_id} | Cluster: {k} | Score: {score:.2f} | Total Predicted No: {self.rejected_count}")
+                
+                # 📊 METRIC: Record rejection
+                if METRICS_ENABLED:
+                    record_prediction(qualified=False, cluster_id=k, confidence=score, exemplar_count=0)
             
             # Return as pipe-delimited string with exemplars
             return f"{customer_id}|{int(is_in)}|{k}|{score}|{exemplars_str}"
@@ -130,8 +171,17 @@ def run_prediction_node():
     log_message(f"Output Topic: {OUTPUT_TOPIC}")
     log_message(f"Model Path:   {MODEL_PATH}")
     log_message(f"Log File:     {LOG_FILE if LOG_ENABLED else 'DISABLED'}")
+    log_message(f"Metrics:      {'ENABLED on port ' + str(METRICS_PORT) if METRICS_ENABLED else 'DISABLED'}")
     log_message(f"Batch Config: Reload every {MODEL_RELOAD_INTERVAL} predictions")
     log_message("═══════════════════════════════════════════════\n")
+    
+    # 📊 Initialize metrics server
+    if METRICS_ENABLED:
+        try:
+            metrics_manager = initialize_metrics("ml_car_predictor", port=METRICS_PORT)
+            log_message(f"✓ Metrics server initialized on port {METRICS_PORT}")
+        except Exception as e:
+            log_message(f"⚠️  Failed to initialize metrics: {e}")
     
     # 1. Read from NATS topic with MasterSchema
     input_stream = pw.io.nats.read(

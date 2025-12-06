@@ -410,6 +410,109 @@ ml_batch_updates = Counter(
 
 
 # ============================================================================
+# PIPELINE OBSERVABILITY METRICS (Node-to-Node Latency, Qualifications, etc.)
+# ============================================================================
+
+# ───────────────────────────────────────────────
+# 1. NODE-TO-NODE LATENCY (Inter-stage latency)
+# ───────────────────────────────────────────────
+
+# Latency between pipeline stages
+node_to_node_latency = Histogram(
+    'pipeline_node_to_node_latency_seconds',
+    'Latency between pipeline nodes (from one stage to the next)',
+    ['from_node', 'to_node'],  # e.g., publisher→enrichment, enrichment→dispatcher
+    buckets=[0.001, 0.005, 0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1.0, 2.5, 5.0, 10.0],
+    registry=_registry
+)
+
+# Stage entry timestamps for latency calculation
+stage_entry_timestamp = Gauge(
+    'pipeline_stage_entry_timestamp',
+    'Timestamp when record entered a stage (for latency calculation)',
+    ['stage', 'record_id'],
+    registry=_registry
+)
+
+# ───────────────────────────────────────────────
+# 2. LEAD QUALIFICATION & CAR LOAN COUNTS
+# ───────────────────────────────────────────────
+
+# Lead qualification counter by product and stage
+lead_qualification_total = Counter(
+    'pipeline_lead_qualification_total',
+    'Total leads qualified by product type and stage',
+    ['product', 'stage'],  # product=car_loan/home_loan/nifty50/elss, stage=qualified/sent_to_call/ml_approved
+    registry=_registry
+)
+
+# Car loan specific qualification funnel
+car_loan_funnel = Counter(
+    'pipeline_car_loan_funnel_total',
+    'Car loan lead funnel stages',
+    ['stage'],  # stage=volume_check/dispatched/ml_qualified/called
+    registry=_registry
+)
+
+# Current qualified leads gauge (for real-time display)
+current_qualified_leads = Gauge(
+    'pipeline_current_qualified_leads',
+    'Current count of qualified leads by product',
+    ['product'],
+    registry=_registry
+)
+
+# ───────────────────────────────────────────────
+# 3. MODEL WEIGHT UPDATE COUNTER
+# ───────────────────────────────────────────────
+
+# Model weight updates counter
+ml_model_weight_updates = Counter(
+    'ml_model_weight_updates_total',
+    'Total model weight updates from feedback loop',
+    ['model_type', 'update_type'],  # model_type=car_loan, update_type=positive/negative
+    registry=_registry
+)
+
+# Model weight update latency
+ml_weight_update_latency = Histogram(
+    'ml_model_weight_update_latency_seconds',
+    'Time taken to update model weights',
+    ['model_type'],
+    buckets=[0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1.0, 5.0],
+    registry=_registry
+)
+
+# ───────────────────────────────────────────────
+# 4. CALL API CONVERSION TRACKING
+# ───────────────────────────────────────────────
+
+# Call API attempts (customers we tried to call)
+call_api_attempts = Counter(
+    'pipeline_call_api_attempts_total',
+    'Total call API attempts (customers sent for calling)',
+    ['product'],  # car_loan, home_loan, nifty50, elss
+    registry=_registry
+)
+
+# Call API conversions (customers who actually bought)
+call_api_conversions = Counter(
+    'pipeline_call_api_conversions_total',
+    'Conversions from call API (customer actually bought)',
+    ['product'],
+    registry=_registry
+)
+
+# Conversion rate gauge (for dashboard display)
+call_conversion_rate = Gauge(
+    'pipeline_call_conversion_rate',
+    'Call-to-conversion rate (conversions/attempts)',
+    ['product'],
+    registry=_registry
+)
+
+
+# ============================================================================
 # METRICS MANAGER CLASS
 # ============================================================================
 
@@ -728,6 +831,133 @@ def record_feedback_error(error_type: str):
 def record_batch_update():
     """Record a batch update"""
     ml_batch_updates.inc()
+
+
+# ============================================================================
+# PIPELINE OBSERVABILITY RECORDING FUNCTIONS
+# ============================================================================
+
+# ───────────────────────────────────────────────
+# NODE-TO-NODE LATENCY FUNCTIONS
+# ───────────────────────────────────────────────
+
+def record_node_to_node_latency(from_node: str, to_node: str, latency_seconds: float):
+    """
+    Record latency between two pipeline nodes
+    
+    Args:
+        from_node: Source node (publisher, enrichment, dispatcher, predictor)
+        to_node: Destination node
+        latency_seconds: Time taken to move from one node to the next
+    """
+    node_to_node_latency.labels(from_node=from_node, to_node=to_node).observe(latency_seconds)
+
+
+def record_stage_entry(stage: str, record_id: str, timestamp: float = None):
+    """
+    Record when a record enters a stage (for latency calculation)
+    
+    Args:
+        stage: Stage name (publisher, enrichment, dispatcher, predictor, feedback)
+        record_id: Unique identifier for the record (e.g., customer_id_timestamp)
+        timestamp: Entry timestamp (defaults to current time)
+    """
+    if timestamp is None:
+        timestamp = time.time()
+    stage_entry_timestamp.labels(stage=stage, record_id=record_id).set(timestamp)
+
+
+# ───────────────────────────────────────────────
+# LEAD QUALIFICATION FUNCTIONS
+# ───────────────────────────────────────────────
+
+def record_lead_qualification(product: str, stage: str, count: int = 1):
+    """
+    Record lead qualification event
+    
+    Args:
+        product: Product type (car_loan, home_loan, nifty50, elss)
+        stage: Qualification stage (qualified, sent_to_call, ml_approved, converted)
+        count: Number of leads (default 1)
+    """
+    lead_qualification_total.labels(product=product, stage=stage).inc(count)
+
+
+def record_car_loan_funnel(stage: str, count: int = 1):
+    """
+    Record car loan funnel progression
+    
+    Args:
+        stage: Funnel stage (volume_check, dispatched, ml_qualified, called, converted)
+        count: Number of leads (default 1)
+    """
+    car_loan_funnel.labels(stage=stage).inc(count)
+
+
+def update_qualified_leads_count(product: str, count: int):
+    """
+    Update current qualified leads gauge
+    
+    Args:
+        product: Product type
+        count: Current count of qualified leads
+    """
+    current_qualified_leads.labels(product=product).set(count)
+
+
+# ───────────────────────────────────────────────
+# MODEL WEIGHT UPDATE FUNCTIONS
+# ───────────────────────────────────────────────
+
+def record_model_weight_update(model_type: str, update_type: str, latency: float = None):
+    """
+    Record a model weight update
+    
+    Args:
+        model_type: Type of model (car_loan, home_loan, etc.)
+        update_type: Type of update (positive, negative)
+        latency: Time taken for the update (optional)
+    """
+    ml_model_weight_updates.labels(model_type=model_type, update_type=update_type).inc()
+    if latency is not None:
+        ml_weight_update_latency.labels(model_type=model_type).observe(latency)
+
+
+# ───────────────────────────────────────────────
+# CALL API CONVERSION FUNCTIONS
+# ───────────────────────────────────────────────
+
+def record_call_api_attempt(product: str, count: int = 1):
+    """
+    Record a call API attempt (customer sent for calling)
+    
+    Args:
+        product: Product type (car_loan, home_loan, nifty50, elss)
+        count: Number of attempts (default 1)
+    """
+    call_api_attempts.labels(product=product).inc(count)
+
+
+def record_call_api_conversion(product: str, count: int = 1):
+    """
+    Record a call API conversion (customer actually bought)
+    
+    Args:
+        product: Product type
+        count: Number of conversions (default 1)
+    """
+    call_api_conversions.labels(product=product).inc(count)
+
+
+def update_call_conversion_rate(product: str, rate: float):
+    """
+    Update the call-to-conversion rate
+    
+    Args:
+        product: Product type
+        rate: Conversion rate (0.0 to 1.0)
+    """
+    call_conversion_rate.labels(product=product).set(rate)
 
 
 # ============================================================================
