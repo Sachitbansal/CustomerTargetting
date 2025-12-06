@@ -3943,3 +3943,622 @@
 
 [2025-12-06 22:54:20] ✓ Car Loan Feedback Node is running.
 
+[2025-12-07 01:59:31] Loading model from /root/interiit/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 01:59:31] ✓ Model loaded. Components: 8
+[2025-12-07 01:59:31] Loading MASTERFILE from /root/interiit/TargettedCalling/MASTERFILE.csv...
+[2025-12-07 01:59:32] ✓ MASTERFILE loaded. 12500 customers indexed.
+[2025-12-07 01:59:32] ═══════════════════════════════════════════════
+[2025-12-07 01:59:32]     CAR LOAN FEEDBACK NODE (PATHWAY)          
+[2025-12-07 01:59:32] ═══════════════════════════════════════════════
+[2025-12-07 01:59:32] Feedback Topic: feedback.carLoan
+[2025-12-07 01:59:32] Model Path:     /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 01:59:32] MASTERFILE:     /root/interiit/TargettedCalling/MASTERFILE.csv
+[2025-12-07 01:59:32] Log File:       /root/interiit/TargettedCalling/carLoanPredictor/feedback_node.log
+[2025-12-07 01:59:32] Batch Config:   Update every 5 feedbacks
+[2025-12-07 01:59:32] Auto-save:      Every 30 seconds
+[2025-12-07 01:59:32] ═══════════════════════════════════════════════
+
+[2025-12-07 01:59:32] ✓ Listening for feedback on 'feedback.carLoan'...
+[2025-12-07 01:59:32] ✓ LISTENING TO: feedback.carLoan
+
+[2025-12-07 01:59:32] ✓ Car Loan Feedback Node is running.
+
+[2025-12-07 02:00:32] Loading model from /root/interiit/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 02:00:32] ✓ Model loaded. Components: 8
+[2025-12-07 02:00:32] Loading MASTERFILE from /root/interiit/TargettedCalling/MASTERFILE.csv...
+[2025-12-07 02:00:32] ✓ MASTERFILE loaded. 12500 customers indexed.
+[2025-12-07 02:00:32] ═══════════════════════════════════════════════
+[2025-12-07 02:00:32]     CAR LOAN FEEDBACK NODE (PATHWAY)          
+[2025-12-07 02:00:32] ═══════════════════════════════════════════════
+[2025-12-07 02:00:32] Feedback Topic: feedback.carLoan
+[2025-12-07 02:00:32] Model Path:     /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:00:32] MASTERFILE:     /root/interiit/TargettedCalling/MASTERFILE.csv
+[2025-12-07 02:00:32] Log File:       /root/interiit/TargettedCalling/carLoanPredictor/feedback_node.log
+[2025-12-07 02:00:32] Batch Config:   Update every 5 feedbacks
+[2025-12-07 02:00:32] Auto-save:      Every 30 seconds
+[2025-12-07 02:00:32] ═══════════════════════════════════════════════
+
+[2025-12-07 02:00:32] ✓ Listening for feedback on 'feedback.carLoan'...
+[2025-12-07 02:00:32] ✓ LISTENING TO: feedback.carLoan
+
+[2025-12-07 02:00:32] ✓ Car Loan Feedback Node is running.
+
+[2025-12-07 02:07:14] Loading model from /root/interiit/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 02:07:14] ✓ Model loaded. Components: 8
+[2025-12-07 02:07:14] Loading MASTERFILE from /root/interiit/TargettedCalling/MASTERFILE.csv...
+[2025-12-07 02:07:14] ✓ MASTERFILE loaded. 12500 customers indexed.
+[2025-12-07 02:07:14] ═══════════════════════════════════════════════
+[2025-12-07 02:07:14]     CAR LOAN FEEDBACK NODE (PATHWAY)          
+[2025-12-07 02:07:14] ═══════════════════════════════════════════════
+[2025-12-07 02:07:14] Feedback Topic: feedback.carLoan
+[2025-12-07 02:07:14] Model Path:     /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:07:14] MASTERFILE:     /root/interiit/TargettedCalling/MASTERFILE.csv
+[2025-12-07 02:07:14] Log File:       /root/interiit/TargettedCalling/carLoanPredictor/feedback_node.log
+[2025-12-07 02:07:14] Batch Config:   Update every 5 feedbacks
+[2025-12-07 02:07:14] Auto-save:      Every 30 seconds
+[2025-12-07 02:07:14] ═══════════════════════════════════════════════
+
+[2025-12-07 02:07:14] ✓ Listening for feedback on 'feedback.carLoan'...
+[2025-12-07 02:07:14] ✓ LISTENING TO: feedback.carLoan
+
+[2025-12-07 02:07:14] ✓ Car Loan Feedback Node is running.
+
+[2025-12-07 02:07:29] 📥 RECEIVED FEEDBACK | Customer: CUST_009455 | Bought: True
+[2025-12-07 02:07:29] Buffer size: 1/5
+[2025-12-07 02:07:29] 📥 RECEIVED FEEDBACK | Customer: CUST_005302 | Bought: True
+[2025-12-07 02:07:29] Buffer size: 2/5
+[2025-12-07 02:07:29] 📥 RECEIVED FEEDBACK | Customer: CUST_007113 | Bought: True
+[2025-12-07 02:07:29] Buffer size: 3/5
+[2025-12-07 02:07:29] 📥 RECEIVED FEEDBACK | Customer: CUST_009493 | Bought: True
+[2025-12-07 02:07:29] Buffer size: 4/5
+[2025-12-07 02:07:29] 📥 RECEIVED FEEDBACK | Customer: CUST_001362 | Bought: True
+[2025-12-07 02:07:29] Buffer size: 5/5
+[2025-12-07 02:07:29] 
+============================================================
+[2025-12-07 02:07:29] 🔄 Processing batch of 5 feedback points
+[2025-12-07 02:07:29] ============================================================
+[2025-12-07 02:07:29] ✓ POSITIVE | Customer: CUST_009455 | Cluster: 2 | Score: -1.96 | Update #1
+[2025-12-07 02:07:29] ✓ POSITIVE | Customer: CUST_005302 | Cluster: 2 | Score: -2.71 | Update #2
+[2025-12-07 02:07:29] ✓ POSITIVE | Customer: CUST_007113 | Cluster: 2 | Score: -1.96 | Update #3
+[2025-12-07 02:07:29] ✓ POSITIVE | Customer: CUST_009493 | Cluster: 3 | Score: 1.56 | Update #4
+[2025-12-07 02:07:29] ✓ POSITIVE | Customer: CUST_001362 | Cluster: 7 | Score: 1.28 | Update #5
+[2025-12-07 02:07:29] 
+💾 Saving model after 5 updates...
+[2025-12-07 02:07:29] ✓ Model saved to /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:07:29] ✓ Current state: Components=8, Positive=5, Negative=0
+
+[2025-12-07 02:07:29] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 02:10:20] Loading model from /root/interiit/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 02:10:20] ✓ Model loaded. Components: 8
+[2025-12-07 02:10:20] Loading MASTERFILE from /root/interiit/TargettedCalling/MASTERFILE.csv...
+[2025-12-07 02:10:20] ✓ MASTERFILE loaded. 12500 customers indexed.
+[2025-12-07 02:10:20] ═══════════════════════════════════════════════
+[2025-12-07 02:10:20]     CAR LOAN FEEDBACK NODE (PATHWAY)          
+[2025-12-07 02:10:20] ═══════════════════════════════════════════════
+[2025-12-07 02:10:20] Feedback Topic: feedback.carLoan
+[2025-12-07 02:10:20] Model Path:     /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:10:20] MASTERFILE:     /root/interiit/TargettedCalling/MASTERFILE.csv
+[2025-12-07 02:10:20] Log File:       /root/interiit/TargettedCalling/carLoanPredictor/feedback_node.log
+[2025-12-07 02:10:20] Batch Config:   Update every 5 feedbacks
+[2025-12-07 02:10:20] Auto-save:      Every 30 seconds
+[2025-12-07 02:10:20] ═══════════════════════════════════════════════
+
+[2025-12-07 02:10:20] ✓ Listening for feedback on 'feedback.carLoan'...
+[2025-12-07 02:10:20] ✓ LISTENING TO: feedback.carLoan
+
+[2025-12-07 02:10:20] ✓ Car Loan Feedback Node is running.
+
+[2025-12-07 02:10:35] 📥 RECEIVED FEEDBACK | Customer: CUST_008225 | Bought: True
+[2025-12-07 02:10:35] Buffer size: 1/5
+[2025-12-07 02:10:35] 📥 RECEIVED FEEDBACK | Customer: CUST_007806 | Bought: True
+[2025-12-07 02:10:35] Buffer size: 2/5
+[2025-12-07 02:10:35] 📥 RECEIVED FEEDBACK | Customer: CUST_010285 | Bought: True
+[2025-12-07 02:10:35] Buffer size: 3/5
+[2025-12-07 02:10:35] 📥 RECEIVED FEEDBACK | Customer: CUST_006675 | Bought: True
+[2025-12-07 02:10:35] Buffer size: 4/5
+[2025-12-07 02:10:35] 📥 RECEIVED FEEDBACK | Customer: CUST_001362 | Bought: True
+[2025-12-07 02:10:35] Buffer size: 5/5
+[2025-12-07 02:10:35] 
+============================================================
+[2025-12-07 02:10:35] 🔄 Processing batch of 5 feedback points
+[2025-12-07 02:10:35] ============================================================
+[2025-12-07 02:10:35] ✓ POSITIVE | Customer: CUST_008225 | Cluster: 3 | Score: 0.30 | Update #1
+[2025-12-07 02:10:35] ✓ POSITIVE | Customer: CUST_007806 | Cluster: 2 | Score: -0.40 | Update #2
+[2025-12-07 02:10:35] ✓ POSITIVE | Customer: CUST_010285 | Cluster: 5 | Score: -2.15 | Update #3
+[2025-12-07 02:10:35] ✓ POSITIVE | Customer: CUST_006675 | Cluster: 3 | Score: -0.91 | Update #4
+[2025-12-07 02:10:35] ✓ POSITIVE | Customer: CUST_001362 | Cluster: 7 | Score: 1.71 | Update #5
+[2025-12-07 02:10:35] 
+💾 Saving model after 5 updates...
+[2025-12-07 02:10:35] ✓ Model saved to /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:10:35] ✓ Current state: Components=8, Positive=5, Negative=0
+
+[2025-12-07 02:10:35] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 02:12:42] Loading model from /root/interiit/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 02:12:42] ✓ Model loaded. Components: 8
+[2025-12-07 02:12:42] Loading MASTERFILE from /root/interiit/TargettedCalling/MASTERFILE.csv...
+[2025-12-07 02:12:42] ✓ MASTERFILE loaded. 12500 customers indexed.
+[2025-12-07 02:12:42] ═══════════════════════════════════════════════
+[2025-12-07 02:12:42]     CAR LOAN FEEDBACK NODE (PATHWAY)          
+[2025-12-07 02:12:42] ═══════════════════════════════════════════════
+[2025-12-07 02:12:42] Feedback Topic: feedback.carLoan
+[2025-12-07 02:12:42] Model Path:     /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:12:42] MASTERFILE:     /root/interiit/TargettedCalling/MASTERFILE.csv
+[2025-12-07 02:12:42] Log File:       /root/interiit/TargettedCalling/carLoanPredictor/feedback_node.log
+[2025-12-07 02:12:42] Batch Config:   Update every 5 feedbacks
+[2025-12-07 02:12:42] Auto-save:      Every 30 seconds
+[2025-12-07 02:12:42] ═══════════════════════════════════════════════
+
+[2025-12-07 02:12:42] ✓ Listening for feedback on 'feedback.carLoan'...
+[2025-12-07 02:12:42] ✓ LISTENING TO: feedback.carLoan
+
+[2025-12-07 02:12:42] ✓ Car Loan Feedback Node is running.
+
+[2025-12-07 02:13:10] 📥 RECEIVED FEEDBACK | Customer: CUST_000833 | Bought: True
+[2025-12-07 02:13:10] Buffer size: 1/5
+[2025-12-07 02:13:10] 📥 RECEIVED FEEDBACK | Customer: CUST_002835 | Bought: True
+[2025-12-07 02:13:10] Buffer size: 2/5
+[2025-12-07 02:13:10] 📥 RECEIVED FEEDBACK | Customer: CUST_006882 | Bought: True
+[2025-12-07 02:13:10] Buffer size: 3/5
+[2025-12-07 02:13:10] 📥 RECEIVED FEEDBACK | Customer: CUST_006950 | Bought: True
+[2025-12-07 02:13:10] Buffer size: 4/5
+[2025-12-07 02:13:10] 📥 RECEIVED FEEDBACK | Customer: CUST_006994 | Bought: True
+[2025-12-07 02:13:10] Buffer size: 5/5
+[2025-12-07 02:13:10] 
+============================================================
+[2025-12-07 02:13:10] 🔄 Processing batch of 5 feedback points
+[2025-12-07 02:13:10] ============================================================
+[2025-12-07 02:13:10] ✓ POSITIVE | Customer: CUST_000833 | Cluster: 3 | Score: 0.60 | Update #1
+[2025-12-07 02:13:10] ✓ POSITIVE | Customer: CUST_002835 | Cluster: 2 | Score: -1.13 | Update #2
+[2025-12-07 02:13:10] ✓ POSITIVE | Customer: CUST_006882 | Cluster: 5 | Score: 1.68 | Update #3
+[2025-12-07 02:13:10] ✓ POSITIVE | Customer: CUST_006950 | Cluster: 2 | Score: -2.04 | Update #4
+[2025-12-07 02:13:10] ✓ POSITIVE | Customer: CUST_006994 | Cluster: 3 | Score: 1.30 | Update #5
+[2025-12-07 02:13:10] 
+💾 Saving model after 5 updates...
+[2025-12-07 02:13:10] ✓ Model saved to /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:13:11] ✓ Current state: Components=8, Positive=5, Negative=0
+
+[2025-12-07 02:13:11] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 02:13:11] 📥 RECEIVED FEEDBACK | Customer: CUST_008225 | Bought: True
+[2025-12-07 02:13:11] Buffer size: 1/5
+[2025-12-07 02:13:11] 📥 RECEIVED FEEDBACK | Customer: CUST_006675 | Bought: True
+[2025-12-07 02:13:11] Buffer size: 2/5
+[2025-12-07 02:13:11] 📥 RECEIVED FEEDBACK | Customer: CUST_002806 | Bought: True
+[2025-12-07 02:13:11] Buffer size: 3/5
+[2025-12-07 02:13:11] 📥 RECEIVED FEEDBACK | Customer: CUST_002712 | Bought: True
+[2025-12-07 02:13:11] Buffer size: 4/5
+[2025-12-07 02:13:11] 📥 RECEIVED FEEDBACK | Customer: CUST_002879 | Bought: True
+[2025-12-07 02:13:11] Buffer size: 5/5
+[2025-12-07 02:13:11] 
+============================================================
+[2025-12-07 02:13:11] 🔄 Processing batch of 5 feedback points
+[2025-12-07 02:13:11] ============================================================
+[2025-12-07 02:13:11] ✓ POSITIVE | Customer: CUST_008225 | Cluster: 3 | Score: 1.31 | Update #6
+[2025-12-07 02:13:11] ✓ POSITIVE | Customer: CUST_006675 | Cluster: 3 | Score: 0.16 | Update #7
+[2025-12-07 02:13:11] ✓ POSITIVE | Customer: CUST_002806 | Cluster: 2 | Score: -1.60 | Update #8
+[2025-12-07 02:13:11] ✓ POSITIVE | Customer: CUST_002712 | Cluster: 2 | Score: -1.57 | Update #9
+[2025-12-07 02:13:11] ✓ POSITIVE | Customer: CUST_002879 | Cluster: 2 | Score: -0.59 | Update #10
+[2025-12-07 02:13:11] 
+💾 Saving model after 10 updates...
+[2025-12-07 02:13:11] ✓ Model saved to /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:13:11] ✓ Current state: Components=8, Positive=10, Negative=0
+
+[2025-12-07 02:13:11] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 02:13:11] 📥 RECEIVED FEEDBACK | Customer: CUST_000198 | Bought: True
+[2025-12-07 02:13:11] Buffer size: 1/5
+[2025-12-07 02:13:11] 📥 RECEIVED FEEDBACK | Customer: CUST_008697 | Bought: True
+[2025-12-07 02:13:11] Buffer size: 2/5
+[2025-12-07 02:13:11] 📥 RECEIVED FEEDBACK | Customer: CUST_001441 | Bought: True
+[2025-12-07 02:13:11] Buffer size: 3/5
+[2025-12-07 02:13:11] 📥 RECEIVED FEEDBACK | Customer: CUST_001362 | Bought: True
+[2025-12-07 02:13:11] Buffer size: 4/5
+[2025-12-07 02:13:11] 📥 RECEIVED FEEDBACK | Customer: CUST_006584 | Bought: True
+[2025-12-07 02:13:11] Buffer size: 5/5
+[2025-12-07 02:13:11] 
+============================================================
+[2025-12-07 02:13:11] 🔄 Processing batch of 5 feedback points
+[2025-12-07 02:13:11] ============================================================
+[2025-12-07 02:13:11] ✓ POSITIVE | Customer: CUST_000198 | Cluster: 3 | Score: 0.23 | Update #11
+[2025-12-07 02:13:11] ✓ POSITIVE | Customer: CUST_008697 | Cluster: 7 | Score: -0.07 | Update #12
+[2025-12-07 02:13:12] ✓ POSITIVE | Customer: CUST_001441 | Cluster: 2 | Score: -0.27 | Update #13
+[2025-12-07 02:13:12] ✓ POSITIVE | Customer: CUST_001362 | Cluster: 7 | Score: 2.06 | Update #14
+[2025-12-07 02:13:12] ✓ POSITIVE | Customer: CUST_006584 | Cluster: 2 | Score: -0.19 | Update #15
+[2025-12-07 02:13:12] 
+💾 Saving model after 15 updates...
+[2025-12-07 02:13:12] ✓ Model saved to /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:13:12] ✓ Current state: Components=8, Positive=15, Negative=0
+
+[2025-12-07 02:13:12] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 02:13:12] 📥 RECEIVED FEEDBACK | Customer: CUST_005979 | Bought: True
+[2025-12-07 02:13:12] Buffer size: 1/5
+[2025-12-07 02:13:12] 📥 RECEIVED FEEDBACK | Customer: CUST_010727 | Bought: True
+[2025-12-07 02:13:12] Buffer size: 2/5
+[2025-12-07 02:13:12] 📥 RECEIVED FEEDBACK | Customer: CUST_003631 | Bought: True
+[2025-12-07 02:13:12] Buffer size: 3/5
+[2025-12-07 02:13:12] 📥 RECEIVED FEEDBACK | Customer: CUST_003037 | Bought: True
+[2025-12-07 02:13:12] Buffer size: 4/5
+[2025-12-07 02:13:12] 📥 RECEIVED FEEDBACK | Customer: CUST_009972 | Bought: True
+[2025-12-07 02:13:12] Buffer size: 5/5
+[2025-12-07 02:13:12] 
+============================================================
+[2025-12-07 02:13:12] 🔄 Processing batch of 5 feedback points
+[2025-12-07 02:13:12] ============================================================
+[2025-12-07 02:13:12] ✓ POSITIVE | Customer: CUST_005979 | Cluster: 5 | Score: -0.57 | Update #16
+[2025-12-07 02:13:12] ✓ POSITIVE | Customer: CUST_010727 | Cluster: 2 | Score: -0.50 | Update #17
+[2025-12-07 02:13:12] ✓ POSITIVE | Customer: CUST_003631 | Cluster: 2 | Score: -2.30 | Update #18
+[2025-12-07 02:13:12] ✓ POSITIVE | Customer: CUST_003037 | Cluster: 4 | Score: 2.09 | Update #19
+[2025-12-07 02:13:12] ✓ POSITIVE | Customer: CUST_009972 | Cluster: 2 | Score: 0.15 | Update #20
+[2025-12-07 02:13:12] 
+💾 Saving model after 20 updates...
+[2025-12-07 02:13:12] ✓ Model saved to /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:13:12] ✓ Current state: Components=8, Positive=20, Negative=0
+
+[2025-12-07 02:13:12] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 02:13:12] 📥 RECEIVED FEEDBACK | Customer: CUST_003138 | Bought: True
+[2025-12-07 02:13:12] Buffer size: 1/5
+[2025-12-07 02:13:12] 📥 RECEIVED FEEDBACK | Customer: CUST_003732 | Bought: True
+[2025-12-07 02:13:12] Buffer size: 2/5
+[2025-12-07 02:13:12] 📥 RECEIVED FEEDBACK | Customer: CUST_005601 | Bought: True
+[2025-12-07 02:13:12] Buffer size: 3/5
+[2025-12-07 02:13:12] 📥 RECEIVED FEEDBACK | Customer: CUST_009865 | Bought: True
+[2025-12-07 02:13:12] Buffer size: 4/5
+[2025-12-07 02:13:13] 📥 RECEIVED FEEDBACK | Customer: CUST_005661 | Bought: True
+[2025-12-07 02:13:13] Buffer size: 5/5
+[2025-12-07 02:13:13] 
+============================================================
+[2025-12-07 02:13:13] 🔄 Processing batch of 5 feedback points
+[2025-12-07 02:13:13] ============================================================
+[2025-12-07 02:13:13] ✓ POSITIVE | Customer: CUST_003138 | Cluster: 3 | Score: 0.41 | Update #21
+[2025-12-07 02:13:13] ✓ POSITIVE | Customer: CUST_003732 | Cluster: 2 | Score: 0.29 | Update #22
+[2025-12-07 02:13:13] ✓ POSITIVE | Customer: CUST_005601 | Cluster: 3 | Score: 2.33 | Update #23
+[2025-12-07 02:13:13] ✓ POSITIVE | Customer: CUST_009865 | Cluster: 2 | Score: -1.71 | Update #24
+[2025-12-07 02:13:13] ✓ POSITIVE | Customer: CUST_005661 | Cluster: 2 | Score: 0.71 | Update #25
+[2025-12-07 02:13:13] 
+💾 Saving model after 25 updates...
+[2025-12-07 02:13:13] ✓ Model saved to /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:13:13] ✓ Current state: Components=8, Positive=25, Negative=0
+
+[2025-12-07 02:13:13] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 02:13:13] 📥 RECEIVED FEEDBACK | Customer: CUST_002160 | Bought: True
+[2025-12-07 02:13:13] Buffer size: 1/5
+[2025-12-07 02:13:13] 📥 RECEIVED FEEDBACK | Customer: CUST_006184 | Bought: True
+[2025-12-07 02:13:13] Buffer size: 2/5
+[2025-12-07 02:19:39] Loading model from /root/interiit/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 02:19:39] ✓ Model loaded. Components: 8
+[2025-12-07 02:19:39] Loading MASTERFILE from /root/interiit/TargettedCalling/MASTERFILE.csv...
+[2025-12-07 02:19:39] ✓ MASTERFILE loaded. 12500 customers indexed.
+[2025-12-07 02:19:39] ═══════════════════════════════════════════════
+[2025-12-07 02:19:39]     CAR LOAN FEEDBACK NODE (PATHWAY)          
+[2025-12-07 02:19:39] ═══════════════════════════════════════════════
+[2025-12-07 02:19:39] Feedback Topic: feedback.carLoan
+[2025-12-07 02:19:39] Model Path:     /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:19:39] MASTERFILE:     /root/interiit/TargettedCalling/MASTERFILE.csv
+[2025-12-07 02:19:39] Log File:       /root/interiit/TargettedCalling/carLoanPredictor/feedback_node.log
+[2025-12-07 02:19:39] Batch Config:   Update every 5 feedbacks
+[2025-12-07 02:19:39] Auto-save:      Every 30 seconds
+[2025-12-07 02:19:39] ═══════════════════════════════════════════════
+
+[2025-12-07 02:19:39] ✓ Listening for feedback on 'feedback.carLoan'...
+[2025-12-07 02:19:39] ✓ LISTENING TO: feedback.carLoan
+
+[2025-12-07 02:19:39] ✓ Car Loan Feedback Node is running.
+
+[2025-12-07 02:21:14] Loading model from /root/interiit/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 02:21:14] ✓ Model loaded. Components: 8
+[2025-12-07 02:21:14] Loading MASTERFILE from /root/interiit/TargettedCalling/MASTERFILE.csv...
+[2025-12-07 02:21:14] ✓ MASTERFILE loaded. 12500 customers indexed.
+[2025-12-07 02:21:14] ═══════════════════════════════════════════════
+[2025-12-07 02:21:14]     CAR LOAN FEEDBACK NODE (PATHWAY)          
+[2025-12-07 02:21:14] ═══════════════════════════════════════════════
+[2025-12-07 02:21:14] Feedback Topic: feedback.carLoan
+[2025-12-07 02:21:14] Model Path:     /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:21:14] MASTERFILE:     /root/interiit/TargettedCalling/MASTERFILE.csv
+[2025-12-07 02:21:14] Log File:       /root/interiit/TargettedCalling/carLoanPredictor/feedback_node.log
+[2025-12-07 02:21:14] Batch Config:   Update every 5 feedbacks
+[2025-12-07 02:21:14] Auto-save:      Every 30 seconds
+[2025-12-07 02:21:14] ═══════════════════════════════════════════════
+
+[2025-12-07 02:21:14] ✓ Listening for feedback on 'feedback.carLoan'...
+[2025-12-07 02:21:14] ✓ LISTENING TO: feedback.carLoan
+
+[2025-12-07 02:21:14] ✓ Car Loan Feedback Node is running.
+
+[2025-12-07 02:21:26] 📥 RECEIVED FEEDBACK | Customer: CUST_010932 | Bought: True
+[2025-12-07 02:21:26] Buffer size: 1/5
+[2025-12-07 02:21:26] 📥 RECEIVED FEEDBACK | Customer: CUST_009671 | Bought: True
+[2025-12-07 02:21:26] Buffer size: 2/5
+[2025-12-07 02:21:26] 📥 RECEIVED FEEDBACK | Customer: CUST_004083 | Bought: True
+[2025-12-07 02:21:26] Buffer size: 3/5
+[2025-12-07 02:21:26] 📥 RECEIVED FEEDBACK | Customer: CUST_008225 | Bought: True
+[2025-12-07 02:21:26] Buffer size: 4/5
+[2025-12-07 02:27:03] Loading model from /root/interiit/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 02:27:03] ✓ Model loaded. Components: 8
+[2025-12-07 02:27:03] Loading MASTERFILE from /root/interiit/TargettedCalling/MASTERFILE.csv...
+[2025-12-07 02:27:03] ✓ MASTERFILE loaded. 12500 customers indexed.
+[2025-12-07 02:27:03] ═══════════════════════════════════════════════
+[2025-12-07 02:27:03]     CAR LOAN FEEDBACK NODE (PATHWAY)          
+[2025-12-07 02:27:03] ═══════════════════════════════════════════════
+[2025-12-07 02:27:03] Feedback Topic: feedback.carLoan
+[2025-12-07 02:27:03] Model Path:     /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:27:03] MASTERFILE:     /root/interiit/TargettedCalling/MASTERFILE.csv
+[2025-12-07 02:27:03] Log File:       /root/interiit/TargettedCalling/carLoanPredictor/feedback_node.log
+[2025-12-07 02:27:03] Batch Config:   Update every 5 feedbacks
+[2025-12-07 02:27:03] Auto-save:      Every 30 seconds
+[2025-12-07 02:27:03] ═══════════════════════════════════════════════
+
+[2025-12-07 02:27:03] ✓ Listening for feedback on 'feedback.carLoan'...
+[2025-12-07 02:27:03] ✓ LISTENING TO: feedback.carLoan
+
+[2025-12-07 02:27:03] ✓ Car Loan Feedback Node is running.
+
+[2025-12-07 02:27:19] 📥 RECEIVED FEEDBACK | Customer: CUST_008697 | Bought: True
+[2025-12-07 02:27:19] Buffer size: 1/5
+[2025-12-07 02:27:19] 📥 RECEIVED FEEDBACK | Customer: CUST_007806 | Bought: True
+[2025-12-07 02:27:19] Buffer size: 2/5
+[2025-12-07 02:27:19] 📥 RECEIVED FEEDBACK | Customer: CUST_004083 | Bought: True
+[2025-12-07 02:27:19] Buffer size: 3/5
+[2025-12-07 02:27:19] 📥 RECEIVED FEEDBACK | Customer: CUST_008956 | Bought: True
+[2025-12-07 02:27:20] Buffer size: 4/5
+[2025-12-07 02:27:20] 📥 RECEIVED FEEDBACK | Customer: CUST_005111 | Bought: True
+[2025-12-07 02:27:20] Buffer size: 5/5
+[2025-12-07 02:27:20] 
+============================================================
+[2025-12-07 02:27:20] 🔄 Processing batch of 5 feedback points
+[2025-12-07 02:27:20] ============================================================
+[2025-12-07 02:27:20] ✓ POSITIVE | Customer: CUST_008697 | Cluster: 7 | Score: 0.90 | Update #1
+[2025-12-07 02:27:20] ✓ POSITIVE | Customer: CUST_007806 | Cluster: 2 | Score: -0.20 | Update #2
+[2025-12-07 02:27:20] ✓ POSITIVE | Customer: CUST_004083 | Cluster: 4 | Score: 3.47 | Update #3
+[2025-12-07 02:27:20] ✓ POSITIVE | Customer: CUST_008956 | Cluster: 3 | Score: 1.32 | Update #4
+[2025-12-07 02:27:20] ✓ POSITIVE | Customer: CUST_005111 | Cluster: 5 | Score: -0.50 | Update #5
+[2025-12-07 02:27:20] 
+💾 Saving model after 5 updates...
+[2025-12-07 02:27:20] ✓ Model saved to /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:27:20] ✓ Current state: Components=8, Positive=5, Negative=0
+
+[2025-12-07 02:27:20] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 02:27:20] 📥 RECEIVED FEEDBACK | Customer: CUST_007113 | Bought: True
+[2025-12-07 02:27:20] Buffer size: 1/5
+[2025-12-07 02:27:20] 📥 RECEIVED FEEDBACK | Customer: CUST_006528 | Bought: True
+[2025-12-07 02:27:20] Buffer size: 2/5
+[2025-12-07 02:27:20] 📥 RECEIVED FEEDBACK | Customer: CUST_011241 | Bought: True
+[2025-12-07 02:27:20] Buffer size: 3/5
+[2025-12-07 02:27:20] 📥 RECEIVED FEEDBACK | Customer: CUST_004838 | Bought: True
+[2025-12-07 02:27:20] Buffer size: 4/5
+[2025-12-07 02:27:20] 📥 RECEIVED FEEDBACK | Customer: CUST_002054 | Bought: True
+[2025-12-07 02:27:20] Buffer size: 5/5
+[2025-12-07 02:27:20] 
+============================================================
+[2025-12-07 02:27:20] 🔄 Processing batch of 5 feedback points
+[2025-12-07 02:27:20] ============================================================
+[2025-12-07 02:27:20] ✓ POSITIVE | Customer: CUST_007113 | Cluster: 2 | Score: -0.82 | Update #6
+[2025-12-07 02:27:20] ✓ POSITIVE | Customer: CUST_006528 | Cluster: 2 | Score: -0.01 | Update #7
+[2025-12-07 02:27:20] ✓ POSITIVE | Customer: CUST_011241 | Cluster: 2 | Score: -0.12 | Update #8
+[2025-12-07 02:27:20] ✓ POSITIVE | Customer: CUST_004838 | Cluster: 5 | Score: 1.51 | Update #9
+[2025-12-07 02:27:20] ✓ POSITIVE | Customer: CUST_002054 | Cluster: 2 | Score: 0.60 | Update #10
+[2025-12-07 02:27:20] 
+💾 Saving model after 10 updates...
+[2025-12-07 02:27:20] ✓ Model saved to /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:27:20] ✓ Current state: Components=8, Positive=10, Negative=0
+
+[2025-12-07 02:27:20] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 02:30:09] Loading model from /root/interiit/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 02:30:09] ✓ Model loaded. Components: 8
+[2025-12-07 02:30:09] Loading MASTERFILE from /root/interiit/TargettedCalling/MASTERFILE.csv...
+[2025-12-07 02:30:09] ✓ MASTERFILE loaded. 12500 customers indexed.
+[2025-12-07 02:30:09] ═══════════════════════════════════════════════
+[2025-12-07 02:30:09]     CAR LOAN FEEDBACK NODE (PATHWAY)          
+[2025-12-07 02:30:09] ═══════════════════════════════════════════════
+[2025-12-07 02:30:09] Feedback Topic: feedback.carLoan
+[2025-12-07 02:30:09] Model Path:     /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:30:09] MASTERFILE:     /root/interiit/TargettedCalling/MASTERFILE.csv
+[2025-12-07 02:30:09] Log File:       /root/interiit/TargettedCalling/carLoanPredictor/feedback_node.log
+[2025-12-07 02:30:09] Batch Config:   Update every 5 feedbacks
+[2025-12-07 02:30:09] Auto-save:      Every 30 seconds
+[2025-12-07 02:30:09] ═══════════════════════════════════════════════
+
+[2025-12-07 02:30:09] ✓ Listening for feedback on 'feedback.carLoan'...
+[2025-12-07 02:30:09] ✓ LISTENING TO: feedback.carLoan
+
+[2025-12-07 02:30:09] ✓ Car Loan Feedback Node is running.
+
+[2025-12-07 02:30:23] 📥 RECEIVED FEEDBACK | Customer: CUST_004887 | Bought: True
+[2025-12-07 02:30:23] Buffer size: 1/5
+[2025-12-07 02:30:23] 📥 RECEIVED FEEDBACK | Customer: CUST_012487 | Bought: True
+[2025-12-07 02:30:23] Buffer size: 2/5
+[2025-12-07 02:30:23] 📥 RECEIVED FEEDBACK | Customer: CUST_009236 | Bought: True
+[2025-12-07 02:30:23] Buffer size: 3/5
+[2025-12-07 02:30:24] 📥 RECEIVED FEEDBACK | Customer: CUST_002431 | Bought: True
+[2025-12-07 02:30:24] Buffer size: 4/5
+[2025-12-07 02:30:24] 📥 RECEIVED FEEDBACK | Customer: CUST_001749 | Bought: True
+[2025-12-07 02:30:24] Buffer size: 5/5
+[2025-12-07 02:30:24] 
+============================================================
+[2025-12-07 02:30:24] 🔄 Processing batch of 5 feedback points
+[2025-12-07 02:30:24] ============================================================
+[2025-12-07 02:30:25] ✓ POSITIVE | Customer: CUST_004887 | Cluster: 3 | Score: 0.27 | Update #1
+[2025-12-07 02:30:25] ✓ POSITIVE | Customer: CUST_012487 | Cluster: 3 | Score: 0.23 | Update #2
+[2025-12-07 02:30:25] ✓ POSITIVE | Customer: CUST_009236 | Cluster: 5 | Score: 1.04 | Update #3
+[2025-12-07 02:30:25] ✓ POSITIVE | Customer: CUST_002431 | Cluster: 3 | Score: -2.19 | Update #4
+[2025-12-07 02:30:25] ✓ POSITIVE | Customer: CUST_001749 | Cluster: 7 | Score: 0.32 | Update #5
+[2025-12-07 02:30:25] 
+💾 Saving model after 5 updates...
+[2025-12-07 02:30:25] ✓ Model saved to /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:30:25] ✓ Current state: Components=8, Positive=5, Negative=0
+
+[2025-12-07 02:30:25] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 02:30:25] 📥 RECEIVED FEEDBACK | Customer: CUST_010529 | Bought: True
+[2025-12-07 02:30:25] Buffer size: 1/5
+[2025-12-07 02:30:26] 📥 RECEIVED FEEDBACK | Customer: CUST_009236 | Bought: True
+[2025-12-07 02:30:26] Buffer size: 2/5
+[2025-12-07 02:30:32] 📥 RECEIVED FEEDBACK | Customer: CUST_002431 | Bought: True
+[2025-12-07 02:30:32] Buffer size: 3/5
+[2025-12-07 02:30:32] 📥 RECEIVED FEEDBACK | Customer: CUST_011241 | Bought: True
+[2025-12-07 02:30:32] Buffer size: 4/5
+[2025-12-07 02:30:32] 📥 RECEIVED FEEDBACK | Customer: CUST_008965 | Bought: True
+[2025-12-07 02:30:32] Buffer size: 5/5
+[2025-12-07 02:30:32] 
+============================================================
+[2025-12-07 02:30:32] 🔄 Processing batch of 5 feedback points
+[2025-12-07 02:30:32] ============================================================
+[2025-12-07 02:30:32] ✓ POSITIVE | Customer: CUST_010529 | Cluster: 3 | Score: 0.21 | Update #6
+[2025-12-07 02:30:32] ✓ POSITIVE | Customer: CUST_009236 | Cluster: 5 | Score: 1.79 | Update #7
+[2025-12-07 02:30:32] ✓ POSITIVE | Customer: CUST_002431 | Cluster: 3 | Score: -0.29 | Update #8
+[2025-12-07 02:30:32] ✓ POSITIVE | Customer: CUST_011241 | Cluster: 2 | Score: 0.58 | Update #9
+[2025-12-07 02:30:32] ✓ POSITIVE | Customer: CUST_008965 | Cluster: 2 | Score: 0.89 | Update #10
+[2025-12-07 02:30:32] 
+💾 Saving model after 10 updates...
+[2025-12-07 02:30:32] ✓ Model saved to /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:30:32] ✓ Current state: Components=8, Positive=10, Negative=0
+
+[2025-12-07 02:30:32] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 02:30:32] 📥 RECEIVED FEEDBACK | Customer: CUST_003732 | Bought: True
+[2025-12-07 02:30:32] Buffer size: 1/5
+[2025-12-07 02:30:32] 📥 RECEIVED FEEDBACK | Customer: CUST_008678 | Bought: True
+[2025-12-07 02:30:32] Buffer size: 2/5
+[2025-12-07 02:30:32] 📥 RECEIVED FEEDBACK | Customer: CUST_003631 | Bought: True
+[2025-12-07 02:30:32] Buffer size: 3/5
+[2025-12-07 02:30:32] 📥 RECEIVED FEEDBACK | Customer: CUST_001320 | Bought: True
+[2025-12-07 02:30:32] Buffer size: 4/5
+[2025-12-07 02:30:32] 📥 RECEIVED FEEDBACK | Customer: CUST_001749 | Bought: True
+[2025-12-07 02:30:32] Buffer size: 5/5
+[2025-12-07 02:30:32] 
+============================================================
+[2025-12-07 02:30:32] 🔄 Processing batch of 5 feedback points
+[2025-12-07 02:30:32] ============================================================
+[2025-12-07 02:30:32] ✓ POSITIVE | Customer: CUST_003732 | Cluster: 2 | Score: 0.97 | Update #11
+[2025-12-07 02:30:33] ✓ POSITIVE | Customer: CUST_008678 | Cluster: 3 | Score: 1.84 | Update #12
+[2025-12-07 02:30:33] ✓ POSITIVE | Customer: CUST_003631 | Cluster: 2 | Score: -1.91 | Update #13
+[2025-12-07 02:30:33] ✓ POSITIVE | Customer: CUST_001320 | Cluster: 3 | Score: 0.33 | Update #14
+[2025-12-07 02:30:33] ✓ POSITIVE | Customer: CUST_001749 | Cluster: 7 | Score: 1.24 | Update #15
+[2025-12-07 02:30:33] 
+💾 Saving model after 15 updates...
+[2025-12-07 02:30:33] ✓ Model saved to /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:30:33] ✓ Current state: Components=8, Positive=15, Negative=0
+
+[2025-12-07 02:30:33] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 02:30:33] 📥 RECEIVED FEEDBACK | Customer: CUST_010529 | Bought: True
+[2025-12-07 02:30:33] Buffer size: 1/5
+[2025-12-07 02:30:33] 📥 RECEIVED FEEDBACK | Customer: CUST_001320 | Bought: True
+[2025-12-07 02:30:33] Buffer size: 2/5
+[2025-12-07 02:30:33] 📥 RECEIVED FEEDBACK | Customer: CUST_008502 | Bought: True
+[2025-12-07 02:30:33] Buffer size: 3/5
+[2025-12-07 02:30:33] 📥 RECEIVED FEEDBACK | Customer: CUST_003631 | Bought: True
+[2025-12-07 02:30:33] Buffer size: 4/5
+[2025-12-07 02:30:33] 📥 RECEIVED FEEDBACK | Customer: CUST_002431 | Bought: True
+[2025-12-07 02:30:33] Buffer size: 5/5
+[2025-12-07 02:30:33] 
+============================================================
+[2025-12-07 02:30:33] 🔄 Processing batch of 5 feedback points
+[2025-12-07 02:30:33] ============================================================
+[2025-12-07 02:30:33] ✓ POSITIVE | Customer: CUST_010529 | Cluster: 3 | Score: 0.79 | Update #16
+[2025-12-07 02:30:33] ✓ POSITIVE | Customer: CUST_001320 | Cluster: 3 | Score: 1.09 | Update #17
+[2025-12-07 02:30:33] ✓ POSITIVE | Customer: CUST_008502 | Cluster: 2 | Score: -0.35 | Update #18
+[2025-12-07 02:30:33] ✓ POSITIVE | Customer: CUST_003631 | Cluster: 2 | Score: -0.30 | Update #19
+[2025-12-07 02:30:33] ✓ POSITIVE | Customer: CUST_002431 | Cluster: 3 | Score: 0.38 | Update #20
+[2025-12-07 02:30:33] 
+💾 Saving model after 20 updates...
+[2025-12-07 02:30:33] ✓ Model saved to /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:30:33] ✓ Current state: Components=8, Positive=20, Negative=0
+
+[2025-12-07 02:30:33] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 02:30:33] 📥 RECEIVED FEEDBACK | Customer: CUST_008400 | Bought: True
+[2025-12-07 02:30:33] Buffer size: 1/5
+[2025-12-07 02:30:50] 📥 RECEIVED FEEDBACK | Customer: CUST_002188 | Bought: True
+[2025-12-07 02:30:50] Buffer size: 2/5
+[2025-12-07 02:30:50] 📥 RECEIVED FEEDBACK | Customer: CUST_005302 | Bought: True
+[2025-12-07 02:30:50] Buffer size: 3/5
+[2025-12-07 02:30:50] 📥 RECEIVED FEEDBACK | Customer: CUST_008400 | Bought: True
+[2025-12-07 02:30:50] Buffer size: 4/5
+[2025-12-07 02:30:50] 📥 RECEIVED FEEDBACK | Customer: CUST_006950 | Bought: True
+[2025-12-07 02:30:50] Buffer size: 5/5
+[2025-12-07 02:30:50] 
+============================================================
+[2025-12-07 02:30:50] 🔄 Processing batch of 5 feedback points
+[2025-12-07 02:30:50] ============================================================
+[2025-12-07 02:30:50] ✓ POSITIVE | Customer: CUST_008400 | Cluster: 2 | Score: -3.87 | Update #21
+[2025-12-07 02:30:50] ✓ POSITIVE | Customer: CUST_002188 | Cluster: 2 | Score: 0.33 | Update #22
+[2025-12-07 02:30:50] ✓ POSITIVE | Customer: CUST_005302 | Cluster: 2 | Score: -2.24 | Update #23
+[2025-12-07 02:30:50] ✓ POSITIVE | Customer: CUST_008400 | Cluster: 2 | Score: -4.60 | Update #24
+[2025-12-07 02:30:51] ✓ POSITIVE | Customer: CUST_006950 | Cluster: 2 | Score: -0.85 | Update #25
+[2025-12-07 02:30:51] 
+💾 Saving model after 25 updates...
+[2025-12-07 02:30:51] ✓ Model saved to /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:30:51] ✓ Current state: Components=8, Positive=25, Negative=0
+
+[2025-12-07 02:30:51] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 02:30:51] 📥 RECEIVED FEEDBACK | Customer: CUST_011672 | Bought: True
+[2025-12-07 02:30:51] Buffer size: 1/5
+[2025-12-07 02:30:51] 📥 RECEIVED FEEDBACK | Customer: CUST_012487 | Bought: True
+[2025-12-07 02:30:51] Buffer size: 2/5
+[2025-12-07 02:30:51] 📥 RECEIVED FEEDBACK | Customer: CUST_004361 | Bought: True
+[2025-12-07 02:30:51] Buffer size: 3/5
+[2025-12-07 02:30:51] 📥 RECEIVED FEEDBACK | Customer: CUST_008502 | Bought: True
+[2025-12-07 02:30:51] Buffer size: 4/5
+[2025-12-07 02:30:51] 📥 RECEIVED FEEDBACK | Customer: CUST_009236 | Bought: True
+[2025-12-07 02:30:51] Buffer size: 5/5
+[2025-12-07 02:30:51] 
+============================================================
+[2025-12-07 02:30:51] 🔄 Processing batch of 5 feedback points
+[2025-12-07 02:30:51] ============================================================
+[2025-12-07 02:30:51] ✓ POSITIVE | Customer: CUST_011672 | Cluster: 2 | Score: -1.18 | Update #26
+[2025-12-07 02:30:51] ✓ POSITIVE | Customer: CUST_012487 | Cluster: 3 | Score: 1.22 | Update #27
+[2025-12-07 02:30:51] ✓ POSITIVE | Customer: CUST_004361 | Cluster: 2 | Score: -2.53 | Update #28
+[2025-12-07 02:30:51] ✓ POSITIVE | Customer: CUST_008502 | Cluster: 2 | Score: 0.55 | Update #29
+[2025-12-07 02:30:51] ✓ POSITIVE | Customer: CUST_009236 | Cluster: 5 | Score: 2.29 | Update #30
+[2025-12-07 02:30:51] 
+💾 Saving model after 30 updates...
+[2025-12-07 02:30:52] ✓ Model saved to /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:30:52] ✓ Current state: Components=8, Positive=30, Negative=0
+
+[2025-12-07 02:30:52] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 02:30:52] 📥 RECEIVED FEEDBACK | Customer: CUST_001320 | Bought: True
+[2025-12-07 02:30:52] Buffer size: 1/5
+[2025-12-07 02:30:52] 📥 RECEIVED FEEDBACK | Customer: CUST_007492 | Bought: True
+[2025-12-07 02:30:52] Buffer size: 2/5
+[2025-12-07 02:30:52] 📥 RECEIVED FEEDBACK | Customer: CUST_003631 | Bought: True
+[2025-12-07 02:30:52] Buffer size: 3/5
+[2025-12-07 02:30:52] 📥 RECEIVED FEEDBACK | Customer: CUST_008965 | Bought: True
+[2025-12-07 02:30:52] Buffer size: 4/5
+[2025-12-07 02:30:52] 📥 RECEIVED FEEDBACK | Customer: CUST_004887 | Bought: True
+[2025-12-07 02:30:52] Buffer size: 5/5
+[2025-12-07 02:30:52] 
+============================================================
+[2025-12-07 02:30:52] 🔄 Processing batch of 5 feedback points
+[2025-12-07 02:30:52] ============================================================
+[2025-12-07 02:30:52] ✓ POSITIVE | Customer: CUST_001320 | Cluster: 3 | Score: 1.52 | Update #31
+[2025-12-07 02:30:52] ✓ POSITIVE | Customer: CUST_007492 | Cluster: 3 | Score: 2.97 | Update #32
+[2025-12-07 02:30:52] ✓ POSITIVE | Customer: CUST_003631 | Cluster: 2 | Score: 0.20 | Update #33
+[2025-12-07 02:30:53] ✓ POSITIVE | Customer: CUST_008965 | Cluster: 2 | Score: 1.42 | Update #34
+[2025-12-07 02:30:53] ✓ POSITIVE | Customer: CUST_004887 | Cluster: 3 | Score: 1.10 | Update #35
+[2025-12-07 02:30:53] 
+💾 Saving model after 35 updates...
+[2025-12-07 02:30:53] ✓ Model saved to /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:30:53] ✓ Current state: Components=8, Positive=35, Negative=0
+
+[2025-12-07 02:30:53] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 02:30:53] 📥 RECEIVED FEEDBACK | Customer: CUST_008557 | Bought: True
+[2025-12-07 02:30:53] Buffer size: 1/5
+[2025-12-07 02:30:53] 📥 RECEIVED FEEDBACK | Customer: CUST_001206 | Bought: True
+[2025-12-07 02:30:53] Buffer size: 2/5
+[2025-12-07 02:30:53] 📥 RECEIVED FEEDBACK | Customer: CUST_007222 | Bought: True
+[2025-12-07 02:30:53] Buffer size: 3/5
+[2025-12-07 02:30:53] 📥 RECEIVED FEEDBACK | Customer: CUST_001287 | Bought: True
+[2025-12-07 02:30:53] Buffer size: 4/5
+[2025-12-07 02:30:53] 📥 RECEIVED FEEDBACK | Customer: CUST_009180 | Bought: True
+[2025-12-07 02:30:53] Buffer size: 5/5
+[2025-12-07 02:30:53] 
+============================================================
+[2025-12-07 02:30:53] 🔄 Processing batch of 5 feedback points
+[2025-12-07 02:30:53] ============================================================
+[2025-12-07 02:30:53] ✓ POSITIVE | Customer: CUST_008557 | Cluster: 2 | Score: -0.60 | Update #36
+[2025-12-07 02:30:53] ✓ POSITIVE | Customer: CUST_001206 | Cluster: 3 | Score: -2.39 | Update #37
+[2025-12-07 02:30:54] ✓ POSITIVE | Customer: CUST_007222 | Cluster: 5 | Score: 0.46 | Update #38
+[2025-12-07 02:30:54] ✓ POSITIVE | Customer: CUST_001287 | Cluster: 3 | Score: 1.63 | Update #39
+[2025-12-07 02:30:54] ✓ POSITIVE | Customer: CUST_009180 | Cluster: 5 | Score: 2.03 | Update #40
+[2025-12-07 02:30:54] 
+💾 Saving model after 40 updates...
+[2025-12-07 02:30:54] ✓ Model saved to /root/interiit/TargettedCalling/Persistence/model_car.json
+[2025-12-07 02:30:54] ✓ Current state: Components=8, Positive=40, Negative=0
+
+[2025-12-07 02:30:54] ✓ Batch complete: 5 updates, 0 errors
+[2025-12-07 02:30:54] 📥 RECEIVED FEEDBACK | Customer: CUST_004887 | Bought: True
+[2025-12-07 02:30:54] Buffer size: 1/5

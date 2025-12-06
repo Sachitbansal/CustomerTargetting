@@ -13,6 +13,7 @@ declare -a NODES=(
     "carLoanPredictor:car_loan_feedback_node.py"
     "report_gen:read_pred.py"
     "report_gen:llm_gen.py"
+    "carLoanPredictor:caller_node.py"
     "transactionPublisher:run_publisher.py"
 )
 
@@ -25,7 +26,7 @@ for node in "${NODES[@]}"; do
 done
 
 echo ""
-echo "✓ All 7 nodes started successfully!"
+echo "✓ All 8 nodes started successfully!"
 echo "Press Ctrl+C to stop all nodes"
 echo ""
 
