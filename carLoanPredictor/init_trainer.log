@@ -1,0 +1,95 @@
+[2025-12-06 01:00:17] ═══════════════════════════════════════════════
+[2025-12-06 01:00:17]     Initializing Trainer for opted_car_loan        
+[2025-12-06 01:00:17] ═══════════════════════════════════════════════
+[2025-12-06 01:00:17] Data File:      /home/crazy_warlord/TargettedCalling/MASTERFILE.csv
+[2025-12-06 01:00:17] Model Path:     /home/crazy_warlord/TargettedCalling/Persistence/model_car.json
+[2025-12-06 01:00:17] Log File:       /home/crazy_warlord/TargettedCalling/carLoanPredictor/init_trainer.log
+[2025-12-06 01:00:17] Metrics:        ENABLED
+[2025-12-06 01:00:17] ═══════════════════════════════════════════════
+
+[2025-12-06 01:00:17] Loading data from /home/crazy_warlord/TargettedCalling/MASTERFILE.csv...
+[2025-12-06 01:00:17] ✓ Data loaded. Total rows: 12500
+[2025-12-06 01:00:17] 
+Training Data Statistics:
+[2025-12-06 01:00:17]   Total Rows: 12500
+[2025-12-06 01:00:17]   Positive Samples (target=1): 8637
+[2025-12-06 01:00:17]   Negative/Streaming Samples (target=0): 3863
+[2025-12-06 01:00:17] 📊 Metric recorded: Training samples = 8637
+[2025-12-06 01:00:17] 
+📊 Fitting Preprocessors...
+[2025-12-06 01:00:17]   Numerical Features (6): ['dti_ratio', 'savings_rate', 'score_x_log_income', 'final_avg_monthly_balance', 'monthly_fuel_spend', 'monthly_transport_service_spend']
+[2025-12-06 01:00:17]   Categorical Features (3): ['city_tier', 'marital_status', 'employment_type']
+[2025-12-06 01:00:17] 📊 Metric recorded: Feature dimensions = 6 num, 3 cat
+[2025-12-06 01:00:17]   ✓ StandardScaler fitted on 8637 samples
+[2025-12-06 01:00:17]   ✓ OrdinalEncoder fitted. Category dimensions: [3, 2, 2]
+[2025-12-06 01:00:17] 
+🧠 Fitting StreamingHybridAdvanced GMM...
+[2025-12-06 01:00:17]   Model Configuration:
+[2025-12-06 01:00:17]     - Numerical Dimensions: 6
+[2025-12-06 01:00:17]     - Categorical Dimensions: 3
+[2025-12-06 01:00:17]     - Max Components (kMax): 8
+[2025-12-06 01:00:17]     - Learning Rate: 0.05
+[2025-12-06 01:00:17]     - Max Exemplars per Cluster: 6
+[2025-12-06 01:00:17]   ✓ Model Initialized. Components: 8
+[2025-12-06 01:00:17] 📊 Metric recorded: Baseline components = 8
+[2025-12-06 01:00:17] 
+💾 Saving model system to /home/crazy_warlord/TargettedCalling/Persistence/model_car.json...
+[2025-12-06 01:00:17] 
+❌ TRAINING FAILED: name 'save_model_system' is not defined
+[2025-12-06 01:00:17] Traceback (most recent call last):
+  File "/home/crazy_warlord/TargettedCalling/carLoanPredictor/init_car_trainer.py", line 155, in train_and_save
+    save_model_system(model, scaler, ord_enc, MODEL_SAVE_PATH)
+NameError: name 'save_model_system' is not defined
+
+[2025-12-06 01:00:17] 📊 Metric recorded: Training status = FAILED
+[2025-12-06 01:01:34] ═══════════════════════════════════════════════
+[2025-12-06 01:01:34]     Initializing Trainer for opted_car_loan        
+[2025-12-06 01:01:34] ═══════════════════════════════════════════════
+[2025-12-06 01:01:34] Data File:      /home/crazy_warlord/TargettedCalling/MASTERFILE.csv
+[2025-12-06 01:01:34] Model Path:     /home/crazy_warlord/TargettedCalling/Persistence/model_car.json
+[2025-12-06 01:01:34] Log File:       /home/crazy_warlord/TargettedCalling/carLoanPredictor/init_trainer.log
+[2025-12-06 01:01:34] Metrics:        ENABLED
+[2025-12-06 01:01:34] ═══════════════════════════════════════════════
+
+[2025-12-06 01:01:34] Loading data from /home/crazy_warlord/TargettedCalling/MASTERFILE.csv...
+[2025-12-06 01:01:34] ✓ Data loaded. Total rows: 12500
+[2025-12-06 01:01:34] 
+Training Data Statistics:
+[2025-12-06 01:01:34]   Total Rows: 12500
+[2025-12-06 01:01:34]   Positive Samples (target=1): 8637
+[2025-12-06 01:01:34]   Negative/Streaming Samples (target=0): 3863
+[2025-12-06 01:01:34] 📊 Metric recorded: Training samples = 8637
+[2025-12-06 01:01:34] 
+📊 Fitting Preprocessors...
+[2025-12-06 01:01:34]   Numerical Features (6): ['dti_ratio', 'savings_rate', 'score_x_log_income', 'final_avg_monthly_balance', 'monthly_fuel_spend', 'monthly_transport_service_spend']
+[2025-12-06 01:01:34]   Categorical Features (3): ['city_tier', 'marital_status', 'employment_type']
+[2025-12-06 01:01:34] 📊 Metric recorded: Feature dimensions = 6 num, 3 cat
+[2025-12-06 01:01:34]   ✓ StandardScaler fitted on 8637 samples
+[2025-12-06 01:01:34]   ✓ OrdinalEncoder fitted. Category dimensions: [3, 2, 2]
+[2025-12-06 01:01:34] 
+🧠 Fitting StreamingHybridAdvanced GMM...
+[2025-12-06 01:01:34]   Model Configuration:
+[2025-12-06 01:01:34]     - Numerical Dimensions: 6
+[2025-12-06 01:01:34]     - Categorical Dimensions: 3
+[2025-12-06 01:01:34]     - Max Components (kMax): 8
+[2025-12-06 01:01:34]     - Learning Rate: 0.05
+[2025-12-06 01:01:34]     - Max Exemplars per Cluster: 6
+[2025-12-06 01:01:34]   ✓ Model Initialized. Components: 8
+[2025-12-06 01:01:34] 📊 Metric recorded: Baseline components = 8
+[2025-12-06 01:01:34] 
+💾 Saving model system to /home/crazy_warlord/TargettedCalling/Persistence/model_car.json...
+[2025-12-06 01:01:34] ✓ Model system saved successfully!
+[2025-12-06 01:01:34] 📊 Metric recorded: Training duration = 0.41s
+[2025-12-06 01:01:34] 📊 Metric recorded: Training status = SUCCESS
+[2025-12-06 01:01:34] 
+==================================================
+[2025-12-06 01:01:34] TRAINING COMPLETE - SUMMARY
+[2025-12-06 01:01:34] ==================================================
+[2025-12-06 01:01:34] Training Samples:     8637
+[2025-12-06 01:01:34] GMM Components:       8
+[2025-12-06 01:01:34] Training Duration:    0.41s
+[2025-12-06 01:01:34] Model Location:       /home/crazy_warlord/TargettedCalling/Persistence/model_car.json
+[2025-12-06 01:01:34] Log Location:         /home/crazy_warlord/TargettedCalling/carLoanPredictor/init_trainer.log
+[2025-12-06 01:01:34] Metrics Recorded:     YES
+[2025-12-06 01:01:34] ==================================================
+

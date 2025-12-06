@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  # 1. Message Broker
+  nats:
+    image: nats:latest
+    ports:
+      - "4222:4222"
+      - "8222:8222"
+    command: "-js"
+    networks:
+      - pipeline-net
+
+  # 2. Metrics Collector
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      # Main Config
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      # Alert Rules (Added these based on your files)
+      - ./monitoring/alerts.yml:/etc/prometheus/alerts.yml
+      - ./monitoring/ml_alerts.yml:/etc/prometheus/ml_alerts.yml
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--web.enable-lifecycle'
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - pipeline-net
+
+  # 3. System Metrics (From your monitoring file)
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node-exporter
+    ports:
+      - "9100:9100"
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.sysfs=/host/sys'
+    networks:
+      - pipeline-net
+
+  # 4. Visualization (Auto-Provisioned)
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      # Mount the provisioning configs
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      # Mount the actual JSON dashboards
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    depends_on:
+      - prometheus
+    networks:
+      - pipeline-net
+
+networks:
+  pipeline-net:
+    driver: bridge

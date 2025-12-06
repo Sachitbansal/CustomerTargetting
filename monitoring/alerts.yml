@@ -1,0 +1,339 @@
+# Prometheus Alert Rules for Transaction Pipeline
+# Place this file in: ./monitoring/alerts.yml
+# 
+# To enable alerts:
+# 1. Uncomment the rule_files section in prometheus.yml
+# 2. Set up Alertmanager (optional but recommended)
+
+groups:
+  # ========================================================================
+  # PUBLISHER ALERTS - Data Injection Stage
+  # ========================================================================
+  
+  - name: publisher_alerts
+    interval: 30s
+    rules:
+      
+      # Critical: Publisher has stopped injecting data
+      - alert: PublisherFlatline
+        expr: rate(pipeline_record_processing_total{stage="publisher"}[1m]) < 1
+        for: 1m
+        labels:
+          severity: critical
+          component: publisher
+          stage: injection
+        annotations:
+          summary: "Publisher has stopped processing data"
+          description: "Publisher TPS is {{ $value | humanize }} (expected ~20 TPS). Data ingestion may have halted."
+          dashboard: "http://localhost:3000/d/publisher"
+      
+      # Warning: TPS below target
+      - alert: PublisherLowTPS
+        expr: publisher_current_tps < 18 and publisher_current_tps > 0
+        for: 2m
+        labels:
+          severity: warning
+          component: publisher
+          stage: injection
+        annotations:
+          summary: "Publisher TPS below target"
+          description: "Current TPS is {{ $value | humanize }} (target: 20). Check for IO bottlenecks or CPU issues."
+      
+      # Warning: TPS above target (too fast, might overwhelm downstream)
+      - alert: PublisherHighTPS
+        expr: publisher_current_tps > 22
+        for: 2m
+        labels:
+          severity: warning
+          component: publisher
+          stage: injection
+        annotations:
+          summary: "Publisher TPS above target"
+          description: "Current TPS is {{ $value | humanize }} (target: 20). Downstream components may be overwhelmed."
+      
+      # Critical: NATS publish failures
+      - alert: PublisherNATSFailures
+        expr: rate(publisher_nats_publish_errors_total[5m]) > 0
+        for: 1m
+        labels:
+          severity: critical
+          component: publisher
+          infrastructure: nats
+        annotations:
+          summary: "NATS publish failures detected"
+          description: "{{ $value | humanize }} publish errors per second. Check NATS connection and queue health."
+      
+      # Warning: NATS connection down
+      - alert: PublisherNATSDisconnected
+        expr: nats_connection_status{component="publisher"} == 0
+        for: 30s
+        labels:
+          severity: critical
+          component: publisher
+          infrastructure: nats
+        annotations:
+          summary: "Publisher disconnected from NATS"
+          description: "NATS connection is down. Messages are not being published."
+      
+      # Warning: High IO latency
+      - alert: PublisherHighIOLatency
+        expr: histogram_quantile(0.95, rate(publisher_io_wait_duration_seconds_bucket{operation="append"}[5m])) > 0.05
+        for: 3m
+        labels:
+          severity: warning
+          component: publisher
+          performance: io
+        annotations:
+          summary: "High file IO latency detected"
+          description: "95th percentile append latency is {{ $value | humanize }}s (threshold: 50ms). Disk may be slow."
+      
+      # Warning: Buffer lag increasing
+      - alert: PublisherBufferLag
+        expr: publisher_buffer_lag_seconds > 5
+        for: 2m
+        labels:
+          severity: warning
+          component: publisher
+          performance: buffer
+        annotations:
+          summary: "CSV buffer lag increasing"
+          description: "Buffer lag is {{ $value | humanize }}s. Writer is outpacing reader, or reader is stuck."
+      
+      # Warning: Memory leak suspected
+      - alert: PublisherMemoryLeak
+        expr: |
+          (
+            pipeline_component_memory_usage_bytes{component="publisher"} - 
+            pipeline_component_memory_usage_bytes{component="publisher"} offset 10m
+          ) > 100000000
+        for: 5m
+        labels:
+          severity: warning
+          component: publisher
+          resource: memory
+        annotations:
+          summary: "Potential memory leak in Publisher"
+          description: "Memory usage increased by {{ $value | humanize }}B in 10 minutes. Check for leaks or unbounded buffers."
+      
+      # Info: Publisher component errors
+      - alert: PublisherErrors
+        expr: rate(pipeline_component_errors_total{component="publisher"}[5m]) > 0
+        for: 2m
+        labels:
+          severity: warning
+          component: publisher
+        annotations:
+          summary: "Publisher errors detected"
+          description: "{{ $value | humanize }} errors per second. Check logs for details."
+
+  # ========================================================================
+  # ENRICHMENT ALERTS - Customer 360 Stage
+  # ========================================================================
+  
+  - name: enrichment_alerts
+    interval: 30s
+    rules:
+      
+      # Critical: Enrichment has stopped
+      - alert: EnrichmentFlatline
+        expr: rate(pipeline_record_processing_total{stage="enrichment"}[1m]) < 1
+        for: 1m
+        labels:
+          severity: critical
+          component: enrichment
+          stage: customer360
+        annotations:
+          summary: "Enrichment pipeline has stopped"
+          description: "No records enriched in the last minute. Check enrichment service and NATS consumer."
+      
+      # Critical: High orphan rate (transactions without customer IDs)
+      - alert: EnrichmentHighOrphanRate
+        expr: |
+          (
+            rate(enrichment_master_match_fail_total[5m]) / 
+            (rate(enrichment_master_match_success_total[5m]) + rate(enrichment_master_match_fail_total[5m]))
+          ) > 0.05
+        for: 3m
+        labels:
+          severity: critical
+          component: enrichment
+          data_quality: master_match
+        annotations:
+          summary: "High rate of unmatched customer IDs"
+          description: "{{ $value | humanizePercentage }} of transactions have unknown customer IDs. Master data may be stale or corrupted."
+      
+      # Warning: Credit score anomaly
+      - alert: EnrichmentCreditScoreAnomaly
+        expr: enrichment_average_credit_score < 300 or enrichment_average_credit_score > 850
+        for: 5m
+        labels:
+          severity: warning
+          component: enrichment
+          data_quality: credit_score
+        annotations:
+          summary: "Credit score average is abnormal"
+          description: "Average credit score is {{ $value | humanize }} (normal: 300-850). Check credit score calculation logic."
+      
+      # Warning: High bounced transaction rate
+      - alert: EnrichmentHighBouncedRate
+        expr: rate(enrichment_bounced_events_total[5m]) > 1
+        for: 5m
+        labels:
+          severity: warning
+          component: enrichment
+          business_metric: bounced
+        annotations:
+          summary: "High rate of bounced transactions"
+          description: "{{ $value | humanize }} bounced transactions per second. May indicate payment issues or fraud."
+      
+      # Warning: Slow enrichment processing
+      - alert: EnrichmentSlowProcessing
+        expr: histogram_quantile(0.95, rate(enrichment_processing_duration_seconds_bucket[5m])) > 0.5
+        for: 3m
+        labels:
+          severity: warning
+          component: enrichment
+          performance: latency
+        annotations:
+          summary: "Enrichment processing is slow"
+          description: "95th percentile processing time is {{ $value | humanize }}s. Check CPU and join performance."
+
+  # ========================================================================
+  # DISPATCHER ALERTS - Lead Generation Stage
+  # ========================================================================
+  
+  - name: dispatcher_alerts
+    interval: 30s
+    rules:
+      
+      # Critical: Dispatcher has stopped
+      - alert: DispatcherFlatline
+        expr: rate(pipeline_record_processing_total{stage="dispatcher"}[1m]) < 0.01
+        for: 2m
+        labels:
+          severity: critical
+          component: dispatcher
+          stage: lead_generation
+        annotations:
+          summary: "Lead dispatcher has stopped"
+          description: "No leads generated in 2 minutes. Check dispatcher service and downstream NATS topics."
+      
+      # Warning: Lead generation flood
+      - alert: DispatcherLeadFlood
+        expr: rate(dispatcher_leads_generated_total[1m]) > 100
+        for: 2m
+        labels:
+          severity: warning
+          component: dispatcher
+          business_metric: leads
+        annotations:
+          summary: "Unusually high lead generation rate"
+          description: "Generating {{ $value | humanize }} leads per second (normal: <2). Thresholds may be too low."
+      
+      # Warning: High cooldown filter hits (missing opportunities?)
+      - alert: DispatcherHighCooldownRate
+        expr: |
+          (
+            rate(dispatcher_cooldown_filter_hits_total[10m]) / 
+            (rate(dispatcher_leads_generated_total[10m]) + rate(dispatcher_lead_rejections_total{reason="cooldown"}[10m]))
+          ) > 0.8
+        for: 5m
+        labels:
+          severity: warning
+          component: dispatcher
+          business_logic: cooldown
+        annotations:
+          summary: "High cooldown filter rejection rate"
+          description: "{{ $value | humanizePercentage }} of potential leads rejected due to cooldown. Consider adjusting cooldown periods."
+      
+      # Info: Lead type distribution skew
+      - alert: DispatcherLeadTypeSkew
+        expr: |
+          sum(rate(dispatcher_leads_generated_total{type="home"}[10m])) / 
+          sum(rate(dispatcher_leads_generated_total[10m])) > 0.9
+        for: 10m
+        labels:
+          severity: info
+          component: dispatcher
+          business_metric: lead_distribution
+        annotations:
+          summary: "Lead distribution heavily skewed"
+          description: "{{ $value | humanizePercentage }} of leads are type=home. Check if other thresholds are too restrictive."
+      
+      # Warning: High lead generation latency
+      - alert: DispatcherHighLatency
+        expr: histogram_quantile(0.95, rate(dispatcher_lead_latency_seconds_bucket[5m])) > 30
+        for: 3m
+        labels:
+          severity: warning
+          component: dispatcher
+          performance: latency
+        annotations:
+          summary: "High lead generation latency"
+          description: "95th percentile latency is {{ $value | humanize }}s. Leads are taking too long to generate after transaction updates."
+
+  # ========================================================================
+  # PIPELINE-WIDE ALERTS - End-to-End Health
+  # ========================================================================
+  
+  - name: pipeline_health_alerts
+    interval: 30s
+    rules:
+      
+      # Critical: End-to-end pipeline stalled
+      - alert: PipelineStalled
+        expr: |
+          (
+            rate(pipeline_record_processing_total{stage="publisher"}[2m]) > 10 and
+            rate(pipeline_record_processing_total{stage="enrichment"}[2m]) < 1
+          ) or
+          (
+            rate(pipeline_record_processing_total{stage="enrichment"}[2m]) > 10 and
+            rate(pipeline_record_processing_total{stage="dispatcher"}[2m]) < 0.01
+          )
+        for: 2m
+        labels:
+          severity: critical
+          pipeline: end_to_end
+        annotations:
+          summary: "Pipeline stage is stalled"
+          description: "Data is flowing into one stage but not flowing out. Check NATS queues and component health."
+      
+      # Warning: High end-to-end latency
+      - alert: PipelineHighLatency
+        expr: histogram_quantile(0.95, rate(pipeline_end_to_end_latency_seconds_bucket[5m])) > 60
+        for: 5m
+        labels:
+          severity: warning
+          pipeline: end_to_end
+          performance: latency
+        annotations:
+          summary: "High end-to-end pipeline latency"
+          description: "95th percentile latency is {{ $value | humanize }}s. Transactions are taking too long to flow through the pipeline."
+      
+      # Warning: NATS queue building up
+      - alert: NATSQueueBacklog
+        expr: nats_queue_depth > 1000
+        for: 3m
+        labels:
+          severity: warning
+          infrastructure: nats
+        annotations:
+          summary: "NATS queue has backlog"
+          description: "{{ $labels.stream }} has {{ $value }} pending messages. Consumer may be slow or down."
+      
+      # Info: All systems operational
+      - alert: PipelineHealthy
+        expr: |
+          (
+            publisher_current_tps >= 18 and publisher_current_tps <= 22 and
+            rate(pipeline_record_processing_total{stage="enrichment"}[1m]) > 10 and
+            nats_connection_status == 1
+          )
+        for: 5m
+        labels:
+          severity: info
+          pipeline: health
+        annotations:
+          summary: "Pipeline is healthy"
+          description: "All components are operating within normal parameters."

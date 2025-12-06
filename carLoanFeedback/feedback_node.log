@@ -1,0 +1,48 @@
+[2025-12-06 01:02:25] Loading model from /home/crazy_warlord/TargettedCalling/Persistence/model_car.json...
+[2025-12-06 01:02:25] ✓ Model loaded. Components: 8
+[2025-12-06 01:02:25] 📊 Metric recorded: Model components = 8
+[2025-12-06 01:02:25] Loading MASTERFILE from /home/crazy_warlord/TargettedCalling/MASTERFILE.csv...
+[2025-12-06 01:02:25] ✓ MASTERFILE loaded. 12500 customers indexed.
+[2025-12-06 01:02:25] ✓ Background metrics updater started
+[2025-12-06 01:02:25] ═══════════════════════════════════════════════
+[2025-12-06 01:02:25]     CAR LOAN FEEDBACK NODE (PATHWAY)          
+[2025-12-06 01:02:25] ═══════════════════════════════════════════════
+[2025-12-06 01:02:25] Feedback Topic: feedback.carLoan
+[2025-12-06 01:02:25] Model Path:     /home/crazy_warlord/TargettedCalling/Persistence/model_car.json
+[2025-12-06 01:02:25] MASTERFILE:     /home/crazy_warlord/TargettedCalling/MASTERFILE.csv
+[2025-12-06 01:02:25] Log File:       /home/crazy_warlord/TargettedCalling/carLoanFeedback/feedback_node.log
+[2025-12-06 01:02:25] Metrics:        ENABLED on port 8006
+[2025-12-06 01:02:25] Batch Config:   Update every 5 feedbacks
+[2025-12-06 01:02:25] Auto-save:      Every 30 seconds
+[2025-12-06 01:02:25] ═══════════════════════════════════════════════
+
+[2025-12-06 01:02:25] ✓ Metrics server initialized on port 8006
+[2025-12-06 01:02:25] ✓ Listening for feedback on 'feedback.carLoan'...
+[2025-12-06 01:02:25] ✓ LISTENING TO: feedback.carLoan
+
+[2025-12-06 01:02:25] ✓ Car Loan Feedback Node is running.
+
+[2025-12-06 21:43:55] Loading model from /home/crazy_warlord/TargettedCalling/Persistence/model_car.json...
+[2025-12-06 21:43:55] ✓ Model loaded. Components: 8
+[2025-12-06 21:43:55] 📊 Metric recorded: Model components = 8
+[2025-12-06 21:43:55] Loading MASTERFILE from /home/crazy_warlord/TargettedCalling/MASTERFILE.csv...
+[2025-12-06 21:43:55] ✓ MASTERFILE loaded. 12500 customers indexed.
+[2025-12-06 21:43:55] ✓ Background metrics updater started
+[2025-12-06 21:43:55] ═══════════════════════════════════════════════
+[2025-12-06 21:43:55]     CAR LOAN FEEDBACK NODE (PATHWAY)          
+[2025-12-06 21:43:55] ═══════════════════════════════════════════════
+[2025-12-06 21:43:55] Feedback Topic: feedback.carLoan
+[2025-12-06 21:43:55] Model Path:     /home/crazy_warlord/TargettedCalling/Persistence/model_car.json
+[2025-12-06 21:43:55] MASTERFILE:     /home/crazy_warlord/TargettedCalling/MASTERFILE.csv
+[2025-12-06 21:43:55] Log File:       /home/crazy_warlord/TargettedCalling/carLoanFeedback/feedback_node.log
+[2025-12-06 21:43:55] Metrics:        ENABLED on port 8006
+[2025-12-06 21:43:55] Batch Config:   Update every 5 feedbacks
+[2025-12-06 21:43:55] Auto-save:      Every 30 seconds
+[2025-12-06 21:43:55] ═══════════════════════════════════════════════
+
+[2025-12-06 21:43:55] ✓ Metrics server initialized on port 8006
+[2025-12-06 21:43:55] ✓ Listening for feedback on 'feedback.carLoan'...
+[2025-12-06 21:43:55] ✓ LISTENING TO: feedback.carLoan
+
+[2025-12-06 21:43:55] ✓ Car Loan Feedback Node is running.
+

@@ -1,0 +1,334 @@
+2025-12-05 14:59:29.525036: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-12-05 14:59:29.525632: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-12-05 14:59:29.591864: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+/home/crazy_warlord/TargettedCalling/interiit/lib/python3.10/site-packages/google/api_core/_python_version_support.py:266: FutureWarning: You are using a Python version (3.10.12) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+2025-12-05 14:59:30.787778: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-12-05 14:59:30.788411: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+Loaded 10000 training customers and 2500 streaming customers.
+
+=== Oracle Training for opted_car_loan ===
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1764926971.709295  658987 cuda_executor.cc:1309] INTERNAL: CUDA Runtime error: Failed call to cudaGetRuntimeVersion: Error loading CUDA libraries. GPU will not be used.: Error loading CUDA libraries. GPU will not be used.
+W0000 00:00:1764926971.724969  658987 gpu_device.cc:2342] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+
+Oracle Evaluation on Test Split (Final State):
+[[  89  248]
+ [  55 2108]]
+              precision    recall  f1-score   support
+
+           0       0.62      0.26      0.37       337
+           1       0.89      0.97      0.93      2163
+
+    accuracy                           0.88      2500
+   macro avg       0.76      0.62      0.65      2500
+weighted avg       0.86      0.88      0.86      2500
+
+
+=== GMM Initialization for opted_car_loan (Positive Class Only) ===
+GMM initialized with 20 components.
+
+=== Event-Driven Simulation for opted_car_loan ===
+Simulating 380462 transactions...
+
+--- REPORT @ Txn 15000 ---
+Accuracy: 0.6667 | Precision: 0.0000 | Recall: 0.0000
+CM: [TN:2 FP:0] [FN:1 TP:0]
+
+--- REPORT @ Txn 20000 ---
+Accuracy: 0.5862 | Precision: 0.0000 | Recall: 0.0000
+CM: [TN:34 FP:0] [FN:24 TP:0]
+
+--- REPORT @ Txn 25000 ---
+Accuracy: 0.6434 | Precision: 0.6316 | Recall: 0.1176
+CM: [TN:163 FP:7] [FN:90 TP:12]
+
+--- REPORT @ Txn 30000 ---
+Accuracy: 0.7090 | Precision: 0.7674 | Recall: 0.5000
+CM: [TN:287 FP:40] [FN:132 TP:132]
+
+--- REPORT @ Txn 35000 ---
+Accuracy: 0.7009 | Precision: 0.7112 | Recall: 0.6132
+CM: [TN:426 FP:121] [FN:188 TP:298]
+
+--- REPORT @ Txn 40000 ---
+Accuracy: 0.6852 | Precision: 0.6551 | Recall: 0.6939
+CM: [TN:544 FP:259] [FN:217 TP:492]
+
+--- REPORT @ Txn 45000 ---
+Accuracy: 0.6832 | Precision: 0.6340 | Recall: 0.7292
+CM: [TN:670 FP:370] [FN:238 TP:641]
+
+--- REPORT @ Txn 50000 ---
+Accuracy: 0.6964 | Precision: 0.6374 | Recall: 0.7490
+CM: [TN:817 FP:433] [FN:255 TP:761]
+
+--- REPORT @ Txn 55000 ---
+Accuracy: 0.7074 | Precision: 0.6470 | Recall: 0.7533
+CM: [TN:963 FP:473] [FN:284 TP:867]
+
+--- REPORT @ Txn 60000 ---
+Accuracy: 0.7169 | Precision: 0.6576 | Recall: 0.7600
+CM: [TN:1087 FP:506] [FN:307 TP:972]
+
+--- REPORT @ Txn 65000 ---
+Accuracy: 0.7251 | Precision: 0.6747 | Recall: 0.7740
+CM: [TN:1167 FP:540] [FN:327 TP:1120]
+
+--- REPORT @ Txn 70000 ---
+Accuracy: 0.7295 | Precision: 0.6859 | Recall: 0.7866
+CM: [TN:1233 FP:584] [FN:346 TP:1275]
+
+--- REPORT @ Txn 75000 ---
+Accuracy: 0.7257 | Precision: 0.6793 | Recall: 0.7945
+CM: [TN:1324 FP:670] [FN:367 TP:1419]
+
+--- REPORT @ Txn 80000 ---
+Accuracy: 0.7204 | Precision: 0.6648 | Recall: 0.8016
+CM: [TN:1446 FP:778] [FN:382 TP:1543]
+
+--- REPORT @ Txn 85000 ---
+Accuracy: 0.7187 | Precision: 0.6554 | Recall: 0.8058
+CM: [TN:1584 FP:868] [FN:398 TP:1651]
+
+--- REPORT @ Txn 90000 ---
+Accuracy: 0.7162 | Precision: 0.6493 | Recall: 0.8007
+CM: [TN:1732 FP:944] [FN:435 TP:1748]
+
+--- REPORT @ Txn 95000 ---
+Accuracy: 0.7181 | Precision: 0.6571 | Recall: 0.8026
+CM: [TN:1807 FP:987] [FN:465 TP:1891]
+
+--- REPORT @ Txn 100000 ---
+Accuracy: 0.7150 | Precision: 0.6635 | Recall: 0.7952
+CM: [TN:1868 FP:1032] [FN:524 TP:2035]
+
+--- REPORT @ Txn 105000 ---
+Accuracy: 0.7170 | Precision: 0.6729 | Recall: 0.7913
+CM: [TN:1992 FP:1076] [FN:584 TP:2214]
+
+--- REPORT @ Txn 110000 ---
+Accuracy: 0.7217 | Precision: 0.6822 | Recall: 0.7918
+CM: [TN:2108 FP:1104] [FN:623 TP:2370]
+
+--- REPORT @ Txn 115000 ---
+Accuracy: 0.7257 | Precision: 0.6882 | Recall: 0.7928
+CM: [TN:2237 FP:1139] [FN:657 TP:2514]
+
+--- REPORT @ Txn 120000 ---
+Accuracy: 0.7262 | Precision: 0.6914 | Recall: 0.7912
+CM: [TN:2327 FP:1175] [FN:695 TP:2633]
+
+--- REPORT @ Txn 125000 ---
+Accuracy: 0.7264 | Precision: 0.6942 | Recall: 0.7898
+CM: [TN:2422 FP:1218] [FN:736 TP:2765]
+
+--- REPORT @ Txn 130000 ---
+Accuracy: 0.7269 | Precision: 0.6991 | Recall: 0.7880
+CM: [TN:2508 FP:1253] [FN:783 TP:2911]
+
+--- REPORT @ Txn 135000 ---
+Accuracy: 0.7307 | Precision: 0.7049 | Recall: 0.7917
+CM: [TN:2618 FP:1290] [FN:811 TP:3082]
+
+--- REPORT @ Txn 140000 ---
+Accuracy: 0.7347 | Precision: 0.7092 | Recall: 0.7967
+CM: [TN:2747 FP:1337] [FN:832 TP:3260]
+
+--- REPORT @ Txn 145000 ---
+Accuracy: 0.7393 | Precision: 0.7148 | Recall: 0.8036
+CM: [TN:2851 FP:1379] [FN:845 TP:3457]
+
+--- REPORT @ Txn 150000 ---
+Accuracy: 0.7409 | Precision: 0.7168 | Recall: 0.8100
+CM: [TN:2927 FP:1445] [FN:858 TP:3657]
+
+--- REPORT @ Txn 155000 ---
+Accuracy: 0.7425 | Precision: 0.7180 | Recall: 0.8142
+CM: [TN:3010 FP:1495] [FN:869 TP:3807]
+
+--- REPORT @ Txn 160000 ---
+Accuracy: 0.7453 | Precision: 0.7213 | Recall: 0.8175
+CM: [TN:3109 FP:1533] [FN:886 TP:3968]
+
+--- REPORT @ Txn 165000 ---
+Accuracy: 0.7476 | Precision: 0.7241 | Recall: 0.8206
+CM: [TN:3211 FP:1576] [FN:904 TP:4136]
+
+--- REPORT @ Txn 170000 ---
+Accuracy: 0.7485 | Precision: 0.7256 | Recall: 0.8230
+CM: [TN:3294 FP:1628] [FN:926 TP:4306]
+
+--- REPORT @ Txn 175000 ---
+Accuracy: 0.7502 | Precision: 0.7288 | Recall: 0.8256
+CM: [TN:3383 FP:1674] [FN:950 TP:4498]
+
+--- REPORT @ Txn 180000 ---
+Accuracy: 0.7529 | Precision: 0.7318 | Recall: 0.8308
+CM: [TN:3464 FP:1722] [FN:957 TP:4698]
+
+--- REPORT @ Txn 185000 ---
+Accuracy: 0.7543 | Precision: 0.7339 | Recall: 0.8333
+CM: [TN:3542 FP:1767] [FN:975 TP:4874]
+
+--- REPORT @ Txn 190000 ---
+Accuracy: 0.7558 | Precision: 0.7357 | Recall: 0.8362
+CM: [TN:3629 FP:1816] [FN:990 TP:5054]
+
+--- REPORT @ Txn 195000 ---
+Accuracy: 0.7549 | Precision: 0.7372 | Recall: 0.8328
+CM: [TN:3728 FP:1855] [FN:1045 TP:5204]
+
+--- REPORT @ Txn 200000 ---
+Accuracy: 0.7558 | Precision: 0.7411 | Recall: 0.8311
+CM: [TN:3815 FP:1878] [FN:1092 TP:5375]
+
+--- REPORT @ Txn 205000 ---
+Accuracy: 0.7575 | Precision: 0.7467 | Recall: 0.8310
+CM: [TN:3878 FP:1893] [FN:1135 TP:5581]
+
+--- REPORT @ Txn 210000 ---
+Accuracy: 0.7605 | Precision: 0.7534 | Recall: 0.8316
+CM: [TN:3950 FP:1895] [FN:1172 TP:5788]
+
+--- REPORT @ Txn 215000 ---
+Accuracy: 0.7631 | Precision: 0.7593 | Recall: 0.8319
+CM: [TN:4034 FP:1901] [FN:1212 TP:5996]
+
+--- REPORT @ Txn 220000 ---
+Accuracy: 0.7661 | Precision: 0.7646 | Recall: 0.8331
+CM: [TN:4132 FP:1913] [FN:1245 TP:6214]
+
+--- REPORT @ Txn 225000 ---
+Accuracy: 0.7696 | Precision: 0.7697 | Recall: 0.8355
+CM: [TN:4221 FP:1922] [FN:1264 TP:6422]
+
+--- REPORT @ Txn 230000 ---
+Accuracy: 0.7726 | Precision: 0.7747 | Recall: 0.8375
+CM: [TN:4307 FP:1935] [FN:1291 TP:6655]
+
+--- REPORT @ Txn 235000 ---
+Accuracy: 0.7761 | Precision: 0.7800 | Recall: 0.8407
+CM: [TN:4368 FP:1941] [FN:1304 TP:6880]
+
+--- REPORT @ Txn 240000 ---
+Accuracy: 0.7797 | Precision: 0.7853 | Recall: 0.8437
+CM: [TN:4447 FP:1950] [FN:1322 TP:7134]
+
+--- REPORT @ Txn 245000 ---
+Accuracy: 0.7826 | Precision: 0.7891 | Recall: 0.8462
+CM: [TN:4534 FP:1967] [FN:1337 TP:7358]
+
+--- REPORT @ Txn 250000 ---
+Accuracy: 0.7849 | Precision: 0.7922 | Recall: 0.8476
+CM: [TN:4628 FP:1978] [FN:1356 TP:7541]
+
+--- REPORT @ Txn 255000 ---
+Accuracy: 0.7878 | Precision: 0.7964 | Recall: 0.8497
+CM: [TN:4704 FP:1984] [FN:1373 TP:7761]
+
+--- REPORT @ Txn 260000 ---
+Accuracy: 0.7898 | Precision: 0.7996 | Recall: 0.8507
+CM: [TN:4785 FP:1996] [FN:1398 TP:7964]
+
+--- REPORT @ Txn 265000 ---
+Accuracy: 0.7923 | Precision: 0.8032 | Recall: 0.8527
+CM: [TN:4866 FP:2010] [FN:1417 TP:8203]
+
+--- REPORT @ Txn 270000 ---
+Accuracy: 0.7946 | Precision: 0.8067 | Recall: 0.8544
+CM: [TN:4947 FP:2021] [FN:1438 TP:8436]
+
+--- REPORT @ Txn 275000 ---
+Accuracy: 0.7970 | Precision: 0.8102 | Recall: 0.8556
+CM: [TN:5044 FP:2029] [FN:1462 TP:8660]
+
+--- REPORT @ Txn 280000 ---
+Accuracy: 0.7988 | Precision: 0.8124 | Recall: 0.8569
+CM: [TN:5134 FP:2045] [FN:1479 TP:8857]
+
+--- REPORT @ Txn 285000 ---
+Accuracy: 0.8015 | Precision: 0.8157 | Recall: 0.8592
+CM: [TN:5212 FP:2051] [FN:1488 TP:9080]
+
+--- REPORT @ Txn 290000 ---
+Accuracy: 0.8008 | Precision: 0.8182 | Recall: 0.8559
+CM: [TN:5277 FP:2057] [FN:1559 TP:9257]
+
+--- REPORT @ Txn 295000 ---
+Accuracy: 0.8000 | Precision: 0.8204 | Recall: 0.8524
+CM: [TN:5351 FP:2061] [FN:1630 TP:9415]
+
+--- REPORT @ Txn 300000 ---
+Accuracy: 0.8013 | Precision: 0.8233 | Recall: 0.8520
+CM: [TN:5451 FP:2067] [FN:1673 TP:9633]
+
+--- REPORT @ Txn 305000 ---
+Accuracy: 0.8029 | Precision: 0.8268 | Recall: 0.8521
+CM: [TN:5523 FP:2067] [FN:1712 TP:9867]
+
+--- REPORT @ Txn 310000 ---
+Accuracy: 0.8053 | Precision: 0.8302 | Recall: 0.8536
+CM: [TN:5609 FP:2068] [FN:1734 TP:10114]
+
+--- REPORT @ Txn 315000 ---
+Accuracy: 0.8074 | Precision: 0.8335 | Recall: 0.8548
+CM: [TN:5683 FP:2068] [FN:1759 TP:10356]
+
+--- REPORT @ Txn 320000 ---
+Accuracy: 0.8094 | Precision: 0.8362 | Recall: 0.8562
+CM: [TN:5757 FP:2070] [FN:1775 TP:10568]
+
+--- REPORT @ Txn 325000 ---
+Accuracy: 0.8113 | Precision: 0.8391 | Recall: 0.8573
+CM: [TN:5836 FP:2072] [FN:1798 TP:10806]
+
+--- REPORT @ Txn 330000 ---
+Accuracy: 0.8135 | Precision: 0.8417 | Recall: 0.8590
+CM: [TN:5916 FP:2074] [FN:1809 TP:11025]
+
+--- REPORT @ Txn 335000 ---
+Accuracy: 0.8157 | Precision: 0.8444 | Recall: 0.8607
+CM: [TN:5992 FP:2075] [FN:1822 TP:11261]
+
+--- REPORT @ Txn 340000 ---
+Accuracy: 0.8181 | Precision: 0.8469 | Recall: 0.8625
+CM: [TN:6086 FP:2078] [FN:1833 TP:11499]
+
+--- REPORT @ Txn 345000 ---
+Accuracy: 0.8200 | Precision: 0.8493 | Recall: 0.8639
+CM: [TN:6167 FP:2081] [FN:1848 TP:11730]
+
+--- REPORT @ Txn 350000 ---
+Accuracy: 0.8221 | Precision: 0.8518 | Recall: 0.8654
+CM: [TN:6254 FP:2082] [FN:1862 TP:11970]
+
+--- REPORT @ Txn 355000 ---
+Accuracy: 0.8242 | Precision: 0.8543 | Recall: 0.8671
+CM: [TN:6333 FP:2083] [FN:1873 TP:12217]
+
+--- REPORT @ Txn 360000 ---
+Accuracy: 0.8264 | Precision: 0.8568 | Recall: 0.8685
+CM: [TN:6429 FP:2083] [FN:1887 TP:12465]
+
+--- REPORT @ Txn 365000 ---
+Accuracy: 0.8279 | Precision: 0.8587 | Recall: 0.8697
+CM: [TN:6497 FP:2087] [FN:1901 TP:12685]
+
+--- REPORT @ Txn 370000 ---
+Accuracy: 0.8300 | Precision: 0.8610 | Recall: 0.8714
+CM: [TN:6588 FP:2088] [FN:1909 TP:12933]
+
+--- REPORT @ Txn 375000 ---
+Accuracy: 0.8319 | Precision: 0.8631 | Recall: 0.8728
+CM: [TN:6669 FP:2090] [FN:1920 TP:13177]
+
+--- REPORT @ Txn 380000 ---
+Accuracy: 0.8334 | Precision: 0.8648 | Recall: 0.8738
+CM: [TN:6748 FP:2092] [FN:1932 TP:13382]
+
+=== Final Simulation Report ===
+Updates: 24190 | Accuracy: 0.8334 | Precision: 0.8649 | Recall: 0.8738
+Animation saved to car_loan_simulation.gif

@@ -1,0 +1,364 @@
+# MLOps Alerting Rules for Car Loan Predictor
+# Place this file in: ./monitoring/ml_alerts.yml
+# Enable in prometheus.yml: rule_files: ["ml_alerts.yml"]
+
+groups:
+  - name: ml_model_health
+    interval: 30s
+    rules:
+      # ====================================================================
+      # CRITICAL: Silent Model Alert
+      # The model has stopped approving anyone - business logic failure
+      # ====================================================================
+      - alert: MLModelSilentQualification
+        expr: |
+          sum(rate(ml_car_predictions_total{result="qualified"}[5m])) == 0
+          and
+          sum(rate(ml_car_predictions_total[5m])) > 0
+        for: 10m
+        labels:
+          severity: critical
+          component: ml_predictor
+          alert_type: model_failure
+        annotations:
+          summary: "Car Loan Model has stopped qualifying customers"
+          description: |
+            The model has processed {{ $value }} predictions in the last 10 minutes
+            but has not qualified a single customer. This indicates a model failure
+            or data quality issue.
+            
+            Action Required:
+            1. Check model file integrity
+            2. Verify input feature distributions
+            3. Review recent model updates from feedback loop
+            4. Consider rolling back to baseline model
+
+      # ====================================================================
+      # CRITICAL: Model Explosion Alert
+      # Online learning has created too many clusters
+      # ====================================================================
+      - alert: MLModelComplexityExplosion
+        expr: ml_car_model_components_current >= 7
+        for: 2m
+        labels:
+          severity: critical
+          component: ml_feedback
+          alert_type: model_degradation
+        annotations:
+          summary: "Car Loan Model complexity approaching maximum"
+          description: |
+            Model has {{ $value }} GMM components (max: 8).
+            The online learning algorithm is fragmenting the model space.
+            
+            Current State:
+            - Components: {{ $value }}/8
+            - Risk: Model cannot learn new patterns effectively
+            
+            Action Required:
+            1. Review feedback distribution (positive vs negative)
+            2. Consider full model retraining with init_car_trainer.py
+            3. Adjust learning_rate or kMax parameters
+            4. Investigate if feedback data is noisy
+
+      # ====================================================================
+      # WARNING: Model Drift Alert
+      # Average confidence score dropping (market has changed)
+      # ====================================================================
+      - alert: MLModelDriftDetected
+        expr: |
+          (
+            avg_over_time(ml_car_avg_confidence_score[1h])
+            /
+            avg_over_time(ml_car_avg_confidence_score[1h] offset 24h)
+          ) < 0.8
+        for: 30m
+        labels:
+          severity: warning
+          component: ml_predictor
+          alert_type: drift
+        annotations:
+          summary: "Car Loan Model confidence drift detected"
+          description: |
+            Model confidence has dropped by >20% compared to 24h ago.
+            Current avg confidence: {{ $value }}
+            
+            This indicates data drift - the model is seeing patterns
+            it wasn't trained on (e.g., market changes, inflation impact).
+            
+            Recommended Actions:
+            1. Analyze recent customer demographics
+            2. Compare feature distributions now vs training time
+            3. Schedule full model retrain with fresh data
+            4. Review if business rules need updating
+
+      # ====================================================================
+      # WARNING: Cluster Imbalance Alert
+      # Most customers falling into one cluster - model collapsed
+      # ====================================================================
+      - alert: MLClusterImbalance
+        expr: |
+          max(rate(ml_car_cluster_assignments_total[10m]))
+          /
+          sum(rate(ml_car_cluster_assignments_total[10m]))
+          > 0.7
+        for: 15m
+        labels:
+          severity: warning
+          component: ml_predictor
+          alert_type: model_quality
+        annotations:
+          summary: "Car Loan Model showing cluster imbalance"
+          description: |
+            >70% of predictions are being assigned to a single cluster.
+            This indicates the model has collapsed or is undertrained.
+            
+            Healthy State: Predictions should spread across 3-5 clusters
+            Current State: One cluster dominates with {{ $value | humanizePercentage }}
+            
+            Action Required:
+            1. Review training data diversity
+            2. Check if feedback loop is overfitting to one pattern
+            3. Retrain with more diverse positive samples
+            4. Verify feature engineering is working correctly
+
+  - name: ml_performance
+    interval: 30s
+    rules:
+      # ====================================================================
+      # WARNING: High Inference Latency
+      # Predictions taking too long - user experience impact
+      # ====================================================================
+      - alert: MLHighInferenceLatency
+        expr: |
+          histogram_quantile(0.95, 
+            rate(ml_car_inference_latency_seconds_bucket[5m])
+          ) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+          component: ml_predictor
+          alert_type: performance
+        annotations:
+          summary: "Car Loan Model inference latency degraded"
+          description: |
+            95th percentile inference latency is {{ $value }}s (threshold: 0.1s).
+            
+            Possible Causes:
+            1. Model file size growing (too many components)
+            2. Disk I/O bottleneck on model loads
+            3. Feature preprocessing overhead
+            4. CPU resource contention
+            
+            Action Required:
+            1. Check model file size: ls -lh Persistence/model_car.json
+            2. Monitor disk I/O with iostat
+            3. Consider model pruning if components > 5
+            4. Profile feature transformation code
+
+      # ====================================================================
+      # WARNING: Slow Model Updates
+      # Feedback processing taking too long - backlog risk
+      # ====================================================================
+      - alert: MLSlowFeedbackProcessing
+        expr: |
+          histogram_quantile(0.95,
+            rate(ml_car_update_latency_seconds_bucket[5m])
+          ) > 1.0
+        for: 5m
+        labels:
+          severity: warning
+          component: ml_feedback
+          alert_type: performance
+        annotations:
+          summary: "Car Loan Feedback processing latency high"
+          description: |
+            95th percentile update latency is {{ $value }}s (threshold: 1.0s).
+            
+            Impact: Feedback buffer may overflow, losing learning data.
+            
+            Possible Causes:
+            1. Model complexity too high (many components)
+            2. Slow disk I/O during model saves
+            3. MASTERFILE lookup inefficient
+            
+            Action Required:
+            1. Check ml_car_model_components_current metric
+            2. Monitor ml_car_save_latency_seconds
+            3. Consider increasing FEEDBACK_BATCH_SIZE
+            4. Optimize MASTERFILE indexing
+
+  - name: ml_operational
+    interval: 60s
+    rules:
+      # ====================================================================
+      # INFO: Model Not Reloading
+      # Predictor not picking up feedback loop changes
+      # ====================================================================
+      - alert: MLModelStaleInPredictor
+        expr: |
+          time() - (ml_car_model_reloads_total > 0)
+          > 3600
+        for: 5m
+        labels:
+          severity: info
+          component: ml_predictor
+          alert_type: sync
+        annotations:
+          summary: "Car Loan Model hasn't reloaded in 1 hour"
+          description: |
+            The predictor hasn't reloaded the model in over 1 hour.
+            
+            This is normal if:
+            - No feedback has been received (check ml_car_feedback_received_total)
+            - Prediction volume is low (< MODEL_RELOAD_INTERVAL)
+            
+            Investigation:
+            1. Check if feedback loop is running
+            2. Verify MODEL_RELOAD_INTERVAL setting
+            3. Monitor ml_car_predictions_total rate
+
+      # ====================================================================
+      # WARNING: High Prediction Error Rate
+      # Many predictions failing - data quality issue
+      # ====================================================================
+      - alert: MLHighPredictionErrorRate
+        expr: |
+          rate(ml_car_prediction_errors_total[5m])
+          /
+          rate(ml_car_predictions_total[5m])
+          > 0.05
+        for: 5m
+        labels:
+          severity: warning
+          component: ml_predictor
+          alert_type: data_quality
+        annotations:
+          summary: "Car Loan Model prediction error rate high"
+          description: |
+            {{ $value | humanizePercentage }} of predictions are failing.
+            
+            Common Causes:
+            1. Missing features in input data
+            2. Feature schema mismatch with trained model
+            3. Invalid/null values in categorical features
+            4. Scaler/encoder preprocessing errors
+            
+            Action Required:
+            1. Review prediction_node.log for error details
+            2. Check ml_car_prediction_errors_total labels
+            3. Validate input data against training schema
+            4. Verify NATS message format
+
+      # ====================================================================
+      # WARNING: Feedback Processing Failures
+      # Online learning not working properly
+      # ====================================================================
+      - alert: MLFeedbackProcessingErrors
+        expr: |
+          rate(ml_car_feedback_errors_total[10m]) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+          component: ml_feedback
+          alert_type: data_quality
+        annotations:
+          summary: "Car Loan Feedback processing errors detected"
+          description: |
+            Feedback loop is encountering errors at {{ $value }}/sec.
+            
+            Common Causes:
+            1. customer_not_found: IDs not in MASTERFILE
+            2. save_failed: Disk write permissions or space issues
+            3. transform_error: Feature preprocessing failures
+            
+            Action Required:
+            1. Review feedback_node.log
+            2. Check ml_car_feedback_errors_total by error_type
+            3. Verify MASTERFILE is up to date
+            4. Check disk space: df -h
+
+  - name: ml_business_logic
+    interval: 60s
+    rules:
+      # ====================================================================
+      # INFO: Unusual Qualification Rate
+      # Business metric - qualification rate changed significantly
+      # ====================================================================
+      - alert: MLUnusualQualificationRate
+        expr: |
+          abs(
+            (
+              rate(ml_car_predictions_total{result="qualified"}[1h])
+              /
+              rate(ml_car_predictions_total[1h])
+            )
+            -
+            (
+              rate(ml_car_predictions_total{result="qualified"}[1h] offset 24h)
+              /
+              rate(ml_car_predictions_total[1h] offset 24h)
+            )
+          ) > 0.2
+        for: 30m
+        labels:
+          severity: info
+          component: ml_predictor
+          alert_type: business_metric
+        annotations:
+          summary: "Car Loan qualification rate changed significantly"
+          description: |
+            Qualification rate has changed by >20% compared to 24h ago.
+            
+            Current Rate: {{ $value | humanizePercentage }}
+            
+            This may indicate:
+            1. Market conditions changed (good or bad)
+            2. Model drift from feedback updates
+            3. Input data distribution shift
+            4. Seasonal/calendar effects
+            
+            Recommended Review:
+            1. Compare to business expectations
+            2. Analyze recent feedback sentiment
+            3. Review qualification reasons with product team
+            4. Check if marketing campaign changed targeting
+
+      # ====================================================================
+      # INFO: Imbalanced Feedback
+      # Feedback loop receiving only positive or only negative
+      # ====================================================================
+      - alert: MLImbalancedFeedback
+        expr: |
+          (
+            rate(ml_car_feedback_received_total{feedback_type="positive"}[1h])
+            /
+            rate(ml_car_feedback_received_total[1h])
+          ) > 0.9
+          or
+          (
+            rate(ml_car_feedback_received_total{feedback_type="positive"}[1h])
+            /
+            rate(ml_car_feedback_received_total[1h])
+          ) < 0.1
+        for: 30m
+        labels:
+          severity: info
+          component: ml_feedback
+          alert_type: data_quality
+        annotations:
+          summary: "Car Loan Feedback heavily imbalanced"
+          description: |
+            Feedback is >90% or <10% positive.
+            
+            Current Distribution: {{ $value | humanizePercentage }} positive
+            
+            Risks:
+            1. Model will overfit to dominant class
+            2. Rare patterns won't be learned
+            3. Prediction quality may degrade
+            
+            Investigate:
+            1. Is feedback collection working correctly?
+            2. Has product changed conversion funnel?
+            3. Are we only getting feedback from one user segment?
+            4. Consider downsampling majority class

@@ -13,13 +13,34 @@ import time
 from datetime import datetime
 
 # --- PATH SETUP ---
-
 CURRENT_DIR = Path(__file__).resolve().parent
 PARENT_DIR = CURRENT_DIR.parent
+MONITORING_DIR = PARENT_DIR / "monitoring"
 sys.path.append(str(PARENT_DIR))
+sys.path.append(str(MONITORING_DIR))
 
 from persistenceUtils.persistence_utils import load_model_system, save_model_system
 from pipelineConfigs.pipeline_configs import CAR_LOAN_CONFIG as CONFIG
+
+# Import metrics
+try:
+    from metrics import (
+        initialize_metrics,
+        record_feedback,
+        update_model_components,
+        record_update_time,
+        record_save_time,
+        update_feedback_buffer_size,
+        update_time_since_save,
+        record_feedback_error,
+        record_batch_update,
+        update_memory_usage,
+        MetricsTimer
+    )
+    METRICS_ENABLED = True
+except ImportError:
+    print("⚠️  Warning: metrics module not found. Metrics will not be recorded.")
+    METRICS_ENABLED = False
 
 # --- CONFIGURATION ---
 NATS_URI = "nats://localhost:4222"
@@ -28,6 +49,7 @@ MODEL_PATH = os.path.join(PARENT_DIR, "Persistence", "model_car.json")
 MASTERFILE_PATH = os.path.join(PARENT_DIR, "MASTERFILE.csv")
 LOG_ENABLED = True  # Set to False to disable logging
 LOG_FILE = os.path.join(CURRENT_DIR, "feedback_node.log")
+METRICS_PORT = 8006  # Dedicated port for feedback metrics
 
 NUM_FEATURES = CONFIG["gmm_num_features"]
 CAT_FEATURES = CONFIG["gmm_cat_features"]
@@ -65,6 +87,10 @@ class FeedbackProcessor:
         # Load initial state
         self.load_model()
         self.load_masterfile()
+        
+        # Start background metrics updater
+        if METRICS_ENABLED:
+            self._start_metrics_updater()
     
     def load_model(self):
         """Load model from disk"""
@@ -74,6 +100,11 @@ class FeedbackProcessor:
         log_message(f"Loading model from {MODEL_PATH}...")
         self.model, self.scaler, self.encoder = load_model_system(MODEL_PATH)
         log_message(f"✓ Model loaded. Components: {self.model.n_components}")
+        
+        # 📊 METRIC: Update model components
+        if METRICS_ENABLED:
+            update_model_components(self.model.n_components)
+            log_message(f"📊 Metric recorded: Model components = {self.model.n_components}")
     
     def load_masterfile(self):
         """Load MASTERFILE for feature lookup"""
@@ -88,20 +119,51 @@ class FeedbackProcessor:
     def save_model(self):
         """Save model to disk"""
         log_message(f"\n💾 Saving model after {self.update_count} updates...")
-        save_model_system(self.model, self.scaler, self.encoder, MODEL_PATH)
-        self.last_save_time = time.time()
-        log_message(f"✓ Model saved to {MODEL_PATH}")
-        log_message(f"✓ Current state: Components={self.model.n_components}, Positive={self.positive_feedback_count}, Negative={self.negative_feedback_count}\n")
+        
+        save_start_time = time.time()
+        save_success = False
+        
+        try:
+            save_model_system(self.model, self.scaler, self.encoder, MODEL_PATH)
+            save_success = True
+            save_duration = time.time() - save_start_time
+            self.last_save_time = time.time()
+            
+            log_message(f"✓ Model saved to {MODEL_PATH} in {save_duration:.3f}s")
+            log_message(f"✓ Current state: Components={self.model.n_components}, Positive={self.positive_feedback_count}, Negative={self.negative_feedback_count}\n")
+            
+            # 📊 METRIC: Record save time
+            if METRICS_ENABLED:
+                record_save_time(save_duration, success=True)
+                update_model_components(self.model.n_components)
+                log_message(f"📊 Metric recorded: Save time = {save_duration:.3f}s, Components = {self.model.n_components}")
+                
+        except Exception as e:
+            save_duration = time.time() - save_start_time
+            log_message(f"❌ Failed to save model: {e}")
+            
+            # 📊 METRIC: Record failed save
+            if METRICS_ENABLED:
+                record_save_time(save_duration, success=False)
+                record_feedback_error('save_failed')
     
     def process_feedback(self, customer_id, bought_loan):
         """Add feedback to buffer and process if batch is full"""
         log_message(f"📥 RECEIVED FEEDBACK | Customer: {customer_id} | Bought: {bought_loan}")
+        
+        # 📊 METRIC: Record feedback received
+        if METRICS_ENABLED:
+            record_feedback(bought_loan)
         
         with self.lock:
             self.feedback_buffer.append({
                 'customer_id': customer_id,
                 'bought_loan': bought_loan
             })
+            
+            # 📊 METRIC: Update buffer size
+            if METRICS_ENABLED:
+                update_feedback_buffer_size(len(self.feedback_buffer))
             
             log_message(f"Buffer size: {len(self.feedback_buffer)}/{FEEDBACK_BATCH_SIZE}")
             
@@ -129,6 +191,11 @@ class FeedbackProcessor:
         batch_data = list(self.feedback_buffer)
         self.feedback_buffer.clear()
         
+        # 📊 METRIC: Clear buffer size
+        if METRICS_ENABLED:
+            update_feedback_buffer_size(0)
+            record_batch_update()
+        
         success_count = 0
         error_count = 0
         
@@ -136,11 +203,17 @@ class FeedbackProcessor:
             customer_id = feedback['customer_id']
             bought_loan = feedback['bought_loan']
             
+            update_start_time = time.time()
+            
             try:
                 # Look up customer features from MASTERFILE
                 if customer_id not in self.masterfile_df.index:
                     log_message(f"⚠ ERROR | Customer {customer_id} not found in MASTERFILE. Skipping.")
                     error_count += 1
+                    
+                    # 📊 METRIC: Record error
+                    if METRICS_ENABLED:
+                        record_feedback_error('customer_not_found')
                     continue
                 
                 row = self.masterfile_df.loc[customer_id]
@@ -162,6 +235,11 @@ class FeedbackProcessor:
                 # Update model with feedback
                 self.model.update(x_num, x_cat, bought_loan, result_tuple, meta=customer_id)
                 
+                # 📊 METRIC: Record update time
+                update_duration = time.time() - update_start_time
+                if METRICS_ENABLED:
+                    record_update_time(update_duration)
+                
                 self.update_count += 1
                 success_count += 1
                 
@@ -173,11 +251,17 @@ class FeedbackProcessor:
                     self.negative_feedback_count += 1
                     feedback_type = "✗ NEGATIVE"
                 
-                log_message(f"{feedback_type} | Customer: {customer_id} | Cluster: {k} | Score: {score:.2f} | Update #{self.update_count}")
+                log_message(f"{feedback_type} | Customer: {customer_id} | Cluster: {k} | Score: {score:.2f} | "
+                          f"Update #{self.update_count} | Latency: {update_duration*1000:.2f}ms")
                 
             except Exception as e:
                 log_message(f"⚠ ERROR | Failed to process feedback for {customer_id}: {e}")
                 error_count += 1
+                
+                # 📊 METRIC: Record error
+                if METRICS_ENABLED:
+                    error_type = type(e).__name__
+                    record_feedback_error(error_type)
         
         # Save updated model
         if success_count > 0:
@@ -185,6 +269,31 @@ class FeedbackProcessor:
             log_message(f"✓ Batch complete: {success_count} updates, {error_count} errors")
         else:
             log_message(f"⚠ Batch failed: No successful updates")
+    
+    def _start_metrics_updater(self):
+        """Background thread to update time-based metrics"""
+        def updater():
+            while True:
+                time.sleep(5)  # Update every 5 seconds
+                try:
+                    # Update time since last save
+                    time_since_save = time.time() - self.last_save_time
+                    update_time_since_save(time_since_save)
+                    
+                    # Update memory usage
+                    try:
+                        import psutil
+                        process = psutil.Process()
+                        memory_bytes = process.memory_info().rss
+                        update_memory_usage('ml_feedback', memory_bytes)
+                    except ImportError:
+                        pass
+                except Exception as e:
+                    log_message(f"⚠️  Metrics updater error: {e}")
+        
+        thread = threading.Thread(target=updater, daemon=True)
+        thread.start()
+        log_message("✓ Background metrics updater started")
 
 # Global processor instance
 processor = FeedbackProcessor()
@@ -197,9 +306,18 @@ def run_feedback_node():
     log_message(f"Model Path:     {MODEL_PATH}")
     log_message(f"MASTERFILE:     {MASTERFILE_PATH}")
     log_message(f"Log File:       {LOG_FILE if LOG_ENABLED else 'DISABLED'}")
+    log_message(f"Metrics:        {'ENABLED on port ' + str(METRICS_PORT) if METRICS_ENABLED else 'DISABLED'}")
     log_message(f"Batch Config:   Update every {FEEDBACK_BATCH_SIZE} feedbacks")
     log_message(f"Auto-save:      Every {AUTO_SAVE_INTERVAL} seconds")
     log_message("═══════════════════════════════════════════════\n")
+    
+    # 📊 Initialize metrics server
+    if METRICS_ENABLED:
+        try:
+            metrics_manager = initialize_metrics("ml_car_feedback", port=METRICS_PORT)
+            log_message(f"✓ Metrics server initialized on port {METRICS_PORT}")
+        except Exception as e:
+            log_message(f"⚠️  Failed to initialize metrics: {e}")
     
     # Expected schema: customer_id (str), custBoughtLoanOrNot (bool)
     class FeedbackSchema(pw.Schema):
@@ -231,6 +349,20 @@ def run_feedback_node():
     pw.io.null.write(processed)
     
     log_message("✓ Car Loan Feedback Node is running.\n")
+    
+    # Periodically update component uptime
+    if METRICS_ENABLED:
+        def update_uptime():
+            while True:
+                time.sleep(30)
+                try:
+                    metrics_manager.update_component_uptime()
+                except:
+                    pass
+        
+        uptime_thread = threading.Thread(target=update_uptime, daemon=True)
+        uptime_thread.start()
+    
     pw.run()
 
 if __name__ == "__main__":
