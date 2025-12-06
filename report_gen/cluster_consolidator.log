@@ -4,81 +4,49 @@
 [Consolidator] Using OpenAI model: gpt-4o
 [Consolidator] 📥 RECEIVED BATCH → cluster=2, count=5
 [Consolidator] Parsed 5 customers
+[Consolidator] 📋 Generating Customer IDs JSON → /root/interiit/TargettedCalling/report_gen/output_reports/CLUSTER_2_20251206_172443_IDS.json
+[Consolidator] ✅ Customer IDs JSON generated successfully
 [Consolidator] 🔵 Calling OpenAI model gpt-4o...
-[Consolidator] ✅ Received LLM response (1779 chars)
+[Consolidator] ✅ Received LLM response (2085 chars)
 [Consolidator] ✅ Parsed JSON successfully with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
 [Consolidator] ✅ Analysis completed with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
 [Consolidator] ✔ Saved JSON + TXT for cluster 2
-[Consolidator] 📝 Generating PDF → /root/interiit/TargettedCalling/report_gen/output_reports/cluster_2_20251205_224746.pdf
+[Consolidator] 📝 Generating PDF → /root/interiit/TargettedCalling/report_gen/output_reports/CLUSTER_2_20251206_172443.pdf
 [Consolidator] ✅ PDF generated successfully
-[Consolidator] ✅ Complete report generated at /root/interiit/TargettedCalling/report_gen/output_reports/cluster_2_20251205_224746.pdf
+[Consolidator] ✅ Complete report generated at /root/interiit/TargettedCalling/report_gen/output_reports/CLUSTER_2_20251206_172443.pdf
 [Consolidator] 📥 RECEIVED BATCH → cluster=2, count=5
 [Consolidator] Parsed 5 customers
+[Consolidator] 📋 Generating Customer IDs JSON → /root/interiit/TargettedCalling/report_gen/output_reports/CLUSTER_2_20251206_172449_IDS.json
+[Consolidator] ✅ Customer IDs JSON generated successfully
 [Consolidator] 🔵 Calling OpenAI model gpt-4o...
-[Consolidator] ✅ Received LLM response (1896 chars)
+[Consolidator] ✅ Received LLM response (2024 chars)
 [Consolidator] ✅ Parsed JSON successfully with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
 [Consolidator] ✅ Analysis completed with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
 [Consolidator] ✔ Saved JSON + TXT for cluster 2
-[Consolidator] 📝 Generating PDF → /root/interiit/TargettedCalling/report_gen/output_reports/cluster_2_20251205_224831.pdf
+[Consolidator] 📝 Generating PDF → /root/interiit/TargettedCalling/report_gen/output_reports/CLUSTER_2_20251206_172449.pdf
 [Consolidator] ✅ PDF generated successfully
-[Consolidator] ✅ Complete report generated at /root/interiit/TargettedCalling/report_gen/output_reports/cluster_2_20251205_224831.pdf
-[Consolidator] 📥 RECEIVED BATCH → cluster=2, count=5
-[Consolidator] Parsed 5 customers
-[Consolidator] 🔵 Calling OpenAI model gpt-4o...
-[Consolidator] ✅ Received LLM response (2161 chars)
-[Consolidator] ✅ Parsed JSON successfully with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✅ Analysis completed with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✔ Saved JSON + TXT for cluster 2
-[Consolidator] 📝 Generating PDF → /root/interiit/TargettedCalling/report_gen/output_reports/cluster_2_20251205_224840.pdf
-[Consolidator] ✅ PDF generated successfully
-[Consolidator] ✅ Complete report generated at /root/interiit/TargettedCalling/report_gen/output_reports/cluster_2_20251205_224840.pdf
-[Consolidator] 📥 RECEIVED BATCH → cluster=4, count=5
-[Consolidator] Parsed 5 customers
-[Consolidator] 🔵 Calling OpenAI model gpt-4o...
-[Consolidator] ✅ Received LLM response (1867 chars)
-[Consolidator] ✅ Parsed JSON successfully with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✅ Analysis completed with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✔ Saved JSON + TXT for cluster 4
-[Consolidator] 📝 Generating PDF → /root/interiit/TargettedCalling/report_gen/output_reports/cluster_4_20251205_224850.pdf
-[Consolidator] ✅ PDF generated successfully
-[Consolidator] ✅ Complete report generated at /root/interiit/TargettedCalling/report_gen/output_reports/cluster_4_20251205_224850.pdf
-[Consolidator] 📥 RECEIVED BATCH → cluster=2, count=5
-[Consolidator] Parsed 5 customers
-[Consolidator] 🔵 Calling OpenAI model gpt-4o...
-[Consolidator] ✅ Received LLM response (1812 chars)
-[Consolidator] ✅ Parsed JSON successfully with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✅ Analysis completed with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✔ Saved JSON + TXT for cluster 2
-[Consolidator] 📝 Generating PDF → /root/interiit/TargettedCalling/report_gen/output_reports/cluster_2_20251205_224919.pdf
-[Consolidator] ✅ PDF generated successfully
-[Consolidator] ✅ Complete report generated at /root/interiit/TargettedCalling/report_gen/output_reports/cluster_2_20251205_224919.pdf
-[Consolidator] 📥 RECEIVED BATCH → cluster=2, count=5
-[Consolidator] Parsed 5 customers
-[Consolidator] 🔵 Calling OpenAI model gpt-4o...
-[Consolidator] ✅ Received LLM response (2122 chars)
-[Consolidator] ✅ Parsed JSON successfully with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✅ Analysis completed with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✔ Saved JSON + TXT for cluster 2
-[Consolidator] 📝 Generating PDF → /root/interiit/TargettedCalling/report_gen/output_reports/cluster_2_20251205_224927.pdf
-[Consolidator] ✅ PDF generated successfully
-[Consolidator] ✅ Complete report generated at /root/interiit/TargettedCalling/report_gen/output_reports/cluster_2_20251205_224927.pdf
-[Consolidator] 📥 RECEIVED BATCH → cluster=2, count=5
-[Consolidator] Parsed 5 customers
-[Consolidator] 🔵 Calling OpenAI model gpt-4o...
-[Consolidator] ✅ Received LLM response (2053 chars)
-[Consolidator] ✅ Parsed JSON successfully with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✅ Analysis completed with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✔ Saved JSON + TXT for cluster 2
-[Consolidator] 📝 Generating PDF → /root/interiit/TargettedCalling/report_gen/output_reports/cluster_2_20251205_224937.pdf
-[Consolidator] ✅ PDF generated successfully
-[Consolidator] ✅ Complete report generated at /root/interiit/TargettedCalling/report_gen/output_reports/cluster_2_20251205_224937.pdf
+[Consolidator] ✅ Complete report generated at /root/interiit/TargettedCalling/report_gen/output_reports/CLUSTER_2_20251206_172449.pdf
 [Consolidator] 📥 RECEIVED BATCH → cluster=6, count=5
 [Consolidator] Parsed 5 customers
+[Consolidator] 📋 Generating Customer IDs JSON → /root/interiit/TargettedCalling/report_gen/output_reports/CLUSTER_6_20251206_172530_IDS.json
+[Consolidator] ✅ Customer IDs JSON generated successfully
 [Consolidator] 🔵 Calling OpenAI model gpt-4o...
-[Consolidator] ✅ Received LLM response (1858 chars)
+[Consolidator] ✅ Received LLM response (1942 chars)
 [Consolidator] ✅ Parsed JSON successfully with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
 [Consolidator] ✅ Analysis completed with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
 [Consolidator] ✔ Saved JSON + TXT for cluster 6
-[Consolidator] 📝 Generating PDF → /root/interiit/TargettedCalling/report_gen/output_reports/cluster_6_20251205_224945.pdf
+[Consolidator] 📝 Generating PDF → /root/interiit/TargettedCalling/report_gen/output_reports/CLUSTER_6_20251206_172530.pdf
 [Consolidator] ✅ PDF generated successfully
-[Consolidator] ✅ Complete report generated at /root/interiit/TargettedCalling/report_gen/output_reports/cluster_6_20251205_224945.pdf
+[Consolidator] ✅ Complete report generated at /root/interiit/TargettedCalling/report_gen/output_reports/CLUSTER_6_20251206_172530.pdf
+[Consolidator] 📥 RECEIVED BATCH → cluster=2, count=5
+[Consolidator] Parsed 5 customers
+[Consolidator] 📋 Generating Customer IDs JSON → /root/interiit/TargettedCalling/report_gen/output_reports/CLUSTER_2_20251206_172539_IDS.json
+[Consolidator] ✅ Customer IDs JSON generated successfully
+[Consolidator] 🔵 Calling OpenAI model gpt-4o...
+[Consolidator] ✅ Received LLM response (2189 chars)
+[Consolidator] ✅ Parsed JSON successfully with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
+[Consolidator] ✅ Analysis completed with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
+[Consolidator] ✔ Saved JSON + TXT for cluster 2
+[Consolidator] 📝 Generating PDF → /root/interiit/TargettedCalling/report_gen/output_reports/CLUSTER_2_20251206_172539.pdf
+[Consolidator] ✅ PDF generated successfully
+[Consolidator] ✅ Complete report generated at /root/interiit/TargettedCalling/report_gen/output_reports/CLUSTER_2_20251206_172539.pdf

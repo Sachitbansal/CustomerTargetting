@@ -5,9 +5,10 @@ STEP-2: Cluster Consolidation Node (Pathway)
 ✔ Receives cluster batches from NATS
 ✔ Loads MASTERFILE.csv and enriches each customer
 ✔ Generates comprehensive analysis with OpenAI
-✔ Creates JSON + TXT + PDF reports
+✔ Creates JSON + TXT + PDF reports + Customer IDs JSON
 ✔ Writes summary back to NATS
 """
+
 
 import os
 import json
@@ -57,7 +58,7 @@ NATS_URI = os.getenv("NATS_SERVERS", "nats://127.0.0.1:4222")
 INPUT_TOPIC = "reports.cluster.ready"
 OUTPUT_TOPIC = "reports.cluster.final"
 
-LLM_MODEL = os.getenv("LLM_MODEL", "gpt-4o")  # Changed to valid model
+LLM_MODEL = os.getenv("LLM_MODEL", "gpt-4o")
 MAX_TOKENS = int(os.getenv("LLM_MAX_TOKENS", "2000"))
 
 
@@ -215,6 +216,36 @@ Provide a comprehensive analysis in the following JSON format (respond ONLY with
 
 
 # =======================================================
+# CUSTOMER IDS JSON GENERATION
+# =======================================================
+def generate_customer_ids_json(cluster_id, ts, customers_list):
+    """Generate JSON file containing only customer IDs."""
+    filename = f"CLUSTER_{cluster_id}_{ts}_IDS.json"
+    path = os.path.join(OUTPUT_DIR, filename)
+    
+    log(f"📋 Generating Customer IDs JSON → {path}")
+    
+    # Extract just the customer IDs
+    customer_ids = [c["customer_id"] for c in customers_list]
+    
+    ids_data = {
+        "cluster_id": cluster_id,
+        "timestamp": ts,
+        "customer_count": len(customer_ids),
+        "customer_ids": customer_ids
+    }
+    
+    try:
+        with open(path, "w") as f:
+            json.dump(ids_data, f, indent=2)
+        log(f"✅ Customer IDs JSON generated successfully")
+        return path
+    except Exception as e:
+        log(f"❌ Failed to generate Customer IDs JSON: {e}")
+        return None
+
+
+# =======================================================
 # PDF GENERATION
 # =======================================================
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
@@ -224,7 +255,8 @@ from reportlab.lib import colors
 from reportlab.lib.units import inch
 
 def generate_pdf(cluster_id, ts, payload, decision):
-    path = os.path.join(OUTPUT_DIR, f"cluster_{cluster_id}_{ts}.pdf")
+    filename = f"CLUSTER_{cluster_id}_{ts}.pdf"
+    path = os.path.join(OUTPUT_DIR, filename)
 
     log(f"📝 Generating PDF → {path}")
 
@@ -332,7 +364,8 @@ def consolidate_cluster(cluster_id, count, customers_json_str):
         }
 
     ts = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
-    base_path = os.path.join(OUTPUT_DIR, f"cluster_{cluster_id}_{ts}")
+    base_filename = f"CLUSTER_{cluster_id}_{ts}"
+    base_path = os.path.join(OUTPUT_DIR, base_filename)
 
     # Enrich customer data
     enriched = []
@@ -346,6 +379,13 @@ def consolidate_cluster(cluster_id, count, customers_json_str):
         "count": count,
         "customers": enriched
     }
+
+    # Generate Customer IDs JSON first
+    try:
+        ids_json_path = generate_customer_ids_json(cluster_id, ts, customers_list)
+    except Exception as e:
+        log(f"❌ Customer IDs JSON generation failed: {e}")
+        traceback.print_exc()
 
     # Generate analysis via OpenAI
     try:

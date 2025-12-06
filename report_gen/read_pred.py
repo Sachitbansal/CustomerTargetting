@@ -1,18 +1,20 @@
 #!/usr/bin/env python3
 """
-STEP 1 — CLUSTER AGGREGATOR (FIXED)
+STEP 1 — CLUSTER AGGREGATOR (ROLLING CACHE)
 
 ✔ Properly returns batch data to Pathway
 ✔ Only keeps predicted_eligible == True
 ✔ Aggregates cluster batches in memory
 ✔ Emits complete JSON payload with all fields populated
+✔ Maintains rolling cache with max 500 entries (FIFO)
 """
 
 import pathway as pw
 from pathlib import Path
 import sys
 import json
-from collections import defaultdict
+import csv
+from collections import defaultdict, deque
 
 # ------------------------------------------------
 # CONFIG
@@ -22,6 +24,7 @@ ROOT = CURRENT_DIR.parent
 sys.path.append(str(ROOT))
 
 K_BATCH = 5
+MAX_CACHE_SIZE = 500
 
 CACHE_FILE = CURRENT_DIR / "prediction_cache.csv"
 LOG_FILE = CURRENT_DIR / "aggregator.log"
@@ -31,6 +34,9 @@ INPUT_TOPIC = "leads.callCarLoan"
 OUTPUT_TOPIC = "reports.cluster.ready"
 
 cluster_buffers = defaultdict(list)
+
+# Rolling cache to maintain only last 500 entries
+cache_queue = deque(maxlen=MAX_CACHE_SIZE)
 
 # ------------------------------------------------
 # LOGGING
@@ -58,15 +64,65 @@ class BatchSchema(pw.Schema):
     customers: str  # JSON string of customer list
 
 # ------------------------------------------------
-# CACHE WRITER
+# CACHE INITIALIZATION
 # ------------------------------------------------
-def append_to_cache(row):
-    is_new = not CACHE_FILE.exists()
+def initialize_cache():
+    """Load existing cache entries into memory (up to MAX_CACHE_SIZE)."""
+    if CACHE_FILE.exists():
+        try:
+            with open(CACHE_FILE, 'r') as f:
+                reader = csv.DictReader(f)
+                entries = list(reader)
+                
+                # Keep only the last MAX_CACHE_SIZE entries
+                if len(entries) > MAX_CACHE_SIZE:
+                    entries = entries[-MAX_CACHE_SIZE:]
+                
+                for entry in entries:
+                    cache_queue.append(entry)
+                
+                log(f"Loaded {len(cache_queue)} entries from existing cache")
+        except Exception as e:
+            log(f"⚠ Error loading cache: {e}")
+            cache_queue.clear()
 
-    with open(CACHE_FILE, "a") as f:
-        if is_new:
-            f.write(",".join(row.keys()) + "\n")
-        f.write(",".join(str(row[k]) for k in row.keys()) + "\n")
+# ------------------------------------------------
+# ROLLING CACHE WRITER
+# ------------------------------------------------
+def write_cache_to_file():
+    """Write the entire cache queue to file (overwrites)."""
+    try:
+        with open(CACHE_FILE, 'w', newline='') as f:
+            if len(cache_queue) == 0:
+                return
+            
+            # Get fieldnames from first entry
+            fieldnames = list(cache_queue[0].keys())
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            
+            writer.writeheader()
+            for entry in cache_queue:
+                writer.writerow(entry)
+                
+    except Exception as e:
+        log(f"❌ Error writing cache: {e}")
+
+def append_to_cache(row):
+    """
+    Add new entry to rolling cache.
+    Automatically removes oldest entry if cache exceeds MAX_CACHE_SIZE.
+    """
+    # Convert row to string values for CSV compatibility
+    csv_row = {k: str(v) for k, v in row.items()}
+    
+    # Add to queue (automatically removes oldest if at max capacity)
+    cache_queue.append(csv_row)
+    
+    cache_size = len(cache_queue)
+    log(f"Cache: {cache_size}/{MAX_CACHE_SIZE} entries")
+    
+    # Write entire cache to file
+    write_cache_to_file()
 
 # ------------------------------------------------
 # MAIN UDF → Returns tuple of (cluster_id, count, customers_json)
@@ -87,13 +143,18 @@ def handle_prediction(customer_id, predicted_yes, cluster_id, score, exemplars_j
         "customer_id": customer_id,
         "cluster_id": int(cluster_id),
         "score": float(score),
-        "exemplars": exemplars
+        "exemplars": json.dumps(exemplars)  # Keep as JSON string for CSV
     }
 
     append_to_cache(row)
 
     # Add to cluster buffer
-    cluster_buffers[cluster_id].append(row)
+    cluster_buffers[cluster_id].append({
+        "customer_id": customer_id,
+        "cluster_id": int(cluster_id),
+        "score": float(score),
+        "exemplars": exemplars  # Keep as list for batch processing
+    })
     size = len(cluster_buffers[cluster_id])
 
     log(f"CUST {customer_id} → CL {cluster_id} | score={score:.3f} | {size}/{K_BATCH}")
@@ -120,7 +181,11 @@ def run_cluster_aggregator():
     log(f"Listening on topic: {INPUT_TOPIC}")
     log(f"Publishing batches to: {OUTPUT_TOPIC}")
     log(f"K_BATCH = {K_BATCH}")
+    log(f"MAX_CACHE_SIZE = {MAX_CACHE_SIZE}")
     log(f"Cache file: {CACHE_FILE}\n")
+
+    # Initialize cache from existing file
+    initialize_cache()
 
     # 1. Stream from NATS
     stream = pw.io.nats.read(
