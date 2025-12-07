@@ -55,7 +55,7 @@ NUM_FEATURES = CONFIG["gmm_num_features"]
 CAT_FEATURES = CONFIG["gmm_cat_features"]
 
 # Batch processing config
-FEEDBACK_BATCH_SIZE = 5
+FEEDBACK_BATCH_SIZE = 20
 AUTO_SAVE_INTERVAL = 30
 
 def log_message(message):
@@ -101,7 +101,12 @@ class FeedbackProcessor:
         
         log_message(f"Loading model from {MODEL_PATH}...")
         self.model, self.scaler, self.encoder = load_model_system(MODEL_PATH)
+        
+        # 🔑 Log buffer restoration
+        buffer_size = len(self.model.fn_buffer_num)
         log_message(f"✓ Model loaded. Components: {self.model.n_components}")
+        if buffer_size > 0:
+            log_message(f"  └─ FN Buffer restored: {buffer_size} samples")
         
         # 📊 METRIC: Update model components
         if METRICS_ENABLED:
@@ -123,11 +128,12 @@ class FeedbackProcessor:
         log_message(f"\n💾 Saving model after {self.update_count} updates...")
         
         save_start_time = time.time()
-        save_success = False
         
         try:
+            # 🔑 FLUSH BUFFER BEFORE SAVING
+            self.model.flush_buffer()
+            
             save_model_system(self.model, self.scaler, self.encoder, MODEL_PATH)
-            save_success = True
             save_duration = time.time() - save_start_time
             self.last_save_time = time.time()
             
@@ -365,6 +371,7 @@ def run_feedback_node():
     log_message(f"Batch Config:   Update every {FEEDBACK_BATCH_SIZE} feedbacks")
     log_message(f"Auto-save:      Every {AUTO_SAVE_INTERVAL} seconds")
     log_message(f"Input Format:   'custID | feedback_type' (TP/FP/TN/FN)")
+    log_message(f"Buffer Flush:   ENABLED (flushes before save)")
     log_message("═══════════════════════════════════════════════\n")
     
     # 📊 Initialize metrics server

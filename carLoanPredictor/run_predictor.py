@@ -34,7 +34,7 @@ CAT_FEATURES = CONFIG["gmm_cat_features"]
 
 # Batch processing config
 PREDICTION_BATCH_SIZE = 10
-MODEL_RELOAD_INTERVAL = 100
+MODEL_RELOAD_INTERVAL = 10
 
 def log_message(message):
     """Log message to file if logging is enabled"""

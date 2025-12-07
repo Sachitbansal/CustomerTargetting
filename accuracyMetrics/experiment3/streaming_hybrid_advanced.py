@@ -7,7 +7,7 @@ from scipy.linalg import inv, det
 
 class StreamingHybridAdvanced:
     def __init__(self, num_dim, cat_dims, kMax, 
-                 significance_level=0.05, learning_rate=0.02, neg_learning_rate=0.05,
+                 significance_level=0.1, learning_rate=0.1, neg_learning_rate=0.05,
                  max_idle_iterations=500, fn_buffer_size=50, fn_buffer_kMax=3,
                  merge_dist_threshold=0.6, weight_prune_threshold=0.005):
         

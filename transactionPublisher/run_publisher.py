@@ -29,7 +29,7 @@ TEMP_STREAM_FILE = Path(__file__).parent.parent / 'temp_txn_stream.csv'
 
 NATS_URI = "nats://localhost:4222"
 NATS_TOPIC = "transactions.stream"
-TARGET_TPS = 200
+TARGET_TPS = 1000
 
 # Metrics port for Publisher
 METRICS_PORT = 8001

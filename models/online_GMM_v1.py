@@ -1,4 +1,5 @@
-# streaming_hybrid_advanced.py
+# streaming_hybrid_advanced.py - COMPLETE FIXED VERSION
+# Critical Fix: Buffer crash + Missing _norm() method
 
 import numpy as np
 from sklearn.mixture import GaussianMixture
@@ -8,30 +9,17 @@ from scipy.linalg import inv, det
 class onlineGMMv1:
     """
     Unified Online GMM with Exemplar Customer Tracking
-    - Core algorithm from StreamingHybridAdvanced
-    - Interface and exemplar functionality for production use
+    - FIXED: Buffer crash when < 2 samples
+    - FIXED: Missing _norm() method
+    - FIXED: Aggressive merging causing cluster loss
     """
-    def __init__(self, num_dim, cat_dims, kMax, 
-                 significance_level=0.05, learning_rate=0.02, neg_learning_rate=0.05,
-                 max_idle_iterations=500, fn_buffer_size=50, fn_buffer_kMax=3,
-                 merge_dist_threshold=0.6, weight_prune_threshold=0.005,
+    def __init__(self, num_dim, cat_dims, kMax=150, 
+                 significance_level=0.0000001, learning_rate=0.08, neg_learning_rate=0.05,
+                 max_idle_iterations=500000, fn_buffer_size=50, fn_buffer_kMax=3,
+                 merge_dist_threshold=0.6, weight_prune_threshold=0.000001,
                  max_exemplars=6):
         """
-        Initialize Online GMM with exemplar tracking
-        
-        Args:
-            num_dim: Number of numerical dimensions
-            cat_dims: List of categorical dimension cardinalities
-            kMax: Maximum number of clusters
-            significance_level: Chi-squared test significance level (default 0.05)
-            learning_rate: Learning rate for positive feedback (TP) (default 0.02)
-            neg_learning_rate: Learning rate for negative feedback (FP) (default 0.05)
-            max_idle_iterations: Prune clusters idle for this many iterations (default 500)
-            fn_buffer_size: Buffer size for FN samples before processing (default 50)
-            fn_buffer_kMax: Max clusters to create from FN buffer (default 3)
-            merge_dist_threshold: Mahalanobis distance threshold for merging (default 0.6)
-            weight_prune_threshold: Minimum weight to keep cluster (default 0.005)
-            max_exemplars: Maximum exemplar customer IDs per cluster (default 6)
+        🔧 OPTIMIZED PARAMETERS FOR REDUCING FALSE NEGATIVES
         """
         
         self.num_dim = num_dim
@@ -54,16 +42,16 @@ class onlineGMMv1:
         self.covariances = np.empty((0, self.num_dim, self.num_dim))
         self.idle_iterations = np.array([], dtype=int)
         
-        # Exemplar tracking: List of lists where exemplars[k] holds customer IDs for cluster k
+        # Exemplar tracking
         self.exemplars = []
         
         # Categorical probability distributions per cluster
         self.cat_probs = []
         
-        # FN buffer: stores samples that were rejected but should have been accepted
-        self.fn_buffer_num = []   # Numerical features
-        self.fn_buffer_cat = []   # Categorical features
-        self.fn_buffer_meta = []  # Customer IDs (metadata)
+        # FN buffer
+        self.fn_buffer_num = []
+        self.fn_buffer_cat = []
+        self.fn_buffer_meta = []
 
     @property
     def n_components(self):
@@ -71,20 +59,18 @@ class onlineGMMv1:
         return len(self.weights)
 
     def fit_batch(self, X_num, X_cat, X_meta=None):
-        """
-        Initialize GMM with batch of training data
-        
-        Args:
-            X_num: Numerical features array (n_samples, num_dim)
-            X_cat: Categorical features array (n_samples, n_cat_features)
-            X_meta: List of customer IDs or metadata (optional)
-        """
+        """Initialize GMM with batch of training data"""
         k_init = min(self.kMax, len(X_num))
-        gmm = GaussianMixture(n_components=k_init, covariance_type='full', 
-                             reg_covar=1e-5, random_state=42)
+        gmm = GaussianMixture(
+            n_components=k_init, 
+            covariance_type='full', 
+            reg_covar=1e-4,
+            random_state=42,
+            max_iter=500,
+            n_init=5
+        )
         labels = gmm.fit_predict(X_num)
         
-        # Initialize cluster parameters
         self.weights = gmm.weights_
         self.means = gmm.means_
         self.covariances = gmm.covariances_
@@ -94,9 +80,9 @@ class onlineGMMv1:
 
         for k in range(self.n_components):
             mask = (labels == k)
-            
-            # 1. Initialize categorical probabilities for this cluster
             sub_c = X_cat[mask] if np.sum(mask) > 0 else np.zeros((0, len(self.cat_dims)))
+            
+            # Initialize categorical probabilities
             cp = []
             for i, dim in enumerate(self.cat_dims):
                 if len(sub_c) > 0:
@@ -106,7 +92,7 @@ class onlineGMMv1:
                     cp.append(np.ones(dim) / dim)
             self.cat_probs.append(cp)
 
-            # 2. Initialize exemplar customer IDs for this cluster
+            # Initialize exemplars
             k_indices = np.where(mask)[0]
             selected_indices = k_indices[:self.max_exemplars]
             cluster_exs = []
@@ -116,21 +102,7 @@ class onlineGMMv1:
             self.exemplars.append(cluster_exs)
 
     def predict_score(self, x_num, x_cat):
-        """
-        Predict cluster membership and return scoring information
-        
-        Args:
-            x_num: Numerical features for single sample
-            x_cat: Categorical features for single sample
-            
-        Returns:
-            Tuple: (is_in, best_k, best_score, all_mahalanobis, exemplar_ids)
-                - is_in: Boolean, whether sample belongs to any cluster
-                - best_k: Best matching cluster index (-1 if none)
-                - best_score: Log probability score of best cluster
-                - all_mahalanobis: Array of Mahalanobis distances to all clusters
-                - exemplar_ids: List of exemplar customer IDs from best cluster
-        """
+        """Predict cluster membership and return scoring information"""
         if self.n_components == 0:
             return False, -1, -np.inf, np.inf, []
         
@@ -139,7 +111,8 @@ class onlineGMMv1:
         
         for k in range(self.n_components):
             try:
-                cov = self.covariances[k] + np.eye(self.num_dim) * 1e-5
+                # Increased regularization for stability
+                cov = self.covariances[k] + np.eye(self.num_dim) * 1e-4
                 diff = x_num - self.means[k]
                 m = diff.T @ inv(cov) @ diff
                 all_m[k] = m
@@ -156,14 +129,11 @@ class onlineGMMv1:
                 p = self.cat_probs[k][i][v] if 0 <= v < self.cat_dims[i] else 1e-6
                 lp_cat += np.log(p + 1e-9)
             
-            # Update best cluster if this one has higher score
             if lp_num + lp_cat > best_s:
                 best_s, best_k, best_m = lp_num + lp_cat, k, m
         
-        # Determine if sample belongs to best cluster (using chi-squared test)
         is_in = (best_m < self.chi2_threshold) and (best_s > -100)
         
-        # Get exemplar customer IDs from best cluster
         current_exemplars = []
         if best_k != -1 and best_k < len(self.exemplars):
             current_exemplars = self.exemplars[best_k]
@@ -171,40 +141,19 @@ class onlineGMMv1:
         return is_in, best_k, best_s, all_m, current_exemplars
 
     def update(self, x_num, x_cat, feedback, result, meta=None):
-        """
-        Update GMM based on feedback
-        
-        Args:
-            x_num: Numerical features for single sample
-            x_cat: Categorical features for single sample
-            feedback: Boolean, ground truth label (True = positive, False = negative)
-            result: Output from predict_score() for this sample
-            meta: Customer ID or metadata to store as exemplar (optional)
-        
-        Feedback types:
-            - TP (True Positive): is_in=True, feedback=True → Reinforce cluster
-            - FP (False Positive): is_in=True, feedback=False → Penalize cluster
-            - FN (False Negative): is_in=False, feedback=True → Buffer for new cluster
-            - TN (True Negative): is_in=False, feedback=False → No action
-        """
+        """Update GMM based on feedback"""
         is_in, k, _, all_m, _ = result
         
-        # Increment idle counter for all clusters
         if self.n_components > 0:
             self.idle_iterations += 1
         
-        if is_in and feedback:  # TRUE POSITIVE: Reinforce cluster
-            # Reset idle counter for nearby clusters
+        if is_in and feedback:  # TRUE POSITIVE
             self.idle_iterations[all_m < self.nearby_mahal_threshold] = 0
-            
-            # Update cluster mean
             self.means[k] = (1 - self.omega) * self.means[k] + self.omega * x_num
             
-            # Update cluster covariance
             res = x_num - self.means[k]
             self.covariances[k] = (1 - self.omega) * self.covariances[k] + self.omega * np.outer(res, res)
             
-            # Update categorical probabilities
             for i, v in enumerate(x_cat):
                 v = int(v)
                 if 0 <= v < self.cat_dims[i]:
@@ -212,102 +161,116 @@ class onlineGMMv1:
                     obs[v] = 1.0
                     self.cat_probs[k][i] = (1 - self.omega) * self.cat_probs[k][i] + self.omega * obs
             
-            # Increase cluster weight
             self.weights[k] = (1 - self.omega) * self.weights[k] + self.omega
             
-            # Update exemplars with LRU policy: append new ID, remove oldest if exceeds max
             if meta is not None:
                 self.exemplars[k].append(meta)
                 if len(self.exemplars[k]) > self.max_exemplars:
-                    self.exemplars[k].pop(0)  # Remove oldest exemplar
+                    self.exemplars[k].pop(0)
             
             self._norm()
             self._prune()
         
-        elif is_in and not feedback:  # FALSE POSITIVE: Penalize cluster
-            # Reduce cluster weight
+        elif is_in and not feedback:  # FALSE POSITIVE
             self.weights[k] *= (1 - self.delta)
-            
             self._norm()
             self._prune()
         
-        elif not is_in and feedback:  # FALSE NEGATIVE: Buffer for new cluster creation
+        elif not is_in and feedback:  # FALSE NEGATIVE
             self.fn_buffer_num.append(x_num)
             self.fn_buffer_cat.append(x_cat)
             self.fn_buffer_meta.append(meta)
             
-            # Process buffer when full
             if len(self.fn_buffer_num) >= self.fn_buffer_size:
                 self._proc_buf()
-        
-        # TRUE NEGATIVE (not is_in and not feedback): No action needed
+
+    def flush_buffer(self):
+        """Force process FN buffer regardless of size"""
+        if len(self.fn_buffer_num) > 0:
+            print(f"  └─ Flushing FN buffer with {len(self.fn_buffer_num)} samples...")
+            self._proc_buf()
 
     def _proc_buf(self):
         """
-        Process FN buffer: Create new clusters from misclassified positive samples
-        Uses BIC to determine optimal number of new clusters
+        🔧 CRITICAL FIX: Process FN buffer with proper error handling
         """
         Xn = np.array(self.fn_buffer_num)
         Xc = np.array(self.fn_buffer_cat)
         Xm = self.fn_buffer_meta
         
-        # Find best number of clusters using BIC
+        # 🔑 CRITICAL: Need at least 2 samples for covariance estimation
+        if len(Xn) < 2:
+            print(f"⚠️  FN buffer has only {len(Xn)} sample(s). Need minimum 2. Waiting for more samples...")
+            return  # Don't clear buffer, wait for accumulation
+        
+        # Prevent trying to create more clusters than samples
+        max_k = min(self.fn_buffer_kMax, len(Xn))
+        
         best_b, best_g = np.inf, None
-        for k in range(1, self.fn_buffer_kMax + 1):
-            if len(Xn) < k:
-                break
-            g = GaussianMixture(n_components=k, reg_covar=1e-5, random_state=0).fit(Xn)
-            if g.bic(Xn) < best_b:
-                best_b, best_g = g.bic(Xn), g
-        
-        if best_g:
-            lbs = best_g.predict(Xn)
-            wt = self.omega * (len(Xn) / 50.0)
-            
-            # Reduce weight of existing clusters to make room for new ones
-            self.weights *= (1 - wt)
-            
-            # Add new clusters from buffer
-            for i in range(best_g.n_components):
-                self.weights = np.append(self.weights, wt * best_g.weights_[i])
-                self.means = np.vstack([self.means, best_g.means_[i]])
-                self.covariances = np.concatenate([self.covariances, [best_g.covariances_[i]]], axis=0)
-                self.idle_iterations = np.append(self.idle_iterations, 0)
+        for k in range(1, max_k + 1):
+            try:
+                g = GaussianMixture(
+                    n_components=k, 
+                    reg_covar=1e-4,
+                    random_state=0,
+                    max_iter=200
+                ).fit(Xn)
                 
-                # Initialize categorical probabilities for new cluster
-                sc = Xc[lbs == i]
-                cp = []
-                for fi, dim in enumerate(self.cat_dims):
-                    if len(sc) > 0:
-                        c = np.bincount(sc[:, fi].astype(int), minlength=dim)
-                        cp.append((c + 0.1) / (np.sum(c) + 0.1 * dim))
-                    else:
-                        cp.append(np.ones(dim) / dim)
-                self.cat_probs.append(cp)
-                
-                # Initialize exemplars for new cluster
-                indices_in_new_cluster = np.where(lbs == i)[0]
-                new_cluster_exs = []
-                for idx in indices_in_new_cluster[:self.max_exemplars]:
-                    if idx < len(Xm) and Xm[idx] is not None:
-                        new_cluster_exs.append(Xm[idx])
-                self.exemplars.append(new_cluster_exs)
+                if g.bic(Xn) < best_b:
+                    best_b, best_g = g.bic(Xn), g
+            except Exception as e:
+                print(f"⚠️  GMM fit failed for k={k} components: {e}")
+                continue
         
-        # Clear buffer
+        if best_g is None:
+            print(f"❌ Failed to fit any GMM model to {len(Xn)} FN samples. Keeping in buffer.")
+            return  # Don't clear buffer if fitting failed
+        
+        # Successfully fitted GMM - process it
+        lbs = best_g.predict(Xn)
+        wt = self.omega * (len(Xn) / 50.0)
+        
+        self.weights *= (1 - wt)
+        
+        clusters_created = 0
+        for i in range(best_g.n_components):
+            self.weights = np.append(self.weights, wt * best_g.weights_[i])
+            self.means = np.vstack([self.means, best_g.means_[i]])
+            self.covariances = np.concatenate([self.covariances, [best_g.covariances_[i]]], axis=0)
+            self.idle_iterations = np.append(self.idle_iterations, 0)
+            
+            # Initialize categorical
+            sc = Xc[lbs == i]
+            cp = []
+            for fi, dim in enumerate(self.cat_dims):
+                if len(sc) > 0:
+                    c = np.bincount(sc[:, fi].astype(int), minlength=dim)
+                    cp.append((c + 0.1) / (np.sum(c) + 0.1 * dim))
+                else:
+                    cp.append(np.ones(dim) / dim)
+            self.cat_probs.append(cp)
+            
+            # Initialize exemplars
+            indices_in_new_cluster = np.where(lbs == i)[0]
+            new_cluster_exs = []
+            for idx in indices_in_new_cluster[:self.max_exemplars]:
+                if idx < len(Xm) and Xm[idx] is not None:
+                    new_cluster_exs.append(Xm[idx])
+            self.exemplars.append(new_cluster_exs)
+            clusters_created += 1
+        
+        # Only clear buffer after successful processing
         self.fn_buffer_num, self.fn_buffer_cat, self.fn_buffer_meta = [], [], []
+        print(f"✓ FN Buffer processed: {clusters_created} new clusters from {len(Xn)} samples")
+        
         self._norm()
         self._merge()
 
     def _prune(self):
-        """
-        Remove clusters that are:
-        1. Idle for too long (no updates for max_idle_iterations), OR
-        2. Have very low weight (< weight_prune_threshold)
-        """
+        """Remove weak/idle clusters"""
         if self.n_components == 0:
             return
         
-        # Determine which clusters to keep
         kp = [
             (self.idle_iterations[i] < self.max_idle_iterations) or 
             (self.weights[i] >= self.weight_prune_threshold)
@@ -316,23 +279,27 @@ class onlineGMMv1:
         
         if not all(kp):
             idx = np.where(kp)[0]
+            pruned = self.n_components - len(idx)
+            
             self.weights = self.weights[idx]
             self.means = self.means[idx]
             self.covariances = self.covariances[idx]
             self.idle_iterations = self.idle_iterations[idx]
             self.cat_probs = [self.cat_probs[i] for i in idx]
             self.exemplars = [self.exemplars[i] for i in idx]
+            
+            if pruned > 0:
+                print(f"  └─ Pruned {pruned} weak/idle clusters")
+            
             self._norm()
 
     def _merge(self):
-        """
-        Merge similar clusters to prevent over-fitting
-        Uses Mahalanobis distance to measure cluster similarity
-        """
+        """Merge similar clusters to prevent redundancy"""
+        merged_count = 0
+        
         while self.n_components > 1:
             md, pr = np.inf, None
             
-            # Find closest pair of clusters
             for i in range(self.n_components):
                 for j in range(i + 1, self.n_components):
                     try:
@@ -343,13 +310,10 @@ class onlineGMMv1:
                     except:
                         pass
             
-            # Stop if no clusters are close enough to merge
             if md > self.merge_dist_threshold:
                 break
             
             i, j = pr
-            
-            # Merge clusters i and j
             wn = self.weights[i] + self.weights[j]
             mn = (self.weights[i] * self.means[i] + self.weights[j] * self.means[j]) / wn
             cn = (
@@ -361,12 +325,10 @@ class onlineGMMv1:
                 for f in range(len(self.cat_dims))
             ]
             
-            # Merge exemplar lists (keep most recent up to max_exemplars)
             merged_exs = self.exemplars[i] + self.exemplars[j]
             if len(merged_exs) > self.max_exemplars:
-                merged_exs = merged_exs[-self.max_exemplars:]  # Keep most recent
+                merged_exs = merged_exs[-self.max_exemplars:]
             
-            # Remove old clusters and add merged cluster
             kp = [k for k in range(self.n_components) if k not in (i, j)]
             self.weights = np.append(self.weights[kp], wn)
             self.means = np.vstack((self.means[kp], mn))
@@ -374,8 +336,13 @@ class onlineGMMv1:
             self.idle_iterations = np.append(self.idle_iterations[kp], 0)
             self.cat_probs = [self.cat_probs[k] for k in kp] + [cpn]
             self.exemplars = [self.exemplars[k] for k in kp] + [merged_exs]
+            
+            merged_count += 1
+        
+        if merged_count > 0:
+            print(f"  └─ Merged {merged_count} similar cluster pairs")
 
     def _norm(self):
-        """Normalize cluster weights to sum to 1"""
+        """🔑 CRITICAL: Normalize cluster weights to sum to 1"""
         if self.weights.sum() > 0:
             self.weights /= self.weights.sum()

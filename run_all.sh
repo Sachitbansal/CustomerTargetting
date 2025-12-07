@@ -18,10 +18,15 @@ echo "Python env activated."
 #   PREPROCESSING STEPS (sequential)
 ###############################################
 echo ""
-echo "🧹 Cleaning old CSV files..."
+echo "🧹 Cleaning old CSV and log files..."
 rm -f "$BASE_DIR/MASTERFILE.csv"
 rm -f "$BASE_DIR/streaming_transactions.csv"
 rm -f "$BASE_DIR/datasetGeneration/streaming_transactions.csv"
+rm -f "$BASE_DIR/carLoanFeedback/feedback_node.log"
+rm -f "$BASE_DIR/carLoanPredictor/init_trainer.log"
+rm -f "$BASE_DIR/carLoanPredictor/prediction_node.log"
+rm -f "$BASE_DIR/oracle/oracle_predictor.log"
+rm -f "$BASE_DIR/output.txt"
 
 echo ""
 echo "⚙️  Running dataset preprocessing pipeline..."
@@ -57,7 +62,7 @@ python3 "$BASE_DIR/carLoanPredictor/init_car_trainer.py"
 
 
 ##################################################
-#          NODE DEFINITIONS (your format)
+#          NODE DEFINITIONS
 ##################################################
 
 declare -a NODES=(
@@ -81,21 +86,33 @@ echo "============================================"
 echo "🚀 Starting all pipeline nodes..."
 echo "============================================"
 
+
 ##################################################
 #          NODE LAUNCH LOOP
 ##################################################
 for node in "${NODES[@]}"; do
     IFS=':' read -r folder script <<< "$node"
     echo "▶️  Starting $script in $folder ..."
-    
-    (
-        cd "$BASE_DIR/$folder" || exit
-        source "$VENV_PATH"
-        python3 "$script"
-    ) &
-    
+
+    # Stream logs ONLY for dataUpdater
+    if [ "$folder" = "dataUpdater" ]; then
+        echo "📄 Streaming logs for dataUpdater → output.txt"
+        (
+            cd "$BASE_DIR/$folder" || exit
+            source "$VENV_PATH"
+            python3 "$script" >> "$BASE_DIR/output.txt" 2>&1
+        ) &
+    else
+        (
+            cd "$BASE_DIR/$folder" || exit
+            source "$VENV_PATH"
+            python3 "$script"
+        ) &
+    fi
+
     sleep 1
 done
+
 
 echo ""
 echo "✓ All nodes launched in background!"

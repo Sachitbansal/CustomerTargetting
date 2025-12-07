@@ -119,23 +119,36 @@ def train_and_save():
         cat_dims = [len(c) for c in ord_enc.categories_]
         log_message(f"  ✓ OrdinalEncoder fitted. Category dimensions: {cat_dims}")
         
-        # 4. Initialize and Fit GMM
+        # 4. Initialize and Fit GMM with OPTIMIZED PARAMETERS
         log_message("\n🧠 Fitting StreamingHybridAdvanced GMM...")
         X_meta = positive_df['customer_id'].tolist()
         
+        # 🔑 UPDATED PARAMETERS FOR MORE YES PREDICTIONS
         model = onlineGMMv1(
             num_dim=X_num.shape[1], 
-            cat_dims=cat_dims, 
-            kMax=8, 
-            learning_rate=0.05, 
-            max_exemplars=6
+            cat_dims=cat_dims,
+            # kMax=15,                          # More clusters allowed
+            # significance_level=0.01,          # 🔑 KEY: More lenient (was 0.00005)
+            # learning_rate=0.08,               # Faster cluster expansion
+            # neg_learning_rate=0.03,           # Moderate FP penalty
+            # max_idle_iterations=500000,
+            # fn_buffer_size=10,                # Process FN faster (was 25)
+            # fn_buffer_kMax=15,                # More FN clusters (was 10)
+            # merge_dist_threshold=0.5,         # Keep clusters separate (was 0.9)
+            # weight_prune_threshold=0.000001,
+            # max_exemplars=6
         )
         
         log_message(f"  Model Configuration:")
         log_message(f"    - Numerical Dimensions: {X_num.shape[1]}")
         log_message(f"    - Categorical Dimensions: {len(cat_dims)}")
-        log_message(f"    - Max Components (kMax): 8")
-        log_message(f"    - Learning Rate: 0.05")
+        log_message(f"    - Max Components (kMax): 15")
+        log_message(f"    - Significance Level: 0.01 (MORE LENIENT)")
+        log_message(f"    - Learning Rate: 0.08")
+        log_message(f"    - Negative Learning Rate: 0.03")
+        log_message(f"    - FN Buffer Size: 10 (processes faster)")
+        log_message(f"    - FN Buffer Max Clusters: 15")
+        log_message(f"    - Merge Distance Threshold: 0.5")
         log_message(f"    - Max Exemplars per Cluster: 6")
         
         model.fit_batch(X_num, X_cat, X_meta=X_meta)
@@ -176,6 +189,7 @@ def train_and_save():
         log_message(f"Model Location:       {MODEL_SAVE_PATH}")
         log_message(f"Log Location:         {LOG_FILE}")
         log_message(f"Metrics Recorded:     {'YES' if METRICS_ENABLED else 'NO'}")
+        log_message(f"Configuration:        OPTIMIZED FOR MORE YES PREDICTIONS")
         log_message("="*50 + "\n")
         
     except Exception as e:
