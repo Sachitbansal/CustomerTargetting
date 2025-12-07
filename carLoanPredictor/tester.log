@@ -1,0 +1,143 @@
+[2025-12-07 12:30:03] ═══════════════════════════════════════════════
+[2025-12-07 12:30:03]        CAR LOAN TESTER NODE (PATHWAY)         
+[2025-12-07 12:30:03] ═══════════════════════════════════════════════
+[2025-12-07 12:30:03] Input Topic:    leads.callCarLoan
+[2025-12-07 12:30:03] Output Topic:   feedback.carLoan
+[2025-12-07 12:30:03] Log File:       /home/crazy_warlord/TargettedCalling/carLoanPredictor/tester.log
+[2025-12-07 12:30:03] Base Purchase:  70.0%
+[2025-12-07 12:30:03] Prediction Bonus: +15.0%
+[2025-12-07 12:30:03] ═══════════════════════════════════════════════
+
+[2025-12-07 12:30:03] ✓ LISTENING TO: leads.callCarLoan
+[2025-12-07 12:30:03] ✓ Listening for ALL car loan predictions (qualified + rejected)...
+[2025-12-07 12:30:03] ✓ STREAMING TO: feedback.carLoan
+[2025-12-07 12:30:03] ✓ Streaming simulated feedback to 'feedback.carLoan'...
+[2025-12-07 12:30:03] 
+✓ Tester Node is running.
+
+[2025-12-07 12:30:03] ============================================================
+[2025-12-07 12:30:03] SIMULATION FLOW:
+[2025-12-07 12:30:03]   1. Listen to ALL predictions on: leads.callCarLoan
+[2025-12-07 12:30:03]   2. Simulate customer decision (model influences odds)
+[2025-12-07 12:30:03]   3. Stream actual outcome to: feedback.carLoan
+[2025-12-07 12:30:03]   4. Track: TP, FP, FN, TN, Accuracy, Precision, Recall
+[2025-12-07 12:30:03] ============================================================
+
+[2025-12-07 12:30:08] ✗✗ TRUE NEGATIVE | Customer: CUST_000017 | Cluster: 2 | Score: -199.81 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 1 | Acc: 100.00% | Prec: 0.00% | Rec: 0.00%
+[2025-12-07 12:30:08] ✗✓ FALSE NEGATIVE | Customer: CUST_000017 | Cluster: 2 | Score: -26.71 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.67 | Total: 2 | Acc: 50.00% | Prec: 0.00% | Rec: 0.00%
+[2025-12-07 12:30:08] ✗✗ TRUE NEGATIVE | Customer: CUST_000017 | Cluster: 3 | Score: -191.89 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 3 | Acc: 66.67% | Prec: 0.00% | Rec: 0.00%
+[2025-12-07 12:30:08] ✗✓ FALSE NEGATIVE | Customer: CUST_000017 | Cluster: 2 | Score: -199.81 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 4 | Acc: 50.00% | Prec: 0.00% | Rec: 0.00%
+[2025-12-07 12:30:09] ✗✓ FALSE NEGATIVE | Customer: CUST_000041 | Cluster: 2 | Score: -20.79 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.68 | Total: 5 | Acc: 40.00% | Prec: 0.00% | Rec: 0.00%
+[2025-12-07 12:30:12] ✗✓ FALSE NEGATIVE | Customer: CUST_000055 | Cluster: 2 | Score: -476.10 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 6 | Acc: 33.33% | Prec: 0.00% | Rec: 0.00%
+[2025-12-07 12:30:12] ✗✓ FALSE NEGATIVE | Customer: CUST_000055 | Cluster: 2 | Score: -535.03 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 7 | Acc: 28.57% | Prec: 0.00% | Rec: 0.00%
+[2025-12-07 12:30:14] ✗✓ FALSE NEGATIVE | Customer: CUST_000055 | Cluster: 2 | Score: -1579.32 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 8 | Acc: 25.00% | Prec: 0.00% | Rec: 0.00%
+[2025-12-07 12:30:17] ✗✓ FALSE NEGATIVE | Customer: CUST_000078 | Cluster: 2 | Score: -19.75 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.68 | Total: 9 | Acc: 22.22% | Prec: 0.00% | Rec: 0.00%
+[2025-12-07 12:30:17] ✗✓ FALSE NEGATIVE | Customer: CUST_000073 | Cluster: 2 | Score: -227.50 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 10 | Acc: 20.00% | Prec: 0.00% | Rec: 0.00%
+[2025-12-07 12:30:17] ✗✗ TRUE NEGATIVE | Customer: CUST_000078 | Cluster: 3 | Score: -141.69 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 11 | Acc: 27.27% | Prec: 0.00% | Rec: 0.00%
+[2025-12-07 12:30:17] ✗✓ FALSE NEGATIVE | Customer: CUST_000073 | Cluster: 2 | Score: -783.66 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 12 | Acc: 25.00% | Prec: 0.00% | Rec: 0.00%
+[2025-12-07 12:30:17] ✗✓ FALSE NEGATIVE | Customer: CUST_000073 | Cluster: 2 | Score: -783.66 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 13 | Acc: 23.08% | Prec: 0.00% | Rec: 0.00%
+[2025-12-07 12:30:18] ✗✗ TRUE NEGATIVE | Customer: CUST_000079 | Cluster: 3 | Score: -557.81 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 14 | Acc: 28.57% | Prec: 0.00% | Rec: 0.00%
+[2025-12-07 12:30:18] ✗✓ FALSE NEGATIVE | Customer: CUST_000079 | Cluster: 2 | Score: -444.61 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 15 | Acc: 26.67% | Prec: 0.00% | Rec: 0.00%
+[2025-12-07 12:30:18] ✗✓ FALSE NEGATIVE | Customer: CUST_000079 | Cluster: 3 | Score: -555.09 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 16 | Acc: 25.00% | Prec: 0.00% | Rec: 0.00%
+[2025-12-07 12:30:18] ✗✓ FALSE NEGATIVE | Customer: CUST_000078 | Cluster: 3 | Score: -130.53 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 17 | Acc: 23.53% | Prec: 0.00% | Rec: 0.00%
+[2025-12-07 12:30:21] ✗✓ FALSE NEGATIVE | Customer: CUST_000090 | Cluster: 3 | Score: -496.13 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 18 | Acc: 22.22% | Prec: 0.00% | Rec: 0.00%
+[2025-12-07 12:30:21] ✗✗ TRUE NEGATIVE | Customer: CUST_000098 | Cluster: 6 | Score: -78.44 | 6 similar: ['CUST_000037', 'CUST_000108', 'CUST_000164'] | Prob: 0.62 | Total: 19 | Acc: 26.32% | Prec: 0.00% | Rec: 0.00%
+[2025-12-07 12:30:21] ✗✓ FALSE NEGATIVE | Customer: CUST_000098 | Cluster: 3 | Score: -590.53 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 20 | Acc: 25.00% | Prec: 0.00% | Rec: 0.00%
+[2025-12-07 12:30:24] ✓✓ TRUE POSITIVE | Customer: CUST_000131 | Cluster: 5 | Score: 3.63 | 6 similar: ['CUST_000015', 'CUST_000031', 'CUST_000035'] | Prob: 0.85 | Total: 21 | Acc: 28.57% | Prec: 100.00% | Rec: 6.25%
+[2025-12-07 12:30:24] ✗✓ FALSE NEGATIVE | Customer: CUST_000131 | Cluster: 2 | Score: -395.59 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 22 | Acc: 27.27% | Prec: 100.00% | Rec: 5.88%
+[2025-12-07 12:30:26] ✗✓ FALSE NEGATIVE | Customer: CUST_000131 | Cluster: 2 | Score: -601.49 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 23 | Acc: 26.09% | Prec: 100.00% | Rec: 5.56%
+[2025-12-07 12:30:26] ✗✓ FALSE NEGATIVE | Customer: CUST_000131 | Cluster: 2 | Score: -1314.35 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 24 | Acc: 25.00% | Prec: 100.00% | Rec: 5.26%
+[2025-12-07 12:30:26] ✗✓ FALSE NEGATIVE | Customer: CUST_000131 | Cluster: 2 | Score: -699.53 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 25 | Acc: 24.00% | Prec: 100.00% | Rec: 5.00%
+[2025-12-07 12:30:26] ✗✗ TRUE NEGATIVE | Customer: CUST_000131 | Cluster: 2 | Score: -699.53 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 26 | Acc: 26.92% | Prec: 100.00% | Rec: 5.00%
+[2025-12-07 12:30:27] ✗✓ FALSE NEGATIVE | Customer: CUST_000137 | Cluster: 2 | Score: -535.97 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 27 | Acc: 25.93% | Prec: 100.00% | Rec: 4.76%
+[2025-12-07 12:30:29] ✗✓ FALSE NEGATIVE | Customer: CUST_000143 | Cluster: 2 | Score: -68.26 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.63 | Total: 28 | Acc: 25.00% | Prec: 100.00% | Rec: 4.55%
+[2025-12-07 12:30:29] ✗✓ FALSE NEGATIVE | Customer: CUST_000143 | Cluster: 2 | Score: -72.51 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.63 | Total: 29 | Acc: 24.14% | Prec: 100.00% | Rec: 4.35%
+[2025-12-07 12:30:29] ✗✓ FALSE NEGATIVE | Customer: CUST_000143 | Cluster: 0 | Score: -23.93 | 6 similar: ['CUST_000080', 'CUST_000084', 'CUST_000095'] | Prob: 0.68 | Total: 30 | Acc: 23.33% | Prec: 100.00% | Rec: 4.17%
+[2025-12-07 12:30:29] ✗✓ FALSE NEGATIVE | Customer: CUST_000143 | Cluster: 0 | Score: -30.32 | 6 similar: ['CUST_000080', 'CUST_000084', 'CUST_000095'] | Prob: 0.67 | Total: 31 | Acc: 22.58% | Prec: 100.00% | Rec: 4.00%
+[2025-12-07 12:30:29] ✗✗ TRUE NEGATIVE | Customer: CUST_000143 | Cluster: 0 | Score: -23.93 | 6 similar: ['CUST_000080', 'CUST_000084', 'CUST_000095'] | Prob: 0.68 | Total: 32 | Acc: 25.00% | Prec: 100.00% | Rec: 4.00%
+[2025-12-07 12:30:29] ✗✓ FALSE NEGATIVE | Customer: CUST_000143 | Cluster: 2 | Score: -40.87 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.66 | Total: 33 | Acc: 24.24% | Prec: 100.00% | Rec: 3.85%
+[2025-12-07 12:30:29] ✗✗ TRUE NEGATIVE | Customer: CUST_000143 | Cluster: 2 | Score: -116.98 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 34 | Acc: 26.47% | Prec: 100.00% | Rec: 3.85%
+[2025-12-07 12:30:30] ✗✓ FALSE NEGATIVE | Customer: CUST_000143 | Cluster: 2 | Score: -180.77 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 35 | Acc: 25.71% | Prec: 100.00% | Rec: 3.70%
+[2025-12-07 12:30:30] ✗✓ FALSE NEGATIVE | Customer: CUST_000143 | Cluster: 2 | Score: -180.77 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 36 | Acc: 25.00% | Prec: 100.00% | Rec: 3.57%
+[2025-12-07 12:30:42] ✗✗ TRUE NEGATIVE | Customer: CUST_000203 | Cluster: 4 | Score: -6.15 | 6 similar: ['CUST_000007', 'CUST_000016', 'CUST_000027'] | Prob: 0.69 | Total: 37 | Acc: 27.03% | Prec: 100.00% | Rec: 3.57%
+[2025-12-07 12:30:44] ✗✗ TRUE NEGATIVE | Customer: CUST_000203 | Cluster: 2 | Score: -108.60 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 38 | Acc: 28.95% | Prec: 100.00% | Rec: 3.57%
+[2025-12-07 12:30:44] ✗✓ FALSE NEGATIVE | Customer: CUST_000203 | Cluster: 3 | Score: -109.72 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 39 | Acc: 28.21% | Prec: 100.00% | Rec: 3.45%
+[2025-12-07 12:30:44] ✗✗ TRUE NEGATIVE | Customer: CUST_000203 | Cluster: 2 | Score: -108.60 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 40 | Acc: 30.00% | Prec: 100.00% | Rec: 3.45%
+[2025-12-07 12:30:48] ✗✗ TRUE NEGATIVE | Customer: CUST_000242 | Cluster: 0 | Score: -61.15 | 6 similar: ['CUST_000080', 'CUST_000084', 'CUST_000095'] | Prob: 0.64 | Total: 41 | Acc: 31.71% | Prec: 100.00% | Rec: 3.45%
+[2025-12-07 12:30:48] ✗✓ FALSE NEGATIVE | Customer: CUST_000242 | Cluster: 2 | Score: -233.01 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 42 | Acc: 30.95% | Prec: 100.00% | Rec: 3.33%
+[2025-12-07 12:30:48] ✗✓ FALSE NEGATIVE | Customer: CUST_000242 | Cluster: 0 | Score: -68.95 | 6 similar: ['CUST_000080', 'CUST_000084', 'CUST_000095'] | Prob: 0.63 | Total: 43 | Acc: 30.23% | Prec: 100.00% | Rec: 3.23%
+[2025-12-07 12:30:48] ✗✓ FALSE NEGATIVE | Customer: CUST_000242 | Cluster: 2 | Score: -223.35 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 44 | Acc: 29.55% | Prec: 100.00% | Rec: 3.12%
+[2025-12-07 12:30:48] ✗✗ TRUE NEGATIVE | Customer: CUST_000242 | Cluster: 0 | Score: -61.15 | 6 similar: ['CUST_000080', 'CUST_000084', 'CUST_000095'] | Prob: 0.64 | Total: 45 | Acc: 31.11% | Prec: 100.00% | Rec: 3.12%
+[2025-12-07 12:30:50] ✗✓ FALSE NEGATIVE | Customer: CUST_000256 | Cluster: 2 | Score: -195.74 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 46 | Acc: 30.43% | Prec: 100.00% | Rec: 3.03%
+[2025-12-07 12:30:50] ✗✓ FALSE NEGATIVE | Customer: CUST_000256 | Cluster: 6 | Score: -26.76 | 6 similar: ['CUST_000037', 'CUST_000108', 'CUST_000164'] | Prob: 0.67 | Total: 47 | Acc: 29.79% | Prec: 100.00% | Rec: 2.94%
+[2025-12-07 12:30:50] ✗✓ FALSE NEGATIVE | Customer: CUST_000256 | Cluster: 2 | Score: -371.27 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 48 | Acc: 29.17% | Prec: 100.00% | Rec: 2.86%
+[2025-12-07 12:30:50] ✗✓ FALSE NEGATIVE | Customer: CUST_000256 | Cluster: 6 | Score: -16.64 | 6 similar: ['CUST_000164', 'CUST_000174', 'CUST_000180'] | Prob: 0.68 | Total: 49 | Acc: 28.57% | Prec: 100.00% | Rec: 2.78%
+[2025-12-07 12:30:50] ✗✓ FALSE NEGATIVE | Customer: CUST_000256 | Cluster: 2 | Score: -195.74 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 50 | Acc: 28.00% | Prec: 100.00% | Rec: 2.70%
+[2025-12-07 12:30:51] ✗✗ TRUE NEGATIVE | Customer: CUST_000263 | Cluster: 2 | Score: -91.34 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.61 | Total: 51 | Acc: 29.41% | Prec: 100.00% | Rec: 2.70%
+[2025-12-07 12:30:51] ✗✓ FALSE NEGATIVE | Customer: CUST_000263 | Cluster: 0 | Score: -23.78 | 6 similar: ['CUST_000080', 'CUST_000084', 'CUST_000095'] | Prob: 0.68 | Total: 52 | Acc: 28.85% | Prec: 100.00% | Rec: 2.63%
+[2025-12-07 12:30:51] ✗✗ TRUE NEGATIVE | Customer: CUST_000265 | Cluster: 2 | Score: -24.13 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.68 | Total: 53 | Acc: 30.19% | Prec: 100.00% | Rec: 2.63%
+[2025-12-07 12:30:51] ✗✓ FALSE NEGATIVE | Customer: CUST_000263 | Cluster: 3 | Score: -270.69 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 54 | Acc: 29.63% | Prec: 100.00% | Rec: 2.56%
+[2025-12-07 12:30:51] ✗✓ FALSE NEGATIVE | Customer: CUST_000263 | Cluster: 3 | Score: -270.69 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 55 | Acc: 29.09% | Prec: 100.00% | Rec: 2.50%
+[2025-12-07 12:30:51] ✗✓ FALSE NEGATIVE | Customer: CUST_000263 | Cluster: 2 | Score: -30.37 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.67 | Total: 56 | Acc: 28.57% | Prec: 100.00% | Rec: 2.44%
+[2025-12-07 12:30:51] ✗✓ FALSE NEGATIVE | Customer: CUST_000265 | Cluster: 2 | Score: -26.96 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.67 | Total: 57 | Acc: 28.07% | Prec: 100.00% | Rec: 2.38%
+[2025-12-07 12:30:51] ✗✓ FALSE NEGATIVE | Customer: CUST_000263 | Cluster: 2 | Score: -118.70 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 58 | Acc: 27.59% | Prec: 100.00% | Rec: 2.33%
+[2025-12-07 12:30:51] ✗✗ TRUE NEGATIVE | Customer: CUST_000265 | Cluster: 2 | Score: -26.96 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.67 | Total: 59 | Acc: 28.81% | Prec: 100.00% | Rec: 2.33%
+[2025-12-07 12:30:51] ✗✓ FALSE NEGATIVE | Customer: CUST_000263 | Cluster: 0 | Score: -23.78 | 6 similar: ['CUST_000080', 'CUST_000084', 'CUST_000095'] | Prob: 0.68 | Total: 60 | Acc: 28.33% | Prec: 100.00% | Rec: 2.27%
+[2025-12-07 12:30:51] ✗✓ FALSE NEGATIVE | Customer: CUST_000263 | Cluster: 2 | Score: -91.34 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.61 | Total: 61 | Acc: 27.87% | Prec: 100.00% | Rec: 2.22%
+[2025-12-07 12:30:53] ✗✗ TRUE NEGATIVE | Customer: CUST_000265 | Cluster: 2 | Score: -116.46 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 62 | Acc: 29.03% | Prec: 100.00% | Rec: 2.22%
+[2025-12-07 12:30:53] ✗✓ FALSE NEGATIVE | Customer: CUST_000265 | Cluster: 2 | Score: -62.77 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.64 | Total: 63 | Acc: 28.57% | Prec: 100.00% | Rec: 2.17%
+[2025-12-07 12:30:53] ✗✗ TRUE NEGATIVE | Customer: CUST_000265 | Cluster: 2 | Score: -62.77 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.64 | Total: 64 | Acc: 29.69% | Prec: 100.00% | Rec: 2.17%
+[2025-12-07 12:30:53] ✗✓ FALSE NEGATIVE | Customer: CUST_000265 | Cluster: 2 | Score: -31.98 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.67 | Total: 65 | Acc: 29.23% | Prec: 100.00% | Rec: 2.13%
+[2025-12-07 12:30:53] ✗✓ FALSE NEGATIVE | Customer: CUST_000265 | Cluster: 2 | Score: -116.46 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 66 | Acc: 28.79% | Prec: 100.00% | Rec: 2.08%
+[2025-12-07 12:30:59] ✗✓ FALSE NEGATIVE | Customer: CUST_000330 | Cluster: 0 | Score: -103.33 | 6 similar: ['CUST_000080', 'CUST_000084', 'CUST_000095'] | Prob: 0.70 | Total: 67 | Acc: 28.36% | Prec: 100.00% | Rec: 2.04%
+[2025-12-07 12:30:59] ✗✓ FALSE NEGATIVE | Customer: CUST_000330 | Cluster: 3 | Score: -521.06 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 68 | Acc: 27.94% | Prec: 100.00% | Rec: 2.00%
+[2025-12-07 12:30:59] ✗✗ TRUE NEGATIVE | Customer: CUST_000330 | Cluster: 0 | Score: -27.53 | 6 similar: ['CUST_000080', 'CUST_000084', 'CUST_000095'] | Prob: 0.67 | Total: 69 | Acc: 28.99% | Prec: 100.00% | Rec: 2.00%
+[2025-12-07 12:30:59] ✗✗ TRUE NEGATIVE | Customer: CUST_000330 | Cluster: 0 | Score: -324.02 | 6 similar: ['CUST_000080', 'CUST_000084', 'CUST_000095'] | Prob: 0.70 | Total: 70 | Acc: 30.00% | Prec: 100.00% | Rec: 2.00%
+[2025-12-07 12:30:59] ✗✓ FALSE NEGATIVE | Customer: CUST_000330 | Cluster: 0 | Score: -87.20 | 6 similar: ['CUST_000080', 'CUST_000084', 'CUST_000095'] | Prob: 0.61 | Total: 71 | Acc: 29.58% | Prec: 100.00% | Rec: 1.96%
+[2025-12-07 12:30:59] ✗✓ FALSE NEGATIVE | Customer: CUST_000330 | Cluster: 2 | Score: -281.10 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 72 | Acc: 29.17% | Prec: 100.00% | Rec: 1.92%
+[2025-12-07 12:31:02] ✗✓ FALSE NEGATIVE | Customer: CUST_000343 | Cluster: 2 | Score: -291.49 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 73 | Acc: 28.77% | Prec: 100.00% | Rec: 1.89%
+[2025-12-07 12:31:02] ✗✓ FALSE NEGATIVE | Customer: CUST_000343 | Cluster: 2 | Score: -99.35 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.60 | Total: 74 | Acc: 28.38% | Prec: 100.00% | Rec: 1.85%
+[2025-12-07 12:31:02] ✗✓ FALSE NEGATIVE | Customer: CUST_000343 | Cluster: 2 | Score: -213.08 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 75 | Acc: 28.00% | Prec: 100.00% | Rec: 1.82%
+[2025-12-07 12:31:02] ✗✓ FALSE NEGATIVE | Customer: CUST_000343 | Cluster: 3 | Score: -537.15 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 76 | Acc: 27.63% | Prec: 100.00% | Rec: 1.79%
+[2025-12-07 12:31:02] ✗✓ FALSE NEGATIVE | Customer: CUST_000343 | Cluster: 2 | Score: -93.36 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.61 | Total: 77 | Acc: 27.27% | Prec: 100.00% | Rec: 1.75%
+[2025-12-07 12:31:02] ✗✗ TRUE NEGATIVE | Customer: CUST_000343 | Cluster: 2 | Score: -140.43 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 78 | Acc: 28.21% | Prec: 100.00% | Rec: 1.75%
+[2025-12-07 12:31:03] ✗✓ FALSE NEGATIVE | Customer: CUST_000349 | Cluster: 0 | Score: -26.18 | 6 similar: ['CUST_000080', 'CUST_000084', 'CUST_000095'] | Prob: 0.67 | Total: 79 | Acc: 27.85% | Prec: 100.00% | Rec: 1.72%
+[2025-12-07 12:31:03] ✗✓ FALSE NEGATIVE | Customer: CUST_000349 | Cluster: 2 | Score: -426.17 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 80 | Acc: 27.50% | Prec: 100.00% | Rec: 1.69%
+[2025-12-07 12:31:03] ✗✓ FALSE NEGATIVE | Customer: CUST_000349 | Cluster: 0 | Score: -26.18 | 6 similar: ['CUST_000080', 'CUST_000084', 'CUST_000095'] | Prob: 0.67 | Total: 81 | Acc: 27.16% | Prec: 100.00% | Rec: 1.67%
+[2025-12-07 12:31:03] ✗✓ FALSE NEGATIVE | Customer: CUST_000349 | Cluster: 3 | Score: -84.42 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.62 | Total: 82 | Acc: 26.83% | Prec: 100.00% | Rec: 1.64%
+[2025-12-07 12:31:03] ✗✗ TRUE NEGATIVE | Customer: CUST_000349 | Cluster: 2 | Score: -199.04 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 83 | Acc: 27.71% | Prec: 100.00% | Rec: 1.64%
+[2025-12-07 12:31:03] ✗✓ FALSE NEGATIVE | Customer: CUST_000349 | Cluster: 3 | Score: -295.19 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 84 | Acc: 27.38% | Prec: 100.00% | Rec: 1.61%
+[2025-12-07 12:31:03] ✗✗ TRUE NEGATIVE | Customer: CUST_000349 | Cluster: 6 | Score: -28.02 | 6 similar: ['CUST_000164', 'CUST_000174', 'CUST_000180'] | Prob: 0.67 | Total: 85 | Acc: 28.24% | Prec: 100.00% | Rec: 1.61%
+[2025-12-07 12:31:03] ✗✓ FALSE NEGATIVE | Customer: CUST_000349 | Cluster: 3 | Score: -94.52 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.61 | Total: 86 | Acc: 27.91% | Prec: 100.00% | Rec: 1.59%
+[2025-12-07 12:31:08] ✗✗ TRUE NEGATIVE | Customer: CUST_000383 | Cluster: 3 | Score: -152.95 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 87 | Acc: 28.74% | Prec: 100.00% | Rec: 1.59%
+[2025-12-07 12:31:08] ✗✓ FALSE NEGATIVE | Customer: CUST_000383 | Cluster: 3 | Score: -175.37 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 88 | Acc: 28.41% | Prec: 100.00% | Rec: 1.56%
+[2025-12-07 12:31:08] ✗✓ FALSE NEGATIVE | Customer: CUST_000383 | Cluster: 3 | Score: -61.28 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.64 | Total: 89 | Acc: 28.09% | Prec: 100.00% | Rec: 1.54%
+[2025-12-07 12:31:09] ✗✗ TRUE NEGATIVE | Customer: CUST_000383 | Cluster: 3 | Score: -449.94 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 90 | Acc: 28.89% | Prec: 100.00% | Rec: 1.54%
+[2025-12-07 12:31:09] ✗✗ TRUE NEGATIVE | Customer: CUST_000383 | Cluster: 3 | Score: -484.63 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 91 | Acc: 29.67% | Prec: 100.00% | Rec: 1.54%
+[2025-12-07 12:31:09] ✗✓ FALSE NEGATIVE | Customer: CUST_000383 | Cluster: 3 | Score: -749.85 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 92 | Acc: 29.35% | Prec: 100.00% | Rec: 1.52%
+[2025-12-07 12:31:09] ✗✓ FALSE NEGATIVE | Customer: CUST_000383 | Cluster: 3 | Score: -152.95 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 93 | Acc: 29.03% | Prec: 100.00% | Rec: 1.49%
+[2025-12-07 12:31:09] ✗✓ FALSE NEGATIVE | Customer: CUST_000383 | Cluster: 3 | Score: -484.63 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 94 | Acc: 28.72% | Prec: 100.00% | Rec: 1.47%
+[2025-12-07 12:31:12] ✗✓ FALSE NEGATIVE | Customer: CUST_000406 | Cluster: 2 | Score: -27.58 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.67 | Total: 95 | Acc: 28.42% | Prec: 100.00% | Rec: 1.45%
+[2025-12-07 12:31:12] ✗✓ FALSE NEGATIVE | Customer: CUST_000406 | Cluster: 3 | Score: -252.35 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 96 | Acc: 28.12% | Prec: 100.00% | Rec: 1.43%
+[2025-12-07 12:31:12] ✗✓ FALSE NEGATIVE | Customer: CUST_000406 | Cluster: 3 | Score: -149.30 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 97 | Acc: 27.84% | Prec: 100.00% | Rec: 1.41%
+[2025-12-07 12:31:12] ✗✓ FALSE NEGATIVE | Customer: CUST_000406 | Cluster: 3 | Score: -265.71 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 98 | Acc: 27.55% | Prec: 100.00% | Rec: 1.39%
+[2025-12-07 12:31:12] ✗✗ TRUE NEGATIVE | Customer: CUST_000406 | Cluster: 3 | Score: -149.30 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 99 | Acc: 28.28% | Prec: 100.00% | Rec: 1.39%
+[2025-12-07 12:31:12] ✗✗ TRUE NEGATIVE | Customer: CUST_000406 | Cluster: 2 | Score: -27.58 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.67 | Total: 100 | Acc: 29.00% | Prec: 100.00% | Rec: 1.39%
+[2025-12-07 12:31:12] ✗✗ TRUE NEGATIVE | Customer: CUST_000406 | Cluster: 2 | Score: -21.22 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.68 | Total: 101 | Acc: 29.70% | Prec: 100.00% | Rec: 1.39%
+[2025-12-07 12:31:12] ✗✗ TRUE NEGATIVE | Customer: CUST_000406 | Cluster: 3 | Score: -265.71 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 102 | Acc: 30.39% | Prec: 100.00% | Rec: 1.39%
+[2025-12-07 12:31:12] ✗✓ FALSE NEGATIVE | Customer: CUST_000406 | Cluster: 3 | Score: -282.73 | 6 similar: ['CUST_000021', 'CUST_000060', 'CUST_000061'] | Prob: 0.70 | Total: 103 | Acc: 30.10% | Prec: 100.00% | Rec: 1.37%
+[2025-12-07 12:31:12] ✗✓ FALSE NEGATIVE | Customer: CUST_000406 | Cluster: 2 | Score: -85.71 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.61 | Total: 104 | Acc: 29.81% | Prec: 100.00% | Rec: 1.35%
+[2025-12-07 12:31:12] ✗✓ FALSE NEGATIVE | Customer: CUST_000406 | Cluster: 2 | Score: -27.33 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.67 | Total: 105 | Acc: 29.52% | Prec: 100.00% | Rec: 1.33%
+[2025-12-07 12:31:18] ✗✗ TRUE NEGATIVE | Customer: CUST_000499 | Cluster: 7 | Score: -11.12 | 6 similar: ['CUST_000034', 'CUST_000036', 'CUST_000038'] | Prob: 0.69 | Total: 106 | Acc: 30.19% | Prec: 100.00% | Rec: 1.33%
+[2025-12-07 12:31:20] ✗✗ TRUE NEGATIVE | Customer: CUST_000499 | Cluster: 4 | Score: -28.23 | 6 similar: ['CUST_000048', 'CUST_000041', 'CUST_000041'] | Prob: 0.67 | Total: 107 | Acc: 30.84% | Prec: 100.00% | Rec: 1.33%
+[2025-12-07 12:31:20] ✗✓ FALSE NEGATIVE | Customer: CUST_000499 | Cluster: 2 | Score: -62.59 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.64 | Total: 108 | Acc: 30.56% | Prec: 100.00% | Rec: 1.32%
+[2025-12-07 12:31:20] ✗✓ FALSE NEGATIVE | Customer: CUST_000499 | Cluster: 2 | Score: -72.97 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.63 | Total: 109 | Acc: 30.28% | Prec: 100.00% | Rec: 1.30%
+[2025-12-07 12:31:20] ✗✓ FALSE NEGATIVE | Customer: CUST_000499 | Cluster: 2 | Score: -40.74 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.66 | Total: 110 | Acc: 30.00% | Prec: 100.00% | Rec: 1.28%
+[2025-12-07 12:31:20] ✗✓ FALSE NEGATIVE | Customer: CUST_000499 | Cluster: 2 | Score: -40.74 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.66 | Total: 111 | Acc: 29.73% | Prec: 100.00% | Rec: 1.27%
+[2025-12-07 12:31:20] ✗✓ FALSE NEGATIVE | Customer: CUST_000499 | Cluster: 2 | Score: -19.75 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.68 | Total: 112 | Acc: 29.46% | Prec: 100.00% | Rec: 1.25%
+[2025-12-07 12:31:21] ✗✓ FALSE NEGATIVE | Customer: CUST_000513 | Cluster: 4 | Score: -14.44 | 6 similar: ['CUST_000048', 'CUST_000041', 'CUST_000041'] | Prob: 0.69 | Total: 113 | Acc: 29.20% | Prec: 100.00% | Rec: 1.23%
+[2025-12-07 12:31:21] ✗✓ FALSE NEGATIVE | Customer: CUST_000513 | Cluster: 2 | Score: -29.17 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.67 | Total: 114 | Acc: 28.95% | Prec: 100.00% | Rec: 1.22%
+[2025-12-07 12:31:21] ✗✗ TRUE NEGATIVE | Customer: CUST_000513 | Cluster: 2 | Score: -157.66 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 115 | Acc: 29.57% | Prec: 100.00% | Rec: 1.22%
+[2025-12-07 12:31:21] ✗✗ TRUE NEGATIVE | Customer: CUST_000513 | Cluster: 4 | Score: -24.35 | 6 similar: ['CUST_000048', 'CUST_000041', 'CUST_000041'] | Prob: 0.68 | Total: 116 | Acc: 30.17% | Prec: 100.00% | Rec: 1.22%
+[2025-12-07 12:31:21] ✗✗ TRUE NEGATIVE | Customer: CUST_000513 | Cluster: 2 | Score: -34.30 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.67 | Total: 117 | Acc: 30.77% | Prec: 100.00% | Rec: 1.22%
+[2025-12-07 12:31:21] ✗✓ FALSE NEGATIVE | Customer: CUST_000513 | Cluster: 2 | Score: -157.66 | 6 similar: ['CUST_000001', 'CUST_000004', 'CUST_000005'] | Prob: 0.70 | Total: 118 | Acc: 30.51% | Prec: 100.00% | Rec: 1.20%
