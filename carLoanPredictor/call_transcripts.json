@@ -1,12 +1,14 @@
 {
-  "CUST_000282": {
-    "customer_id": "CUST_000282",
+  "CUST_000090": {
+    "customer_id": "CUST_000090",
     "transcript": "Transcript not available",
-    "timestamp": "2025-12-07T17:48:16.606796"
+    "decision": 0,
+    "timestamp": "2025-12-07T18:28:58.772620"
   },
-  "CUST_000242": {
-    "customer_id": "CUST_000242",
-    "transcript": "AI: Hello. May I speak with customer? This is calling from the bank regarding your car loan application.\nUser: I was\nAI: Thank you so much for taking the call. My name is Yornane, and I'm your loan adviser here to assist you with your auto loan inquiry. I noticed you've expressed interest in financing vehicle. So I'd like to share some options tailored to your needs. Does that sound good?\nUser: I'm not interested to take any loan.\nUser: Right. Right.\nAI: Thank you. Thank you for your time. Have a great day. Feel free to reach out. Thank you for your time.\n",
-    "timestamp": "2025-12-07T17:49:23.520500"
+  "CUST_000647": {
+    "customer_id": "CUST_000647",
+    "transcript": "Transcript not available",
+    "decision": 0,
+    "timestamp": "2025-12-07T18:29:49.362647"
   }
 }

@@ -59,7 +59,7 @@ REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
 REDIS_PORT = int(os.getenv("REDIS_PORT", "6379"))
 REDIS_DB = int(os.getenv("REDIS_DB", "1"))
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY","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")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 if not OPENAI_API_KEY:
     raise RuntimeError("OPENAI_API_KEY must be set in environment")
 

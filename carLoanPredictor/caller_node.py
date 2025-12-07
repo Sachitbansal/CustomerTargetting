@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """
-Enhanced Car Loan Tester with VAPI Calling
+Enhanced Car Loan Tester with VAPI Calling and LLM Sentiment Analysis
 
 ✔ Filters positive predictions from NATS
 ✔ Loads customer data from MASTERFILE
 ✔ Matches customers with loan offers
 ✔ Makes VAPI calls to customers
 ✔ Collects call transcripts
+✔ Analyzes transcript with OpenAI for loan decision
 ✔ Streams feedback back to NATS
 """
 
@@ -59,8 +60,12 @@ VAPI_API_KEY = "704a9601-3f91-432e-83ec-f275d938482c"
 VAPI_BASE_URL = "https://api.vapi.ai"
 VAPI_PHONE_NUMBER_ID = "ed8ca566-93de-4687-b10e-6092222d506b"
 
+# OpenAI Configuration for Sentiment Analysis
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_BASE_URL = "https://api.openai.com/v1"
+
 # Hardcoded phone number for testing
-HARDCODED_PHONE = "+919064370831"
+HARDCODED_PHONE = os.getenv("HARDCODED_PHONE")
 
 # Global data structures
 call_queue = queue.Queue()
@@ -210,6 +215,117 @@ def find_top_loans(customer: Dict) -> list:
     
     scored_loans.sort(key=lambda x: x['score'], reverse=True)
     return [item['loan'] for item in scored_loans[:3]]
+
+# =======================================================
+# OPENAI SENTIMENT ANALYSIS
+# =======================================================
+def analyze_transcript_sentiment(transcript: str, customer_name: str) -> int:
+    """
+    Analyze call transcript using OpenAI to determine if customer wants the loan.
+    Returns: 1 if customer wants loan, 0 if not
+    """
+    log(f"\n  🤖 Analyzing transcript with OpenAI...")
+    
+    try:
+        headers = {
+            "Authorization": f"Bearer {OPENAI_API_KEY}",
+            "Content-Type": "application/json"
+        }
+        
+        # Structured output request
+        request_body = {
+            "model": "gpt-4o-mini",
+            "messages": [
+                {
+                    "role": "system",
+                    "content": """You are an expert at analyzing sales call transcripts to determine customer intent.
+Your task is to analyze a car loan sales call transcript and determine if the customer wants to proceed with the loan.
+
+Look for explicit signals such as:
+- Direct YES/NO responses when asked about proceeding
+- Positive phrases like "I'm interested", "Let's move forward", "Sign me up", "Sounds good"
+- Negative phrases like "Not interested", "I'll pass", "Maybe later", "Need to think about it"
+- Questions about next steps (indicates interest)
+- Requests for more information (indicates interest)
+- Concerns about affordability or terms (indicates hesitation/rejection)
+
+Return your analysis in JSON format with:
+- decision: 1 if customer wants the loan, 0 if they don't
+- confidence: a number between 0.0 and 1.0 indicating your confidence
+- reasoning: brief explanation of your decision"""
+                },
+                {
+                    "role": "user",
+                    "content": f"""Analyze this car loan sales call transcript for customer {customer_name}:
+
+TRANSCRIPT:
+{transcript}
+
+Based on this transcript, does the customer want to proceed with the car loan?
+Provide your analysis in the specified JSON format."""
+                }
+            ],
+            "response_format": {
+                "type": "json_schema",
+                "json_schema": {
+                    "name": "loan_decision_analysis",
+                    "strict": True,
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "decision": {
+                                "type": "integer",
+                                "description": "1 if customer wants the loan, 0 if not"
+                            },
+                            "confidence": {
+                                "type": "number",
+                                "description": "Confidence score between 0.0 and 1.0"
+                            },
+                            "reasoning": {
+                                "type": "string",
+                                "description": "Brief explanation of the decision"
+                            }
+                        },
+                        "required": ["decision", "confidence", "reasoning"],
+                        "additionalProperties": False
+                    }
+                }
+            },
+            "temperature": 0.3
+        }
+        
+        response = requests.post(
+            f"{OPENAI_BASE_URL}/chat/completions",
+            headers=headers,
+            json=request_body,
+            timeout=30
+        )
+        
+        if response.status_code == 200:
+            result = response.json()
+            content = result['choices'][0]['message']['content']
+            analysis = json.loads(content)
+            
+            decision = analysis.get('decision', 0)
+            confidence = analysis.get('confidence', 0.0)
+            reasoning = analysis.get('reasoning', 'No reasoning provided')
+            
+            log(f"  ✔ OpenAI Analysis Complete:")
+            log(f"     Decision: {decision} ({'WANTS LOAN' if decision == 1 else 'DOES NOT WANT LOAN'})")
+            log(f"     Confidence: {confidence:.2f}")
+            log(f"     Reasoning: {reasoning}")
+            
+            return decision
+        else:
+            log(f"  ❌ OpenAI API error: {response.status_code}")
+            log(f"     Response: {response.text}")
+            # Default to 0 (no loan) on API error
+            return 0
+            
+    except Exception as e:
+        log(f"  ❌ Error analyzing transcript: {e}")
+        # Default to 0 (no loan) on error
+        return 0
 
 # =======================================================
 # VAPI INTEGRATION
@@ -422,19 +538,20 @@ def get_call_transcript(call_id: str) -> Optional[str]:
         log(f"  ⚠ Error fetching transcript: {e}")
         return None
 
-def save_transcript(customer_id: str, transcript: str):
+def save_transcript(customer_id: str, transcript: str, decision: int):
     """Save call transcript to JSON file"""
     global call_transcripts
     call_transcripts[customer_id] = {
         'customer_id': customer_id,
         'transcript': transcript,
+        'decision': decision,
         'timestamp': datetime.now().isoformat()
     }
     
     try:
         with open(CALL_TRANSCRIPTS_JSON, 'w') as f:
             json.dump(call_transcripts, f, indent=2)
-        log(f"  ✔ Transcript saved ({len(transcript)} chars)")
+        log(f"  ✔ Transcript saved ({len(transcript)} chars, decision={decision})")
     except Exception as e:
         log(f"  ⚠ Error saving transcript: {e}")
 
@@ -459,8 +576,8 @@ def process_customer_call(customer_id: str, customer_data: Dict) -> int:
         top_loans = find_top_loans(customer_data)
         
         if not top_loans:
-            log(f"  ⚠ No matching loans found. Using hardcoded response.")
-            return 1
+            log(f"  ⚠ No matching loans found. Defaulting to decision=0")
+            return 0
         
         log(f"  ✔ Found {len(top_loans)} matching loans")
         for idx, loan in enumerate(top_loans, 1):
@@ -475,8 +592,8 @@ def process_customer_call(customer_id: str, customer_data: Dict) -> int:
         assistant = create_vapi_assistant(prompt, customer_data.get('name', 'Customer'))
         
         if not assistant:
-            log(f"  ⚠ Failed to create assistant. Using hardcoded response.")
-            return 1
+            log(f"  ⚠ Failed to create assistant. Defaulting to decision=0")
+            return 0
         
         assistant_id = assistant.get('id')
         
@@ -485,8 +602,8 @@ def process_customer_call(customer_id: str, customer_data: Dict) -> int:
         call = make_call(assistant_id, HARDCODED_PHONE, customer_data.get('name', 'Customer'))
         
         if not call:
-            log(f"  ⚠ Failed to initiate call. Using hardcoded response.")
-            return 1
+            log(f"  ⚠ Failed to initiate call. Defaulting to decision=0")
+            return 0
         
         call_id = call.get('id')
         call_status = call.get('status', 'initiated')
@@ -494,22 +611,28 @@ def process_customer_call(customer_id: str, customer_data: Dict) -> int:
         log(f"  ✔ Call ID: {call_id}")
         log(f"  ✔ Status: {call_status}")
         
-        # Fetch transcript (includes 5 second wait for call completion)
+        # Fetch transcript (includes waiting for call completion)
         log(f"\n  📄 Fetching call transcript...")
         transcript = get_call_transcript(call_id)
         
-        if transcript:
-            save_transcript(customer_id, transcript)
-        else:
-            save_transcript(customer_id, "Transcript not available")
+        if not transcript or transcript == "Transcript not available":
+            log(f"  ⚠ Transcript not available. Defaulting to decision=0")
+            save_transcript(customer_id, transcript or "Not available", 0)
+            return 0
+        
+        # Analyze transcript with OpenAI
+        decision = analyze_transcript_sentiment(transcript, customer_data.get('name', 'Customer'))
+        
+        # Save transcript with decision
+        save_transcript(customer_id, transcript, decision)
         
         log(f"{'='*70}\n")
         
-        return 1  # Hardcoded decision
+        return decision
         
     except Exception as e:
         log(f"  ❌ Error processing customer {customer_id}: {e}")
-        return 1
+        return 0
 
 def calling_agent_worker():
     """Worker thread that processes the call queue - ONE CALL AT A TIME"""
@@ -527,7 +650,7 @@ def calling_agent_worker():
             
             # Acquire lock and process the call
             with call_in_progress_lock:
-                # Process the entire call (includes waiting for call to complete)
+                # Process the entire call (includes waiting for call + LLM analysis)
                 decision = process_customer_call(customer_id, customer_data)
                 
                 # Store decision
@@ -566,7 +689,7 @@ class FeedbackSimulator:
         self.decisions_cache = {}
     
     def get_decision(self, customer_id: str) -> int:
-        return self.decisions_cache.get(customer_id, 1)
+        return self.decisions_cache.get(customer_id, 0)
     
     def store_decision(self, customer_id: str, decision: int):
         self.decisions_cache[customer_id] = decision
@@ -579,13 +702,14 @@ simulator = FeedbackSimulator()
 # =======================================================
 def run():
     log("═══════════════════════════════════════════════")
-    log("   ENHANCED CAR LOAN TESTER WITH VAPI CALLING  ")
+    log("   ENHANCED CAR LOAN TESTER WITH LLM ANALYSIS  ")
     log("═══════════════════════════════════════════════")
     log(f"Input Topic:    {INPUT_TOPIC}")
     log(f"Output Topic:   {OUTPUT_TOPIC}")
     log(f"Data Source:    Redis @ {REDIS_HOST}:{REDIS_PORT} (db={REDIS_DB})")
     log(f"Log File:       {LOG_FILE}")
     log(f"Transcripts:    {CALL_TRANSCRIPTS_JSON}")
+    log(f"OpenAI Model:   gpt-4o-mini (with structured output)")
     log("═══════════════════════════════════════════════\n")
     
     # Load data
@@ -622,8 +746,9 @@ def run():
             call_queue.put((customer_id, customer_data.copy()))
             log(f"➕ Added customer {customer_id} to call queue (Queue size: {call_queue.qsize()})")
             
-            decision = 1  # Hardcoded
-            simulator.store_decision(customer_id, decision)
+            # Wait for decision from calling agent (will be populated by worker thread)
+            # The decision will be determined by LLM analysis
+            decision = simulator.get_decision(customer_id)
             
             return f"{customer_id}|{decision}"
         else:
@@ -665,17 +790,19 @@ def run():
         format="json"
     )
     
-    log("\n✔ Enhanced Tester Node is running.\n")
+    log("\n✔ Enhanced Tester Node with LLM Analysis is running.\n")
     log("=" * 60)
     log("PIPELINE FLOW:")
     log(f"  1. Listen to predictions on: {INPUT_TOPIC}")
     log(f"  2. Filter ONLY positive predictions (predicted_eligible=True)")
-    log(f"  3. Fetch customer details from: Redis (masterfile:data)")
+    log(f"  3. Fetch customer details from Redis")
     log(f"  4. Add customer to call queue")
-    log(f"  5. Calling agent processes queue in background")
+    log(f"  5. Calling agent processes queue ONE AT A TIME")
     log(f"  6. Make VAPI call and collect transcript")
-    log(f"  7. Stream feedback to: {OUTPUT_TOPIC}")
-    log(f"  8. Save transcripts to: {CALL_TRANSCRIPTS_JSON}")
+    log(f"  7. Analyze transcript with OpenAI LLM (structured output)")
+    log(f"  8. Get decision (1=wants loan, 0=doesn't want loan)")
+    log(f"  9. Stream feedback to: {OUTPUT_TOPIC}")
+    log(f" 10. Save transcripts to: {CALL_TRANSCRIPTS_JSON}")
     log("=" * 60 + "\n")
     
     pw.run()

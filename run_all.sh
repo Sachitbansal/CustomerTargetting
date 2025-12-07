@@ -88,14 +88,14 @@ declare -a NODES=(
     "carLoanFeedback:run_feedback.py"
     "dataUpdater:run_detector_publisher.py"
     "oracle:run_feedback.py"
-    "modelVisualiser:model_carVisualiser.py"
+    # "modelVisualiser:model_carVisualiser.py"
 
     # Report Gen Nodes
     "report_gen:llm_gen.py"
     "report_gen:read_pred.py"
 
     # Agent Caller node
-    "carLoanPredictor:caller_node.py"
+    # "carLoanPredictor:caller_node.py"
 
     # Publishers
     "leadPublisher:run_publisher.py"

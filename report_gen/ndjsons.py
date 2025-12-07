@@ -29,5 +29,3 @@ if __name__ == "__main__":
     convert_to_ndjson(INPUT_DIR, OUTPUT_FILE)
 
 
-
-#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

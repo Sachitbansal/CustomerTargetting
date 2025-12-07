@@ -37,11 +37,26 @@ last_file_hash = None
 
 
 def compute_file_hash(filepath):
-    """Compute MD5 hash of file to detect changes"""
+    """Compute a signature based on mtime + size + hash for reliable change detection"""
     if not os.path.exists(filepath):
         return None
-    with open(filepath, 'rb') as f:
-        return hashlib.md5(f.read()).hexdigest()
+    try:
+        # Use mtime + size for quick change detection
+        stat = os.stat(filepath)
+        mtime = stat.st_mtime
+        size = stat.st_size
+        
+        # Force fresh read by opening with no buffering
+        with open(filepath, 'rb') as f:
+            # Read and hash content
+            content = f.read()
+            content_hash = hashlib.md5(content).hexdigest()
+        
+        # Combine all signals for reliable detection
+        return f"{mtime}_{size}_{content_hash}"
+    except Exception as e:
+        print(f"⚠️  Error computing file hash: {e}")
+        return None
 
 
 def load_model_data(filepath):

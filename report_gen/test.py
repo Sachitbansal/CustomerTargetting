@@ -37,7 +37,7 @@ load_dotenv()
 CUSTOMER_CSV = "/root/interiit/TargettedCalling/MASTERFILE.csv"
 SCHEMES_NDJSON = "loan_schemes.ndjson"
 OUTPUT_DIR = "reports_test"
-OPENAI_API_KEY = os.getenv("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")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4")
 NUM_TEST_CUSTOMERS = 3  # Number of customers to test
 NUM_NEIGHBORS = 10  # Number of neighbors to find

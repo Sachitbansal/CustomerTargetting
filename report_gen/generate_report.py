@@ -49,7 +49,7 @@ NEIGHBORS_TOPIC = os.getenv("NEIGHBORS_TOPIC", "customers.neighbors")
 RESULT_TOPIC = os.getenv("RESULT_TOPIC", "customers.reports")
 SCHEMES_NDJSON_PATH = os.getenv("SCHEMES_NDJSON_PATH", "loan_schemes.ndjson")
 OUTPUT_DIR = os.getenv("OUTPUT_DIR", "reports")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "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")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4")
 USE_PATHWAY_XPACK = os.getenv("USE_PATHWAY_XPACK", "true").lower() in ("1", "true", "yes")
 

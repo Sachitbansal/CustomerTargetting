@@ -388,7 +388,7 @@ def run_feedback_node():
     log_message("═══════════════════════════════════════════════")
     log_message(f"Feedback Topic: {FEEDBACK_TOPIC}")
     log_message(f"Model Path:     {MODEL_PATH}")
-    log_message(f"MASTERFILE:     {MASTERFILE_PATH}")
+    log_message(f"MASTERFILE:     Redis @ {REDIS_HOST}:{REDIS_PORT} (db={REDIS_DB})")
     log_message(f"Log File:       {LOG_FILE if LOG_ENABLED else 'DISABLED'}")
     log_message(f"Metrics:        {'ENABLED on port ' + str(METRICS_PORT) if METRICS_ENABLED else 'DISABLED'}")
     log_message(f"Batch Config:   Update every {FEEDBACK_BATCH_SIZE} feedbacks")
