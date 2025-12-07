@@ -5,6 +5,17 @@ echo "Starting Full Targeted Calling Pipeline..."
 # Auto-detect project directory
 BASE_DIR="$(cd "$(dirname "$0")" && pwd)"
 
+# Clean modelVisualiser output directories so pipeline starts fresh
+MV_DIR="$BASE_DIR/modelVisualiser"
+GIF_IMAGES_DIR="$MV_DIR/gif_images"
+CLUSTER_STATS_DIR="$MV_DIR/cluster_stats"
+WEIGHT_EVOLUTION_DIR="$MV_DIR/weight_evolution"
+CLUSTER_COUNT_DIR="$MV_DIR/cluster_count_evolution"
+
+echo "Cleaning old model visualiser folders (if any)..."
+rm -rf "$GIF_IMAGES_DIR" "$CLUSTER_STATS_DIR" "$WEIGHT_EVOLUTION_DIR" "$CLUSTER_COUNT_DIR"
+echo "Done cleaning modelVisualiser outputs."
+
 # Path to venv
 VENV_PATH="$BASE_DIR/venv/bin/activate"
 
@@ -23,7 +34,6 @@ echo "🧹 Cleaning old CSV and log files..."
 
 
 rm -f "$BASE_DIR/MASTERFILE.csv"
-
 rm -f "$BASE_DIR/streaming_transactions.csv"
 rm -f "$BASE_DIR/datasetGeneration/streaming_transactions.csv"
 rm -f "$BASE_DIR/carLoanFeedback/feedback_node.log"
@@ -78,6 +88,7 @@ declare -a NODES=(
     "carLoanFeedback:run_feedback.py"
     "dataUpdater:run_detector_publisher.py"
     "oracle:run_feedback.py"
+    "modelVisualiser:model_carVisualiser.py"
 
     # Report Gen Nodes
     "report_gen:llm_gen.py"
