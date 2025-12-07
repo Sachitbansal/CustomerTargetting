@@ -22,7 +22,7 @@ GIF_IMAGES_DIR = os.path.join(OUTPUT_DIR, "gif_images")
 CLUSTER_STATS_DIR = os.path.join(OUTPUT_DIR, "cluster_stats")
 WEIGHT_EVOLUTION_DIR = os.path.join(OUTPUT_DIR, "weight_evolution")
 CLUSTER_COUNT_DIR = os.path.join(OUTPUT_DIR, "cluster_count_evolution")
-REFRESH_INTERVAL = 15  # seconds
+REFRESH_INTERVAL = 5  # seconds
 
 os.makedirs(GIF_IMAGES_DIR, exist_ok=True)
 os.makedirs(CLUSTER_STATS_DIR, exist_ok=True)

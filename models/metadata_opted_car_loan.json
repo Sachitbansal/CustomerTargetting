@@ -1,0 +1,53 @@
+{
+    "target_column": "opted_car_loan",
+    "training_date": "2025-12-07T02:58:24.890944",
+    "n_features": 33,
+    "n_train_samples": 8124,
+    "n_val_samples": 2501,
+    "n_test_samples": 1875,
+    "hyperparameters": {
+        "batch_size": 32,
+        "learning_rate": 0.001,
+        "epochs": 50,
+        "early_stopping_patience": 10
+    },
+    "feature_columns": {
+        "numerical": [
+            "age",
+            "dependents_count",
+            "yearly_income",
+            "account_age_months",
+            "initial_credit_score",
+            "existing_loans_count",
+            "existing_loan_monthly_EMI_total",
+            "total_credit_limit",
+            "initial_credit_utilization_ratio",
+            "initial_avg_monthly_balance",
+            "initial_savings_rate",
+            "txn_count_last_30d",
+            "high_value_txn_count_30d",
+            "bounced_txn_count",
+            "final_avg_monthly_balance",
+            "monthly_fuel_spend",
+            "monthly_transport_service_spend",
+            "avg_monthly_investment_debit",
+            "final_credit_score",
+            "dti_ratio",
+            "savings_rate",
+            "income_to_limit",
+            "txn_intensity",
+            "age_x_dependents",
+            "score_x_log_income"
+        ],
+        "categorical": [
+            "gender",
+            "marital_status",
+            "employment_type",
+            "occupation",
+            "education_level",
+            "city_tier",
+            "has_existing_auto_loan",
+            "has_existing_investment_account"
+        ]
+    }
+}

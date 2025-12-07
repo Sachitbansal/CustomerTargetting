@@ -79,8 +79,10 @@ class FeedbackProcessor:
         self.feedback_buffer = deque()
         self.masterfile_df = None
         self.update_count = 0
-        self.positive_feedback_count = 0
-        self.negative_feedback_count = 0
+        self.tp_count = 0
+        self.fp_count = 0
+        self.tn_count = 0
+        self.fn_count = 0
         self.last_save_time = time.time()
         self.lock = threading.Lock()
         
@@ -130,7 +132,7 @@ class FeedbackProcessor:
             self.last_save_time = time.time()
             
             log_message(f"✓ Model saved to {MODEL_PATH} in {save_duration:.3f}s")
-            log_message(f"✓ Current state: Components={self.model.n_components}, Positive={self.positive_feedback_count}, Negative={self.negative_feedback_count}\n")
+            log_message(f"✓ Current state: Components={self.model.n_components}, TP={self.tp_count}, FP={self.fp_count}, FN={self.fn_count}, TN={self.tn_count}\n")
             
             # 📊 METRIC: Record save time
             if METRICS_ENABLED:
@@ -147,18 +149,50 @@ class FeedbackProcessor:
                 record_save_time(save_duration, success=False)
                 record_feedback_error('save_failed')
     
-    def process_feedback(self, customer_id, bought_loan):
+    def parse_feedback_string(self, feedback_str):
+        """
+        Parse feedback string in format: 'custID | feedback_type'
+        Returns: (customer_id, feedback_type) or (None, None) if invalid
+        """
+        try:
+            parts = feedback_str.split('|')
+            if len(parts) != 2:
+                log_message(f"⚠ Invalid format: '{feedback_str}'. Expected 'custID | feedback_type'")
+                return None, None
+            
+            customer_id = parts[0].strip()
+            feedback_type = parts[1].strip().upper()
+            
+            if feedback_type not in ['TP', 'FP', 'TN', 'FN']:
+                log_message(f"⚠ Invalid feedback type: '{feedback_type}'. Must be TP, FP, TN, or FN")
+                return None, None
+            
+            return customer_id, feedback_type
+        except Exception as e:
+            log_message(f"⚠ Error parsing feedback string '{feedback_str}': {e}")
+            return None, None
+    
+    def process_feedback(self, feedback_str):
         """Add feedback to buffer and process if batch is full"""
-        log_message(f"📥 RECEIVED FEEDBACK | Customer: {customer_id} | Bought: {bought_loan}")
+        customer_id, feedback_type = self.parse_feedback_string(feedback_str)
+        
+        if customer_id is None or feedback_type is None:
+            if METRICS_ENABLED:
+                record_feedback_error('invalid_format')
+            return f"error_invalid_format"
+        
+        log_message(f"📥 RECEIVED FEEDBACK | Customer: {customer_id} | Type: {feedback_type}")
         
         # 📊 METRIC: Record feedback received
         if METRICS_ENABLED:
-            record_feedback(bought_loan)
+            # Map feedback types to boolean for metrics (TP/FN are positive, FP/TN are negative)
+            is_positive = feedback_type in ['TP', 'FN']
+            record_feedback(is_positive)
         
         with self.lock:
             self.feedback_buffer.append({
                 'customer_id': customer_id,
-                'bought_loan': bought_loan
+                'feedback_type': feedback_type
             })
             
             # 📊 METRIC: Update buffer size
@@ -177,7 +211,7 @@ class FeedbackProcessor:
                 self._process_batch()
         
         # Return a simple string for tracking
-        return f"processed_{customer_id}"
+        return f"processed_{customer_id}_{feedback_type}"
     
     def _process_batch(self):
         """Process all feedback in buffer and update model"""
@@ -201,7 +235,7 @@ class FeedbackProcessor:
         
         for feedback in batch_data:
             customer_id = feedback['customer_id']
-            bought_loan = feedback['bought_loan']
+            feedback_type = feedback['feedback_type']
             
             update_start_time = time.time()
             
@@ -230,10 +264,39 @@ class FeedbackProcessor:
                 
                 # Get current prediction for context
                 result_tuple = self.model.predict_score(x_num, x_cat)
-                is_in, k, score, _, _ = result_tuple
+                is_in, k, score, all_m, exemplars = result_tuple
+                
+                # Map feedback type to model update parameters
+                # TP: is_in=True, bought=True
+                # FP: is_in=True, bought=False
+                # FN: is_in=False, bought=True
+                # TN: is_in=False, bought=False
+                
+                if feedback_type == 'TP':
+                    is_in_actual = True
+                    bought_actual = True
+                    self.tp_count += 1
+                    icon = "✓✓"
+                elif feedback_type == 'FP':
+                    is_in_actual = True
+                    bought_actual = False
+                    self.fp_count += 1
+                    icon = "✓✗"
+                elif feedback_type == 'FN':
+                    is_in_actual = False
+                    bought_actual = True
+                    self.fn_count += 1
+                    icon = "✗✓"
+                else:  # TN
+                    is_in_actual = False
+                    bought_actual = False
+                    self.tn_count += 1
+                    icon = "✗✗"
                 
                 # Update model with feedback
-                self.model.update(x_num, x_cat, bought_loan, result_tuple, meta=customer_id)
+                # Note: We use the actual prediction result (is_in, k, score, all_m, exemplars)
+                # but interpret feedback_type to determine bought_actual
+                self.model.update(x_num, x_cat, bought_actual, result_tuple, meta=customer_id)
                 
                 # 📊 METRIC: Record update time
                 update_duration = time.time() - update_start_time
@@ -243,16 +306,8 @@ class FeedbackProcessor:
                 self.update_count += 1
                 success_count += 1
                 
-                # Track statistics
-                if bought_loan:
-                    self.positive_feedback_count += 1
-                    feedback_type = "✓ POSITIVE"
-                else:
-                    self.negative_feedback_count += 1
-                    feedback_type = "✗ NEGATIVE"
-                
-                log_message(f"{feedback_type} | Customer: {customer_id} | Cluster: {k} | Score: {score:.2f} | "
-                          f"Update #{self.update_count} | Latency: {update_duration*1000:.2f}ms")
+                log_message(f"{icon} {feedback_type} | Customer: {customer_id} | Cluster: {k} | Score: {score:.2f} | "
+                          f"Predicted: {'IN' if is_in else 'OUT'} | Update #{self.update_count} | Latency: {update_duration*1000:.2f}ms")
                 
             except Exception as e:
                 log_message(f"⚠ ERROR | Failed to process feedback for {customer_id}: {e}")
@@ -309,6 +364,7 @@ def run_feedback_node():
     log_message(f"Metrics:        {'ENABLED on port ' + str(METRICS_PORT) if METRICS_ENABLED else 'DISABLED'}")
     log_message(f"Batch Config:   Update every {FEEDBACK_BATCH_SIZE} feedbacks")
     log_message(f"Auto-save:      Every {AUTO_SAVE_INTERVAL} seconds")
+    log_message(f"Input Format:   'custID | feedback_type' (TP/FP/TN/FN)")
     log_message("═══════════════════════════════════════════════\n")
     
     # 📊 Initialize metrics server
@@ -319,10 +375,9 @@ def run_feedback_node():
         except Exception as e:
             log_message(f"⚠️  Failed to initialize metrics: {e}")
     
-    # Expected schema: customer_id (str), custBoughtLoanOrNot (bool)
+    # Expected schema: feedback_string (str) in format "custID | feedback_type"
     class FeedbackSchema(pw.Schema):
-        customer_id: str
-        custBoughtLoanOrNot: bool
+        feedback_string: str
     
     # 1. Read feedback from NATS
     feedback_stream = pw.io.nats.read(
@@ -333,16 +388,15 @@ def run_feedback_node():
     )
     
     log_message(f"✓ Listening for feedback on '{FEEDBACK_TOPIC}'...")
-    log_message(f"✓ LISTENING TO: {FEEDBACK_TOPIC}\n")
+    log_message(f"✓ Expected format: {{\"feedback_string\": \"custID | TP/FP/TN/FN\"}}\n")
     
     # 2. Process each feedback point
     processed = feedback_stream.select(
-        customer_id=pw.this.customer_id,
+        feedback_string=pw.this.feedback_string,
         status=pw.apply_with_type(
-            lambda cid, bought: processor.process_feedback(cid, bought),
+            lambda fs: processor.process_feedback(fs),
             str,
-            pw.this.customer_id,
-            pw.this.custBoughtLoanOrNot
+            pw.this.feedback_string
         )
     )
     

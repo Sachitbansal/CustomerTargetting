@@ -1,0 +1,15 @@
+═══════════════════════════════════════════════
+        CUSTOMER 360 ENRICHMENT NODE           
+═══════════════════════════════════════════════
+✅ Metrics server started on http://localhost:8002/metrics
+   Component: enrichment
+
+✓ Connected to NATS 'transactions.stream' and MASTERFILE
+✓ Enrichment pipeline configured with latency tracking
+✓ Metrics available at: http://localhost:8002/metrics
+✓ DEBUG LOG: /home/crazy_warlord/TargettedCalling/enrichment_debug.log
+============================================================
+WATCHING FOR ACTIVITY - Check log file for details
+============================================================
+✓ Publishing updated customers to NATS topic 'updated.Customer'
+
