@@ -82,3 +82,12 @@
 [Consolidator] 📝 Generating PDF → /root/interiit/TargettedCalling/report_gen/output_reports/cluster_6_20251205_224945.pdf
 [Consolidator] ✅ PDF generated successfully
 [Consolidator] ✅ Complete report generated at /root/interiit/TargettedCalling/report_gen/output_reports/cluster_6_20251205_224945.pdf
+[Consolidator] Loaded MASTERFILE with 12500 rows.
+[Consolidator] Loaded MASTERFILE with 12500 rows.
+[Consolidator] 🚀 Cluster Consolidator (Step-2) started...
+[Consolidator] Listening on → reports.cluster.ready
+[Consolidator] Using OpenAI model: gpt-4o
+[Consolidator] Loaded MASTERFILE with 12500 rows.
+[Consolidator] 🚀 Cluster Consolidator (Step-2) started...
+[Consolidator] Listening on → reports.cluster.ready
+[Consolidator] Using OpenAI model: gpt-4o

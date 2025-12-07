@@ -68,3 +68,15 @@
 [ClusterAgg] CUST CUST_000385 → CL 4 | score=1.160 | 2/5
 [ClusterAgg] CUST CUST_008502 → CL 2 | score=-0.377 | 3/5
 [ClusterAgg] CUST CUST_003631 → CL 2 | score=-2.583 | 4/5
+[ClusterAgg] === Cluster Aggregator Started ===
+[ClusterAgg] Listening on topic: leads.callCarLoan
+[ClusterAgg] Publishing batches to: reports.cluster.ready
+[ClusterAgg] K_BATCH = 5
+[ClusterAgg] Cache file: /home/sachit/Documents/VSCProjects/TargettedCalling/report_gen/prediction_cache.csv
+
+[ClusterAgg] === Cluster Aggregator Started ===
+[ClusterAgg] Listening on topic: leads.callCarLoan
+[ClusterAgg] Publishing batches to: reports.cluster.ready
+[ClusterAgg] K_BATCH = 5
+[ClusterAgg] Cache file: /home/sachit/Documents/VSCProjects/TargettedCalling/report_gen/prediction_cache.csv
+
