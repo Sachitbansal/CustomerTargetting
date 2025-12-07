@@ -1,93 +1,15 @@
-[Consolidator] Loaded MASTERFILE with 12500 rows.
+[Consolidator] Connecting to Redis at localhost:6379 (db=1)...
+[Consolidator] Loaded MASTERFILE from Redis with 12500 rows.
 [Consolidator] 🚀 Cluster Consolidator (Step-2) started...
 [Consolidator] Listening on → reports.cluster.ready
 [Consolidator] Using OpenAI model: gpt-4o
-[Consolidator] 📥 RECEIVED BATCH → cluster=2, count=5
+[Consolidator] 📥 RECEIVED BATCH → cluster=3, count=5
 [Consolidator] Parsed 5 customers
 [Consolidator] 🔵 Calling OpenAI model gpt-4o...
-[Consolidator] ✅ Received LLM response (1779 chars)
+[Consolidator] ✅ Received LLM response (1987 chars)
 [Consolidator] ✅ Parsed JSON successfully with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
 [Consolidator] ✅ Analysis completed with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✔ Saved JSON + TXT for cluster 2
-[Consolidator] 📝 Generating PDF → /root/interiit/TargettedCalling/report_gen/output_reports/cluster_2_20251205_224746.pdf
+[Consolidator] ✔ Saved JSON + TXT for cluster 3
+[Consolidator] 📝 Generating PDF → /home/sachit/Documents/VSCProjects/TargettedCalling/report_gen/output_reports/cluster_3_20251207_073835.pdf
 [Consolidator] ✅ PDF generated successfully
-[Consolidator] ✅ Complete report generated at /root/interiit/TargettedCalling/report_gen/output_reports/cluster_2_20251205_224746.pdf
-[Consolidator] 📥 RECEIVED BATCH → cluster=2, count=5
-[Consolidator] Parsed 5 customers
-[Consolidator] 🔵 Calling OpenAI model gpt-4o...
-[Consolidator] ✅ Received LLM response (1896 chars)
-[Consolidator] ✅ Parsed JSON successfully with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✅ Analysis completed with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✔ Saved JSON + TXT for cluster 2
-[Consolidator] 📝 Generating PDF → /root/interiit/TargettedCalling/report_gen/output_reports/cluster_2_20251205_224831.pdf
-[Consolidator] ✅ PDF generated successfully
-[Consolidator] ✅ Complete report generated at /root/interiit/TargettedCalling/report_gen/output_reports/cluster_2_20251205_224831.pdf
-[Consolidator] 📥 RECEIVED BATCH → cluster=2, count=5
-[Consolidator] Parsed 5 customers
-[Consolidator] 🔵 Calling OpenAI model gpt-4o...
-[Consolidator] ✅ Received LLM response (2161 chars)
-[Consolidator] ✅ Parsed JSON successfully with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✅ Analysis completed with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✔ Saved JSON + TXT for cluster 2
-[Consolidator] 📝 Generating PDF → /root/interiit/TargettedCalling/report_gen/output_reports/cluster_2_20251205_224840.pdf
-[Consolidator] ✅ PDF generated successfully
-[Consolidator] ✅ Complete report generated at /root/interiit/TargettedCalling/report_gen/output_reports/cluster_2_20251205_224840.pdf
-[Consolidator] 📥 RECEIVED BATCH → cluster=4, count=5
-[Consolidator] Parsed 5 customers
-[Consolidator] 🔵 Calling OpenAI model gpt-4o...
-[Consolidator] ✅ Received LLM response (1867 chars)
-[Consolidator] ✅ Parsed JSON successfully with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✅ Analysis completed with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✔ Saved JSON + TXT for cluster 4
-[Consolidator] 📝 Generating PDF → /root/interiit/TargettedCalling/report_gen/output_reports/cluster_4_20251205_224850.pdf
-[Consolidator] ✅ PDF generated successfully
-[Consolidator] ✅ Complete report generated at /root/interiit/TargettedCalling/report_gen/output_reports/cluster_4_20251205_224850.pdf
-[Consolidator] 📥 RECEIVED BATCH → cluster=2, count=5
-[Consolidator] Parsed 5 customers
-[Consolidator] 🔵 Calling OpenAI model gpt-4o...
-[Consolidator] ✅ Received LLM response (1812 chars)
-[Consolidator] ✅ Parsed JSON successfully with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✅ Analysis completed with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✔ Saved JSON + TXT for cluster 2
-[Consolidator] 📝 Generating PDF → /root/interiit/TargettedCalling/report_gen/output_reports/cluster_2_20251205_224919.pdf
-[Consolidator] ✅ PDF generated successfully
-[Consolidator] ✅ Complete report generated at /root/interiit/TargettedCalling/report_gen/output_reports/cluster_2_20251205_224919.pdf
-[Consolidator] 📥 RECEIVED BATCH → cluster=2, count=5
-[Consolidator] Parsed 5 customers
-[Consolidator] 🔵 Calling OpenAI model gpt-4o...
-[Consolidator] ✅ Received LLM response (2122 chars)
-[Consolidator] ✅ Parsed JSON successfully with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✅ Analysis completed with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✔ Saved JSON + TXT for cluster 2
-[Consolidator] 📝 Generating PDF → /root/interiit/TargettedCalling/report_gen/output_reports/cluster_2_20251205_224927.pdf
-[Consolidator] ✅ PDF generated successfully
-[Consolidator] ✅ Complete report generated at /root/interiit/TargettedCalling/report_gen/output_reports/cluster_2_20251205_224927.pdf
-[Consolidator] 📥 RECEIVED BATCH → cluster=2, count=5
-[Consolidator] Parsed 5 customers
-[Consolidator] 🔵 Calling OpenAI model gpt-4o...
-[Consolidator] ✅ Received LLM response (2053 chars)
-[Consolidator] ✅ Parsed JSON successfully with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✅ Analysis completed with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✔ Saved JSON + TXT for cluster 2
-[Consolidator] 📝 Generating PDF → /root/interiit/TargettedCalling/report_gen/output_reports/cluster_2_20251205_224937.pdf
-[Consolidator] ✅ PDF generated successfully
-[Consolidator] ✅ Complete report generated at /root/interiit/TargettedCalling/report_gen/output_reports/cluster_2_20251205_224937.pdf
-[Consolidator] 📥 RECEIVED BATCH → cluster=6, count=5
-[Consolidator] Parsed 5 customers
-[Consolidator] 🔵 Calling OpenAI model gpt-4o...
-[Consolidator] ✅ Received LLM response (1858 chars)
-[Consolidator] ✅ Parsed JSON successfully with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✅ Analysis completed with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
-[Consolidator] ✔ Saved JSON + TXT for cluster 6
-[Consolidator] 📝 Generating PDF → /root/interiit/TargettedCalling/report_gen/output_reports/cluster_6_20251205_224945.pdf
-[Consolidator] ✅ PDF generated successfully
-[Consolidator] ✅ Complete report generated at /root/interiit/TargettedCalling/report_gen/output_reports/cluster_6_20251205_224945.pdf
-[Consolidator] Loaded MASTERFILE with 12500 rows.
-[Consolidator] Loaded MASTERFILE with 12500 rows.
-[Consolidator] 🚀 Cluster Consolidator (Step-2) started...
-[Consolidator] Listening on → reports.cluster.ready
-[Consolidator] Using OpenAI model: gpt-4o
-[Consolidator] Loaded MASTERFILE with 12500 rows.
-[Consolidator] 🚀 Cluster Consolidator (Step-2) started...
-[Consolidator] Listening on → reports.cluster.ready
-[Consolidator] Using OpenAI model: gpt-4o
+[Consolidator] ✅ Complete report generated at /home/sachit/Documents/VSCProjects/TargettedCalling/report_gen/output_reports/cluster_3_20251207_073835.pdf

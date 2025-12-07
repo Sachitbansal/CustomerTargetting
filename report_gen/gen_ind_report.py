@@ -8,12 +8,14 @@ Usage:
     python individual_customer_report.py CUST_004643
 
 Requirements:
-    pip install openai python-dotenv reportlab pandas
+    pip install openai python-dotenv reportlab pandas redis
 
 Environment:
     - OPENAI_API_KEY must be set
     - PREDICTION_CACHE_PATH (optional, default: prediction_cache.csv)
-    - MASTERFILE_PATH (optional, default: MASTERFILE.csv)
+    - REDIS_HOST (optional, default: localhost)
+    - REDIS_PORT (optional, default: 6379)
+    - REDIS_DB (optional, default: 1)
     - SCHEMES_NDJSON_PATH (optional, default: loan_schemes.ndjson)
     - OUTPUT_DIR (optional, default: individual_reports)
 """
@@ -45,10 +47,17 @@ load_dotenv()
 CURRENT_DIR = Path(__file__).resolve().parent
 ROOT = CURRENT_DIR.parent
 
+# Add root to path for imports
+sys.path.append(str(ROOT))
+
 PREDICTION_CACHE_PATH = os.getenv("PREDICTION_CACHE_PATH", str(CURRENT_DIR / "prediction_cache.csv"))
-MASTERFILE_PATH = os.getenv("MASTERFILE_PATH", str(ROOT / "MASTERFILE.csv"))
 SCHEMES_NDJSON_PATH = os.getenv("SCHEMES_NDJSON_PATH", str(CURRENT_DIR / "loan_schemes.ndjson"))
 OUTPUT_DIR = os.getenv("OUTPUT_DIR", str(CURRENT_DIR / "individual_reports"))
+
+# Redis configuration
+REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
+REDIS_PORT = int(os.getenv("REDIS_PORT", "6379"))
+REDIS_DB = int(os.getenv("REDIS_DB", "1"))
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY","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")
 if not OPENAI_API_KEY:
@@ -62,78 +71,82 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 print(f"Config:")
 print(f"  Prediction cache: {PREDICTION_CACHE_PATH}")
-print(f"  Masterfile: {MASTERFILE_PATH}")
+print(f"  MASTERFILE: Redis @ {REDIS_HOST}:{REDIS_PORT} (db={REDIS_DB})")
 print(f"  Schemes NDJSON: {SCHEMES_NDJSON_PATH}")
 print(f"  Output directory: {OUTPUT_DIR}")
 print(f"  OpenAI model: {OPENAI_MODEL}\n")
 
 # ---------- Load Data ----------
-def load_masterfile(path: str) -> pd.DataFrame:
-    """Load MASTERFILE.csv with customer details."""
-    if not os.path.exists(path):
-        raise FileNotFoundError(f"MASTERFILE not found at {path}")
-    df = pd.read_csv(path)
-    df.set_index("customer_id", inplace=True)
-    print(f"✓ Loaded MASTERFILE with {len(df)} customers")
+def load_masterfile_from_redis() -> pd.DataFrame:
+    """Load MASTERFILE from Redis using RedisDataManager."""
+    from dataManager.redis_data_manager import get_data_manager
+    
+    data_manager = get_data_manager(REDIS_HOST, REDIS_PORT, REDIS_DB)
+    
+    # Test connection
+    try:
+        data_manager.redis_client.ping()
+    except Exception as e:
+        raise RuntimeError(f"Cannot connect to Redis at {REDIS_HOST}:{REDIS_PORT}: {e}")
+    
+    df = data_manager.get_dataframe()
+    if df is None or df.empty:
+        raise RuntimeError("MASTERFILE not found in Redis. Run load_masterfile_to_redis.py first.")
+    
+    df.set_index('customer_id', inplace=True)
+    print(f"✓ Loaded MASTERFILE from Redis with {len(df)} customers")
     return df
 
-def load_prediction_cache(path: str) -> pd.DataFrame:
-    """Load prediction_cache.csv with proper handling of list columns."""
-    if not os.path.exists(path):
-        raise FileNotFoundError(f"Prediction cache not found at {path}")
+def load_prediction_cache_from_redis() -> pd.DataFrame:
+    """Load prediction cache from Redis."""
+    import pickle
     
-    # Read CSV line by line and parse manually to handle the list column
-    rows = []
-    with open(path, 'r') as f:
-        header_line = f.readline().strip()
-        headers = [h.strip() for h in header_line.split(',')]
+    from dataManager.redis_data_manager import get_data_manager
+    data_manager = get_data_manager(REDIS_HOST, REDIS_PORT, REDIS_DB)
+    
+    PREDICTION_CACHE_KEY = "prediction_cache"
+    
+    try:
+        # Get all predictions from Redis hash
+        all_predictions = data_manager.redis_client.hgetall(PREDICTION_CACHE_KEY)
         
-        for line in f:
-            line = line.strip()
-            if not line:
-                continue
-            
-            # Find the list part (starts with [ and ends with ])
-            list_start = line.find('[')
-            list_end = line.rfind(']')
-            
-            if list_start != -1 and list_end != -1:
-                # Split into parts before list, the list, and after list
-                before_list = line[:list_start].rstrip(',')
-                list_part = line[list_start:list_end+1]
-                after_list = line[list_end+1:].lstrip(',')
-                
-                # Parse the non-list parts
-                parts_before = [p.strip() for p in before_list.split(',')]
-                parts_after = [p.strip() for p in after_list.split(',')] if after_list else []
-                
-                # Combine all parts
-                row_data = parts_before + [list_part] + parts_after
-            else:
-                # No list found, split normally
-                row_data = [p.strip() for p in line.split(',')]
-            
-            # Match to headers
-            if len(row_data) >= len(headers):
-                rows.append(dict(zip(headers, row_data[:len(headers)])))
-    
-    df = pd.DataFrame(rows)
-    
-    # Clean up customer_id
-    if 'customer_id' in df.columns:
-        df['customer_id'] = df['customer_id'].astype(str).str.strip().str.strip("'\"")
-    
-    # Convert numeric columns
-    if 'cluster_id' in df.columns:
-        df['cluster_id'] = pd.to_numeric(df['cluster_id'], errors='coerce')
-    if 'score' in df.columns:
-        df['score'] = pd.to_numeric(df['score'], errors='coerce')
-    
-    print(f"✓ Loaded prediction cache with {len(df)} entries")
-    print(f"  Columns: {list(df.columns)}")
-    print(f"  Sample customer IDs: {df['customer_id'].head(3).tolist()}")
-    
-    return df
+        if not all_predictions:
+            print(f"⚠ No predictions found in Redis cache (key: {PREDICTION_CACHE_KEY})")
+            return pd.DataFrame(columns=['customer_id', 'cluster_id', 'score', 'exemplars'])
+        
+        # Unpickle each prediction
+        rows = []
+        for customer_id_bytes, prediction_bytes in all_predictions.items():
+            try:
+                customer_id = customer_id_bytes.decode('utf-8') if isinstance(customer_id_bytes, bytes) else customer_id_bytes
+                prediction = pickle.loads(prediction_bytes)
+                prediction['customer_id'] = customer_id
+                rows.append(prediction)
+            except Exception as e:
+                print(f"  Warning: Failed to parse prediction for {customer_id_bytes}: {e}")
+        
+        df = pd.DataFrame(rows)
+        
+        # Clean up customer_id
+        if 'customer_id' in df.columns:
+            df['customer_id'] = df['customer_id'].astype(str).str.strip().str.strip("'\"")
+        
+        # Convert numeric columns
+        if 'cluster_id' in df.columns:
+            df['cluster_id'] = pd.to_numeric(df['cluster_id'], errors='coerce')
+        if 'score' in df.columns:
+            df['score'] = pd.to_numeric(df['score'], errors='coerce')
+        
+        print(f"✓ Loaded prediction cache from Redis with {len(df)} entries")
+        if len(df) > 0:
+            print(f"  Columns: {list(df.columns)}")
+            print(f"  Sample customer IDs: {df['customer_id'].head(3).tolist()}")
+        
+        return df
+        
+    except Exception as e:
+        print(f"⚠ Error loading prediction cache from Redis: {e}")
+        return pd.DataFrame(columns=['customer_id', 'cluster_id', 'score', 'exemplars'])
 
 def load_schemes_from_ndjson(path: str) -> List[Dict[str, Any]]:
     """Load loan schemes from NDJSON file."""
@@ -153,8 +166,8 @@ def load_schemes_from_ndjson(path: str) -> List[Dict[str, Any]]:
     return schemes
 
 # Load all data
-MASTERFILE_DF = load_masterfile(MASTERFILE_PATH)
-PREDICTION_CACHE_DF = load_prediction_cache(PREDICTION_CACHE_PATH)
+MASTERFILE_DF = load_masterfile_from_redis()
+PREDICTION_CACHE_DF = load_prediction_cache_from_redis()
 SCHEMES = load_schemes_from_ndjson(SCHEMES_NDJSON_PATH)
 
 # ---------- Data Extraction ----------

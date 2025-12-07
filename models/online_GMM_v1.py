@@ -7,9 +7,9 @@ from scipy.linalg import inv, det
 
 class onlineGMMv1:
     def __init__(self, num_dim, cat_dims, kMax, 
-                 significance_level=0.05, learning_rate=0.02, neg_learning_rate=0.05,
+                 significance_level=0.000001, learning_rate=0.02, neg_learning_rate=0.00005,
                  max_idle_iterations=500, fn_buffer_size=50, fn_buffer_kMax=3,
-                 merge_dist_threshold=0.6, weight_prune_threshold=0.005,
+                 merge_dist_threshold=0.6, weight_prune_threshold=0.00000005,
                  max_exemplars=6): # Stores up to 6 IDs
         
         self.num_dim = num_dim

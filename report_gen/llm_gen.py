@@ -49,7 +49,9 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 # PATHS & CONFIG
 # =======================================================
 ROOT = CURRENT_DIR.parent
-MASTERFILE_PATH = ROOT / "MASTERFILE.csv"
+import sys
+sys.path.append(str(ROOT))
+
 OUTPUT_DIR = CURRENT_DIR / "output_reports"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -60,19 +62,31 @@ OUTPUT_TOPIC = "reports.cluster.final"
 LLM_MODEL = os.getenv("LLM_MODEL", "gpt-4o")  # Changed to valid model
 MAX_TOKENS = int(os.getenv("LLM_MAX_TOKENS", "2000"))
 
+# Redis configuration
+REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
+REDIS_PORT = int(os.getenv("REDIS_PORT", "6379"))
+REDIS_DB = int(os.getenv("REDIS_DB", "1"))
+
 
 # =======================================================
-# LOAD MASTERFILE
+# LOAD MASTERFILE FROM REDIS
 # =======================================================
 import pandas as pd
+from dataManager.redis_data_manager import get_data_manager
 
-if not MASTERFILE_PATH.exists():
-    raise RuntimeError(f"MASTERFILE missing at {MASTERFILE_PATH}")
+log(f"Connecting to Redis at {REDIS_HOST}:{REDIS_PORT} (db={REDIS_DB})...")
+data_manager = get_data_manager(REDIS_HOST, REDIS_PORT, REDIS_DB)
 
-master_df = pd.read_csv(MASTERFILE_PATH)
-master_df.set_index("customer_id", inplace=True)
-
-log(f"Loaded MASTERFILE with {len(master_df)} rows.")
+# Test connection and load data
+try:
+    data_manager.redis_client.ping()
+    master_df = data_manager.get_dataframe()
+    if master_df is None or master_df.empty:
+        raise RuntimeError("MASTERFILE not found in Redis. Run load_masterfile_to_redis.py first.")
+    master_df.set_index("customer_id", inplace=True)
+    log(f"Loaded MASTERFILE from Redis with {len(master_df)} rows.")
+except Exception as e:
+    raise RuntimeError(f"Cannot connect to Redis or load MASTERFILE: {e}")
 
 
 def get_customer_features(cid: str):

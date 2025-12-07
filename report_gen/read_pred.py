@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-STEP 1 — CLUSTER AGGREGATOR (FIXED)
+STEP 1 — CLUSTER AGGREGATOR (REDIS)
 
 ✔ Properly returns batch data to Pathway
 ✔ Only keeps predicted_eligible == True
 ✔ Aggregates cluster batches in memory
 ✔ Emits complete JSON payload with all fields populated
+✔ Stores predictions in Redis (not CSV)
 """
 
 import pathway as pw
@@ -13,6 +14,7 @@ from pathlib import Path
 import sys
 import json
 from collections import defaultdict
+import os
 
 # ------------------------------------------------
 # CONFIG
@@ -23,14 +25,32 @@ sys.path.append(str(ROOT))
 
 K_BATCH = 5
 
-CACHE_FILE = CURRENT_DIR / "prediction_cache.csv"
 LOG_FILE = CURRENT_DIR / "aggregator.log"
 
 NATS_URI = "nats://localhost:4222"
 INPUT_TOPIC = "leads.callCarLoan"
 OUTPUT_TOPIC = "reports.cluster.ready"
 
+# Redis configuration
+REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
+REDIS_PORT = int(os.getenv("REDIS_PORT", "6379"))
+REDIS_DB = int(os.getenv("REDIS_DB", "1"))
+PREDICTION_CACHE_KEY = "prediction_cache"
+
 cluster_buffers = defaultdict(list)
+
+# ------------------------------------------------
+# REDIS CONNECTION
+# ------------------------------------------------
+import redis
+import pickle
+
+redis_client = redis.Redis(
+    host=REDIS_HOST,
+    port=REDIS_PORT,
+    db=REDIS_DB,
+    decode_responses=False
+)
 
 # ------------------------------------------------
 # LOGGING
@@ -58,15 +78,17 @@ class BatchSchema(pw.Schema):
     customers: str  # JSON string of customer list
 
 # ------------------------------------------------
-# CACHE WRITER
+# CACHE WRITER (Redis-based)
 # ------------------------------------------------
 def append_to_cache(row):
-    is_new = not CACHE_FILE.exists()
-
-    with open(CACHE_FILE, "a") as f:
-        if is_new:
-            f.write(",".join(row.keys()) + "\n")
-        f.write(",".join(str(row[k]) for k in row.keys()) + "\n")
+    """Store prediction in Redis hash keyed by customer_id."""
+    customer_id = row.get("customer_id")
+    if not customer_id:
+        return
+    
+    # Store as pickled dict for consistency with MASTERFILE storage
+    redis_client.hset(PREDICTION_CACHE_KEY, customer_id, pickle.dumps(row))
+    log(f"📝 Cached prediction for {customer_id} in Redis")
 
 # ------------------------------------------------
 # MAIN UDF → Returns tuple of (cluster_id, count, customers_json)
@@ -120,7 +142,7 @@ def run_cluster_aggregator():
     log(f"Listening on topic: {INPUT_TOPIC}")
     log(f"Publishing batches to: {OUTPUT_TOPIC}")
     log(f"K_BATCH = {K_BATCH}")
-    log(f"Cache file: {CACHE_FILE}\n")
+    log(f"Cache: Redis @ {REDIS_HOST}:{REDIS_PORT} (key: {PREDICTION_CACHE_KEY})\n")
 
     # 1. Stream from NATS
     stream = pw.io.nats.read(

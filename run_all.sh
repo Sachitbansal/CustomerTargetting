@@ -29,7 +29,3 @@ run_in_terminal "report_gen/read_pred.py"
 run_in_terminal "leadPublisher/run_publisher.py"
 run_in_terminal "transactionPublisher/run_publisher.py"
 run_in_terminal "carLoanPredictor/tester.py"
-
-echo ""
-echo "✓ All nodes launched in separate terminals!"
-echo ""

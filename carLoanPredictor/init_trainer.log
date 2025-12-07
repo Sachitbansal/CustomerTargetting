@@ -185,3 +185,105 @@ Training Data Statistics:
 [2025-12-06 23:33:45] Metrics Recorded:     NO
 [2025-12-06 23:33:45] ==================================================
 
+[2025-12-07 13:00:11] ═══════════════════════════════════════════════
+[2025-12-07 13:00:11]     Initializing Trainer for opted_car_loan        
+[2025-12-07 13:00:11] ═══════════════════════════════════════════════
+[2025-12-07 13:00:11] Data File:      /home/sachit/Documents/VSCProjects/TargettedCalling/MASTERFILE.csv
+[2025-12-07 13:00:11] Model Path:     /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json
+[2025-12-07 13:00:11] Log File:       /home/sachit/Documents/VSCProjects/TargettedCalling/carLoanPredictor/init_trainer.log
+[2025-12-07 13:00:11] Metrics:        ENABLED
+[2025-12-07 13:00:11] ═══════════════════════════════════════════════
+
+[2025-12-07 13:00:11] Loading data from /home/sachit/Documents/VSCProjects/TargettedCalling/MASTERFILE.csv...
+[2025-12-07 13:00:12] ✓ Data loaded. Total rows: 12500
+[2025-12-07 13:00:12] 
+Training Data Statistics:
+[2025-12-07 13:00:12]   Total Rows: 12500
+[2025-12-07 13:00:12]   Positive Samples (target=1): 8637
+[2025-12-07 13:00:12]   Negative/Streaming Samples (target=0): 3863
+[2025-12-07 13:00:12] 📊 Metric recorded: Training samples = 8637
+[2025-12-07 13:00:12] 
+📊 Fitting Preprocessors...
+[2025-12-07 13:00:12]   Numerical Features (6): ['dti_ratio', 'savings_rate', 'score_x_log_income', 'final_avg_monthly_balance', 'monthly_fuel_spend', 'monthly_transport_service_spend']
+[2025-12-07 13:00:12]   Categorical Features (3): ['city_tier', 'marital_status', 'employment_type']
+[2025-12-07 13:00:12] 📊 Metric recorded: Feature dimensions = 6 num, 3 cat
+[2025-12-07 13:00:12]   ✓ StandardScaler fitted on 8637 samples
+[2025-12-07 13:00:12]   ✓ OrdinalEncoder fitted. Category dimensions: [3, 2, 2]
+[2025-12-07 13:00:12] 
+🧠 Fitting StreamingHybridAdvanced GMM...
+[2025-12-07 13:00:12]   Model Configuration:
+[2025-12-07 13:00:12]     - Numerical Dimensions: 6
+[2025-12-07 13:00:12]     - Categorical Dimensions: 3
+[2025-12-07 13:00:12]     - Max Components (kMax): 8
+[2025-12-07 13:00:12]     - Learning Rate: 0.05
+[2025-12-07 13:00:12]     - Max Exemplars per Cluster: 6
+[2025-12-07 13:00:14]   ✓ Model Initialized. Components: 20
+[2025-12-07 13:00:14] 📊 Metric recorded: Baseline components = 20
+[2025-12-07 13:00:14] 
+💾 Saving model system to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 13:00:14] ✓ Model system saved successfully!
+[2025-12-07 13:00:14] 📊 Metric recorded: Training duration = 2.16s
+[2025-12-07 13:00:14] 📊 Metric recorded: Training status = SUCCESS
+[2025-12-07 13:00:14] 
+==================================================
+[2025-12-07 13:00:14] TRAINING COMPLETE - SUMMARY
+[2025-12-07 13:00:14] ==================================================
+[2025-12-07 13:00:14] Training Samples:     8637
+[2025-12-07 13:00:14] GMM Components:       20
+[2025-12-07 13:00:14] Training Duration:    2.16s
+[2025-12-07 13:00:14] Model Location:       /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json
+[2025-12-07 13:00:14] Log Location:         /home/sachit/Documents/VSCProjects/TargettedCalling/carLoanPredictor/init_trainer.log
+[2025-12-07 13:00:14] Metrics Recorded:     YES
+[2025-12-07 13:00:14] ==================================================
+
+[2025-12-07 13:07:00] ═══════════════════════════════════════════════
+[2025-12-07 13:07:00]     Initializing Trainer for opted_car_loan        
+[2025-12-07 13:07:00] ═══════════════════════════════════════════════
+[2025-12-07 13:07:00] Data File:      /home/sachit/Documents/VSCProjects/TargettedCalling/MASTERFILE.csv
+[2025-12-07 13:07:00] Model Path:     /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json
+[2025-12-07 13:07:00] Log File:       /home/sachit/Documents/VSCProjects/TargettedCalling/carLoanPredictor/init_trainer.log
+[2025-12-07 13:07:00] Metrics:        ENABLED
+[2025-12-07 13:07:00] ═══════════════════════════════════════════════
+
+[2025-12-07 13:07:00] Loading data from /home/sachit/Documents/VSCProjects/TargettedCalling/MASTERFILE.csv...
+[2025-12-07 13:07:01] ✓ Data loaded. Total rows: 12500
+[2025-12-07 13:07:01] 
+Training Data Statistics:
+[2025-12-07 13:07:01]   Total Rows: 12500
+[2025-12-07 13:07:01]   Positive Samples (target=1): 8637
+[2025-12-07 13:07:01]   Negative/Streaming Samples (target=0): 3863
+[2025-12-07 13:07:01] 📊 Metric recorded: Training samples = 8637
+[2025-12-07 13:07:01] 
+📊 Fitting Preprocessors...
+[2025-12-07 13:07:01]   Numerical Features (6): ['dti_ratio', 'savings_rate', 'score_x_log_income', 'final_avg_monthly_balance', 'monthly_fuel_spend', 'monthly_transport_service_spend']
+[2025-12-07 13:07:01]   Categorical Features (3): ['city_tier', 'marital_status', 'employment_type']
+[2025-12-07 13:07:01] 📊 Metric recorded: Feature dimensions = 6 num, 3 cat
+[2025-12-07 13:07:01]   ✓ StandardScaler fitted on 8637 samples
+[2025-12-07 13:07:01]   ✓ OrdinalEncoder fitted. Category dimensions: [3, 2, 2]
+[2025-12-07 13:07:01] 
+🧠 Fitting StreamingHybridAdvanced GMM...
+[2025-12-07 13:07:01]   Model Configuration:
+[2025-12-07 13:07:01]     - Numerical Dimensions: 6
+[2025-12-07 13:07:01]     - Categorical Dimensions: 3
+[2025-12-07 13:07:01]     - Max Components (kMax): 8
+[2025-12-07 13:07:01]     - Learning Rate: 0.05
+[2025-12-07 13:07:01]     - Max Exemplars per Cluster: 6
+[2025-12-07 13:07:03]   ✓ Model Initialized. Components: 20
+[2025-12-07 13:07:03] 📊 Metric recorded: Baseline components = 20
+[2025-12-07 13:07:03] 
+💾 Saving model system to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 13:07:03] ✓ Model system saved successfully!
+[2025-12-07 13:07:03] 📊 Metric recorded: Training duration = 2.47s
+[2025-12-07 13:07:03] 📊 Metric recorded: Training status = SUCCESS
+[2025-12-07 13:07:03] 
+==================================================
+[2025-12-07 13:07:03] TRAINING COMPLETE - SUMMARY
+[2025-12-07 13:07:03] ==================================================
+[2025-12-07 13:07:03] Training Samples:     8637
+[2025-12-07 13:07:03] GMM Components:       20
+[2025-12-07 13:07:03] Training Duration:    2.47s
+[2025-12-07 13:07:03] Model Location:       /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json
+[2025-12-07 13:07:03] Log Location:         /home/sachit/Documents/VSCProjects/TargettedCalling/carLoanPredictor/init_trainer.log
+[2025-12-07 13:07:03] Metrics Recorded:     YES
+[2025-12-07 13:07:03] ==================================================
+

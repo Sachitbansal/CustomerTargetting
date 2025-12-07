@@ -9,7 +9,6 @@ import sys
 from datetime import datetime
 from sklearn.preprocessing import StandardScaler, OrdinalEncoder
 import time
-from dataManager import get_data_manager
 
 # --- PATH SETUP ---
 CURRENT_DIR = Path(__file__).resolve().parent
@@ -43,9 +42,7 @@ TARGET = CONFIG["target"]
 NUM_FEATURES = CONFIG["gmm_num_features"]
 CAT_FEATURES = CONFIG["gmm_cat_features"]
 MODEL_SAVE_PATH = os.path.join(PARENT_DIR, "Persistence", "model_car.json")
-REDIS_HOST = 'localhost'
-REDIS_PORT = 6379
-REDIS_DB = 1  # Customer data in db=1
+DATA_FILE = os.path.join(PARENT_DIR, "MASTERFILE.csv")
 LOG_ENABLED = True  # Set to False to disable logging
 LOG_FILE = os.path.join(CURRENT_DIR, "init_trainer.log")
 
@@ -67,22 +64,20 @@ def train_and_save():
     log_message("═══════════════════════════════════════════════")
     log_message(f"    Initializing Trainer for {TARGET}        ")
     log_message("═══════════════════════════════════════════════")
-    log_message(f"Data Source:    Redis (db={REDIS_DB})")
+    log_message(f"Data File:      {DATA_FILE}")
     log_message(f"Model Path:     {MODEL_SAVE_PATH}")
     log_message(f"Log File:       {LOG_FILE if LOG_ENABLED else 'DISABLED'}")
     log_message(f"Metrics:        {'ENABLED' if METRICS_ENABLED else 'DISABLED'}")
     log_message("═══════════════════════════════════════════════\n")
     
     try:
-        # 1. Load Data from Redis
-        log_message(f"Loading data from Redis (db={REDIS_DB})...")
-        data_manager = get_data_manager(REDIS_HOST, REDIS_PORT, REDIS_DB)
-        df = data_manager.get_dataframe()
+        # 1. Load Data
+        if not os.path.exists(DATA_FILE):
+            raise FileNotFoundError(f"{DATA_FILE} not found.")
         
-        if df is None:
-            raise ValueError("Failed to load data from Redis. Please run: python dataManager/load_masterfile_to_redis.py")
-        
-        log_message(f"✓ Data loaded from Redis. Total rows: {len(df)}")
+        log_message(f"Loading data from {DATA_FILE}...")
+        df = pd.read_csv(DATA_FILE)
+        log_message(f"✓ Data loaded. Total rows: {len(df)}")
         
         # 2. Filter for Relevant Training Rows
         positive_df = df[df[TARGET] == 1].copy()
@@ -131,7 +126,7 @@ def train_and_save():
         model = onlineGMMv1(
             num_dim=X_num.shape[1], 
             cat_dims=cat_dims, 
-            kMax=8, 
+            kMax=20, 
             learning_rate=0.05, 
             max_exemplars=6
         )
