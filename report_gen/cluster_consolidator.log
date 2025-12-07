@@ -23,3 +23,23 @@
 [Consolidator] 🚀 Cluster Consolidator (Step-2) started...
 [Consolidator] Listening on → reports.cluster.ready
 [Consolidator] Using OpenAI model: gpt-4o
+[Consolidator] Connecting to Redis at localhost:6379 (db=1)...
+[Consolidator] Loaded MASTERFILE from Redis with 12500 rows.
+[Consolidator] 🚀 Cluster Consolidator (Step-2) started...
+[Consolidator] Listening on → reports.cluster.ready
+[Consolidator] Using OpenAI model: gpt-4o
+[Consolidator] 📥 RECEIVED BATCH → cluster=17, count=5
+[Consolidator] Parsed 5 customers
+[Consolidator] 🔵 Calling OpenAI model gpt-4o...
+[Consolidator] ✅ Received LLM response (2072 chars)
+[Consolidator] ✅ Parsed JSON successfully with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
+[Consolidator] ✅ Analysis completed with keys: ['cluster_id', 'count', 'cluster_summary', 'avg_confidence', 'confidence_distribution', 'prediction_factors', 'customer_behavior_patterns', 'exemplar_insights', 'recommendations', 'admin_summary']
+[Consolidator] ✔ Saved JSON + TXT for cluster 17
+[Consolidator] 📝 Generating PDF → /home/sachit/Documents/VSCProjects/TargettedCalling/report_gen/output_reports/cluster_17_20251207_120341.pdf
+[Consolidator] ✅ PDF generated successfully
+[Consolidator] ✅ Complete report generated at /home/sachit/Documents/VSCProjects/TargettedCalling/report_gen/output_reports/cluster_17_20251207_120341.pdf
+[Consolidator] Connecting to Redis at localhost:6379 (db=1)...
+[Consolidator] Loaded MASTERFILE from Redis with 12500 rows.
+[Consolidator] 🚀 Cluster Consolidator (Step-2) started...
+[Consolidator] Listening on → reports.cluster.ready
+[Consolidator] Using OpenAI model: gpt-4o

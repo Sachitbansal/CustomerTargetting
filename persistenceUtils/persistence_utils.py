@@ -26,6 +26,7 @@ class NumpyEncoder(json.JSONEncoder):
 def save_model_system(model, scaler, encoder, filepath):
     """
     Saves the GMM model, Scaler, and Encoder params to a JSON file.
+    NOW INCLUDES FN BUFFER PERSISTENCE
     """
     # 1. Extract Scaler Params
     scaler_params = {
@@ -43,7 +44,7 @@ def save_model_system(model, scaler, encoder, filepath):
         'n_features_in': encoder.n_features_in_
     }
 
-    # 3. Extract GMM Model Params
+    # 3. Extract GMM Model Params (INCLUDING BUFFER)
     gmm_params = {
         'num_dim': model.num_dim,
         'cat_dims': model.cat_dims,
@@ -55,7 +56,12 @@ def save_model_system(model, scaler, encoder, filepath):
         'cat_probs': model.cat_probs,
         'exemplars': model.exemplars,
         'omega': model.omega,
-        'delta': model.delta
+        'delta': model.delta,
+        
+        # 🔑 FN BUFFER PERSISTENCE (NEW)
+        'fn_buffer_num': model.fn_buffer_num,
+        'fn_buffer_cat': model.fn_buffer_cat,
+        'fn_buffer_meta': model.fn_buffer_meta
     }
 
     master_payload = {
@@ -67,11 +73,16 @@ def save_model_system(model, scaler, encoder, filepath):
     os.makedirs(os.path.dirname(filepath), exist_ok=True)
     with open(filepath, 'w') as f:
         json.dump(master_payload, f, cls=NumpyEncoder, indent=4)
+    
+    # Log buffer size for tracking
+    buffer_size = len(model.fn_buffer_num)
     print(f"Model system saved to {filepath}")
+    print(f"  └─ FN Buffer: {buffer_size} samples persisted")
 
 def load_model_system(filepath):
     """
     Loads JSON and reconstructs the GMM model, Scaler, and Encoder.
+    NOW RESTORES FN BUFFER
     """
     with open(filepath, 'r') as f:
         data = json.load(f)
@@ -136,10 +147,20 @@ def load_model_system(filepath):
     model.delta = gmm_data['delta']
     model.exemplars = gmm_data['exemplars']
     
+    # 🔑 RESTORE FN BUFFER (with backward compatibility)
+    model.fn_buffer_num = gmm_data.get('fn_buffer_num', [])
+    model.fn_buffer_cat = gmm_data.get('fn_buffer_cat', [])
+    model.fn_buffer_meta = gmm_data.get('fn_buffer_meta', [])
+    
     # Restore Cat Probs
     model.cat_probs = []
     for comp_probs in gmm_data['cat_probs']:
         reconstructed_comp = [np.array(dim_prob) for dim_prob in comp_probs]
         model.cat_probs.append(reconstructed_comp)
+    
+    # Log buffer restoration
+    buffer_size = len(model.fn_buffer_num)
+    if buffer_size > 0:
+        print(f"  └─ FN Buffer: {buffer_size} samples restored")
 
     return model, scaler, encoder

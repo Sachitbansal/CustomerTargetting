@@ -670,7 +670,7 @@ def run():
     log("PIPELINE FLOW:")
     log(f"  1. Listen to predictions on: {INPUT_TOPIC}")
     log(f"  2. Filter ONLY positive predictions (predicted_eligible=True)")
-    log(f"  3. Fetch customer details from: {MASTERFILE_CSV}")
+    log(f"  3. Fetch customer details from: Redis (masterfile:data)")
     log(f"  4. Add customer to call queue")
     log(f"  5. Calling agent processes queue in background")
     log(f"  6. Make VAPI call and collect transcript")

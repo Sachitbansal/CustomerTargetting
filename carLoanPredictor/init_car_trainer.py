@@ -1,194 +1,166 @@
-# init_car_trainer.py
-# Location: ./TargettedCalling/carLoanPredictor/init_car_trainer.py
-
-import pandas as pd
+import json
 import numpy as np
 import os
+from sklearn.preprocessing import StandardScaler, OrdinalEncoder
+
 from pathlib import Path
 import sys
-from datetime import datetime
-from sklearn.preprocessing import StandardScaler, OrdinalEncoder
-import time
 
 # --- PATH SETUP ---
 CURRENT_DIR = Path(__file__).resolve().parent
 PARENT_DIR = CURRENT_DIR.parent
-MONITORING_DIR = PARENT_DIR / "monitoring"
 sys.path.append(str(PARENT_DIR))
-sys.path.append(str(CURRENT_DIR))
-sys.path.append(str(MONITORING_DIR))
 
-# Imports
 from models.online_GMM_v1 import onlineGMMv1
-from persistenceUtils.persistence_utils import load_model_system,save_model_system
-from pipelineConfigs.pipeline_configs import CAR_LOAN_CONFIG as CONFIG 
 
-# Import metrics
-try:
-    from metrics import (
-        record_training_samples,
-        record_baseline_components,
-        record_training_duration,
-        record_feature_dimensions,
-        record_training_status
+class NumpyEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, np.ndarray):
+            return obj.tolist()
+        if isinstance(obj, np.integer):
+            return int(obj)
+        if isinstance(obj, np.floating):
+            return float(obj)
+        return super(NumpyEncoder, self).default(obj)
+
+def save_model_system(model, scaler, encoder, filepath):
+    """
+    Saves the GMM model, Scaler, and Encoder params to a JSON file.
+    NOW INCLUDES FN BUFFER PERSISTENCE
+    """
+    # 1. Extract Scaler Params
+    scaler_params = {
+        'mean': scaler.mean_,
+        'scale': scaler.scale_,
+        'var': scaler.var_,
+        'n_samples_seen': scaler.n_samples_seen_
+    }
+
+    # 2. Extract Encoder Params
+    encoder_params = {
+        'categories': [cat.tolist() for cat in encoder.categories_],
+        'handle_unknown': encoder.handle_unknown,
+        'unknown_value': encoder.unknown_value,
+        'n_features_in': encoder.n_features_in_
+    }
+
+    # 3. Extract GMM Model Params (INCLUDING BUFFER)
+    gmm_params = {
+        'num_dim': model.num_dim,
+        'cat_dims': model.cat_dims,
+        'kMax': model.kMax,
+        'weights': model.weights,
+        'means': model.means,
+        'covariances': model.covariances,
+        'idle_iterations': model.idle_iterations,
+        'cat_probs': model.cat_probs,
+        'exemplars': model.exemplars,
+        'omega': model.omega,
+        'delta': model.delta,
+        
+        # 🔑 FN BUFFER PERSISTENCE (NEW)
+        'fn_buffer_num': model.fn_buffer_num,
+        'fn_buffer_cat': model.fn_buffer_cat,
+        'fn_buffer_meta': model.fn_buffer_meta
+    }
+
+    master_payload = {
+        'scaler': scaler_params,
+        'encoder': encoder_params,
+        'gmm': gmm_params
+    }
+
+    os.makedirs(os.path.dirname(filepath), exist_ok=True)
+    with open(filepath, 'w') as f:
+        json.dump(master_payload, f, cls=NumpyEncoder, indent=4)
+    
+    # Log buffer size for tracking
+    buffer_size = len(model.fn_buffer_num)
+    print(f"Model system saved to {filepath}")
+    print(f"  └─ FN Buffer: {buffer_size} samples persisted")
+
+def load_model_system(filepath):
+    """
+    Loads JSON and reconstructs the GMM model, Scaler, and Encoder.
+    NOW RESTORES FN BUFFER
+    """
+    with open(filepath, 'r') as f:
+        data = json.load(f)
+
+    # 1. Reconstruct Scaler
+    scaler = StandardScaler()
+    scaler.mean_ = np.array(data['scaler']['mean'])
+    scaler.scale_ = np.array(data['scaler']['scale'])
+    scaler.var_ = np.array(data['scaler']['var'])
+    scaler.n_samples_seen_ = data['scaler']['n_samples_seen']
+
+    # 2. Reconstruct Encoder - ROBUST FIX
+    encoder_data = data['encoder']
+    
+    # Create encoder and fit on dummy data to initialize all internal attributes
+    categories = [np.array(cat, dtype=object) for cat in encoder_data['categories']]
+    n_features = len(categories)
+    
+    # Create a dummy dataset with one example per category
+    dummy_data = []
+    for cat_list in categories:
+        if len(cat_list) > 0:
+            dummy_data.append([cat_list[0]])  # Use first category
+        else:
+            dummy_data.append(['dummy'])
+    
+    # Transpose to get correct shape (1 sample, n_features)
+    dummy_df = np.array(dummy_data).T
+    
+    # Initialize encoder with proper parameters
+    encoder = OrdinalEncoder(
+        handle_unknown=encoder_data.get('handle_unknown', 'use_encoded_value'),
+        unknown_value=encoder_data.get('unknown_value', -1),
+        encoded_missing_value=np.nan
     )
-    METRICS_ENABLED = True
-except ImportError:
-    print("⚠️  Warning: metrics module not found. Metrics will not be recorded.")
-    METRICS_ENABLED = False
-
-# --- CONFIGURATION ---
-TARGET = CONFIG["target"]
-NUM_FEATURES = CONFIG["gmm_num_features"]
-CAT_FEATURES = CONFIG["gmm_cat_features"]
-MODEL_SAVE_PATH = os.path.join(PARENT_DIR, "Persistence", "model_car.json")
-DATA_FILE = os.path.join(PARENT_DIR, "MASTERFILE.csv")
-LOG_ENABLED = True  # Set to False to disable logging
-LOG_FILE = os.path.join(CURRENT_DIR, "init_trainer.log")
-
-def log_message(message):
-    """Log message to file if logging is enabled"""
-    if LOG_ENABLED:
-        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        log_entry = f"[{timestamp}] {message}\n"
-        with open(LOG_FILE, 'a') as f:
-            f.write(log_entry)
-        print(message)
-    else:
-        print(message)
-
-def train_and_save():
-    training_start_time = time.time()
-    training_success = False
     
-    log_message("═══════════════════════════════════════════════")
-    log_message(f"    Initializing Trainer for {TARGET}        ")
-    log_message("═══════════════════════════════════════════════")
-    log_message(f"Data File:      {DATA_FILE}")
-    log_message(f"Model Path:     {MODEL_SAVE_PATH}")
-    log_message(f"Log File:       {LOG_FILE if LOG_ENABLED else 'DISABLED'}")
-    log_message(f"Metrics:        {'ENABLED' if METRICS_ENABLED else 'DISABLED'}")
-    log_message("═══════════════════════════════════════════════\n")
+    # Fit on dummy data to initialize all internal attributes
+    encoder.fit(dummy_df)
     
-    try:
-        # 1. Load Data
-        if not os.path.exists(DATA_FILE):
-            raise FileNotFoundError(f"{DATA_FILE} not found.")
-        
-        log_message(f"Loading data from {DATA_FILE}...")
-        df = pd.read_csv(DATA_FILE)
-        log_message(f"✓ Data loaded. Total rows: {len(df)}")
-        
-        # 2. Filter for Relevant Training Rows
-        positive_df = df[df[TARGET] == 1].copy()
-        
-        log_message(f"\nTraining Data Statistics:")
-        log_message(f"  Total Rows: {len(df)}")
-        log_message(f"  Positive Samples (target=1): {len(positive_df)}")
-        log_message(f"  Negative/Streaming Samples (target=0): {len(df) - len(positive_df)}")
+    # Now override with saved categories
+    encoder.categories_ = categories
+    encoder.n_features_in_ = encoder_data.get('n_features_in', n_features)
+    
+    # Ensure _missing_indices exists (it should after fit, but double-check)
+    if not hasattr(encoder, '_missing_indices'):
+        encoder._missing_indices = {}
 
-        if len(positive_df) == 0:
-            log_message("❌ ERROR: No positive samples found. Cannot train.")
-            if METRICS_ENABLED:
-                record_training_samples(0)
-                record_training_status(False)
-            return
+    # 3. Reconstruct GMM
+    gmm_data = data['gmm']
+    model = onlineGMMv1(
+        num_dim=gmm_data['num_dim'],
+        cat_dims=gmm_data['cat_dims'],
+        kMax=gmm_data['kMax']
+    )
+    
+    # Restore internal state
+    model.weights = np.array(gmm_data['weights'])
+    model.means = np.array(gmm_data['means'])
+    model.covariances = np.array(gmm_data['covariances'])
+    model.idle_iterations = np.array(gmm_data['idle_iterations'])
+    model.omega = gmm_data['omega']
+    model.delta = gmm_data['delta']
+    model.exemplars = gmm_data['exemplars']
+    
+    # 🔑 RESTORE FN BUFFER (with backward compatibility)
+    model.fn_buffer_num = gmm_data.get('fn_buffer_num', [])
+    model.fn_buffer_cat = gmm_data.get('fn_buffer_cat', [])
+    model.fn_buffer_meta = gmm_data.get('fn_buffer_meta', [])
+    
+    # Restore Cat Probs
+    model.cat_probs = []
+    for comp_probs in gmm_data['cat_probs']:
+        reconstructed_comp = [np.array(dim_prob) for dim_prob in comp_probs]
+        model.cat_probs.append(reconstructed_comp)
+    
+    # Log buffer restoration
+    buffer_size = len(model.fn_buffer_num)
+    if buffer_size > 0:
+        print(f"  └─ FN Buffer: {buffer_size} samples restored")
 
-        # 📊 METRIC: Record training sample count
-        if METRICS_ENABLED:
-            record_training_samples(len(positive_df))
-            log_message(f"📊 Metric recorded: Training samples = {len(positive_df)}")
-
-        # 3. Fit Preprocessors
-        log_message("\n📊 Fitting Preprocessors...")
-        log_message(f"  Numerical Features ({len(NUM_FEATURES)}): {NUM_FEATURES}")
-        log_message(f"  Categorical Features ({len(CAT_FEATURES)}): {CAT_FEATURES}")
-        
-        # 📊 METRIC: Record feature dimensions
-        if METRICS_ENABLED:
-            record_feature_dimensions(len(NUM_FEATURES), len(CAT_FEATURES))
-            log_message(f"📊 Metric recorded: Feature dimensions = {len(NUM_FEATURES)} num, {len(CAT_FEATURES)} cat")
-        
-        scaler = StandardScaler()
-        X_num = scaler.fit_transform(positive_df[NUM_FEATURES])
-        log_message(f"  ✓ StandardScaler fitted on {X_num.shape[0]} samples")
-
-        ord_enc = OrdinalEncoder(handle_unknown='use_encoded_value', unknown_value=-1)
-        X_cat = ord_enc.fit_transform(positive_df[CAT_FEATURES])
-        
-        cat_dims = [len(c) for c in ord_enc.categories_]
-        log_message(f"  ✓ OrdinalEncoder fitted. Category dimensions: {cat_dims}")
-        
-        # 4. Initialize and Fit GMM
-        log_message("\n🧠 Fitting StreamingHybridAdvanced GMM...")
-        X_meta = positive_df['customer_id'].tolist()
-        
-        model = onlineGMMv1(
-            num_dim=X_num.shape[1], 
-            cat_dims=cat_dims, 
-            kMax=20, 
-            learning_rate=0.05, 
-            max_exemplars=6
-        )
-        
-        log_message(f"  Model Configuration:")
-        log_message(f"    - Numerical Dimensions: {X_num.shape[1]}")
-        log_message(f"    - Categorical Dimensions: {len(cat_dims)}")
-        log_message(f"    - Max Components (kMax): 8")
-        log_message(f"    - Learning Rate: 0.05")
-        log_message(f"    - Max Exemplars per Cluster: 6")
-        
-        model.fit_batch(X_num, X_cat, X_meta=X_meta)
-        log_message(f"  ✓ Model Initialized. Components: {model.n_components}")
-
-        # 📊 METRIC: Record baseline components
-        if METRICS_ENABLED:
-            record_baseline_components(model.n_components)
-            log_message(f"📊 Metric recorded: Baseline components = {model.n_components}")
-
-        # 5. Save to JSON
-        log_message(f"\n💾 Saving model system to {MODEL_SAVE_PATH}...")
-        
-        # Ensure Persistence directory exists
-        os.makedirs(os.path.dirname(MODEL_SAVE_PATH), exist_ok=True)
-        
-        save_model_system(model, scaler, ord_enc, MODEL_SAVE_PATH)
-        log_message("✓ Model system saved successfully!")
-        
-        training_success = True
-        
-        # 6. Summary
-        training_duration = time.time() - training_start_time
-        
-        # 📊 METRIC: Record training duration and status
-        if METRICS_ENABLED:
-            record_training_duration(training_duration)
-            record_training_status(True)
-            log_message(f"📊 Metric recorded: Training duration = {training_duration:.2f}s")
-            log_message(f"📊 Metric recorded: Training status = SUCCESS")
-        
-        log_message("\n" + "="*50)
-        log_message("TRAINING COMPLETE - SUMMARY")
-        log_message("="*50)
-        log_message(f"Training Samples:     {len(positive_df)}")
-        log_message(f"GMM Components:       {model.n_components}")
-        log_message(f"Training Duration:    {training_duration:.2f}s")
-        log_message(f"Model Location:       {MODEL_SAVE_PATH}")
-        log_message(f"Log Location:         {LOG_FILE}")
-        log_message(f"Metrics Recorded:     {'YES' if METRICS_ENABLED else 'NO'}")
-        log_message("="*50 + "\n")
-        
-    except Exception as e:
-        log_message(f"\n❌ TRAINING FAILED: {e}")
-        import traceback
-        log_message(traceback.format_exc())
-        
-        # 📊 METRIC: Record failure
-        if METRICS_ENABLED:
-            record_training_status(False)
-            training_duration = time.time() - training_start_time
-            record_training_duration(training_duration)
-            log_message(f"📊 Metric recorded: Training status = FAILED")
-
-if __name__ == "__main__":
-    train_and_save()
+    return model, scaler, encoder

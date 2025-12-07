@@ -1,17 +1,12 @@
 {
-  "CUST_000196": {
-    "customer_id": "CUST_000196",
-    "transcript": "AI: Hello. May I speak with customer? This is calling from the bank regarding your car loan application.\n",
-    "timestamp": "2025-12-07T15:15:03.878099"
-  },
-  "CUST_000675": {
-    "customer_id": "CUST_000675",
-    "transcript": "AI: Hello. May I speak with customer? This is calling from the bank regarding your car loan application.\nUser: Yes. Good afternoon.\nAI: Thank you for confirming my name is your name. Good afternoon. Thank you for taking my call. My name is your name, and I'm your loan adviser. I'm reaching out regarding your inquiry about an auto loan. I'd love to go over some great loan options we have for you today. Is now a good time to discuss this?\nUser: Yes. It is a good time to discuss this.\nAI: Wonderful. I'm happy to help. Based on your interest in an auto loan. Here are a few options that might suit your needs. 1, electric vehicle loans. Interest rate, 4.8 percent APR. Maximum amount, 8 dollars 0 0 0 0. Loan term, 60 months. Features, special rates for ads and green incentives, too. Luxury auto loan, interest rate. 5 percent APR, maximum amount,\nUser: I'm not interested in taking any loan. Thank you.\nUser: Bye bye.\nAI: I completely understand. Thank you for letting me know. If you ever change your mind or have any questions in the future, feel free to reach out. Thank you for your time. And I hope you have a great day. Thank you for your time. Have a great day.\n",
-    "timestamp": "2025-12-07T15:16:50.785773"
-  },
-  "CUST_001229": {
-    "customer_id": "CUST_001229",
+  "CUST_000282": {
+    "customer_id": "CUST_000282",
     "transcript": "Transcript not available",
-    "timestamp": "2025-12-07T15:17:51.205678"
+    "timestamp": "2025-12-07T17:48:16.606796"
+  },
+  "CUST_000242": {
+    "customer_id": "CUST_000242",
+    "transcript": "AI: Hello. May I speak with customer? This is calling from the bank regarding your car loan application.\nUser: I was\nAI: Thank you so much for taking the call. My name is Yornane, and I'm your loan adviser here to assist you with your auto loan inquiry. I noticed you've expressed interest in financing vehicle. So I'd like to share some options tailored to your needs. Does that sound good?\nUser: I'm not interested to take any loan.\nUser: Right. Right.\nAI: Thank you. Thank you for your time. Have a great day. Feel free to reach out. Thank you for your time.\n",
+    "timestamp": "2025-12-07T17:49:23.520500"
   }
 }

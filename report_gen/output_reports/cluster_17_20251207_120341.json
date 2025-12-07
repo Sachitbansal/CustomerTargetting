@@ -1,0 +1,31 @@
+{
+  "cluster_id": 17,
+  "count": 5,
+  "cluster_summary": "This cluster consists of five salaried individuals predominantly residing in tier 1 cities with high incomes and good credit scores. Despite their financial stability, the confidence scores vary significantly, indicating differing levels of predicted eligibility for car loans.",
+  "avg_confidence": -7.154730712336193,
+  "confidence_distribution": {
+    "min": -19.560747420623265,
+    "max": 2.196944666072228,
+    "median": -7.012737844982196
+  },
+  "prediction_factors": [
+    "High income levels across the cluster",
+    "Good credit scores above 720",
+    "Majority residing in tier 1 cities"
+  ],
+  "customer_behavior_patterns": [
+    "All customers are salaried employees",
+    "High-income earners with consistent employment",
+    "Predominantly young adults in their 20s and 30s"
+  ],
+  "exemplar_insights": [
+    "Customer CUST_000576 has the highest confidence score and a strong financial profile, making them a prime candidate for a car loan.",
+    "Customer CUST_000242, despite having the highest income, has a significantly lower confidence score, suggesting other factors may be affecting their loan eligibility."
+  ],
+  "recommendations": [
+    "Focus on customers with high incomes and good credit scores for loan offers.",
+    "Investigate factors affecting confidence scores for high-income customers.",
+    "Target tier 1 city residents with personalized loan packages."
+  ],
+  "admin_summary": "The cluster of customers analyzed shows a diverse range of confidence scores despite uniformly high incomes and credit scores, indicating potential areas for further investigation. The average confidence score is slightly negative, suggesting room for improvement in loan eligibility predictions. Recommendations include targeting high-income individuals with strong credit histories and exploring underlying factors affecting lower confidence scores. The sales team should prioritize outreach to tier 1 city residents, leveraging their financial stability to offer competitive loan packages."
+}
