@@ -39,6 +39,7 @@ rm -f "$BASE_DIR/datasetGeneration/streaming_transactions.csv"
 rm -f "$BASE_DIR/carLoanFeedback/feedback_node.log"
 rm -f "$BASE_DIR/carLoanPredictor/init_trainer.log"
 rm -f "$BASE_DIR/carLoanPredictor/caller_node.log"
+rm -f "$BASE_DIR/report_gen/aggregator.log"
 rm -f "$BASE_DIR/carLoanPredictor/prediction_node.log"
 rm -f "$BASE_DIR/oracle/oracle_predictor.log"
 rm -f "$BASE_DIR/output.txt"
@@ -88,7 +89,7 @@ declare -a NODES=(
     "carLoanFeedback:run_feedback.py"
     "dataUpdater:run_detector_publisher.py"
     "oracle:run_feedback.py"
-    # "modelVisualiser:model_carVisualiser.py"
+    "modelVisualiser:model_carVisualiser.py"
 
     # Report Gen Nodes
     "report_gen:llm_gen.py"

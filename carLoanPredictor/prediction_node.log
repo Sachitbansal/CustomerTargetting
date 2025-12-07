@@ -1,489 +1,602 @@
-[2025-12-07 18:38:04] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:04] ✓ Model loaded (Load #1). Components: 20
-[2025-12-07 18:38:04] ═══════════════════════════════════════════════
-[2025-12-07 18:38:04]     CAR LOAN PREDICTION NODE (PATHWAY)        
-[2025-12-07 18:38:04] ═══════════════════════════════════════════════
-[2025-12-07 18:38:04] Input Topic:  leads.checkCarLoan
-[2025-12-07 18:38:04] Output Topic: leads.callCarLoan
-[2025-12-07 18:38:04] Model Path:   /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json
-[2025-12-07 18:38:04] Log File:     /home/sachit/Documents/VSCProjects/TargettedCalling/carLoanPredictor/prediction_node.log
-[2025-12-07 18:38:04] Batch Config: Reload every 10 predictions
-[2025-12-07 18:38:04] ═══════════════════════════════════════════════
+[2025-12-07 18:47:20] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:47:20] ✓ Model loaded (Load #1). Components: 29
+[2025-12-07 18:47:20] ═══════════════════════════════════════════════
+[2025-12-07 18:47:20]     CAR LOAN PREDICTION NODE (PATHWAY)        
+[2025-12-07 18:47:20] ═══════════════════════════════════════════════
+[2025-12-07 18:47:20] Input Topic:  leads.checkCarLoan
+[2025-12-07 18:47:20] Output Topic: leads.callCarLoan
+[2025-12-07 18:47:20] Model Path:   /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json
+[2025-12-07 18:47:20] Log File:     /home/sachit/Documents/VSCProjects/TargettedCalling/carLoanPredictor/prediction_node.log
+[2025-12-07 18:47:20] Batch Config: Reload every 10 predictions
+[2025-12-07 18:47:20] ═══════════════════════════════════════════════
 
-[2025-12-07 18:38:04] ✓ Listening for car loan leads on 'leads.checkCarLoan'...
-[2025-12-07 18:38:04] ✓ Publishing ALL predictions (qualified + rejected) to 'leads.callCarLoan'...
-[2025-12-07 18:38:04] ✓ STREAMING TO: leads.callCarLoan
-[2025-12-07 18:38:04] 
+[2025-12-07 18:47:20] ✓ Listening for car loan leads on 'leads.checkCarLoan'...
+[2025-12-07 18:47:20] ✓ Publishing ALL predictions (qualified + rejected) to 'leads.callCarLoan'...
+[2025-12-07 18:47:20] ✓ STREAMING TO: leads.callCarLoan
+[2025-12-07 18:47:20] 
 ✓ Car Loan Prediction Node is running.
 
-[2025-12-07 18:38:13] ✗ PREDICTED NO | Customer: CUST_000010 | Cluster: 2 | Score: -4631.11 | Total Predicted No: 1
-[2025-12-07 18:38:14] ✗ PREDICTED NO | Customer: CUST_000012 | Cluster: 9 | Score: -182.80 | Total Predicted No: 2
-[2025-12-07 18:38:14] ✗ PREDICTED NO | Customer: CUST_000012 | Cluster: 9 | Score: -182.80 | Total Predicted No: 3
-[2025-12-07 18:38:14] ✗ PREDICTED NO | Customer: CUST_000012 | Cluster: 9 | Score: -2707.83 | Total Predicted No: 4
-[2025-12-07 18:38:15] ✓ PREDICTED YES | Customer: CUST_000078 | Cluster: 2 | Score: -1.07 | Exemplars: ['CUST_000302', 'CUST_000302', 'CUST_000302', 'CUST_000302', 'CUST_000302', 'CUST_000302'] | Total Predicted Yes: 1
-[2025-12-07 18:38:15] ✗ PREDICTED NO | Customer: CUST_000072 | Cluster: 16 | Score: -413.79 | Total Predicted No: 5
-[2025-12-07 18:38:15] ✗ PREDICTED NO | Customer: CUST_000079 | Cluster: 9 | Score: -454.88 | Total Predicted No: 6
-[2025-12-07 18:38:15] ✗ PREDICTED NO | Customer: CUST_000068 | Cluster: 9 | Score: -214.15 | Total Predicted No: 7
-[2025-12-07 18:38:15] ✗ PREDICTED NO | Customer: CUST_000078 | Cluster: 2 | Score: -34.07 | Total Predicted No: 8
-[2025-12-07 18:38:15] ✗ PREDICTED NO | Customer: CUST_000061 | Cluster: 17 | Score: -27.68 | Total Predicted No: 9
-[2025-12-07 18:38:16] ⟳ Reloading model after 10 predictions...
-[2025-12-07 18:38:16] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:16] ✓ Model loaded (Load #2). Components: 20
-[2025-12-07 18:38:16] ✗ PREDICTED NO | Customer: CUST_000061 | Cluster: 17 | Score: -27.68 | Total Predicted No: 10
-[2025-12-07 18:38:16] ✓ PREDICTED YES | Customer: CUST_000078 | Cluster: 2 | Score: -1.07 | Exemplars: ['CUST_000302', 'CUST_000302', 'CUST_000302', 'CUST_000302', 'CUST_000302', 'CUST_000302'] | Total Predicted Yes: 2
-[2025-12-07 18:38:16] ✗ PREDICTED NO | Customer: CUST_000061 | Cluster: 17 | Score: -200.95 | Total Predicted No: 11
-[2025-12-07 18:38:16] ✗ PREDICTED NO | Customer: CUST_000068 | Cluster: 9 | Score: -214.15 | Total Predicted No: 12
-[2025-12-07 18:38:16] ✗ PREDICTED NO | Customer: CUST_000068 | Cluster: 9 | Score: -2704.49 | Total Predicted No: 13
-[2025-12-07 18:38:16] ✗ PREDICTED NO | Customer: CUST_000083 | Cluster: 9 | Score: -186315.92 | Total Predicted No: 14
-[2025-12-07 18:38:17] ✗ PREDICTED NO | Customer: CUST_000113 | Cluster: 7 | Score: -801.52 | Total Predicted No: 15
-[2025-12-07 18:38:17] ✗ PREDICTED NO | Customer: CUST_000091 | Cluster: 9 | Score: -14097.78 | Total Predicted No: 16
-[2025-12-07 18:38:17] ✗ PREDICTED NO | Customer: CUST_000090 | Cluster: 17 | Score: -349.58 | Total Predicted No: 17
-[2025-12-07 18:38:17] ✗ PREDICTED NO | Customer: CUST_000079 | Cluster: 9 | Score: -717.24 | Total Predicted No: 18
-[2025-12-07 18:38:17] ⟳ Reloading model after 20 predictions...
-[2025-12-07 18:38:17] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:17] ✓ Model loaded (Load #3). Components: 20
-[2025-12-07 18:38:17] ✗ PREDICTED NO | Customer: CUST_000079 | Cluster: 9 | Score: -454.88 | Total Predicted No: 19
-[2025-12-07 18:38:17] ✗ PREDICTED NO | Customer: CUST_000091 | Cluster: 9 | Score: -10054.11 | Total Predicted No: 20
-[2025-12-07 18:38:17] ✗ PREDICTED NO | Customer: CUST_000079 | Cluster: 9 | Score: -464.44 | Total Predicted No: 21
-[2025-12-07 18:38:17] ✗ PREDICTED NO | Customer: CUST_000113 | Cluster: 7 | Score: -633.02 | Total Predicted No: 22
-[2025-12-07 18:38:17] ✗ PREDICTED NO | Customer: CUST_000079 | Cluster: 9 | Score: -464.44 | Total Predicted No: 23
-[2025-12-07 18:38:18] ✗ PREDICTED NO | Customer: CUST_000091 | Cluster: 9 | Score: -9513.22 | Total Predicted No: 24
-[2025-12-07 18:38:18] ✗ PREDICTED NO | Customer: CUST_000091 | Cluster: 9 | Score: -10054.11 | Total Predicted No: 25
-[2025-12-07 18:38:18] ✗ PREDICTED NO | Customer: CUST_000091 | Cluster: 9 | Score: -9513.22 | Total Predicted No: 26
-[2025-12-07 18:38:18] ✗ PREDICTED NO | Customer: CUST_000098 | Cluster: 9 | Score: -411.43 | Total Predicted No: 27
-[2025-12-07 18:38:18] ✗ PREDICTED NO | Customer: CUST_000113 | Cluster: 7 | Score: -633.02 | Total Predicted No: 28
-[2025-12-07 18:38:19] ⟳ Reloading model after 30 predictions...
-[2025-12-07 18:38:19] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:19] ✓ Model loaded (Load #4). Components: 20
-[2025-12-07 18:38:19] ✗ PREDICTED NO | Customer: CUST_000146 | Cluster: 7 | Score: -801.37 | Total Predicted No: 29
-[2025-12-07 18:38:20] ✗ PREDICTED NO | Customer: CUST_000113 | Cluster: 7 | Score: -1375.13 | Total Predicted No: 30
-[2025-12-07 18:38:20] ✗ PREDICTED NO | Customer: CUST_000143 | Cluster: 2 | Score: -162.42 | Total Predicted No: 31
-[2025-12-07 18:38:20] ✗ PREDICTED NO | Customer: CUST_000143 | Cluster: 9 | Score: -1029.47 | Total Predicted No: 32
-[2025-12-07 18:38:20] ✗ PREDICTED NO | Customer: CUST_000137 | Cluster: 2 | Score: -561.27 | Total Predicted No: 33
-[2025-12-07 18:38:20] ✗ PREDICTED NO | Customer: CUST_000153 | Cluster: 1 | Score: -123.08 | Total Predicted No: 34
-[2025-12-07 18:38:20] ✗ PREDICTED NO | Customer: CUST_000131 | Cluster: 9 | Score: -115.77 | Total Predicted No: 35
-[2025-12-07 18:38:20] ✗ PREDICTED NO | Customer: CUST_000117 | Cluster: 2 | Score: -520.10 | Total Predicted No: 36
-[2025-12-07 18:38:20] ✗ PREDICTED NO | Customer: CUST_000153 | Cluster: 1 | Score: -387.91 | Total Predicted No: 37
-[2025-12-07 18:38:21] ✗ PREDICTED NO | Customer: CUST_000113 | Cluster: 7 | Score: -801.52 | Total Predicted No: 38
-[2025-12-07 18:38:21] ⟳ Reloading model after 40 predictions...
-[2025-12-07 18:38:21] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:21] ✓ Model loaded (Load #5). Components: 20
-[2025-12-07 18:38:21] ✗ PREDICTED NO | Customer: CUST_000131 | Cluster: 9 | Score: -105.58 | Total Predicted No: 39
-[2025-12-07 18:38:21] ✗ PREDICTED NO | Customer: CUST_000153 | Cluster: 17 | Score: -84.67 | Total Predicted No: 40
-[2025-12-07 18:38:21] ✗ PREDICTED NO | Customer: CUST_000153 | Cluster: 17 | Score: -84.67 | Total Predicted No: 41
-[2025-12-07 18:38:21] ✗ PREDICTED NO | Customer: CUST_000131 | Cluster: 9 | Score: -115.77 | Total Predicted No: 42
-[2025-12-07 18:38:21] ✗ PREDICTED NO | Customer: CUST_000131 | Cluster: 9 | Score: -245.06 | Total Predicted No: 43
-[2025-12-07 18:38:21] ✗ PREDICTED NO | Customer: CUST_000143 | Cluster: 2 | Score: -164.85 | Total Predicted No: 44
-[2025-12-07 18:38:21] ✗ PREDICTED NO | Customer: CUST_000175 | Cluster: 9 | Score: -1237.10 | Total Predicted No: 45
-[2025-12-07 18:38:21] ✗ PREDICTED NO | Customer: CUST_000163 | Cluster: 9 | Score: -221499.76 | Total Predicted No: 46
-[2025-12-07 18:38:21] ✗ PREDICTED NO | Customer: CUST_000143 | Cluster: 2 | Score: -164.85 | Total Predicted No: 47
-[2025-12-07 18:38:22] ✗ PREDICTED NO | Customer: CUST_000153 | Cluster: 1 | Score: -123.08 | Total Predicted No: 48
-[2025-12-07 18:38:22] ⟳ Reloading model after 50 predictions...
-[2025-12-07 18:38:22] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:22] ✓ Model loaded (Load #6). Components: 20
-[2025-12-07 18:38:22] ✗ PREDICTED NO | Customer: CUST_000131 | Cluster: 9 | Score: -105.58 | Total Predicted No: 49
-[2025-12-07 18:38:22] ✗ PREDICTED NO | Customer: CUST_000139 | Cluster: 2 | Score: -1129.48 | Total Predicted No: 50
-[2025-12-07 18:38:22] ✗ PREDICTED NO | Customer: CUST_000143 | Cluster: 2 | Score: -162.42 | Total Predicted No: 51
-[2025-12-07 18:38:22] ✗ PREDICTED NO | Customer: CUST_000226 | Cluster: 2 | Score: -2180.88 | Total Predicted No: 52
-[2025-12-07 18:38:22] ✗ PREDICTED NO | Customer: CUST_000194 | Cluster: 9 | Score: -137.47 | Total Predicted No: 53
-[2025-12-07 18:38:23] ✗ PREDICTED NO | Customer: CUST_000194 | Cluster: 9 | Score: -137.47 | Total Predicted No: 54
-[2025-12-07 18:38:23] ✗ PREDICTED NO | Customer: CUST_000192 | Cluster: 3 | Score: -302.45 | Total Predicted No: 55
-[2025-12-07 18:38:23] ✗ PREDICTED NO | Customer: CUST_000214 | Cluster: 2 | Score: -614.24 | Total Predicted No: 56
-[2025-12-07 18:38:23] ✗ PREDICTED NO | Customer: CUST_000259 | Cluster: 9 | Score: -698.55 | Total Predicted No: 57
-[2025-12-07 18:38:23] ✗ PREDICTED NO | Customer: CUST_000196 | Cluster: 2 | Score: -234.51 | Total Predicted No: 58
-[2025-12-07 18:38:23] ⟳ Reloading model after 60 predictions...
-[2025-12-07 18:38:23] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:23] ✓ Model loaded (Load #7). Components: 20
-[2025-12-07 18:38:23] ✗ PREDICTED NO | Customer: CUST_000226 | Cluster: 2 | Score: -350.09 | Total Predicted No: 59
-[2025-12-07 18:38:23] ✗ PREDICTED NO | Customer: CUST_000220 | Cluster: 3 | Score: -257.95 | Total Predicted No: 60
-[2025-12-07 18:38:23] ✗ PREDICTED NO | Customer: CUST_000226 | Cluster: 2 | Score: -350.09 | Total Predicted No: 61
-[2025-12-07 18:38:23] ✗ PREDICTED NO | Customer: CUST_000194 | Cluster: 9 | Score: -77.24 | Total Predicted No: 62
-[2025-12-07 18:38:23] ✗ PREDICTED NO | Customer: CUST_000226 | Cluster: 2 | Score: -2180.88 | Total Predicted No: 63
-[2025-12-07 18:38:24] ✗ PREDICTED NO | Customer: CUST_000226 | Cluster: 2 | Score: -1740.00 | Total Predicted No: 64
-[2025-12-07 18:38:24] ✗ PREDICTED NO | Customer: CUST_000202 | Cluster: 9 | Score: -452.73 | Total Predicted No: 65
-[2025-12-07 18:38:24] ✗ PREDICTED NO | Customer: CUST_000194 | Cluster: 2 | Score: -1065.59 | Total Predicted No: 66
-[2025-12-07 18:38:24] ✗ PREDICTED NO | Customer: CUST_000194 | Cluster: 9 | Score: -77.24 | Total Predicted No: 67
-[2025-12-07 18:38:25] ✗ PREDICTED NO | Customer: CUST_000270 | Cluster: 3 | Score: -958.22 | Total Predicted No: 68
-[2025-12-07 18:38:25] ⟳ Reloading model after 70 predictions...
-[2025-12-07 18:38:25] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:25] ✓ Model loaded (Load #8). Components: 20
-[2025-12-07 18:38:26] ✗ PREDICTED NO | Customer: CUST_000307 | Cluster: 9 | Score: -291.46 | Total Predicted No: 69
-[2025-12-07 18:38:26] ✗ PREDICTED NO | Customer: CUST_000282 | Cluster: 3 | Score: -9.62 | Total Predicted No: 70
-[2025-12-07 18:38:26] ✗ PREDICTED NO | Customer: CUST_000259 | Cluster: 2 | Score: -859.91 | Total Predicted No: 71
-[2025-12-07 18:38:26] ✗ PREDICTED NO | Customer: CUST_000282 | Cluster: 2 | Score: -210.50 | Total Predicted No: 72
-[2025-12-07 18:38:26] ✗ PREDICTED NO | Customer: CUST_000307 | Cluster: 7 | Score: -499.65 | Total Predicted No: 73
-[2025-12-07 18:38:26] ✗ PREDICTED NO | Customer: CUST_000259 | Cluster: 9 | Score: -698.55 | Total Predicted No: 74
-[2025-12-07 18:38:26] ✗ PREDICTED NO | Customer: CUST_000302 | Cluster: 2 | Score: -38.53 | Total Predicted No: 75
-[2025-12-07 18:38:26] ✗ PREDICTED NO | Customer: CUST_000270 | Cluster: 9 | Score: -130.95 | Total Predicted No: 76
-[2025-12-07 18:38:26] ✗ PREDICTED NO | Customer: CUST_000360 | Cluster: 9 | Score: -5600.56 | Total Predicted No: 77
-[2025-12-07 18:38:27] ✗ PREDICTED NO | Customer: CUST_000279 | Cluster: 2 | Score: -273.81 | Total Predicted No: 78
-[2025-12-07 18:38:27] ⟳ Reloading model after 80 predictions...
-[2025-12-07 18:38:27] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:27] ✓ Model loaded (Load #9). Components: 20
-[2025-12-07 18:38:27] ✓ PREDICTED YES | Customer: CUST_000302 | Cluster: 2 | Score: 0.35 | Exemplars: ['CUST_000302', 'CUST_000302', 'CUST_000302', 'CUST_000302', 'CUST_000302', 'CUST_000302'] | Total Predicted Yes: 3
-[2025-12-07 18:38:27] ✓ PREDICTED YES | Customer: CUST_000302 | Cluster: 2 | Score: 0.35 | Exemplars: ['CUST_000302', 'CUST_000302', 'CUST_000302', 'CUST_000302', 'CUST_000302', 'CUST_000302'] | Total Predicted Yes: 4
-[2025-12-07 18:38:27] ✗ PREDICTED NO | Customer: CUST_000279 | Cluster: 2 | Score: -1011.07 | Total Predicted No: 79
-[2025-12-07 18:38:27] ✗ PREDICTED NO | Customer: CUST_000279 | Cluster: 2 | Score: -1011.07 | Total Predicted No: 80
-[2025-12-07 18:38:27] ✗ PREDICTED NO | Customer: CUST_000279 | Cluster: 2 | Score: -2278.32 | Total Predicted No: 81
-[2025-12-07 18:38:27] ✓ PREDICTED YES | Customer: CUST_000307 | Cluster: 16 | Score: 1.04 | Exemplars: ['CUST_000162', 'CUST_000162', 'CUST_000162', 'CUST_000162', 'CUST_001017', 'CUST_001017'] | Total Predicted Yes: 5
-[2025-12-07 18:38:28] ✗ PREDICTED NO | Customer: CUST_000270 | Cluster: 2 | Score: -1154.15 | Total Predicted No: 82
-[2025-12-07 18:38:28] ✗ PREDICTED NO | Customer: CUST_000282 | Cluster: 2 | Score: -147.14 | Total Predicted No: 83
-[2025-12-07 18:38:28] ✗ PREDICTED NO | Customer: CUST_000279 | Cluster: 2 | Score: -3617.60 | Total Predicted No: 84
-[2025-12-07 18:38:28] ✗ PREDICTED NO | Customer: CUST_000360 | Cluster: 9 | Score: -5600.56 | Total Predicted No: 85
-[2025-12-07 18:38:28] ⟳ Reloading model after 90 predictions...
-[2025-12-07 18:38:28] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:28] ✓ Model loaded (Load #10). Components: 22
-[2025-12-07 18:38:28] ✗ PREDICTED NO | Customer: CUST_000307 | Cluster: 9 | Score: -299.41 | Total Predicted No: 86
-[2025-12-07 18:38:28] ✗ PREDICTED NO | Customer: CUST_000279 | Cluster: 2 | Score: -273.81 | Total Predicted No: 87
-[2025-12-07 18:38:28] ✗ PREDICTED NO | Customer: CUST_000307 | Cluster: 7 | Score: -1187.94 | Total Predicted No: 88
-[2025-12-07 18:38:29] ✗ PREDICTED NO | Customer: CUST_000302 | Cluster: 2 | Score: -132.41 | Total Predicted No: 89
-[2025-12-07 18:38:29] ✗ PREDICTED NO | Customer: CUST_000302 | Cluster: 2 | Score: -38.53 | Total Predicted No: 90
-[2025-12-07 18:38:29] ✓ PREDICTED YES | Customer: CUST_000307 | Cluster: 16 | Score: 1.04 | Exemplars: ['CUST_000162', 'CUST_000162', 'CUST_000162', 'CUST_000162', 'CUST_001017', 'CUST_001017'] | Total Predicted Yes: 6
-[2025-12-07 18:38:29] ✗ PREDICTED NO | Customer: CUST_000270 | Cluster: 2 | Score: -1154.15 | Total Predicted No: 91
-[2025-12-07 18:38:29] ✗ PREDICTED NO | Customer: CUST_000282 | Cluster: 3 | Score: -9.62 | Total Predicted No: 92
-[2025-12-07 18:38:29] ✗ PREDICTED NO | Customer: CUST_000282 | Cluster: 2 | Score: -147.14 | Total Predicted No: 93
-[2025-12-07 18:38:29] ✗ PREDICTED NO | Customer: CUST_000270 | Cluster: 9 | Score: -135.30 | Total Predicted No: 94
-[2025-12-07 18:38:29] ⟳ Reloading model after 100 predictions...
-[2025-12-07 18:38:29] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:29] ✓ Model loaded (Load #11). Components: 22
-[2025-12-07 18:38:29] ✗ PREDICTED NO | Customer: CUST_000279 | Cluster: 2 | Score: -2278.32 | Total Predicted No: 95
-[2025-12-07 18:38:29] ✗ PREDICTED NO | Customer: CUST_000360 | Cluster: 9 | Score: -6519.52 | Total Predicted No: 96
-[2025-12-07 18:38:30] ✗ PREDICTED NO | Customer: CUST_000307 | Cluster: 7 | Score: -499.65 | Total Predicted No: 97
-[2025-12-07 18:38:30] ✗ PREDICTED NO | Customer: CUST_000360 | Cluster: 2 | Score: -4219.33 | Total Predicted No: 98
-[2025-12-07 18:38:30] ✗ PREDICTED NO | Customer: CUST_000424 | Cluster: 9 | Score: -249.17 | Total Predicted No: 99
-[2025-12-07 18:38:30] ✗ PREDICTED NO | Customer: CUST_000499 | Cluster: 9 | Score: -195.55 | Total Predicted No: 100
-[2025-12-07 18:38:30] ✗ PREDICTED NO | Customer: CUST_000396 | Cluster: 9 | Score: -338.62 | Total Predicted No: 101
-[2025-12-07 18:38:30] ✗ PREDICTED NO | Customer: CUST_000424 | Cluster: 9 | Score: -115.50 | Total Predicted No: 102
-[2025-12-07 18:38:30] ✗ PREDICTED NO | Customer: CUST_000482 | Cluster: 3 | Score: -291.54 | Total Predicted No: 103
-[2025-12-07 18:38:30] ✗ PREDICTED NO | Customer: CUST_000442 | Cluster: 2 | Score: -1333.07 | Total Predicted No: 104
-[2025-12-07 18:38:30] ⟳ Reloading model after 110 predictions...
-[2025-12-07 18:38:30] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:30] ✓ Model loaded (Load #12). Components: 22
-[2025-12-07 18:38:31] ✗ PREDICTED NO | Customer: CUST_000482 | Cluster: 2 | Score: -85.59 | Total Predicted No: 105
-[2025-12-07 18:38:31] ✗ PREDICTED NO | Customer: CUST_000499 | Cluster: 9 | Score: -195.55 | Total Predicted No: 106
-[2025-12-07 18:38:31] ✗ PREDICTED NO | Customer: CUST_000490 | Cluster: 2 | Score: -541.52 | Total Predicted No: 107
-[2025-12-07 18:38:31] ✗ PREDICTED NO | Customer: CUST_000396 | Cluster: 9 | Score: -1664.84 | Total Predicted No: 108
-[2025-12-07 18:38:31] ✗ PREDICTED NO | Customer: CUST_000424 | Cluster: 2 | Score: -1993.08 | Total Predicted No: 109
-[2025-12-07 18:38:31] ✗ PREDICTED NO | Customer: CUST_000490 | Cluster: 3 | Score: -350.69 | Total Predicted No: 110
-[2025-12-07 18:38:31] ✗ PREDICTED NO | Customer: CUST_000482 | Cluster: 2 | Score: -50.24 | Total Predicted No: 111
-[2025-12-07 18:38:31] ✗ PREDICTED NO | Customer: CUST_000396 | Cluster: 9 | Score: -2902.35 | Total Predicted No: 112
-[2025-12-07 18:38:31] ✗ PREDICTED NO | Customer: CUST_000499 | Cluster: 2 | Score: -1210.28 | Total Predicted No: 113
-[2025-12-07 18:38:31] ✗ PREDICTED NO | Customer: CUST_000482 | Cluster: 2 | Score: -50.24 | Total Predicted No: 114
-[2025-12-07 18:38:32] ⟳ Reloading model after 120 predictions...
-[2025-12-07 18:38:32] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:32] ✓ Model loaded (Load #13). Components: 22
-[2025-12-07 18:38:32] ✗ PREDICTED NO | Customer: CUST_000449 | Cluster: 9 | Score: -1943.77 | Total Predicted No: 115
-[2025-12-07 18:38:32] ✗ PREDICTED NO | Customer: CUST_000442 | Cluster: 9 | Score: -225.30 | Total Predicted No: 116
-[2025-12-07 18:38:32] ✗ PREDICTED NO | Customer: CUST_000424 | Cluster: 9 | Score: -115.50 | Total Predicted No: 117
-[2025-12-07 18:38:32] ✗ PREDICTED NO | Customer: CUST_000360 | Cluster: 9 | Score: -6519.52 | Total Predicted No: 118
-[2025-12-07 18:38:32] ✗ PREDICTED NO | Customer: CUST_000442 | Cluster: 2 | Score: -1333.07 | Total Predicted No: 119
-[2025-12-07 18:38:32] ✗ PREDICTED NO | Customer: CUST_000449 | Cluster: 9 | Score: -1943.77 | Total Predicted No: 120
-[2025-12-07 18:38:32] ✗ PREDICTED NO | Customer: CUST_000482 | Cluster: 2 | Score: -85.59 | Total Predicted No: 121
-[2025-12-07 18:38:33] ✗ PREDICTED NO | Customer: CUST_000499 | Cluster: 17 | Score: -26.85 | Total Predicted No: 122
-[2025-12-07 18:38:33] ✗ PREDICTED NO | Customer: CUST_000449 | Cluster: 9 | Score: -120.34 | Total Predicted No: 123
-[2025-12-07 18:38:33] ✗ PREDICTED NO | Customer: CUST_000499 | Cluster: 9 | Score: -1679.45 | Total Predicted No: 124
-[2025-12-07 18:38:33] ⟳ Reloading model after 130 predictions...
-[2025-12-07 18:38:33] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:33] ✓ Model loaded (Load #14). Components: 22
-[2025-12-07 18:38:33] ✗ PREDICTED NO | Customer: CUST_000499 | Cluster: 9 | Score: -1679.45 | Total Predicted No: 125
-[2025-12-07 18:38:33] ✗ PREDICTED NO | Customer: CUST_000407 | Cluster: 9 | Score: -317.24 | Total Predicted No: 126
-[2025-12-07 18:38:33] ✗ PREDICTED NO | Customer: CUST_000396 | Cluster: 9 | Score: -338.62 | Total Predicted No: 127
-[2025-12-07 18:38:33] ✗ PREDICTED NO | Customer: CUST_000449 | Cluster: 9 | Score: -4813.93 | Total Predicted No: 128
-[2025-12-07 18:38:33] ✗ PREDICTED NO | Customer: CUST_000442 | Cluster: 2 | Score: -1256.10 | Total Predicted No: 129
-[2025-12-07 18:38:33] ✗ PREDICTED NO | Customer: CUST_000490 | Cluster: 2 | Score: -541.52 | Total Predicted No: 130
-[2025-12-07 18:38:33] ✗ PREDICTED NO | Customer: CUST_000424 | Cluster: 9 | Score: -2099.21 | Total Predicted No: 131
-[2025-12-07 18:38:34] ✗ PREDICTED NO | Customer: CUST_000499 | Cluster: 17 | Score: -26.85 | Total Predicted No: 132
-[2025-12-07 18:38:34] ✗ PREDICTED NO | Customer: CUST_000424 | Cluster: 2 | Score: -1798.34 | Total Predicted No: 133
-[2025-12-07 18:38:34] ✗ PREDICTED NO | Customer: CUST_000424 | Cluster: 2 | Score: -1993.08 | Total Predicted No: 134
-[2025-12-07 18:38:34] ⟳ Reloading model after 140 predictions...
-[2025-12-07 18:38:34] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:34] ✓ Model loaded (Load #15). Components: 22
-[2025-12-07 18:38:34] ✗ PREDICTED NO | Customer: CUST_000407 | Cluster: 9 | Score: -86.65 | Total Predicted No: 135
-[2025-12-07 18:38:34] ✗ PREDICTED NO | Customer: CUST_000449 | Cluster: 9 | Score: -120.34 | Total Predicted No: 136
-[2025-12-07 18:38:34] ✗ PREDICTED NO | Customer: CUST_000407 | Cluster: 17 | Score: -367.55 | Total Predicted No: 137
-[2025-12-07 18:38:34] ✗ PREDICTED NO | Customer: CUST_000442 | Cluster: 9 | Score: -225.30 | Total Predicted No: 138
-[2025-12-07 18:38:35] ✗ PREDICTED NO | Customer: CUST_000407 | Cluster: 9 | Score: -86.65 | Total Predicted No: 139
-[2025-12-07 18:38:35] ✗ PREDICTED NO | Customer: CUST_000396 | Cluster: 9 | Score: -1664.84 | Total Predicted No: 140
-[2025-12-07 18:38:35] ✗ PREDICTED NO | Customer: CUST_000407 | Cluster: 9 | Score: -317.24 | Total Predicted No: 141
-[2025-12-07 18:38:35] ✗ PREDICTED NO | Customer: CUST_000424 | Cluster: 9 | Score: -249.17 | Total Predicted No: 142
-[2025-12-07 18:38:35] ✗ PREDICTED NO | Customer: CUST_000424 | Cluster: 9 | Score: -2099.21 | Total Predicted No: 143
-[2025-12-07 18:38:35] ✗ PREDICTED NO | Customer: CUST_000503 | Cluster: 9 | Score: -1326.82 | Total Predicted No: 144
-[2025-12-07 18:38:35] ⟳ Reloading model after 150 predictions...
-[2025-12-07 18:38:35] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:35] ✓ Model loaded (Load #16). Components: 24
-[2025-12-07 18:38:35] ✗ PREDICTED NO | Customer: CUST_000639 | Cluster: 9 | Score: -10.21 | Total Predicted No: 145
-[2025-12-07 18:38:35] ✗ PREDICTED NO | Customer: CUST_000503 | Cluster: 9 | Score: -196.69 | Total Predicted No: 146
-[2025-12-07 18:38:36] ✗ PREDICTED NO | Customer: CUST_000570 | Cluster: 16 | Score: -131.79 | Total Predicted No: 147
-[2025-12-07 18:38:36] ✗ PREDICTED NO | Customer: CUST_000631 | Cluster: 9 | Score: -3067.48 | Total Predicted No: 148
-[2025-12-07 18:38:36] ✗ PREDICTED NO | Customer: CUST_000632 | Cluster: 16 | Score: -231.06 | Total Predicted No: 149
-[2025-12-07 18:38:36] ✗ PREDICTED NO | Customer: CUST_000582 | Cluster: 9 | Score: -7673.79 | Total Predicted No: 150
-[2025-12-07 18:38:36] ✗ PREDICTED NO | Customer: CUST_000542 | Cluster: 16 | Score: -218.92 | Total Predicted No: 151
-[2025-12-07 18:38:36] ✗ PREDICTED NO | Customer: CUST_000631 | Cluster: 9 | Score: -5378.86 | Total Predicted No: 152
-[2025-12-07 18:38:36] ✗ PREDICTED NO | Customer: CUST_000553 | Cluster: 9 | Score: -1254.35 | Total Predicted No: 153
-[2025-12-07 18:38:36] ✗ PREDICTED NO | Customer: CUST_000503 | Cluster: 9 | Score: -742.38 | Total Predicted No: 154
-[2025-12-07 18:38:36] ⟳ Reloading model after 160 predictions...
-[2025-12-07 18:38:36] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:36] ✓ Model loaded (Load #17). Components: 24
-[2025-12-07 18:38:37] ✗ PREDICTED NO | Customer: CUST_000573 | Cluster: 2 | Score: -264.57 | Total Predicted No: 155
-[2025-12-07 18:38:37] ✗ PREDICTED NO | Customer: CUST_000503 | Cluster: 9 | Score: -196.69 | Total Predicted No: 156
-[2025-12-07 18:38:37] ✗ PREDICTED NO | Customer: CUST_000558 | Cluster: 2 | Score: -1252.56 | Total Predicted No: 157
-[2025-12-07 18:38:37] ✗ PREDICTED NO | Customer: CUST_000542 | Cluster: 17 | Score: -206.28 | Total Predicted No: 158
-[2025-12-07 18:38:37] ✗ PREDICTED NO | Customer: CUST_000542 | Cluster: 16 | Score: -218.92 | Total Predicted No: 159
-[2025-12-07 18:38:37] ✗ PREDICTED NO | Customer: CUST_000616 | Cluster: 9 | Score: -2461.86 | Total Predicted No: 160
-[2025-12-07 18:38:38] ✗ PREDICTED NO | Customer: CUST_000631 | Cluster: 9 | Score: -5378.86 | Total Predicted No: 161
-[2025-12-07 18:38:38] ✗ PREDICTED NO | Customer: CUST_000570 | Cluster: 16 | Score: -345.27 | Total Predicted No: 162
-[2025-12-07 18:38:38] ✗ PREDICTED NO | Customer: CUST_000631 | Cluster: 9 | Score: -5205.07 | Total Predicted No: 163
-[2025-12-07 18:38:38] ✗ PREDICTED NO | Customer: CUST_000616 | Cluster: 9 | Score: -10848.78 | Total Predicted No: 164
-[2025-12-07 18:38:38] ⟳ Reloading model after 170 predictions...
-[2025-12-07 18:38:38] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:38] ✓ Model loaded (Load #18). Components: 24
-[2025-12-07 18:38:38] ✗ PREDICTED NO | Customer: CUST_000631 | Cluster: 9 | Score: -3067.48 | Total Predicted No: 165
-[2025-12-07 18:38:38] ✗ PREDICTED NO | Customer: CUST_000542 | Cluster: 7 | Score: -943.26 | Total Predicted No: 166
-[2025-12-07 18:38:38] ✗ PREDICTED NO | Customer: CUST_000629 | Cluster: 9 | Score: -2320.45 | Total Predicted No: 167
-[2025-12-07 18:38:38] ✗ PREDICTED NO | Customer: CUST_000582 | Cluster: 9 | Score: -7346.52 | Total Predicted No: 168
-[2025-12-07 18:38:38] ✗ PREDICTED NO | Customer: CUST_000616 | Cluster: 9 | Score: -10848.78 | Total Predicted No: 169
-[2025-12-07 18:38:39] ✗ PREDICTED NO | Customer: CUST_000629 | Cluster: 9 | Score: -1134.31 | Total Predicted No: 170
-[2025-12-07 18:38:39] ✗ PREDICTED NO | Customer: CUST_000629 | Cluster: 9 | Score: -606.64 | Total Predicted No: 171
-[2025-12-07 18:38:39] ✗ PREDICTED NO | Customer: CUST_000542 | Cluster: 7 | Score: -953.78 | Total Predicted No: 172
-[2025-12-07 18:38:39] ✗ PREDICTED NO | Customer: CUST_000558 | Cluster: 2 | Score: -86.20 | Total Predicted No: 173
-[2025-12-07 18:38:39] ✗ PREDICTED NO | Customer: CUST_000632 | Cluster: 17 | Score: -245.86 | Total Predicted No: 174
-[2025-12-07 18:38:39] ⟳ Reloading model after 180 predictions...
-[2025-12-07 18:38:39] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:39] ✓ Model loaded (Load #19). Components: 24
-[2025-12-07 18:38:39] ✗ PREDICTED NO | Customer: CUST_000570 | Cluster: 16 | Score: -345.27 | Total Predicted No: 175
-[2025-12-07 18:38:39] ✗ PREDICTED NO | Customer: CUST_000616 | Cluster: 9 | Score: -10062.49 | Total Predicted No: 176
-[2025-12-07 18:38:40] ✗ PREDICTED NO | Customer: CUST_000582 | Cluster: 9 | Score: -317.62 | Total Predicted No: 177
-[2025-12-07 18:38:40] ✗ PREDICTED NO | Customer: CUST_000542 | Cluster: 7 | Score: -943.26 | Total Predicted No: 178
-[2025-12-07 18:38:40] ✗ PREDICTED NO | Customer: CUST_000613 | Cluster: 2 | Score: -1096.10 | Total Predicted No: 179
-[2025-12-07 18:38:40] ✗ PREDICTED NO | Customer: CUST_000558 | Cluster: 2 | Score: -86.20 | Total Predicted No: 180
-[2025-12-07 18:38:40] ✗ PREDICTED NO | Customer: CUST_000582 | Cluster: 9 | Score: -317.62 | Total Predicted No: 181
-[2025-12-07 18:38:40] ✗ PREDICTED NO | Customer: CUST_000570 | Cluster: 16 | Score: -131.79 | Total Predicted No: 182
-[2025-12-07 18:38:40] ✗ PREDICTED NO | Customer: CUST_000629 | Cluster: 9 | Score: -606.64 | Total Predicted No: 183
-[2025-12-07 18:38:40] ✗ PREDICTED NO | Customer: CUST_000558 | Cluster: 2 | Score: -1252.56 | Total Predicted No: 184
-[2025-12-07 18:38:40] ⟳ Reloading model after 190 predictions...
-[2025-12-07 18:38:41] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:41] ✓ Model loaded (Load #20). Components: 24
-[2025-12-07 18:38:41] ✗ PREDICTED NO | Customer: CUST_000582 | Cluster: 9 | Score: -7673.79 | Total Predicted No: 185
-[2025-12-07 18:38:41] ✗ PREDICTED NO | Customer: CUST_000553 | Cluster: 9 | Score: -1254.35 | Total Predicted No: 186
-[2025-12-07 18:38:41] ✗ PREDICTED NO | Customer: CUST_000613 | Cluster: 2 | Score: -1096.10 | Total Predicted No: 187
-[2025-12-07 18:38:41] ✗ PREDICTED NO | Customer: CUST_000616 | Cluster: 9 | Score: -2461.86 | Total Predicted No: 188
-[2025-12-07 18:38:41] ✗ PREDICTED NO | Customer: CUST_000558 | Cluster: 3 | Score: -1159.04 | Total Predicted No: 189
-[2025-12-07 18:38:41] ✗ PREDICTED NO | Customer: CUST_000503 | Cluster: 9 | Score: -71.85 | Total Predicted No: 190
-[2025-12-07 18:38:41] ✗ PREDICTED NO | Customer: CUST_000613 | Cluster: 3 | Score: -906.02 | Total Predicted No: 191
-[2025-12-07 18:38:42] ✗ PREDICTED NO | Customer: CUST_000629 | Cluster: 9 | Score: -1134.31 | Total Predicted No: 192
-[2025-12-07 18:38:42] ✗ PREDICTED NO | Customer: CUST_000553 | Cluster: 9 | Score: -466.78 | Total Predicted No: 193
-[2025-12-07 18:38:42] ✗ PREDICTED NO | Customer: CUST_000570 | Cluster: 16 | Score: -356.03 | Total Predicted No: 194
-[2025-12-07 18:38:42] ⟳ Reloading model after 200 predictions...
-[2025-12-07 18:38:42] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:42] ✓ Model loaded (Load #21). Components: 26
-[2025-12-07 18:38:42] ✗ PREDICTED NO | Customer: CUST_000503 | Cluster: 9 | Score: -742.38 | Total Predicted No: 195
-[2025-12-07 18:38:42] ✗ PREDICTED NO | Customer: CUST_000573 | Cluster: 2 | Score: -271.91 | Total Predicted No: 196
-[2025-12-07 18:38:43] ✗ PREDICTED NO | Customer: CUST_000542 | Cluster: 16 | Score: -186.21 | Total Predicted No: 197
-[2025-12-07 18:38:43] ✗ PREDICTED NO | Customer: CUST_000629 | Cluster: 9 | Score: -282.68 | Total Predicted No: 198
-[2025-12-07 18:38:43] ✗ PREDICTED NO | Customer: CUST_000629 | Cluster: 9 | Score: -282.68 | Total Predicted No: 199
-[2025-12-07 18:38:43] ✗ PREDICTED NO | Customer: CUST_000632 | Cluster: 16 | Score: -233.83 | Total Predicted No: 200
-[2025-12-07 18:38:43] ✗ PREDICTED NO | Customer: CUST_000558 | Cluster: 3 | Score: -1159.04 | Total Predicted No: 201
-[2025-12-07 18:38:43] ✗ PREDICTED NO | Customer: CUST_000503 | Cluster: 9 | Score: -71.85 | Total Predicted No: 202
-[2025-12-07 18:38:43] ✗ PREDICTED NO | Customer: CUST_000558 | Cluster: 3 | Score: -1110.13 | Total Predicted No: 203
-[2025-12-07 18:38:44] ✗ PREDICTED NO | Customer: CUST_000573 | Cluster: 3 | Score: -1114.40 | Total Predicted No: 204
-[2025-12-07 18:38:44] ⟳ Reloading model after 210 predictions...
-[2025-12-07 18:38:44] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:44] ✓ Model loaded (Load #22). Components: 26
-[2025-12-07 18:38:44] ✗ PREDICTED NO | Customer: CUST_000553 | Cluster: 9 | Score: -466.78 | Total Predicted No: 205
-[2025-12-07 18:38:44] ✗ PREDICTED NO | Customer: CUST_000553 | Cluster: 9 | Score: -2999.12 | Total Predicted No: 206
-[2025-12-07 18:38:44] ✗ PREDICTED NO | Customer: CUST_000639 | Cluster: 18 | Score: -544.19 | Total Predicted No: 207
-[2025-12-07 18:38:44] ✗ PREDICTED NO | Customer: CUST_000689 | Cluster: 3 | Score: -62.29 | Total Predicted No: 208
-[2025-12-07 18:38:44] ✗ PREDICTED NO | Customer: CUST_000689 | Cluster: 2 | Score: -451.11 | Total Predicted No: 209
-[2025-12-07 18:38:45] ✗ PREDICTED NO | Customer: CUST_000639 | Cluster: 9 | Score: -10.21 | Total Predicted No: 210
-[2025-12-07 18:38:45] ✗ PREDICTED NO | Customer: CUST_000729 | Cluster: 2 | Score: -440.11 | Total Predicted No: 211
-[2025-12-07 18:38:45] ✗ PREDICTED NO | Customer: CUST_000785 | Cluster: 2 | Score: -141.20 | Total Predicted No: 212
-[2025-12-07 18:38:45] ✗ PREDICTED NO | Customer: CUST_000825 | Cluster: 9 | Score: -2722.10 | Total Predicted No: 213
-[2025-12-07 18:38:45] ✗ PREDICTED NO | Customer: CUST_000785 | Cluster: 2 | Score: -312.12 | Total Predicted No: 214
-[2025-12-07 18:38:45] ⟳ Reloading model after 220 predictions...
-[2025-12-07 18:38:45] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:45] ✓ Model loaded (Load #23). Components: 26
-[2025-12-07 18:38:45] ✗ PREDICTED NO | Customer: CUST_000825 | Cluster: 9 | Score: -4511.82 | Total Predicted No: 215
-[2025-12-07 18:38:45] ✗ PREDICTED NO | Customer: CUST_000729 | Cluster: 2 | Score: -409.00 | Total Predicted No: 216
-[2025-12-07 18:38:45] ✗ PREDICTED NO | Customer: CUST_000660 | Cluster: 7 | Score: -614.27 | Total Predicted No: 217
-[2025-12-07 18:38:45] ✗ PREDICTED NO | Customer: CUST_000722 | Cluster: 2 | Score: -885.86 | Total Predicted No: 218
-[2025-12-07 18:38:45] ✗ PREDICTED NO | Customer: CUST_000722 | Cluster: 2 | Score: -493.43 | Total Predicted No: 219
-[2025-12-07 18:38:45] ✗ PREDICTED NO | Customer: CUST_000809 | Cluster: 16 | Score: -648.83 | Total Predicted No: 220
-[2025-12-07 18:38:45] ✗ PREDICTED NO | Customer: CUST_000722 | Cluster: 2 | Score: -872.28 | Total Predicted No: 221
-[2025-12-07 18:38:46] ✗ PREDICTED NO | Customer: CUST_000805 | Cluster: 17 | Score: -28.57 | Total Predicted No: 222
-[2025-12-07 18:38:46] ✗ PREDICTED NO | Customer: CUST_000660 | Cluster: 7 | Score: -357.45 | Total Predicted No: 223
-[2025-12-07 18:38:46] ✗ PREDICTED NO | Customer: CUST_000805 | Cluster: 17 | Score: -28.57 | Total Predicted No: 224
-[2025-12-07 18:38:46] ⟳ Reloading model after 230 predictions...
-[2025-12-07 18:38:46] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:46] ✓ Model loaded (Load #24). Components: 26
-[2025-12-07 18:38:46] ✗ PREDICTED NO | Customer: CUST_000675 | Cluster: 19 | Score: -40.28 | Total Predicted No: 225
-[2025-12-07 18:38:46] ✗ PREDICTED NO | Customer: CUST_000686 | Cluster: 9 | Score: -1060.01 | Total Predicted No: 226
-[2025-12-07 18:38:46] ✓ PREDICTED YES | Customer: CUST_000660 | Cluster: 7 | Score: 2.56 | Exemplars: ['CUST_000054', 'CUST_001172', 'CUST_001197', 'CUST_001197', 'CUST_001197', 'CUST_000054'] | Total Predicted Yes: 7
-[2025-12-07 18:38:46] ✗ PREDICTED NO | Customer: CUST_000675 | Cluster: 3 | Score: -261.39 | Total Predicted No: 227
-[2025-12-07 18:38:46] ✗ PREDICTED NO | Customer: CUST_000792 | Cluster: 2 | Score: -1115.59 | Total Predicted No: 228
-[2025-12-07 18:38:46] ✗ PREDICTED NO | Customer: CUST_000781 | Cluster: 9 | Score: -92.98 | Total Predicted No: 229
-[2025-12-07 18:38:46] ✗ PREDICTED NO | Customer: CUST_000722 | Cluster: 2 | Score: -493.43 | Total Predicted No: 230
-[2025-12-07 18:38:46] ✗ PREDICTED NO | Customer: CUST_000729 | Cluster: 2 | Score: -435.94 | Total Predicted No: 231
-[2025-12-07 18:38:47] ✗ PREDICTED NO | Customer: CUST_000660 | Cluster: 7 | Score: -357.45 | Total Predicted No: 232
-[2025-12-07 18:38:47] ✗ PREDICTED NO | Customer: CUST_000686 | Cluster: 9 | Score: -1060.01 | Total Predicted No: 233
-[2025-12-07 18:38:47] ⟳ Reloading model after 240 predictions...
-[2025-12-07 18:38:47] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:47] ✓ Model loaded (Load #25). Components: 26
-[2025-12-07 18:38:47] ✗ PREDICTED NO | Customer: CUST_000722 | Cluster: 2 | Score: -546.16 | Total Predicted No: 234
-[2025-12-07 18:38:47] ✗ PREDICTED NO | Customer: CUST_000650 | Cluster: 2 | Score: -402.37 | Total Predicted No: 235
-[2025-12-07 18:38:47] ✗ PREDICTED NO | Customer: CUST_000785 | Cluster: 2 | Score: -141.20 | Total Predicted No: 236
-[2025-12-07 18:38:47] ✗ PREDICTED NO | Customer: CUST_000689 | Cluster: 3 | Score: -62.29 | Total Predicted No: 237
-[2025-12-07 18:38:47] ✗ PREDICTED NO | Customer: CUST_000781 | Cluster: 9 | Score: -92.98 | Total Predicted No: 238
-[2025-12-07 18:38:47] ✗ PREDICTED NO | Customer: CUST_000722 | Cluster: 2 | Score: -885.86 | Total Predicted No: 239
-[2025-12-07 18:38:47] ✗ PREDICTED NO | Customer: CUST_000686 | Cluster: 9 | Score: -2321.94 | Total Predicted No: 240
-[2025-12-07 18:38:47] ✗ PREDICTED NO | Customer: CUST_000809 | Cluster: 16 | Score: -648.83 | Total Predicted No: 241
-[2025-12-07 18:38:47] ✗ PREDICTED NO | Customer: CUST_000781 | Cluster: 9 | Score: -1514.02 | Total Predicted No: 242
-[2025-12-07 18:38:48] ✗ PREDICTED NO | Customer: CUST_000809 | Cluster: 7 | Score: -933.57 | Total Predicted No: 243
-[2025-12-07 18:38:48] ⟳ Reloading model after 250 predictions...
-[2025-12-07 18:38:48] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:48] ✓ Model loaded (Load #26). Components: 26
-[2025-12-07 18:38:48] ✗ PREDICTED NO | Customer: CUST_000817 | Cluster: 7 | Score: -765.82 | Total Predicted No: 244
-[2025-12-07 18:38:48] ✗ PREDICTED NO | Customer: CUST_000845 | Cluster: 16 | Score: -234.06 | Total Predicted No: 245
-[2025-12-07 18:38:48] ✗ PREDICTED NO | Customer: CUST_000809 | Cluster: 7 | Score: -933.57 | Total Predicted No: 246
-[2025-12-07 18:38:48] ✗ PREDICTED NO | Customer: CUST_000660 | Cluster: 7 | Score: -614.27 | Total Predicted No: 247
-[2025-12-07 18:38:48] ✗ PREDICTED NO | Customer: CUST_000817 | Cluster: 7 | Score: -1273.48 | Total Predicted No: 248
-[2025-12-07 18:38:48] ✗ PREDICTED NO | Customer: CUST_000781 | Cluster: 9 | Score: -534.62 | Total Predicted No: 249
-[2025-12-07 18:38:49] ✗ PREDICTED NO | Customer: CUST_000785 | Cluster: 2 | Score: -312.12 | Total Predicted No: 250
-[2025-12-07 18:38:49] ✗ PREDICTED NO | Customer: CUST_000817 | Cluster: 16 | Score: -564.35 | Total Predicted No: 251
-[2025-12-07 18:38:49] ✗ PREDICTED NO | Customer: CUST_000729 | Cluster: 2 | Score: -409.00 | Total Predicted No: 252
-[2025-12-07 18:38:49] ✗ PREDICTED NO | Customer: CUST_000817 | Cluster: 16 | Score: -564.35 | Total Predicted No: 253
-[2025-12-07 18:38:49] ⟳ Reloading model after 260 predictions...
-[2025-12-07 18:38:49] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:49] ✓ Model loaded (Load #27). Components: 26
-[2025-12-07 18:38:49] ✗ PREDICTED NO | Customer: CUST_000809 | Cluster: 3 | Score: -4.64 | Total Predicted No: 254
-[2025-12-07 18:38:49] ✗ PREDICTED NO | Customer: CUST_000722 | Cluster: 2 | Score: -647.96 | Total Predicted No: 255
-[2025-12-07 18:38:50] ✗ PREDICTED NO | Customer: CUST_000785 | Cluster: 2 | Score: -320.67 | Total Predicted No: 256
-[2025-12-07 18:38:50] ✗ PREDICTED NO | Customer: CUST_000809 | Cluster: 3 | Score: -4.64 | Total Predicted No: 257
-[2025-12-07 18:38:50] ✗ PREDICTED NO | Customer: CUST_000792 | Cluster: 2 | Score: -1115.59 | Total Predicted No: 258
-[2025-12-07 18:38:50] ✗ PREDICTED NO | Customer: CUST_000639 | Cluster: 9 | Score: -196.70 | Total Predicted No: 259
-[2025-12-07 18:38:50] ✗ PREDICTED NO | Customer: CUST_000781 | Cluster: 9 | Score: -534.62 | Total Predicted No: 260
-[2025-12-07 18:38:50] ✗ PREDICTED NO | Customer: CUST_000805 | Cluster: 1 | Score: -372.06 | Total Predicted No: 261
-[2025-12-07 18:38:51] ✗ PREDICTED NO | Customer: CUST_000817 | Cluster: 7 | Score: -765.82 | Total Predicted No: 262
-[2025-12-07 18:38:51] ✗ PREDICTED NO | Customer: CUST_000825 | Cluster: 9 | Score: -4511.82 | Total Predicted No: 263
-[2025-12-07 18:38:51] ⟳ Reloading model after 270 predictions...
-[2025-12-07 18:38:51] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:51] ✓ Model loaded (Load #28). Components: 26
-[2025-12-07 18:38:51] ✗ PREDICTED NO | Customer: CUST_000660 | Cluster: 9 | Score: -1777.27 | Total Predicted No: 264
-[2025-12-07 18:38:51] ✓ PREDICTED YES | Customer: CUST_000660 | Cluster: 7 | Score: 2.56 | Exemplars: ['CUST_000054', 'CUST_001172', 'CUST_001197', 'CUST_001197', 'CUST_001197', 'CUST_000054'] | Total Predicted Yes: 8
-[2025-12-07 18:38:51] ✗ PREDICTED NO | Customer: CUST_000675 | Cluster: 3 | Score: -291.10 | Total Predicted No: 265
-[2025-12-07 18:38:51] ✗ PREDICTED NO | Customer: CUST_000675 | Cluster: 19 | Score: -42.17 | Total Predicted No: 266
-[2025-12-07 18:38:51] ✗ PREDICTED NO | Customer: CUST_000693 | Cluster: 2 | Score: -344.15 | Total Predicted No: 267
-[2025-12-07 18:38:52] ✗ PREDICTED NO | Customer: CUST_000722 | Cluster: 2 | Score: -872.28 | Total Predicted No: 268
-[2025-12-07 18:38:52] ✗ PREDICTED NO | Customer: CUST_000722 | Cluster: 2 | Score: -546.16 | Total Predicted No: 269
-[2025-12-07 18:38:52] ✗ PREDICTED NO | Customer: CUST_000792 | Cluster: 2 | Score: -920.01 | Total Predicted No: 270
-[2025-12-07 18:38:52] ✗ PREDICTED NO | Customer: CUST_000639 | Cluster: 9 | Score: -196.70 | Total Predicted No: 271
-[2025-12-07 18:38:52] ✗ PREDICTED NO | Customer: CUST_000675 | Cluster: 3 | Score: -261.39 | Total Predicted No: 272
-[2025-12-07 18:38:52] ⟳ Reloading model after 280 predictions...
-[2025-12-07 18:38:52] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:52] ✓ Model loaded (Load #29). Components: 26
-[2025-12-07 18:38:52] ✗ PREDICTED NO | Customer: CUST_000809 | Cluster: 7 | Score: -1260.06 | Total Predicted No: 273
-[2025-12-07 18:38:52] ✗ PREDICTED NO | Customer: CUST_000729 | Cluster: 2 | Score: -440.11 | Total Predicted No: 274
-[2025-12-07 18:38:53] ✗ PREDICTED NO | Customer: CUST_000993 | Cluster: 9 | Score: -2322.90 | Total Predicted No: 275
-[2025-12-07 18:38:53] ✗ PREDICTED NO | Customer: CUST_000988 | Cluster: 9 | Score: -253.52 | Total Predicted No: 276
-[2025-12-07 18:38:53] ✗ PREDICTED NO | Customer: CUST_000924 | Cluster: 9 | Score: -1715.25 | Total Predicted No: 277
-[2025-12-07 18:38:53] ✗ PREDICTED NO | Customer: CUST_000900 | Cluster: 9 | Score: -2732.33 | Total Predicted No: 278
-[2025-12-07 18:38:53] ✗ PREDICTED NO | Customer: CUST_000924 | Cluster: 9 | Score: -2243.88 | Total Predicted No: 279
-[2025-12-07 18:38:53] ✗ PREDICTED NO | Customer: CUST_000951 | Cluster: 6 | Score: -1330.70 | Total Predicted No: 280
-[2025-12-07 18:38:53] ✗ PREDICTED NO | Customer: CUST_000914 | Cluster: 9 | Score: -63032.14 | Total Predicted No: 281
-[2025-12-07 18:38:54] ✗ PREDICTED NO | Customer: CUST_000923 | Cluster: 7 | Score: -401.33 | Total Predicted No: 282
-[2025-12-07 18:38:54] ⟳ Reloading model after 290 predictions...
-[2025-12-07 18:38:54] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:54] ✓ Model loaded (Load #30). Components: 26
-[2025-12-07 18:38:54] ✗ PREDICTED NO | Customer: CUST_000847 | Cluster: 9 | Score: -114.84 | Total Predicted No: 283
-[2025-12-07 18:38:54] ✗ PREDICTED NO | Customer: CUST_000993 | Cluster: 7 | Score: -679.72 | Total Predicted No: 284
-[2025-12-07 18:38:54] ✗ PREDICTED NO | Customer: CUST_000845 | Cluster: 16 | Score: -234.06 | Total Predicted No: 285
-[2025-12-07 18:38:54] ✗ PREDICTED NO | Customer: CUST_000854 | Cluster: 9 | Score: -2996.37 | Total Predicted No: 286
-[2025-12-07 18:38:54] ✗ PREDICTED NO | Customer: CUST_000888 | Cluster: 3 | Score: -148.96 | Total Predicted No: 287
-[2025-12-07 18:38:54] ✗ PREDICTED NO | Customer: CUST_000988 | Cluster: 9 | Score: -253.52 | Total Predicted No: 288
-[2025-12-07 18:38:55] ✗ PREDICTED NO | Customer: CUST_000900 | Cluster: 6 | Score: -73.67 | Total Predicted No: 289
-[2025-12-07 18:38:55] ✗ PREDICTED NO | Customer: CUST_000855 | Cluster: 3 | Score: -2148.43 | Total Predicted No: 290
-[2025-12-07 18:38:55] ✗ PREDICTED NO | Customer: CUST_000900 | Cluster: 9 | Score: -540.94 | Total Predicted No: 291
-[2025-12-07 18:38:55] ✗ PREDICTED NO | Customer: CUST_000992 | Cluster: 2 | Score: -1299.11 | Total Predicted No: 292
-[2025-12-07 18:38:55] ⟳ Reloading model after 300 predictions...
-[2025-12-07 18:38:55] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:55] ✓ Model loaded (Load #31). Components: 26
-[2025-12-07 18:38:55] ✗ PREDICTED NO | Customer: CUST_000992 | Cluster: 2 | Score: -1299.11 | Total Predicted No: 293
-[2025-12-07 18:38:56] ✗ PREDICTED NO | Customer: CUST_000918 | Cluster: 3 | Score: -1021.04 | Total Predicted No: 294
-[2025-12-07 18:38:56] ✗ PREDICTED NO | Customer: CUST_000913 | Cluster: 17 | Score: -111.61 | Total Predicted No: 295
-[2025-12-07 18:38:56] ✗ PREDICTED NO | Customer: CUST_000900 | Cluster: 9 | Score: -540.94 | Total Predicted No: 296
-[2025-12-07 18:38:56] ✗ PREDICTED NO | Customer: CUST_000988 | Cluster: 9 | Score: -1062.48 | Total Predicted No: 297
-[2025-12-07 18:38:56] ✗ PREDICTED NO | Customer: CUST_000993 | Cluster: 7 | Score: -679.72 | Total Predicted No: 298
-[2025-12-07 18:38:56] ✗ PREDICTED NO | Customer: CUST_000996 | Cluster: 9 | Score: -236.39 | Total Predicted No: 299
-[2025-12-07 18:38:56] ✗ PREDICTED NO | Customer: CUST_000861 | Cluster: 3 | Score: -388.44 | Total Predicted No: 300
-[2025-12-07 18:38:56] ✗ PREDICTED NO | Customer: CUST_000951 | Cluster: 6 | Score: -1330.70 | Total Predicted No: 301
-[2025-12-07 18:38:57] ✗ PREDICTED NO | Customer: CUST_000921 | Cluster: 7 | Score: -1015.29 | Total Predicted No: 302
-[2025-12-07 18:38:57] ⟳ Reloading model after 310 predictions...
-[2025-12-07 18:38:57] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:57] ✓ Model loaded (Load #32). Components: 27
-[2025-12-07 18:38:57] ✗ PREDICTED NO | Customer: CUST_000951 | Cluster: 6 | Score: -1506.57 | Total Predicted No: 303
-[2025-12-07 18:38:57] ✗ PREDICTED NO | Customer: CUST_000854 | Cluster: 9 | Score: -280.67 | Total Predicted No: 304
-[2025-12-07 18:38:57] ✗ PREDICTED NO | Customer: CUST_000845 | Cluster: 7 | Score: -697.22 | Total Predicted No: 305
-[2025-12-07 18:38:57] ✗ PREDICTED NO | Customer: CUST_000914 | Cluster: 9 | Score: -97826.29 | Total Predicted No: 306
-[2025-12-07 18:38:57] ✗ PREDICTED NO | Customer: CUST_000951 | Cluster: 9 | Score: -347.47 | Total Predicted No: 307
-[2025-12-07 18:38:57] ✗ PREDICTED NO | Customer: CUST_000991 | Cluster: 17 | Score: -269.53 | Total Predicted No: 308
-[2025-12-07 18:38:58] ✗ PREDICTED NO | Customer: CUST_000923 | Cluster: 7 | Score: -1071.64 | Total Predicted No: 309
-[2025-12-07 18:38:58] ✗ PREDICTED NO | Customer: CUST_000888 | Cluster: 3 | Score: -766.16 | Total Predicted No: 310
-[2025-12-07 18:38:58] ✗ PREDICTED NO | Customer: CUST_000861 | Cluster: 3 | Score: -417.73 | Total Predicted No: 311
-[2025-12-07 18:38:58] ✓ PREDICTED YES | Customer: CUST_000923 | Cluster: 7 | Score: -0.72 | Exemplars: ['CUST_000054', 'CUST_001172', 'CUST_001197', 'CUST_001197', 'CUST_001197', 'CUST_000054'] | Total Predicted Yes: 9
-[2025-12-07 18:38:58] ⟳ Reloading model after 320 predictions...
-[2025-12-07 18:38:58] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:58] ✓ Model loaded (Load #33). Components: 27
-[2025-12-07 18:38:58] ✗ PREDICTED NO | Customer: CUST_000918 | Cluster: 2 | Score: -202.47 | Total Predicted No: 312
-[2025-12-07 18:38:58] ✗ PREDICTED NO | Customer: CUST_000888 | Cluster: 3 | Score: -148.96 | Total Predicted No: 313
-[2025-12-07 18:38:58] ✗ PREDICTED NO | Customer: CUST_000991 | Cluster: 9 | Score: -1136.72 | Total Predicted No: 314
-[2025-12-07 18:38:58] ✓ PREDICTED YES | Customer: CUST_000923 | Cluster: 7 | Score: -0.72 | Exemplars: ['CUST_000054', 'CUST_001172', 'CUST_001197', 'CUST_001197', 'CUST_001197', 'CUST_000054'] | Total Predicted Yes: 10
-[2025-12-07 18:38:58] ✗ PREDICTED NO | Customer: CUST_000861 | Cluster: 2 | Score: -620.45 | Total Predicted No: 315
-[2025-12-07 18:38:59] ✗ PREDICTED NO | Customer: CUST_000900 | Cluster: 9 | Score: -2732.33 | Total Predicted No: 316
-[2025-12-07 18:38:59] ✗ PREDICTED NO | Customer: CUST_000847 | Cluster: 2 | Score: -511.51 | Total Predicted No: 317
-[2025-12-07 18:38:59] ✗ PREDICTED NO | Customer: CUST_001014 | Cluster: 9 | Score: -695.63 | Total Predicted No: 318
-[2025-12-07 18:38:59] ✗ PREDICTED NO | Customer: CUST_000923 | Cluster: 7 | Score: -401.33 | Total Predicted No: 319
-[2025-12-07 18:38:59] ✗ PREDICTED NO | Customer: CUST_000947 | Cluster: 10 | Score: -40.83 | Total Predicted No: 320
-[2025-12-07 18:38:59] ⟳ Reloading model after 330 predictions...
-[2025-12-07 18:38:59] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:59] ✓ Model loaded (Load #34). Components: 27
-[2025-12-07 18:38:59] ✗ PREDICTED NO | Customer: CUST_000992 | Cluster: 2 | Score: -381.38 | Total Predicted No: 321
-[2025-12-07 18:38:59] ✗ PREDICTED NO | Customer: CUST_000951 | Cluster: 9 | Score: -347.47 | Total Predicted No: 322
-[2025-12-07 18:38:59] ✗ PREDICTED NO | Customer: CUST_000861 | Cluster: 2 | Score: -89.03 | Total Predicted No: 323
-[2025-12-07 18:38:59] ✗ PREDICTED NO | Customer: CUST_000947 | Cluster: 10 | Score: -40.83 | Total Predicted No: 324
-[2025-12-07 18:39:00] ✗ PREDICTED NO | Customer: CUST_000914 | Cluster: 9 | Score: -63032.14 | Total Predicted No: 325
-[2025-12-07 18:39:00] ✗ PREDICTED NO | Customer: CUST_000991 | Cluster: 17 | Score: -269.53 | Total Predicted No: 326
-[2025-12-07 18:39:00] ✗ PREDICTED NO | Customer: CUST_000845 | Cluster: 7 | Score: -1237.46 | Total Predicted No: 327
-[2025-12-07 18:39:00] ✗ PREDICTED NO | Customer: CUST_000913 | Cluster: 1 | Score: -398.09 | Total Predicted No: 328
-[2025-12-07 18:39:00] ✗ PREDICTED NO | Customer: CUST_000918 | Cluster: 2 | Score: -202.47 | Total Predicted No: 329
-[2025-12-07 18:39:00] ✗ PREDICTED NO | Customer: CUST_000996 | Cluster: 9 | Score: -236.39 | Total Predicted No: 330
-[2025-12-07 18:39:00] ⟳ Reloading model after 340 predictions...
-[2025-12-07 18:39:00] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:39:00] ⟳ Reloading model after 340 predictions...
-[2025-12-07 18:39:00] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:39:00] ✓ Model loaded (Load #35). Components: 29
-[2025-12-07 18:39:00] ✗ PREDICTED NO | Customer: CUST_000854 | Cluster: 9 | Score: -280.67 | Total Predicted No: 331
-[2025-12-07 18:39:00] ✗ PREDICTED NO | Customer: CUST_000900 | Cluster: 6 | Score: -73.67 | Total Predicted No: 332
-[2025-12-07 18:39:01] ✗ PREDICTED NO | Customer: CUST_000921 | Cluster: 7 | Score: -376.22 | Total Predicted No: 333
-[2025-12-07 18:39:01] ✗ PREDICTED NO | Customer: CUST_000913 | Cluster: 1 | Score: -398.09 | Total Predicted No: 334
-[2025-12-07 18:39:01] ✗ PREDICTED NO | Customer: CUST_000992 | Cluster: 2 | Score: -1300.59 | Total Predicted No: 335
-[2025-12-07 18:39:01] ✗ PREDICTED NO | Customer: CUST_000847 | Cluster: 9 | Score: -114.84 | Total Predicted No: 336
-[2025-12-07 18:39:01] ✗ PREDICTED NO | Customer: CUST_000854 | Cluster: 9 | Score: -2443.90 | Total Predicted No: 337
-[2025-12-07 18:39:01] ✗ PREDICTED NO | Customer: CUST_000924 | Cluster: 9 | Score: -1715.25 | Total Predicted No: 338
-[2025-12-07 18:39:01] ✗ PREDICTED NO | Customer: CUST_000861 | Cluster: 2 | Score: -89.03 | Total Predicted No: 339
-[2025-12-07 18:39:01] ✗ PREDICTED NO | Customer: CUST_000921 | Cluster: 7 | Score: -376.22 | Total Predicted No: 340
-[2025-12-07 18:39:01] ⟳ Reloading model after 350 predictions...
-[2025-12-07 18:39:01] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:39:01] ✓ Model loaded (Load #36). Components: 29
-[2025-12-07 18:39:01] ✗ PREDICTED NO | Customer: CUST_000900 | Cluster: 9 | Score: -2921.93 | Total Predicted No: 341
-[2025-12-07 18:39:01] ✗ PREDICTED NO | Customer: CUST_000992 | Cluster: 2 | Score: -381.38 | Total Predicted No: 342
-[2025-12-07 18:39:02] ✗ PREDICTED NO | Customer: CUST_000913 | Cluster: 1 | Score: -407.69 | Total Predicted No: 343
-[2025-12-07 18:39:02] ✗ PREDICTED NO | Customer: CUST_000913 | Cluster: 17 | Score: -111.61 | Total Predicted No: 344
-[2025-12-07 18:39:02] ✗ PREDICTED NO | Customer: CUST_000854 | Cluster: 9 | Score: -2443.90 | Total Predicted No: 345
-[2025-12-07 18:39:02] ✗ PREDICTED NO | Customer: CUST_000921 | Cluster: 14 | Score: 0.83 | Total Predicted No: 346
-[2025-12-07 18:39:02] ✗ PREDICTED NO | Customer: CUST_000845 | Cluster: 7 | Score: -697.22 | Total Predicted No: 347
-[2025-12-07 18:39:02] ✗ PREDICTED NO | Customer: CUST_000861 | Cluster: 3 | Score: -417.73 | Total Predicted No: 348
-[2025-12-07 18:39:02] ✗ PREDICTED NO | Customer: CUST_000947 | Cluster: 3 | Score: -221.70 | Total Predicted No: 349
-[2025-12-07 18:39:02] ✗ PREDICTED NO | Customer: CUST_000996 | Cluster: 9 | Score: -1805.52 | Total Predicted No: 350
-[2025-12-07 18:39:02] ⟳ Reloading model after 360 predictions...
-[2025-12-07 18:39:02] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:39:03] ✓ Model loaded (Load #37). Components: 29
-[2025-12-07 18:39:03] ✗ PREDICTED NO | Customer: CUST_000921 | Cluster: 14 | Score: 0.83 | Total Predicted No: 351
+[2025-12-07 18:47:32] ✗ PREDICTED NO | Customer: CUST_000053 | Cluster: 9 | Score: -4083.75 | Total Predicted No: 1
+[2025-12-07 18:47:33] ✗ PREDICTED NO | Customer: CUST_000053 | Cluster: 9 | Score: -7732.81 | Total Predicted No: 2
+[2025-12-07 18:47:34] ✗ PREDICTED NO | Customer: CUST_000061 | Cluster: 9 | Score: -4268.93 | Total Predicted No: 3
+[2025-12-07 18:47:34] ✗ PREDICTED NO | Customer: CUST_000053 | Cluster: 9 | Score: -4083.75 | Total Predicted No: 4
+[2025-12-07 18:47:34] ✗ PREDICTED NO | Customer: CUST_000083 | Cluster: 6 | Score: -120.03 | Total Predicted No: 5
+[2025-12-07 18:47:34] ✗ PREDICTED NO | Customer: CUST_000061 | Cluster: 9 | Score: -4268.93 | Total Predicted No: 6
+[2025-12-07 18:47:34] ✗ PREDICTED NO | Customer: CUST_000083 | Cluster: 9 | Score: -318.62 | Total Predicted No: 7
+[2025-12-07 18:47:34] ✗ PREDICTED NO | Customer: CUST_000061 | Cluster: 9 | Score: -6413.12 | Total Predicted No: 8
+[2025-12-07 18:47:34] ✗ PREDICTED NO | Customer: CUST_000056 | Cluster: 3 | Score: -316.63 | Total Predicted No: 9
+[2025-12-07 18:47:34] ✗ PREDICTED NO | Customer: CUST_000078 | Cluster: 2 | Score: -3174.30 | Total Predicted No: 10
+[2025-12-07 18:47:34] ⟳ Reloading model after 10 predictions...
+[2025-12-07 18:47:34] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:47:34] ✓ Model loaded (Load #2). Components: 29
+[2025-12-07 18:47:35] ✗ PREDICTED NO | Customer: CUST_000083 | Cluster: 9 | Score: -318.62 | Total Predicted No: 11
+[2025-12-07 18:47:35] ✗ PREDICTED NO | Customer: CUST_000090 | Cluster: 2 | Score: -1534.82 | Total Predicted No: 12
+[2025-12-07 18:47:35] ✗ PREDICTED NO | Customer: CUST_000126 | Cluster: 16 | Score: -77.31 | Total Predicted No: 13
+[2025-12-07 18:47:35] ✗ PREDICTED NO | Customer: CUST_000090 | Cluster: 2 | Score: -1194.51 | Total Predicted No: 14
+[2025-12-07 18:47:35] ✗ PREDICTED NO | Customer: CUST_000099 | Cluster: 9 | Score: -5208.31 | Total Predicted No: 15
+[2025-12-07 18:47:35] ✗ PREDICTED NO | Customer: CUST_000090 | Cluster: 2 | Score: -1194.51 | Total Predicted No: 16
+[2025-12-07 18:47:35] ✗ PREDICTED NO | Customer: CUST_000116 | Cluster: 7 | Score: -1720.14 | Total Predicted No: 17
+[2025-12-07 18:47:35] ✗ PREDICTED NO | Customer: CUST_000099 | Cluster: 9 | Score: -5290.34 | Total Predicted No: 18
+[2025-12-07 18:47:36] ✗ PREDICTED NO | Customer: CUST_000098 | Cluster: 7 | Score: -1268.03 | Total Predicted No: 19
+[2025-12-07 18:47:36] ✗ PREDICTED NO | Customer: CUST_000099 | Cluster: 9 | Score: -6873.08 | Total Predicted No: 20
+[2025-12-07 18:47:36] ⟳ Reloading model after 20 predictions...
+[2025-12-07 18:47:36] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:47:36] ✓ Model loaded (Load #3). Components: 29
+[2025-12-07 18:47:36] ✗ PREDICTED NO | Customer: CUST_000083 | Cluster: 6 | Score: -120.03 | Total Predicted No: 21
+[2025-12-07 18:47:36] ✗ PREDICTED NO | Customer: CUST_000099 | Cluster: 9 | Score: -5290.34 | Total Predicted No: 22
+[2025-12-07 18:47:36] ✗ PREDICTED NO | Customer: CUST_000099 | Cluster: 9 | Score: -5208.31 | Total Predicted No: 23
+[2025-12-07 18:47:36] ✗ PREDICTED NO | Customer: CUST_000126 | Cluster: 16 | Score: -77.31 | Total Predicted No: 24
+[2025-12-07 18:47:36] ✗ PREDICTED NO | Customer: CUST_000090 | Cluster: 2 | Score: -1420.32 | Total Predicted No: 25
+[2025-12-07 18:47:36] ✗ PREDICTED NO | Customer: CUST_000126 | Cluster: 7 | Score: -126.70 | Total Predicted No: 26
+[2025-12-07 18:47:36] ✗ PREDICTED NO | Customer: CUST_000090 | Cluster: 2 | Score: -1420.32 | Total Predicted No: 27
+[2025-12-07 18:47:36] ✗ PREDICTED NO | Customer: CUST_000083 | Cluster: 9 | Score: -3097.00 | Total Predicted No: 28
+[2025-12-07 18:47:38] ✗ PREDICTED NO | Customer: CUST_000155 | Cluster: 9 | Score: -45795.49 | Total Predicted No: 29
+[2025-12-07 18:47:38] ✗ PREDICTED NO | Customer: CUST_000143 | Cluster: 9 | Score: -786.34 | Total Predicted No: 30
+[2025-12-07 18:47:38] ⟳ Reloading model after 30 predictions...
+[2025-12-07 18:47:38] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:47:38] ✓ Model loaded (Load #4). Components: 29
+[2025-12-07 18:47:38] ✗ PREDICTED NO | Customer: CUST_000159 | Cluster: 9 | Score: -240.62 | Total Predicted No: 31
+[2025-12-07 18:47:38] ✗ PREDICTED NO | Customer: CUST_000159 | Cluster: 9 | Score: -208.81 | Total Predicted No: 32
+[2025-12-07 18:47:38] ✗ PREDICTED NO | Customer: CUST_000126 | Cluster: 7 | Score: -126.70 | Total Predicted No: 33
+[2025-12-07 18:47:39] ✗ PREDICTED NO | Customer: CUST_000143 | Cluster: 3 | Score: -1027.80 | Total Predicted No: 34
+[2025-12-07 18:47:39] ✗ PREDICTED NO | Customer: CUST_000147 | Cluster: 17 | Score: -217.87 | Total Predicted No: 35
+[2025-12-07 18:47:39] ✗ PREDICTED NO | Customer: CUST_000139 | Cluster: 9 | Score: -2730.77 | Total Predicted No: 36
+[2025-12-07 18:47:39] ✗ PREDICTED NO | Customer: CUST_000143 | Cluster: 9 | Score: -786.34 | Total Predicted No: 37
+[2025-12-07 18:47:39] ✗ PREDICTED NO | Customer: CUST_000149 | Cluster: 2 | Score: -876.88 | Total Predicted No: 38
+[2025-12-07 18:47:39] ✗ PREDICTED NO | Customer: CUST_000154 | Cluster: 3 | Score: -210.07 | Total Predicted No: 39
+[2025-12-07 18:47:39] ✗ PREDICTED NO | Customer: CUST_000141 | Cluster: 9 | Score: -874.31 | Total Predicted No: 40
+[2025-12-07 18:47:39] ⟳ Reloading model after 40 predictions...
+[2025-12-07 18:47:39] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:47:39] ✓ Model loaded (Load #5). Components: 29
+[2025-12-07 18:47:39] ✗ PREDICTED NO | Customer: CUST_000153 | Cluster: 2 | Score: -58.45 | Total Predicted No: 41
+[2025-12-07 18:47:39] ✗ PREDICTED NO | Customer: CUST_000153 | Cluster: 2 | Score: -301.96 | Total Predicted No: 42
+[2025-12-07 18:47:39] ✗ PREDICTED NO | Customer: CUST_000126 | Cluster: 7 | Score: -959.33 | Total Predicted No: 43
+[2025-12-07 18:47:40] ✗ PREDICTED NO | Customer: CUST_000153 | Cluster: 2 | Score: -301.96 | Total Predicted No: 44
+[2025-12-07 18:47:40] ✗ PREDICTED NO | Customer: CUST_000153 | Cluster: 2 | Score: -58.45 | Total Predicted No: 45
+[2025-12-07 18:47:40] ✗ PREDICTED NO | Customer: CUST_000159 | Cluster: 9 | Score: -208.81 | Total Predicted No: 46
+[2025-12-07 18:47:40] ✗ PREDICTED NO | Customer: CUST_000153 | Cluster: 3 | Score: -187.70 | Total Predicted No: 47
+[2025-12-07 18:47:41] ✗ PREDICTED NO | Customer: CUST_000190 | Cluster: 18 | Score: -209.63 | Total Predicted No: 48
+[2025-12-07 18:47:41] ✗ PREDICTED NO | Customer: CUST_000192 | Cluster: 2 | Score: -928.76 | Total Predicted No: 49
+[2025-12-07 18:47:41] ✗ PREDICTED NO | Customer: CUST_000205 | Cluster: 9 | Score: -316.98 | Total Predicted No: 50
+[2025-12-07 18:47:41] ⟳ Reloading model after 50 predictions...
+[2025-12-07 18:47:41] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:47:41] ✓ Model loaded (Load #6). Components: 29
+[2025-12-07 18:47:41] ✗ PREDICTED NO | Customer: CUST_000162 | Cluster: 9 | Score: -1690.28 | Total Predicted No: 51
+[2025-12-07 18:47:41] ✗ PREDICTED NO | Customer: CUST_000164 | Cluster: 3 | Score: -408.05 | Total Predicted No: 52
+[2025-12-07 18:47:42] ✗ PREDICTED NO | Customer: CUST_000196 | Cluster: 17 | Score: -151.28 | Total Predicted No: 53
+[2025-12-07 18:47:42] ✗ PREDICTED NO | Customer: CUST_000190 | Cluster: 18 | Score: -270.87 | Total Predicted No: 54
+[2025-12-07 18:47:42] ✗ PREDICTED NO | Customer: CUST_000196 | Cluster: 1 | Score: -338.82 | Total Predicted No: 55
+[2025-12-07 18:47:42] ✗ PREDICTED NO | Customer: CUST_000162 | Cluster: 9 | Score: -1755.77 | Total Predicted No: 56
+[2025-12-07 18:47:42] ✗ PREDICTED NO | Customer: CUST_000188 | Cluster: 2 | Score: -205.12 | Total Predicted No: 57
+[2025-12-07 18:47:42] ✗ PREDICTED NO | Customer: CUST_000159 | Cluster: 9 | Score: -363.56 | Total Predicted No: 58
+[2025-12-07 18:47:42] ✗ PREDICTED NO | Customer: CUST_000205 | Cluster: 9 | Score: -1011.87 | Total Predicted No: 59
+[2025-12-07 18:47:42] ✗ PREDICTED NO | Customer: CUST_000190 | Cluster: 18 | Score: -209.63 | Total Predicted No: 60
+[2025-12-07 18:47:42] ⟳ Reloading model after 60 predictions...
+[2025-12-07 18:47:42] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:47:42] ✓ Model loaded (Load #7). Components: 29
+[2025-12-07 18:47:42] ✗ PREDICTED NO | Customer: CUST_000192 | Cluster: 2 | Score: -267.79 | Total Predicted No: 61
+[2025-12-07 18:47:43] ✗ PREDICTED NO | Customer: CUST_000202 | Cluster: 6 | Score: -2722.00 | Total Predicted No: 62
+[2025-12-07 18:47:43] ✗ PREDICTED NO | Customer: CUST_000192 | Cluster: 9 | Score: -1043.26 | Total Predicted No: 63
+[2025-12-07 18:47:43] ✗ PREDICTED NO | Customer: CUST_000162 | Cluster: 9 | Score: -1690.28 | Total Predicted No: 64
+[2025-12-07 18:47:43] ✗ PREDICTED NO | Customer: CUST_000159 | Cluster: 9 | Score: -240.62 | Total Predicted No: 65
+[2025-12-07 18:47:43] ✗ PREDICTED NO | Customer: CUST_000188 | Cluster: 3 | Score: -90.20 | Total Predicted No: 66
+[2025-12-07 18:47:43] ✗ PREDICTED NO | Customer: CUST_000190 | Cluster: 9 | Score: -52.68 | Total Predicted No: 67
+[2025-12-07 18:47:43] ✗ PREDICTED NO | Customer: CUST_000192 | Cluster: 9 | Score: -1043.26 | Total Predicted No: 68
+[2025-12-07 18:47:43] ✗ PREDICTED NO | Customer: CUST_000202 | Cluster: 7 | Score: -221.45 | Total Predicted No: 69
+[2025-12-07 18:47:43] ✗ PREDICTED NO | Customer: CUST_000202 | Cluster: 17 | Score: -44.87 | Total Predicted No: 70
+[2025-12-07 18:47:43] ⟳ Reloading model after 70 predictions...
+[2025-12-07 18:47:44] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:47:44] ✓ Model loaded (Load #8). Components: 29
+[2025-12-07 18:47:44] ✗ PREDICTED NO | Customer: CUST_000194 | Cluster: 9 | Score: -1213.63 | Total Predicted No: 71
+[2025-12-07 18:47:44] ✗ PREDICTED NO | Customer: CUST_000194 | Cluster: 9 | Score: -1213.63 | Total Predicted No: 72
+[2025-12-07 18:47:44] ✗ PREDICTED NO | Customer: CUST_000194 | Cluster: 9 | Score: -1935.83 | Total Predicted No: 73
+[2025-12-07 18:47:44] ✗ PREDICTED NO | Customer: CUST_000188 | Cluster: 2 | Score: -289.92 | Total Predicted No: 74
+[2025-12-07 18:47:44] ✗ PREDICTED NO | Customer: CUST_000205 | Cluster: 9 | Score: -81.40 | Total Predicted No: 75
+[2025-12-07 18:47:44] ✗ PREDICTED NO | Customer: CUST_000194 | Cluster: 9 | Score: -634.22 | Total Predicted No: 76
+[2025-12-07 18:47:44] ✗ PREDICTED NO | Customer: CUST_000202 | Cluster: 7 | Score: -221.45 | Total Predicted No: 77
+[2025-12-07 18:47:45] ✗ PREDICTED NO | Customer: CUST_000164 | Cluster: 3 | Score: -78.33 | Total Predicted No: 78
+[2025-12-07 18:47:45] ✗ PREDICTED NO | Customer: CUST_000188 | Cluster: 2 | Score: -205.12 | Total Predicted No: 79
+[2025-12-07 18:47:45] ✗ PREDICTED NO | Customer: CUST_000164 | Cluster: 3 | Score: -78.33 | Total Predicted No: 80
+[2025-12-07 18:47:45] ⟳ Reloading model after 80 predictions...
+[2025-12-07 18:47:45] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:47:45] ✓ Model loaded (Load #9). Components: 29
+[2025-12-07 18:47:45] ✗ PREDICTED NO | Customer: CUST_000194 | Cluster: 9 | Score: -1946.10 | Total Predicted No: 81
+[2025-12-07 18:47:45] ✗ PREDICTED NO | Customer: CUST_000162 | Cluster: 7 | Score: -1020.86 | Total Predicted No: 82
+[2025-12-07 18:47:45] ✗ PREDICTED NO | Customer: CUST_000190 | Cluster: 9 | Score: -52.68 | Total Predicted No: 83
+[2025-12-07 18:47:45] ✗ PREDICTED NO | Customer: CUST_000162 | Cluster: 7 | Score: -1020.86 | Total Predicted No: 84
+[2025-12-07 18:47:45] ✗ PREDICTED NO | Customer: CUST_000205 | Cluster: 9 | Score: -316.98 | Total Predicted No: 85
+[2025-12-07 18:47:45] ✗ PREDICTED NO | Customer: CUST_000194 | Cluster: 9 | Score: -634.22 | Total Predicted No: 86
+[2025-12-07 18:47:46] ✗ PREDICTED NO | Customer: CUST_000190 | Cluster: 18 | Score: -270.87 | Total Predicted No: 87
+[2025-12-07 18:47:46] ✗ PREDICTED NO | Customer: CUST_000205 | Cluster: 9 | Score: -1011.87 | Total Predicted No: 88
+[2025-12-07 18:47:46] ✗ PREDICTED NO | Customer: CUST_000202 | Cluster: 7 | Score: -636.32 | Total Predicted No: 89
+[2025-12-07 18:47:46] ✗ PREDICTED NO | Customer: CUST_000202 | Cluster: 7 | Score: -636.32 | Total Predicted No: 90
+[2025-12-07 18:47:46] ⟳ Reloading model after 90 predictions...
+[2025-12-07 18:47:46] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:47:46] ✓ Model loaded (Load #10). Components: 29
+[2025-12-07 18:47:46] ✗ PREDICTED NO | Customer: CUST_000205 | Cluster: 9 | Score: -81.40 | Total Predicted No: 91
+[2025-12-07 18:47:46] ✗ PREDICTED NO | Customer: CUST_000188 | Cluster: 3 | Score: -90.20 | Total Predicted No: 92
+[2025-12-07 18:47:46] ✗ PREDICTED NO | Customer: CUST_000192 | Cluster: 2 | Score: -267.79 | Total Predicted No: 93
+[2025-12-07 18:47:47] ✗ PREDICTED NO | Customer: CUST_000194 | Cluster: 9 | Score: -1935.83 | Total Predicted No: 94
+[2025-12-07 18:47:47] ✗ PREDICTED NO | Customer: CUST_000164 | Cluster: 3 | Score: -408.05 | Total Predicted No: 95
+[2025-12-07 18:47:47] ✗ PREDICTED NO | Customer: CUST_000202 | Cluster: 17 | Score: -44.87 | Total Predicted No: 96
+[2025-12-07 18:47:47] ✗ PREDICTED NO | Customer: CUST_000190 | Cluster: 18 | Score: -304.45 | Total Predicted No: 97
+[2025-12-07 18:47:47] ✗ PREDICTED NO | Customer: CUST_000196 | Cluster: 17 | Score: -151.28 | Total Predicted No: 98
+[2025-12-07 18:47:47] ✗ PREDICTED NO | Customer: CUST_000205 | Cluster: 9 | Score: -2377.21 | Total Predicted No: 99
+[2025-12-07 18:47:47] ✗ PREDICTED NO | Customer: CUST_000164 | Cluster: 3 | Score: -398.90 | Total Predicted No: 100
+[2025-12-07 18:47:47] ⟳ Reloading model after 100 predictions...
+[2025-12-07 18:47:47] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:47:47] ✓ Model loaded (Load #11). Components: 31
+[2025-12-07 18:47:47] ✗ PREDICTED NO | Customer: CUST_000270 | Cluster: 9 | Score: -1564.44 | Total Predicted No: 101
+[2025-12-07 18:47:47] ✗ PREDICTED NO | Customer: CUST_000207 | Cluster: 9 | Score: -8384.16 | Total Predicted No: 102
+[2025-12-07 18:47:48] ✗ PREDICTED NO | Customer: CUST_000220 | Cluster: 3 | Score: -1.51 | Total Predicted No: 103
+[2025-12-07 18:47:48] ✗ PREDICTED NO | Customer: CUST_000270 | Cluster: 9 | Score: -91.71 | Total Predicted No: 104
+[2025-12-07 18:47:48] ✗ PREDICTED NO | Customer: CUST_000208 | Cluster: 16 | Score: -128.98 | Total Predicted No: 105
+[2025-12-07 18:47:48] ✗ PREDICTED NO | Customer: CUST_000214 | Cluster: 9 | Score: -39116.09 | Total Predicted No: 106
+[2025-12-07 18:47:48] ✗ PREDICTED NO | Customer: CUST_000237 | Cluster: 9 | Score: -542.82 | Total Predicted No: 107
+[2025-12-07 18:47:48] ✗ PREDICTED NO | Customer: CUST_000279 | Cluster: 2 | Score: -284.98 | Total Predicted No: 108
+[2025-12-07 18:47:48] ✗ PREDICTED NO | Customer: CUST_000360 | Cluster: 2 | Score: -1691.77 | Total Predicted No: 109
+[2025-12-07 18:47:48] ✗ PREDICTED NO | Customer: CUST_000282 | Cluster: 3 | Score: -35.99 | Total Predicted No: 110
+[2025-12-07 18:47:48] ⟳ Reloading model after 110 predictions...
+[2025-12-07 18:47:48] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:47:48] ✓ Model loaded (Load #12). Components: 31
+[2025-12-07 18:47:48] ✗ PREDICTED NO | Customer: CUST_000226 | Cluster: 9 | Score: -3864.57 | Total Predicted No: 111
+[2025-12-07 18:47:49] ✗ PREDICTED NO | Customer: CUST_000237 | Cluster: 9 | Score: -951.71 | Total Predicted No: 112
+[2025-12-07 18:47:49] ✗ PREDICTED NO | Customer: CUST_000307 | Cluster: 7 | Score: -1152.99 | Total Predicted No: 113
+[2025-12-07 18:47:49] ✗ PREDICTED NO | Customer: CUST_000270 | Cluster: 9 | Score: -1518.37 | Total Predicted No: 114
+[2025-12-07 18:47:49] ✗ PREDICTED NO | Customer: CUST_000366 | Cluster: 9 | Score: -498.49 | Total Predicted No: 115
+[2025-12-07 18:47:49] ✗ PREDICTED NO | Customer: CUST_000270 | Cluster: 9 | Score: -236.87 | Total Predicted No: 116
+[2025-12-07 18:47:49] ✗ PREDICTED NO | Customer: CUST_000242 | Cluster: 9 | Score: -194.57 | Total Predicted No: 117
+[2025-12-07 18:47:49] ✗ PREDICTED NO | Customer: CUST_000242 | Cluster: 9 | Score: -194.57 | Total Predicted No: 118
+[2025-12-07 18:47:49] ✗ PREDICTED NO | Customer: CUST_000208 | Cluster: 7 | Score: -481.15 | Total Predicted No: 119
+[2025-12-07 18:47:49] ✗ PREDICTED NO | Customer: CUST_000226 | Cluster: 9 | Score: -996.90 | Total Predicted No: 120
+[2025-12-07 18:47:49] ⟳ Reloading model after 120 predictions...
+[2025-12-07 18:47:49] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:47:49] ✓ Model loaded (Load #13). Components: 31
+[2025-12-07 18:47:50] ✗ PREDICTED NO | Customer: CUST_000237 | Cluster: 9 | Score: -1105.74 | Total Predicted No: 121
+[2025-12-07 18:47:50] ✗ PREDICTED NO | Customer: CUST_000318 | Cluster: 9 | Score: -1945.31 | Total Predicted No: 122
+[2025-12-07 18:47:50] ✗ PREDICTED NO | Customer: CUST_000279 | Cluster: 2 | Score: -284.98 | Total Predicted No: 123
+[2025-12-07 18:47:50] ✗ PREDICTED NO | Customer: CUST_000237 | Cluster: 9 | Score: -542.82 | Total Predicted No: 124
+[2025-12-07 18:47:50] ✗ PREDICTED NO | Customer: CUST_000208 | Cluster: 7 | Score: -1191.84 | Total Predicted No: 125
+[2025-12-07 18:47:50] ✗ PREDICTED NO | Customer: CUST_000282 | Cluster: 3 | Score: -17.16 | Total Predicted No: 126
+[2025-12-07 18:47:50] ✗ PREDICTED NO | Customer: CUST_000270 | Cluster: 9 | Score: -236.87 | Total Predicted No: 127
+[2025-12-07 18:47:50] ✗ PREDICTED NO | Customer: CUST_000237 | Cluster: 12 | Score: -7.17 | Total Predicted No: 128
+[2025-12-07 18:47:50] ✗ PREDICTED NO | Customer: CUST_000237 | Cluster: 9 | Score: -119.86 | Total Predicted No: 129
+[2025-12-07 18:47:51] ✗ PREDICTED NO | Customer: CUST_000226 | Cluster: 9 | Score: -1945.07 | Total Predicted No: 130
+[2025-12-07 18:47:51] ⟳ Reloading model after 130 predictions...
+[2025-12-07 18:47:51] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:47:51] ✓ Model loaded (Load #14). Components: 31
+[2025-12-07 18:47:51] ✗ PREDICTED NO | Customer: CUST_000220 | Cluster: 3 | Score: -57.01 | Total Predicted No: 131
+[2025-12-07 18:47:51] ✗ PREDICTED NO | Customer: CUST_000208 | Cluster: 16 | Score: -128.98 | Total Predicted No: 132
+[2025-12-07 18:47:51] ✗ PREDICTED NO | Customer: CUST_000236 | Cluster: 9 | Score: -102.98 | Total Predicted No: 133
+[2025-12-07 18:47:51] ✗ PREDICTED NO | Customer: CUST_000207 | Cluster: 9 | Score: -7619.31 | Total Predicted No: 134
+[2025-12-07 18:47:51] ✗ PREDICTED NO | Customer: CUST_000236 | Cluster: 9 | Score: -1170.99 | Total Predicted No: 135
+[2025-12-07 18:47:52] ✗ PREDICTED NO | Customer: CUST_000366 | Cluster: 12 | Score: -17.30 | Total Predicted No: 136
+[2025-12-07 18:47:52] ✗ PREDICTED NO | Customer: CUST_000282 | Cluster: 3 | Score: -17.16 | Total Predicted No: 137
+[2025-12-07 18:47:52] ✗ PREDICTED NO | Customer: CUST_000237 | Cluster: 9 | Score: -119.86 | Total Predicted No: 138
+[2025-12-07 18:47:52] ✗ PREDICTED NO | Customer: CUST_000295 | Cluster: 2 | Score: -115.89 | Total Predicted No: 139
+[2025-12-07 18:47:52] ✗ PREDICTED NO | Customer: CUST_000318 | Cluster: 9 | Score: -7368.07 | Total Predicted No: 140
+[2025-12-07 18:47:52] ⟳ Reloading model after 140 predictions...
+[2025-12-07 18:47:52] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:47:52] ✓ Model loaded (Load #15). Components: 31
+[2025-12-07 18:47:52] ✗ PREDICTED NO | Customer: CUST_000242 | Cluster: 7 | Score: -464.58 | Total Predicted No: 141
+[2025-12-07 18:47:52] ✗ PREDICTED NO | Customer: CUST_000236 | Cluster: 9 | Score: -690.62 | Total Predicted No: 142
+[2025-12-07 18:47:52] ✗ PREDICTED NO | Customer: CUST_000242 | Cluster: 7 | Score: -1512.94 | Total Predicted No: 143
+[2025-12-07 18:47:52] ✗ PREDICTED NO | Customer: CUST_000366 | Cluster: 9 | Score: -498.49 | Total Predicted No: 144
+[2025-12-07 18:47:53] ✗ PREDICTED NO | Customer: CUST_000270 | Cluster: 9 | Score: -91.71 | Total Predicted No: 145
+[2025-12-07 18:47:53] ✗ PREDICTED NO | Customer: CUST_000214 | Cluster: 9 | Score: -25360.05 | Total Predicted No: 146
+[2025-12-07 18:47:53] ✗ PREDICTED NO | Customer: CUST_000207 | Cluster: 9 | Score: -8163.35 | Total Predicted No: 147
+[2025-12-07 18:47:53] ✗ PREDICTED NO | Customer: CUST_000237 | Cluster: 12 | Score: -7.17 | Total Predicted No: 148
+[2025-12-07 18:47:53] ✗ PREDICTED NO | Customer: CUST_000282 | Cluster: 3 | Score: -297.82 | Total Predicted No: 149
+[2025-12-07 18:47:53] ✗ PREDICTED NO | Customer: CUST_000318 | Cluster: 9 | Score: -7368.07 | Total Predicted No: 150
+[2025-12-07 18:47:53] ⟳ Reloading model after 150 predictions...
+[2025-12-07 18:47:53] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:47:53] ✓ Model loaded (Load #16). Components: 31
+[2025-12-07 18:47:53] ✗ PREDICTED NO | Customer: CUST_000236 | Cluster: 9 | Score: -102.98 | Total Predicted No: 151
+[2025-12-07 18:47:53] ✗ PREDICTED NO | Customer: CUST_000360 | Cluster: 9 | Score: -477.56 | Total Predicted No: 152
+[2025-12-07 18:47:53] ✗ PREDICTED NO | Customer: CUST_000237 | Cluster: 9 | Score: -951.71 | Total Predicted No: 153
+[2025-12-07 18:47:54] ✗ PREDICTED NO | Customer: CUST_000226 | Cluster: 9 | Score: -326.11 | Total Predicted No: 154
+[2025-12-07 18:47:54] ✗ PREDICTED NO | Customer: CUST_000207 | Cluster: 9 | Score: -8384.16 | Total Predicted No: 155
+[2025-12-07 18:47:54] ✗ PREDICTED NO | Customer: CUST_000242 | Cluster: 7 | Score: -464.58 | Total Predicted No: 156
+[2025-12-07 18:47:54] ✗ PREDICTED NO | Customer: CUST_000318 | Cluster: 9 | Score: -7380.99 | Total Predicted No: 157
+[2025-12-07 18:47:54] ✗ PREDICTED NO | Customer: CUST_000295 | Cluster: 2 | Score: -448.13 | Total Predicted No: 158
+[2025-12-07 18:47:54] ✗ PREDICTED NO | Customer: CUST_000226 | Cluster: 9 | Score: -996.90 | Total Predicted No: 159
+[2025-12-07 18:47:54] ✗ PREDICTED NO | Customer: CUST_000226 | Cluster: 9 | Score: -326.11 | Total Predicted No: 160
+[2025-12-07 18:47:54] ⟳ Reloading model after 160 predictions...
+[2025-12-07 18:47:54] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:47:54] ✓ Model loaded (Load #17). Components: 31
+[2025-12-07 18:47:55] ✗ PREDICTED NO | Customer: CUST_000208 | Cluster: 7 | Score: -1217.42 | Total Predicted No: 161
+[2025-12-07 18:47:55] ✗ PREDICTED NO | Customer: CUST_000236 | Cluster: 9 | Score: -690.62 | Total Predicted No: 162
+[2025-12-07 18:47:55] ✗ PREDICTED NO | Customer: CUST_000360 | Cluster: 9 | Score: -322.28 | Total Predicted No: 163
+[2025-12-07 18:47:55] ✗ PREDICTED NO | Customer: CUST_000270 | Cluster: 9 | Score: -361.45 | Total Predicted No: 164
+[2025-12-07 18:47:55] ✗ PREDICTED NO | Customer: CUST_000220 | Cluster: 3 | Score: -1.51 | Total Predicted No: 165
+[2025-12-07 18:47:55] ✗ PREDICTED NO | Customer: CUST_000282 | Cluster: 3 | Score: -35.99 | Total Predicted No: 166
+[2025-12-07 18:47:55] ✗ PREDICTED NO | Customer: CUST_000366 | Cluster: 12 | Score: -17.30 | Total Predicted No: 167
+[2025-12-07 18:47:55] ✗ PREDICTED NO | Customer: CUST_000270 | Cluster: 9 | Score: -361.45 | Total Predicted No: 168
+[2025-12-07 18:47:55] ✗ PREDICTED NO | Customer: CUST_000366 | Cluster: 6 | Score: -1097.68 | Total Predicted No: 169
+[2025-12-07 18:47:55] ✗ PREDICTED NO | Customer: CUST_000279 | Cluster: 2 | Score: -1534.37 | Total Predicted No: 170
+[2025-12-07 18:47:56] ⟳ Reloading model after 170 predictions...
+[2025-12-07 18:47:56] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:47:56] ✓ Model loaded (Load #18). Components: 31
+[2025-12-07 18:47:56] ✗ PREDICTED NO | Customer: CUST_000226 | Cluster: 9 | Score: -1945.07 | Total Predicted No: 171
+[2025-12-07 18:47:56] ✗ PREDICTED NO | Customer: CUST_000208 | Cluster: 7 | Score: -1191.84 | Total Predicted No: 172
+[2025-12-07 18:47:56] ✗ PREDICTED NO | Customer: CUST_000208 | Cluster: 7 | Score: -481.15 | Total Predicted No: 173
+[2025-12-07 18:47:56] ✗ PREDICTED NO | Customer: CUST_000214 | Cluster: 9 | Score: -25360.05 | Total Predicted No: 174
+[2025-12-07 18:47:56] ✗ PREDICTED NO | Customer: CUST_000360 | Cluster: 9 | Score: -322.28 | Total Predicted No: 175
+[2025-12-07 18:47:56] ✗ PREDICTED NO | Customer: CUST_000270 | Cluster: 9 | Score: -1518.37 | Total Predicted No: 176
+[2025-12-07 18:47:56] ✗ PREDICTED NO | Customer: CUST_000220 | Cluster: 3 | Score: -57.01 | Total Predicted No: 177
+[2025-12-07 18:47:56] ✗ PREDICTED NO | Customer: CUST_000207 | Cluster: 9 | Score: -7619.31 | Total Predicted No: 178
+[2025-12-07 18:47:57] ✗ PREDICTED NO | Customer: CUST_000360 | Cluster: 9 | Score: -477.56 | Total Predicted No: 179
+[2025-12-07 18:47:57] ✗ PREDICTED NO | Customer: CUST_000220 | Cluster: 3 | Score: -211.27 | Total Predicted No: 180
+[2025-12-07 18:47:57] ⟳ Reloading model after 180 predictions...
+[2025-12-07 18:47:57] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:47:57] ✓ Model loaded (Load #19). Components: 31
+[2025-12-07 18:47:57] ✗ PREDICTED NO | Customer: CUST_000295 | Cluster: 2 | Score: -115.89 | Total Predicted No: 181
+[2025-12-07 18:47:57] ✗ PREDICTED NO | Customer: CUST_000318 | Cluster: 9 | Score: -1945.31 | Total Predicted No: 182
+[2025-12-07 18:47:57] ✗ PREDICTED NO | Customer: CUST_000424 | Cluster: 9 | Score: -900.91 | Total Predicted No: 183
+[2025-12-07 18:47:57] ✗ PREDICTED NO | Customer: CUST_000424 | Cluster: 9 | Score: -928.83 | Total Predicted No: 184
+[2025-12-07 18:47:57] ✗ PREDICTED NO | Customer: CUST_000570 | Cluster: 2 | Score: -308.14 | Total Predicted No: 185
+[2025-12-07 18:47:57] ✗ PREDICTED NO | Customer: CUST_000455 | Cluster: 17 | Score: -32.46 | Total Predicted No: 186
+[2025-12-07 18:47:58] ✗ PREDICTED NO | Customer: CUST_000406 | Cluster: 2 | Score: -549.38 | Total Predicted No: 187
+[2025-12-07 18:47:58] ✗ PREDICTED NO | Customer: CUST_000424 | Cluster: 9 | Score: -41.36 | Total Predicted No: 188
+[2025-12-07 18:47:58] ✗ PREDICTED NO | Customer: CUST_000570 | Cluster: 3 | Score: -20.30 | Total Predicted No: 189
+[2025-12-07 18:47:58] ✗ PREDICTED NO | Customer: CUST_000597 | Cluster: 3 | Score: -778.07 | Total Predicted No: 190
+[2025-12-07 18:47:58] ⟳ Reloading model after 190 predictions...
+[2025-12-07 18:47:58] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:47:58] ✓ Model loaded (Load #20). Components: 31
+[2025-12-07 18:47:58] ✗ PREDICTED NO | Customer: CUST_000465 | Cluster: 9 | Score: -363.48 | Total Predicted No: 191
+[2025-12-07 18:47:58] ✗ PREDICTED NO | Customer: CUST_000366 | Cluster: 6 | Score: -1691.86 | Total Predicted No: 192
+[2025-12-07 18:47:58] ✗ PREDICTED NO | Customer: CUST_000424 | Cluster: 9 | Score: -928.83 | Total Predicted No: 193
+[2025-12-07 18:47:58] ✗ PREDICTED NO | Customer: CUST_000482 | Cluster: 2 | Score: -8645.46 | Total Predicted No: 194
+[2025-12-07 18:47:59] ✗ PREDICTED NO | Customer: CUST_000489 | Cluster: 7 | Score: -1318.90 | Total Predicted No: 195
+[2025-12-07 18:47:59] ✗ PREDICTED NO | Customer: CUST_000597 | Cluster: 2 | Score: -71.47 | Total Predicted No: 196
+[2025-12-07 18:47:59] ✗ PREDICTED NO | Customer: CUST_000538 | Cluster: 16 | Score: -339.00 | Total Predicted No: 197
+[2025-12-07 18:47:59] ✗ PREDICTED NO | Customer: CUST_000407 | Cluster: 3 | Score: -1058.25 | Total Predicted No: 198
+[2025-12-07 18:47:59] ✗ PREDICTED NO | Customer: CUST_000490 | Cluster: 17 | Score: -409.20 | Total Predicted No: 199
+[2025-12-07 18:47:59] ✗ PREDICTED NO | Customer: CUST_000527 | Cluster: 7 | Score: -1116.75 | Total Predicted No: 200
+[2025-12-07 18:47:59] ⟳ Reloading model after 200 predictions...
+[2025-12-07 18:47:59] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:47:59] ✓ Model loaded (Load #21). Components: 31
+[2025-12-07 18:47:59] ✗ PREDICTED NO | Customer: CUST_000482 | Cluster: 3 | Score: -12788.73 | Total Predicted No: 201
+[2025-12-07 18:48:00] ✗ PREDICTED NO | Customer: CUST_000442 | Cluster: 9 | Score: -1756.40 | Total Predicted No: 202
+[2025-12-07 18:48:00] ✗ PREDICTED NO | Customer: CUST_000476 | Cluster: 26 | Score: -47.38 | Total Predicted No: 203
+[2025-12-07 18:48:00] ✗ PREDICTED NO | Customer: CUST_000476 | Cluster: 3 | Score: -455.03 | Total Predicted No: 204
+[2025-12-07 18:48:00] ✗ PREDICTED NO | Customer: CUST_000509 | Cluster: 3 | Score: -873.98 | Total Predicted No: 205
+[2025-12-07 18:48:00] ✗ PREDICTED NO | Customer: CUST_000482 | Cluster: 2 | Score: -8645.46 | Total Predicted No: 206
+[2025-12-07 18:48:00] ✗ PREDICTED NO | Customer: CUST_000499 | Cluster: 9 | Score: -171.46 | Total Predicted No: 207
+[2025-12-07 18:48:00] ✗ PREDICTED NO | Customer: CUST_000442 | Cluster: 9 | Score: -225.59 | Total Predicted No: 208
+[2025-12-07 18:48:01] ✗ PREDICTED NO | Customer: CUST_000499 | Cluster: 9 | Score: -1123.12 | Total Predicted No: 209
+[2025-12-07 18:48:01] ✗ PREDICTED NO | Customer: CUST_000449 | Cluster: 9 | Score: -21.19 | Total Predicted No: 210
+[2025-12-07 18:48:01] ⟳ Reloading model after 210 predictions...
+[2025-12-07 18:48:01] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:01] ✓ Model loaded (Load #22). Components: 31
+[2025-12-07 18:48:01] ✗ PREDICTED NO | Customer: CUST_000572 | Cluster: 16 | Score: -325.94 | Total Predicted No: 211
+[2025-12-07 18:48:01] ✗ PREDICTED NO | Customer: CUST_000449 | Cluster: 9 | Score: -891.92 | Total Predicted No: 212
+[2025-12-07 18:48:01] ✗ PREDICTED NO | Customer: CUST_000442 | Cluster: 9 | Score: -53.66 | Total Predicted No: 213
+[2025-12-07 18:48:01] ✗ PREDICTED NO | Customer: CUST_000570 | Cluster: 3 | Score: -86.96 | Total Predicted No: 214
+[2025-12-07 18:48:01] ✗ PREDICTED NO | Customer: CUST_000385 | Cluster: 16 | Score: -95.37 | Total Predicted No: 215
+[2025-12-07 18:48:02] ✗ PREDICTED NO | Customer: CUST_000449 | Cluster: 9 | Score: -21.19 | Total Predicted No: 216
+[2025-12-07 18:48:02] ✗ PREDICTED NO | Customer: CUST_000407 | Cluster: 9 | Score: -1000.26 | Total Predicted No: 217
+[2025-12-07 18:48:02] ✗ PREDICTED NO | Customer: CUST_000499 | Cluster: 9 | Score: -32.94 | Total Predicted No: 218
+[2025-12-07 18:48:02] ✗ PREDICTED NO | Customer: CUST_000489 | Cluster: 16 | Score: -494.05 | Total Predicted No: 219
+[2025-12-07 18:48:02] ✗ PREDICTED NO | Customer: CUST_000476 | Cluster: 26 | Score: -47.38 | Total Predicted No: 220
+[2025-12-07 18:48:02] ⟳ Reloading model after 220 predictions...
+[2025-12-07 18:48:02] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:02] ✓ Model loaded (Load #23). Components: 31
+[2025-12-07 18:48:02] ✗ PREDICTED NO | Customer: CUST_000489 | Cluster: 10 | Score: -0.23 | Total Predicted No: 221
+[2025-12-07 18:48:02] ✗ PREDICTED NO | Customer: CUST_000442 | Cluster: 9 | Score: -225.59 | Total Predicted No: 222
+[2025-12-07 18:48:02] ✗ PREDICTED NO | Customer: CUST_000449 | Cluster: 9 | Score: -1138.01 | Total Predicted No: 223
+[2025-12-07 18:48:03] ✗ PREDICTED NO | Customer: CUST_000476 | Cluster: 2 | Score: -152.51 | Total Predicted No: 224
+[2025-12-07 18:48:03] ✗ PREDICTED NO | Customer: CUST_000407 | Cluster: 3 | Score: -1118.39 | Total Predicted No: 225
+[2025-12-07 18:48:03] ✗ PREDICTED NO | Customer: CUST_000385 | Cluster: 16 | Score: -265.77 | Total Predicted No: 226
+[2025-12-07 18:48:03] ✗ PREDICTED NO | Customer: CUST_000405 | Cluster: 9 | Score: -2281.19 | Total Predicted No: 227
+[2025-12-07 18:48:03] ✗ PREDICTED NO | Customer: CUST_000424 | Cluster: 9 | Score: -1001.13 | Total Predicted No: 228
+[2025-12-07 18:48:03] ✗ PREDICTED NO | Customer: CUST_000490 | Cluster: 26 | Score: -26.98 | Total Predicted No: 229
+[2025-12-07 18:48:04] ✗ PREDICTED NO | Customer: CUST_000455 | Cluster: 17 | Score: -32.46 | Total Predicted No: 230
+[2025-12-07 18:48:04] ⟳ Reloading model after 230 predictions...
+[2025-12-07 18:48:04] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:04] ✓ Model loaded (Load #24). Components: 32
+[2025-12-07 18:48:04] ✗ PREDICTED NO | Customer: CUST_000597 | Cluster: 2 | Score: -1077.50 | Total Predicted No: 231
+[2025-12-07 18:48:04] ✗ PREDICTED NO | Customer: CUST_000572 | Cluster: 3 | Score: -21.70 | Total Predicted No: 232
+[2025-12-07 18:48:04] ✗ PREDICTED NO | Customer: CUST_000406 | Cluster: 2 | Score: -549.38 | Total Predicted No: 233
+[2025-12-07 18:48:04] ✗ PREDICTED NO | Customer: CUST_000375 | Cluster: 3 | Score: -753.57 | Total Predicted No: 234
+[2025-12-07 18:48:04] ✗ PREDICTED NO | Customer: CUST_000489 | Cluster: 7 | Score: -496.78 | Total Predicted No: 235
+[2025-12-07 18:48:05] ✗ PREDICTED NO | Customer: CUST_000387 | Cluster: 9 | Score: -89.42 | Total Predicted No: 236
+[2025-12-07 18:48:05] ✗ PREDICTED NO | Customer: CUST_000406 | Cluster: 2 | Score: -437.48 | Total Predicted No: 237
+[2025-12-07 18:48:05] ✗ PREDICTED NO | Customer: CUST_000405 | Cluster: 9 | Score: -2627.09 | Total Predicted No: 238
+[2025-12-07 18:48:05] ✗ PREDICTED NO | Customer: CUST_000476 | Cluster: 3 | Score: -413.38 | Total Predicted No: 239
+[2025-12-07 18:48:05] ✗ PREDICTED NO | Customer: CUST_000455 | Cluster: 1 | Score: -272.19 | Total Predicted No: 240
+[2025-12-07 18:48:05] ⟳ Reloading model after 240 predictions...
+[2025-12-07 18:48:05] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:05] ✓ Model loaded (Load #25). Components: 32
+[2025-12-07 18:48:05] ✗ PREDICTED NO | Customer: CUST_000572 | Cluster: 16 | Score: -341.69 | Total Predicted No: 241
+[2025-12-07 18:48:05] ✗ PREDICTED NO | Customer: CUST_000407 | Cluster: 3 | Score: -1118.39 | Total Predicted No: 242
+[2025-12-07 18:48:05] ✗ PREDICTED NO | Customer: CUST_000509 | Cluster: 2 | Score: -271.49 | Total Predicted No: 243
+[2025-12-07 18:48:06] ✗ PREDICTED NO | Customer: CUST_000489 | Cluster: 7 | Score: -690.14 | Total Predicted No: 244
+[2025-12-07 18:48:06] ✗ PREDICTED NO | Customer: CUST_000387 | Cluster: 2 | Score: -532.93 | Total Predicted No: 245
+[2025-12-07 18:48:06] ✗ PREDICTED NO | Customer: CUST_000509 | Cluster: 3 | Score: -873.98 | Total Predicted No: 246
+[2025-12-07 18:48:06] ✗ PREDICTED NO | Customer: CUST_000523 | Cluster: 3 | Score: -28.36 | Total Predicted No: 247
+[2025-12-07 18:48:06] ✗ PREDICTED NO | Customer: CUST_000375 | Cluster: 3 | Score: -44.51 | Total Predicted No: 248
+[2025-12-07 18:48:06] ✗ PREDICTED NO | Customer: CUST_000572 | Cluster: 3 | Score: -21.70 | Total Predicted No: 249
+[2025-12-07 18:48:06] ✗ PREDICTED NO | Customer: CUST_000570 | Cluster: 3 | Score: -20.30 | Total Predicted No: 250
+[2025-12-07 18:48:06] ⟳ Reloading model after 250 predictions...
+[2025-12-07 18:48:06] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:06] ✓ Model loaded (Load #26). Components: 32
+[2025-12-07 18:48:07] ✗ PREDICTED NO | Customer: CUST_000385 | Cluster: 17 | Score: -62.17 | Total Predicted No: 251
+[2025-12-07 18:48:07] ✗ PREDICTED NO | Customer: CUST_000375 | Cluster: 3 | Score: -44.51 | Total Predicted No: 252
+[2025-12-07 18:48:07] ✗ PREDICTED NO | Customer: CUST_000509 | Cluster: 2 | Score: -271.49 | Total Predicted No: 253
+[2025-12-07 18:48:07] ✗ PREDICTED NO | Customer: CUST_000572 | Cluster: 2 | Score: -163.59 | Total Predicted No: 254
+[2025-12-07 18:48:07] ✗ PREDICTED NO | Customer: CUST_000442 | Cluster: 9 | Score: -941.45 | Total Predicted No: 255
+[2025-12-07 18:48:07] ✓ PREDICTED YES | Customer: CUST_000527 | Cluster: 1 | Score: 3.13 | Exemplars: ['CUST_000272', 'CUST_000272', 'CUST_000277', 'CUST_000277', 'CUST_000277', 'CUST_000392'] | Total Predicted Yes: 1
+[2025-12-07 18:48:08] ✗ PREDICTED NO | Customer: CUST_000489 | Cluster: 10 | Score: -0.23 | Total Predicted No: 256
+[2025-12-07 18:48:08] ✗ PREDICTED NO | Customer: CUST_000490 | Cluster: 17 | Score: -309.31 | Total Predicted No: 257
+[2025-12-07 18:48:08] ✗ PREDICTED NO | Customer: CUST_000509 | Cluster: 3 | Score: -893.48 | Total Predicted No: 258
+[2025-12-07 18:48:08] ✗ PREDICTED NO | Customer: CUST_000482 | Cluster: 3 | Score: -11530.08 | Total Predicted No: 259
+[2025-12-07 18:48:08] ⟳ Reloading model after 260 predictions...
+[2025-12-07 18:48:08] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:08] ✓ Model loaded (Load #27). Components: 32
+[2025-12-07 18:48:08] ✗ PREDICTED NO | Customer: CUST_000523 | Cluster: 2 | Score: -199.36 | Total Predicted No: 260
+[2025-12-07 18:48:08] ✗ PREDICTED NO | Customer: CUST_000499 | Cluster: 9 | Score: -171.46 | Total Predicted No: 261
+[2025-12-07 18:48:09] ✗ PREDICTED NO | Customer: CUST_000387 | Cluster: 2 | Score: -651.09 | Total Predicted No: 262
+[2025-12-07 18:48:09] ✗ PREDICTED NO | Customer: CUST_000375 | Cluster: 3 | Score: -753.57 | Total Predicted No: 263
+[2025-12-07 18:48:09] ✗ PREDICTED NO | Customer: CUST_000476 | Cluster: 3 | Score: -455.03 | Total Predicted No: 264
+[2025-12-07 18:48:09] ✗ PREDICTED NO | Customer: CUST_000572 | Cluster: 2 | Score: -163.59 | Total Predicted No: 265
+[2025-12-07 18:48:09] ✗ PREDICTED NO | Customer: CUST_000490 | Cluster: 26 | Score: -26.98 | Total Predicted No: 266
+[2025-12-07 18:48:09] ✗ PREDICTED NO | Customer: CUST_000499 | Cluster: 9 | Score: -1145.50 | Total Predicted No: 267
+[2025-12-07 18:48:09] ✗ PREDICTED NO | Customer: CUST_000490 | Cluster: 17 | Score: -309.31 | Total Predicted No: 268
+[2025-12-07 18:48:10] ✗ PREDICTED NO | Customer: CUST_000597 | Cluster: 2 | Score: -71.47 | Total Predicted No: 269
+[2025-12-07 18:48:10] ⟳ Reloading model after 270 predictions...
+[2025-12-07 18:48:10] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:10] ✓ Model loaded (Load #28). Components: 34
+[2025-12-07 18:48:10] ✗ PREDICTED NO | Customer: CUST_000424 | Cluster: 9 | Score: -1001.13 | Total Predicted No: 270
+[2025-12-07 18:48:10] ✗ PREDICTED NO | Customer: CUST_000489 | Cluster: 7 | Score: -690.14 | Total Predicted No: 271
+[2025-12-07 18:48:10] ✗ PREDICTED NO | Customer: CUST_000375 | Cluster: 3 | Score: -809.72 | Total Predicted No: 272
+[2025-12-07 18:48:10] ✗ PREDICTED NO | Customer: CUST_000499 | Cluster: 9 | Score: -1145.50 | Total Predicted No: 273
+[2025-12-07 18:48:10] ✗ PREDICTED NO | Customer: CUST_000597 | Cluster: 3 | Score: -778.07 | Total Predicted No: 274
+[2025-12-07 18:48:10] ✗ PREDICTED NO | Customer: CUST_000385 | Cluster: 16 | Score: -99.89 | Total Predicted No: 275
+[2025-12-07 18:48:10] ✗ PREDICTED NO | Customer: CUST_000558 | Cluster: 3 | Score: -314.21 | Total Predicted No: 276
+[2025-12-07 18:48:11] ✓ PREDICTED YES | Customer: CUST_000527 | Cluster: 1 | Score: 3.13 | Exemplars: ['CUST_000272', 'CUST_000272', 'CUST_000277', 'CUST_000277', 'CUST_000277', 'CUST_000392'] | Total Predicted Yes: 2
+[2025-12-07 18:48:11] ✗ PREDICTED NO | Customer: CUST_000442 | Cluster: 9 | Score: -941.45 | Total Predicted No: 277
+[2025-12-07 18:48:11] ✗ PREDICTED NO | Customer: CUST_000442 | Cluster: 9 | Score: -53.66 | Total Predicted No: 278
+[2025-12-07 18:48:11] ⟳ Reloading model after 280 predictions...
+[2025-12-07 18:48:11] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:11] ✓ Model loaded (Load #29). Components: 34
+[2025-12-07 18:48:11] ✗ PREDICTED NO | Customer: CUST_000449 | Cluster: 9 | Score: -397.02 | Total Predicted No: 279
+[2025-12-07 18:48:11] ✗ PREDICTED NO | Customer: CUST_000449 | Cluster: 9 | Score: -397.02 | Total Predicted No: 280
+[2025-12-07 18:48:11] ✗ PREDICTED NO | Customer: CUST_000385 | Cluster: 17 | Score: -72.07 | Total Predicted No: 281
+[2025-12-07 18:48:11] ✗ PREDICTED NO | Customer: CUST_000405 | Cluster: 9 | Score: -2627.09 | Total Predicted No: 282
+[2025-12-07 18:48:12] ✗ PREDICTED NO | Customer: CUST_000465 | Cluster: 9 | Score: -539.92 | Total Predicted No: 283
+[2025-12-07 18:48:12] ✗ PREDICTED NO | Customer: CUST_000476 | Cluster: 2 | Score: -153.70 | Total Predicted No: 284
+[2025-12-07 18:48:12] ✗ PREDICTED NO | Customer: CUST_000387 | Cluster: 2 | Score: -547.56 | Total Predicted No: 285
+[2025-12-07 18:48:12] ✗ PREDICTED NO | Customer: CUST_000387 | Cluster: 9 | Score: -89.42 | Total Predicted No: 286
+[2025-12-07 18:48:12] ✗ PREDICTED NO | Customer: CUST_000465 | Cluster: 9 | Score: -363.48 | Total Predicted No: 287
+[2025-12-07 18:48:12] ✗ PREDICTED NO | Customer: CUST_000499 | Cluster: 9 | Score: -32.94 | Total Predicted No: 288
+[2025-12-07 18:48:12] ⟳ Reloading model after 290 predictions...
+[2025-12-07 18:48:12] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:12] ✓ Model loaded (Load #30). Components: 34
+[2025-12-07 18:48:13] ✗ PREDICTED NO | Customer: CUST_000407 | Cluster: 9 | Score: -1000.26 | Total Predicted No: 289
+[2025-12-07 18:48:13] ✗ PREDICTED NO | Customer: CUST_000572 | Cluster: 16 | Score: -340.61 | Total Predicted No: 290
+[2025-12-07 18:48:13] ✗ PREDICTED NO | Customer: CUST_000424 | Cluster: 9 | Score: -41.36 | Total Predicted No: 291
+[2025-12-07 18:48:13] ✗ PREDICTED NO | Customer: CUST_000449 | Cluster: 9 | Score: -891.92 | Total Predicted No: 292
+[2025-12-07 18:48:13] ✗ PREDICTED NO | Customer: CUST_000523 | Cluster: 3 | Score: -28.36 | Total Predicted No: 293
+[2025-12-07 18:48:13] ✗ PREDICTED NO | Customer: CUST_000482 | Cluster: 3 | Score: -12788.73 | Total Predicted No: 294
+[2025-12-07 18:48:13] ✗ PREDICTED NO | Customer: CUST_000570 | Cluster: 3 | Score: -86.96 | Total Predicted No: 295
+[2025-12-07 18:48:14] ✗ PREDICTED NO | Customer: CUST_000366 | Cluster: 6 | Score: -973.24 | Total Predicted No: 296
+[2025-12-07 18:48:14] ✗ PREDICTED NO | Customer: CUST_000808 | Cluster: 9 | Score: -781.40 | Total Predicted No: 297
+[2025-12-07 18:48:14] ✗ PREDICTED NO | Customer: CUST_000858 | Cluster: 9 | Score: -71.07 | Total Predicted No: 298
+[2025-12-07 18:48:14] ⟳ Reloading model after 300 predictions...
+[2025-12-07 18:48:14] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:14] ⟳ Reloading model after 300 predictions...
+[2025-12-07 18:48:14] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:14] ✓ Model loaded (Load #31). Components: 34
+[2025-12-07 18:48:14] ✗ PREDICTED NO | Customer: CUST_000919 | Cluster: 9 | Score: -1952.87 | Total Predicted No: 299
+[2025-12-07 18:48:14] ✗ PREDICTED NO | Customer: CUST_000769 | Cluster: 16 | Score: -719.12 | Total Predicted No: 300
+[2025-12-07 18:48:14] ✗ PREDICTED NO | Customer: CUST_000646 | Cluster: 17 | Score: -8.11 | Total Predicted No: 301
+[2025-12-07 18:48:15] ✗ PREDICTED NO | Customer: CUST_000913 | Cluster: 12 | Score: -12.51 | Total Predicted No: 302
+[2025-12-07 18:48:15] ✗ PREDICTED NO | Customer: CUST_000769 | Cluster: 17 | Score: -147.52 | Total Predicted No: 303
+[2025-12-07 18:48:15] ✗ PREDICTED NO | Customer: CUST_000777 | Cluster: 9 | Score: -38728.50 | Total Predicted No: 304
+[2025-12-07 18:48:15] ✗ PREDICTED NO | Customer: CUST_000700 | Cluster: 3 | Score: -98.75 | Total Predicted No: 305
+[2025-12-07 18:48:15] ✗ PREDICTED NO | Customer: CUST_000769 | Cluster: 17 | Score: -147.52 | Total Predicted No: 306
+[2025-12-07 18:48:15] ✗ PREDICTED NO | Customer: CUST_000826 | Cluster: 2 | Score: -152.91 | Total Predicted No: 307
+[2025-12-07 18:48:15] ✗ PREDICTED NO | Customer: CUST_000808 | Cluster: 9 | Score: -781.40 | Total Predicted No: 308
+[2025-12-07 18:48:15] ⟳ Reloading model after 310 predictions...
+[2025-12-07 18:48:15] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:15] ✓ Model loaded (Load #32). Components: 34
+[2025-12-07 18:48:16] ✗ PREDICTED NO | Customer: CUST_000854 | Cluster: 9 | Score: -1710.74 | Total Predicted No: 309
+[2025-12-07 18:48:16] ✗ PREDICTED NO | Customer: CUST_000916 | Cluster: 9 | Score: -1623.28 | Total Predicted No: 310
+[2025-12-07 18:48:16] ✗ PREDICTED NO | Customer: CUST_000862 | Cluster: 9 | Score: -525.86 | Total Predicted No: 311
+[2025-12-07 18:48:16] ✗ PREDICTED NO | Customer: CUST_000616 | Cluster: 9 | Score: -1636.32 | Total Predicted No: 312
+[2025-12-07 18:48:16] ✗ PREDICTED NO | Customer: CUST_000852 | Cluster: 10 | Score: -25.15 | Total Predicted No: 313
+[2025-12-07 18:48:16] ✗ PREDICTED NO | Customer: CUST_000852 | Cluster: 10 | Score: -25.15 | Total Predicted No: 314
+[2025-12-07 18:48:16] ✗ PREDICTED NO | Customer: CUST_000779 | Cluster: 2 | Score: -732.61 | Total Predicted No: 315
+[2025-12-07 18:48:16] ✗ PREDICTED NO | Customer: CUST_000620 | Cluster: 9 | Score: -1479.46 | Total Predicted No: 316
+[2025-12-07 18:48:16] ✗ PREDICTED NO | Customer: CUST_000923 | Cluster: 1 | Score: 0.84 | Total Predicted No: 317
+[2025-12-07 18:48:17] ✗ PREDICTED NO | Customer: CUST_000620 | Cluster: 9 | Score: -2106.06 | Total Predicted No: 318
+[2025-12-07 18:48:17] ⟳ Reloading model after 320 predictions...
+[2025-12-07 18:48:17] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:17] ✓ Model loaded (Load #33). Components: 34
+[2025-12-07 18:48:17] ✗ PREDICTED NO | Customer: CUST_000786 | Cluster: 2 | Score: -84.64 | Total Predicted No: 319
+[2025-12-07 18:48:17] ✗ PREDICTED NO | Customer: CUST_000831 | Cluster: 9 | Score: -90.87 | Total Predicted No: 320
+[2025-12-07 18:48:17] ✗ PREDICTED NO | Customer: CUST_000786 | Cluster: 2 | Score: -752.83 | Total Predicted No: 321
+[2025-12-07 18:48:17] ✗ PREDICTED NO | Customer: CUST_000700 | Cluster: 3 | Score: -98.75 | Total Predicted No: 322
+[2025-12-07 18:48:17] ✗ PREDICTED NO | Customer: CUST_000847 | Cluster: 2 | Score: -657.26 | Total Predicted No: 323
+[2025-12-07 18:48:17] ✗ PREDICTED NO | Customer: CUST_000646 | Cluster: 7 | Score: -334.13 | Total Predicted No: 324
+[2025-12-07 18:48:17] ✗ PREDICTED NO | Customer: CUST_000631 | Cluster: 9 | Score: -29597.47 | Total Predicted No: 325
+[2025-12-07 18:48:17] ✗ PREDICTED NO | Customer: CUST_000781 | Cluster: 9 | Score: -115.35 | Total Predicted No: 326
+[2025-12-07 18:48:18] ✗ PREDICTED NO | Customer: CUST_000786 | Cluster: 2 | Score: -84.64 | Total Predicted No: 327
+[2025-12-07 18:48:18] ✗ PREDICTED NO | Customer: CUST_000861 | Cluster: 2 | Score: -451.58 | Total Predicted No: 328
+[2025-12-07 18:48:18] ⟳ Reloading model after 330 predictions...
+[2025-12-07 18:48:18] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:18] ✓ Model loaded (Load #34). Components: 34
+[2025-12-07 18:48:18] ✗ PREDICTED NO | Customer: CUST_000786 | Cluster: 2 | Score: -752.83 | Total Predicted No: 329
+[2025-12-07 18:48:18] ✗ PREDICTED NO | Customer: CUST_000824 | Cluster: 17 | Score: -509.92 | Total Predicted No: 330
+[2025-12-07 18:48:18] ✗ PREDICTED NO | Customer: CUST_000916 | Cluster: 7 | Score: -93.80 | Total Predicted No: 331
+[2025-12-07 18:48:18] ✗ PREDICTED NO | Customer: CUST_000898 | Cluster: 2 | Score: -70.51 | Total Predicted No: 332
+[2025-12-07 18:48:18] ✗ PREDICTED NO | Customer: CUST_000846 | Cluster: 3 | Score: -1044.16 | Total Predicted No: 333
+[2025-12-07 18:48:18] ✗ PREDICTED NO | Customer: CUST_000616 | Cluster: 9 | Score: -1509.24 | Total Predicted No: 334
+[2025-12-07 18:48:19] ✗ PREDICTED NO | Customer: CUST_000777 | Cluster: 9 | Score: -57378.79 | Total Predicted No: 335
+[2025-12-07 18:48:19] ✗ PREDICTED NO | Customer: CUST_000717 | Cluster: 7 | Score: -1252.95 | Total Predicted No: 336
+[2025-12-07 18:48:19] ✗ PREDICTED NO | Customer: CUST_000862 | Cluster: 9 | Score: -525.86 | Total Predicted No: 337
+[2025-12-07 18:48:19] ✗ PREDICTED NO | Customer: CUST_000924 | Cluster: 9 | Score: -1452.12 | Total Predicted No: 338
+[2025-12-07 18:48:19] ⟳ Reloading model after 340 predictions...
+[2025-12-07 18:48:19] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:19] ✓ Model loaded (Load #35). Components: 34
+[2025-12-07 18:48:19] ✗ PREDICTED NO | Customer: CUST_000777 | Cluster: 9 | Score: -38728.50 | Total Predicted No: 339
+[2025-12-07 18:48:19] ✗ PREDICTED NO | Customer: CUST_000852 | Cluster: 3 | Score: -154.43 | Total Predicted No: 340
+[2025-12-07 18:48:19] ✗ PREDICTED NO | Customer: CUST_000864 | Cluster: 9 | Score: -826.67 | Total Predicted No: 341
+[2025-12-07 18:48:20] ✗ PREDICTED NO | Customer: CUST_000923 | Cluster: 1 | Score: 0.84 | Total Predicted No: 342
+[2025-12-07 18:48:20] ✗ PREDICTED NO | Customer: CUST_000825 | Cluster: 9 | Score: -6078.54 | Total Predicted No: 343
+[2025-12-07 18:48:20] ✗ PREDICTED NO | Customer: CUST_000854 | Cluster: 9 | Score: -2618.10 | Total Predicted No: 344
+[2025-12-07 18:48:20] ✗ PREDICTED NO | Customer: CUST_000675 | Cluster: 16 | Score: -1278.75 | Total Predicted No: 345
+[2025-12-07 18:48:20] ✗ PREDICTED NO | Customer: CUST_000833 | Cluster: 2 | Score: -259.75 | Total Predicted No: 346
+[2025-12-07 18:48:20] ✗ PREDICTED NO | Customer: CUST_000771 | Cluster: 9 | Score: -4366.47 | Total Predicted No: 347
+[2025-12-07 18:48:20] ✗ PREDICTED NO | Customer: CUST_000913 | Cluster: 9 | Score: -1624.70 | Total Predicted No: 348
+[2025-12-07 18:48:20] ⟳ Reloading model after 350 predictions...
+[2025-12-07 18:48:20] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:20] ✓ Model loaded (Load #36). Components: 34
+[2025-12-07 18:48:21] ✗ PREDICTED NO | Customer: CUST_000875 | Cluster: 9 | Score: -77.09 | Total Predicted No: 349
+[2025-12-07 18:48:21] ✗ PREDICTED NO | Customer: CUST_000781 | Cluster: 9 | Score: -115.35 | Total Predicted No: 350
+[2025-12-07 18:48:21] ✗ PREDICTED NO | Customer: CUST_000846 | Cluster: 3 | Score: -1044.16 | Total Predicted No: 351
+[2025-12-07 18:48:21] ✗ PREDICTED NO | Customer: CUST_000722 | Cluster: 9 | Score: -1447.38 | Total Predicted No: 352
+[2025-12-07 18:48:21] ✗ PREDICTED NO | Customer: CUST_000620 | Cluster: 9 | Score: -1479.46 | Total Predicted No: 353
+[2025-12-07 18:48:21] ✗ PREDICTED NO | Customer: CUST_000620 | Cluster: 9 | Score: -549.19 | Total Predicted No: 354
+[2025-12-07 18:48:21] ✗ PREDICTED NO | Customer: CUST_000722 | Cluster: 9 | Score: -1447.38 | Total Predicted No: 355
+[2025-12-07 18:48:22] ✗ PREDICTED NO | Customer: CUST_000700 | Cluster: 3 | Score: -274.02 | Total Predicted No: 356
+[2025-12-07 18:48:22] ✗ PREDICTED NO | Customer: CUST_000825 | Cluster: 9 | Score: -6182.81 | Total Predicted No: 357
+[2025-12-07 18:48:22] ✗ PREDICTED NO | Customer: CUST_000862 | Cluster: 9 | Score: -34.80 | Total Predicted No: 358
+[2025-12-07 18:48:22] ⟳ Reloading model after 360 predictions...
+[2025-12-07 18:48:22] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:22] ✓ Model loaded (Load #37). Components: 34
+[2025-12-07 18:48:22] ✗ PREDICTED NO | Customer: CUST_000900 | Cluster: 2 | Score: -4077.07 | Total Predicted No: 359
+[2025-12-07 18:48:22] ✗ PREDICTED NO | Customer: CUST_000920 | Cluster: 9 | Score: -453.21 | Total Predicted No: 360
+[2025-12-07 18:48:23] ✗ PREDICTED NO | Customer: CUST_000620 | Cluster: 9 | Score: -549.19 | Total Predicted No: 361
+[2025-12-07 18:48:23] ✗ PREDICTED NO | Customer: CUST_000913 | Cluster: 12 | Score: -12.51 | Total Predicted No: 362
+[2025-12-07 18:48:23] ✗ PREDICTED NO | Customer: CUST_000781 | Cluster: 9 | Score: -774.27 | Total Predicted No: 363
+[2025-12-07 18:48:23] ✗ PREDICTED NO | Customer: CUST_000722 | Cluster: 2 | Score: -146.42 | Total Predicted No: 364
+[2025-12-07 18:48:23] ✗ PREDICTED NO | Customer: CUST_000864 | Cluster: 9 | Score: -826.67 | Total Predicted No: 365
+[2025-12-07 18:48:23] ✗ PREDICTED NO | Customer: CUST_000824 | Cluster: 17 | Score: -506.94 | Total Predicted No: 366
+[2025-12-07 18:48:23] ✗ PREDICTED NO | Customer: CUST_000631 | Cluster: 9 | Score: -29597.47 | Total Predicted No: 367
+[2025-12-07 18:48:23] ✗ PREDICTED NO | Customer: CUST_000824 | Cluster: 2 | Score: -103.47 | Total Predicted No: 368
+[2025-12-07 18:48:23] ⟳ Reloading model after 370 predictions...
+[2025-12-07 18:48:23] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:23] ✓ Model loaded (Load #38). Components: 36
+[2025-12-07 18:48:24] ✗ PREDICTED NO | Customer: CUST_000862 | Cluster: 9 | Score: -616.42 | Total Predicted No: 369
+[2025-12-07 18:48:24] ✗ PREDICTED NO | Customer: CUST_000722 | Cluster: 2 | Score: -146.42 | Total Predicted No: 370
+[2025-12-07 18:48:24] ✗ PREDICTED NO | Customer: CUST_000852 | Cluster: 3 | Score: -153.91 | Total Predicted No: 371
+[2025-12-07 18:48:24] ✗ PREDICTED NO | Customer: CUST_000920 | Cluster: 9 | Score: -407.00 | Total Predicted No: 372
+[2025-12-07 18:48:24] ✗ PREDICTED NO | Customer: CUST_000875 | Cluster: 9 | Score: -504.32 | Total Predicted No: 373
+[2025-12-07 18:48:24] ✗ PREDICTED NO | Customer: CUST_000854 | Cluster: 9 | Score: -1564.92 | Total Predicted No: 374
+[2025-12-07 18:48:24] ✗ PREDICTED NO | Customer: CUST_000771 | Cluster: 9 | Score: -15812.83 | Total Predicted No: 375
+[2025-12-07 18:48:24] ✗ PREDICTED NO | Customer: CUST_000861 | Cluster: 2 | Score: -1253.68 | Total Predicted No: 376
+[2025-12-07 18:48:25] ✗ PREDICTED NO | Customer: CUST_000918 | Cluster: 2 | Score: -195.08 | Total Predicted No: 377
+[2025-12-07 18:48:25] ✗ PREDICTED NO | Customer: CUST_000858 | Cluster: 9 | Score: -187.27 | Total Predicted No: 378
+[2025-12-07 18:48:25] ⟳ Reloading model after 380 predictions...
+[2025-12-07 18:48:25] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:25] ✓ Model loaded (Load #39). Components: 36
+[2025-12-07 18:48:25] ✗ PREDICTED NO | Customer: CUST_000824 | Cluster: 2 | Score: -527.09 | Total Predicted No: 379
+[2025-12-07 18:48:25] ✗ PREDICTED NO | Customer: CUST_000781 | Cluster: 9 | Score: -774.27 | Total Predicted No: 380
+[2025-12-07 18:48:25] ✗ PREDICTED NO | Customer: CUST_000771 | Cluster: 9 | Score: -15419.52 | Total Predicted No: 381
+[2025-12-07 18:48:25] ✗ PREDICTED NO | Customer: CUST_000833 | Cluster: 2 | Score: -188.56 | Total Predicted No: 382
+[2025-12-07 18:48:26] ✗ PREDICTED NO | Customer: CUST_000861 | Cluster: 2 | Score: -451.58 | Total Predicted No: 383
+[2025-12-07 18:48:26] ✗ PREDICTED NO | Customer: CUST_000771 | Cluster: 9 | Score: -4366.47 | Total Predicted No: 384
+[2025-12-07 18:48:26] ✗ PREDICTED NO | Customer: CUST_000826 | Cluster: 2 | Score: -700.54 | Total Predicted No: 385
+[2025-12-07 18:48:26] ✗ PREDICTED NO | Customer: CUST_000660 | Cluster: 9 | Score: -388.84 | Total Predicted No: 386
+[2025-12-07 18:48:26] ✗ PREDICTED NO | Customer: CUST_000779 | Cluster: 16 | Score: -4520.07 | Total Predicted No: 387
+[2025-12-07 18:48:26] ✗ PREDICTED NO | Customer: CUST_000919 | Cluster: 3 | Score: -2113.07 | Total Predicted No: 388
+[2025-12-07 18:48:26] ⟳ Reloading model after 390 predictions...
+[2025-12-07 18:48:26] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:26] ✓ Model loaded (Load #40). Components: 36
+[2025-12-07 18:48:27] ✗ PREDICTED NO | Customer: CUST_000831 | Cluster: 9 | Score: -90.87 | Total Predicted No: 389
+[2025-12-07 18:48:27] ✗ PREDICTED NO | Customer: CUST_000900 | Cluster: 9 | Score: -4996.71 | Total Predicted No: 390
+[2025-12-07 18:48:27] ✗ PREDICTED NO | Customer: CUST_000900 | Cluster: 9 | Score: -543.02 | Total Predicted No: 391
+[2025-12-07 18:48:27] ✗ PREDICTED NO | Customer: CUST_000646 | Cluster: 7 | Score: -1678.78 | Total Predicted No: 392
+[2025-12-07 18:48:27] ✗ PREDICTED NO | Customer: CUST_000675 | Cluster: 2 | Score: -652.01 | Total Predicted No: 393
+[2025-12-07 18:48:27] ✗ PREDICTED NO | Customer: CUST_000831 | Cluster: 9 | Score: -1646.15 | Total Predicted No: 394
+[2025-12-07 18:48:27] ✗ PREDICTED NO | Customer: CUST_000875 | Cluster: 9 | Score: -509.74 | Total Predicted No: 395
+[2025-12-07 18:48:28] ✗ PREDICTED NO | Customer: CUST_000913 | Cluster: 7 | Score: -410.56 | Total Predicted No: 396
+[2025-12-07 18:48:28] ✗ PREDICTED NO | Customer: CUST_000923 | Cluster: 7 | Score: -1552.19 | Total Predicted No: 397
+[2025-12-07 18:48:28] ✗ PREDICTED NO | Customer: CUST_000808 | Cluster: 9 | Score: -2700.96 | Total Predicted No: 398
+[2025-12-07 18:48:28] ⟳ Reloading model after 400 predictions...
+[2025-12-07 18:48:28] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:28] ✓ Model loaded (Load #41). Components: 37
+[2025-12-07 18:48:28] ✗ PREDICTED NO | Customer: CUST_000900 | Cluster: 9 | Score: -4996.71 | Total Predicted No: 399
+[2025-12-07 18:48:28] ✗ PREDICTED NO | Customer: CUST_000858 | Cluster: 9 | Score: -187.27 | Total Predicted No: 400
+[2025-12-07 18:48:28] ✗ PREDICTED NO | Customer: CUST_000898 | Cluster: 2 | Score: -70.51 | Total Predicted No: 401
+[2025-12-07 18:48:29] ✗ PREDICTED NO | Customer: CUST_000864 | Cluster: 9 | Score: -1040.24 | Total Predicted No: 402
+[2025-12-07 18:48:29] ✗ PREDICTED NO | Customer: CUST_000924 | Cluster: 9 | Score: -269.05 | Total Predicted No: 403
+[2025-12-07 18:48:29] ✗ PREDICTED NO | Customer: CUST_000616 | Cluster: 9 | Score: -1509.24 | Total Predicted No: 404
+[2025-12-07 18:48:29] ✗ PREDICTED NO | Customer: CUST_000900 | Cluster: 9 | Score: -543.02 | Total Predicted No: 405
+[2025-12-07 18:48:29] ✗ PREDICTED NO | Customer: CUST_000916 | Cluster: 7 | Score: -844.21 | Total Predicted No: 406
+[2025-12-07 18:48:29] ✗ PREDICTED NO | Customer: CUST_000616 | Cluster: 9 | Score: -1625.61 | Total Predicted No: 407
+[2025-12-07 18:48:29] ✗ PREDICTED NO | Customer: CUST_000717 | Cluster: 1 | Score: -0.96 | Total Predicted No: 408
+[2025-12-07 18:48:29] ⟳ Reloading model after 410 predictions...
+[2025-12-07 18:48:29] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:29] ✓ Model loaded (Load #42). Components: 37
+[2025-12-07 18:48:30] ✗ PREDICTED NO | Customer: CUST_000852 | Cluster: 3 | Score: -153.59 | Total Predicted No: 409
+[2025-12-07 18:48:30] ✗ PREDICTED NO | Customer: CUST_000646 | Cluster: 7 | Score: -334.13 | Total Predicted No: 410
+[2025-12-07 18:48:30] ✗ PREDICTED NO | Customer: CUST_000786 | Cluster: 1 | Score: -1381.92 | Total Predicted No: 411
+[2025-12-07 18:48:30] ✗ PREDICTED NO | Customer: CUST_000854 | Cluster: 9 | Score: -1564.92 | Total Predicted No: 412
+[2025-12-07 18:48:30] ✗ PREDICTED NO | Customer: CUST_000722 | Cluster: 2 | Score: -1455.88 | Total Predicted No: 413
+[2025-12-07 18:48:30] ✗ PREDICTED NO | Customer: CUST_000916 | Cluster: 7 | Score: -93.80 | Total Predicted No: 414
+[2025-12-07 18:48:30] ✗ PREDICTED NO | Customer: CUST_000918 | Cluster: 2 | Score: -192.11 | Total Predicted No: 415
+[2025-12-07 18:48:30] ✗ PREDICTED NO | Customer: CUST_000854 | Cluster: 9 | Score: -1710.74 | Total Predicted No: 416
+[2025-12-07 18:48:30] ✗ PREDICTED NO | Customer: CUST_000833 | Cluster: 2 | Score: -188.56 | Total Predicted No: 417
+[2025-12-07 18:48:30] ✗ PREDICTED NO | Customer: CUST_000875 | Cluster: 9 | Score: -504.32 | Total Predicted No: 418
+[2025-12-07 18:48:30] ⟳ Reloading model after 420 predictions...
+[2025-12-07 18:48:31] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:31] ✓ Model loaded (Load #43). Components: 37
+[2025-12-07 18:48:31] ✗ PREDICTED NO | Customer: CUST_000831 | Cluster: 9 | Score: -1646.15 | Total Predicted No: 419
+[2025-12-07 18:48:31] ✗ PREDICTED NO | Customer: CUST_000717 | Cluster: 7 | Score: -268.53 | Total Predicted No: 420
+[2025-12-07 18:48:31] ✗ PREDICTED NO | Customer: CUST_000913 | Cluster: 7 | Score: -410.56 | Total Predicted No: 421
+[2025-12-07 18:48:31] ✗ PREDICTED NO | Customer: CUST_000825 | Cluster: 9 | Score: -6078.54 | Total Predicted No: 422
+[2025-12-07 18:48:31] ✗ PREDICTED NO | Customer: CUST_000631 | Cluster: 9 | Score: -45806.16 | Total Predicted No: 423
+[2025-12-07 18:48:31] ✗ PREDICTED NO | Customer: CUST_000831 | Cluster: 9 | Score: -2189.54 | Total Predicted No: 424
+[2025-12-07 18:48:31] ✗ PREDICTED NO | Customer: CUST_000923 | Cluster: 7 | Score: -1087.77 | Total Predicted No: 425
+[2025-12-07 18:48:31] ✗ PREDICTED NO | Customer: CUST_000889 | Cluster: 9 | Score: -525.03 | Total Predicted No: 426
+[2025-12-07 18:48:32] ✗ PREDICTED NO | Customer: CUST_000923 | Cluster: 7 | Score: -1087.77 | Total Predicted No: 427
+[2025-12-07 18:48:32] ✗ PREDICTED NO | Customer: CUST_000858 | Cluster: 9 | Score: -1540.55 | Total Predicted No: 428
+[2025-12-07 18:48:32] ⟳ Reloading model after 430 predictions...
+[2025-12-07 18:48:32] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:32] ✓ Model loaded (Load #44). Components: 37
+[2025-12-07 18:48:32] ✗ PREDICTED NO | Customer: CUST_000781 | Cluster: 9 | Score: -1346.65 | Total Predicted No: 429
+[2025-12-07 18:48:32] ✗ PREDICTED NO | Customer: CUST_000862 | Cluster: 9 | Score: -34.80 | Total Predicted No: 430
+[2025-12-07 18:48:32] ✗ PREDICTED NO | Customer: CUST_000921 | Cluster: 9 | Score: -12295.65 | Total Predicted No: 431
+[2025-12-07 18:48:32] ✗ PREDICTED NO | Customer: CUST_000916 | Cluster: 7 | Score: -844.21 | Total Predicted No: 432
+[2025-12-07 18:48:33] ✗ PREDICTED NO | Customer: CUST_000675 | Cluster: 2 | Score: -652.01 | Total Predicted No: 433
+[2025-12-07 18:48:33] ✗ PREDICTED NO | Customer: CUST_000924 | Cluster: 9 | Score: -269.05 | Total Predicted No: 434
+[2025-12-07 18:48:33] ✗ PREDICTED NO | Customer: CUST_000875 | Cluster: 9 | Score: -77.09 | Total Predicted No: 435
+[2025-12-07 18:48:33] ✗ PREDICTED NO | Customer: CUST_000646 | Cluster: 17 | Score: -8.66 | Total Predicted No: 436
+[2025-12-07 18:48:33] ✗ PREDICTED NO | Customer: CUST_000858 | Cluster: 9 | Score: -71.07 | Total Predicted No: 437
+[2025-12-07 18:48:33] ✗ PREDICTED NO | Customer: CUST_000826 | Cluster: 2 | Score: -152.91 | Total Predicted No: 438
+[2025-12-07 18:48:33] ⟳ Reloading model after 440 predictions...
+[2025-12-07 18:48:33] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:48:33] ✓ Model loaded (Load #45). Components: 37
+[2025-12-07 18:48:34] ✗ PREDICTED NO | Customer: CUST_000898 | Cluster: 3 | Score: -454.79 | Total Predicted No: 439
+[2025-12-07 18:48:34] ✗ PREDICTED NO | Customer: CUST_000846 | Cluster: 3 | Score: -1153.99 | Total Predicted No: 440
+[2025-12-07 18:48:34] ✗ PREDICTED NO | Customer: CUST_000919 | Cluster: 9 | Score: -1952.87 | Total Predicted No: 441
+[2025-12-07 18:48:34] ✗ PREDICTED NO | Customer: CUST_000717 | Cluster: 1 | Score: -0.96 | Total Predicted No: 442
+[2025-12-07 18:48:34] ✗ PREDICTED NO | Customer: CUST_000616 | Cluster: 9 | Score: -1636.32 | Total Predicted No: 443
+[2025-12-07 18:48:34] ✗ PREDICTED NO | Customer: CUST_000771 | Cluster: 9 | Score: -15812.83 | Total Predicted No: 444
+[2025-12-07 18:48:35] ✗ PREDICTED NO | Customer: CUST_000824 | Cluster: 2 | Score: -103.47 | Total Predicted No: 445
+[2025-12-07 18:48:35] ✗ PREDICTED NO | Customer: CUST_000918 | Cluster: 2 | Score: -195.08 | Total Predicted No: 446
+[2025-12-07 18:48:35] ✗ PREDICTED NO | Customer: CUST_000717 | Cluster: 7 | Score: -268.53 | Total Predicted No: 447
+[2025-12-07 18:48:35] ✗ PREDICTED NO | Customer: CUST_000920 | Cluster: 9 | Score: -453.21 | Total Predicted No: 448

@@ -1,486 +1,531 @@
-[2025-12-07 18:38:04] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
-[2025-12-07 18:38:04] ✓ Model loaded. Components: 20
-[2025-12-07 18:38:04] 📊 Metric recorded: Model components = 20
-[2025-12-07 18:38:04] Loading MASTERFILE from Redis @ localhost:6379 (db=1)...
-[2025-12-07 18:38:04] ✓ MASTERFILE loaded from Redis. 12500 customers indexed.
-[2025-12-07 18:38:04] ✓ Background metrics updater started
-[2025-12-07 18:38:04] ═══════════════════════════════════════════════
-[2025-12-07 18:38:04]     CAR LOAN FEEDBACK NODE (PATHWAY)          
-[2025-12-07 18:38:04] ═══════════════════════════════════════════════
-[2025-12-07 18:38:04] Feedback Topic: feedback.carLoan
-[2025-12-07 18:38:04] Model Path:     /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json
-[2025-12-07 18:38:04] MASTERFILE:     Redis @ localhost:6379 (db=1)
-[2025-12-07 18:38:04] Log File:       /home/sachit/Documents/VSCProjects/TargettedCalling/carLoanFeedback/feedback_node.log
-[2025-12-07 18:38:04] Metrics:        ENABLED on port 8006
-[2025-12-07 18:38:04] Batch Config:   Update every 20 feedbacks
-[2025-12-07 18:38:04] Auto-save:      Every 30 seconds
-[2025-12-07 18:38:04] Input Format:   'custID | feedback_type' (TP/FP/TN/FN)
-[2025-12-07 18:38:04] Buffer Flush:   ENABLED (flushes before save)
-[2025-12-07 18:38:04] ═══════════════════════════════════════════════
+[2025-12-07 18:47:22] Loading model from /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json...
+[2025-12-07 18:47:22] ✓ Model loaded. Components: 29
+[2025-12-07 18:47:22] 📊 Metric recorded: Model components = 29
+[2025-12-07 18:47:22] Loading MASTERFILE from Redis @ localhost:6379 (db=1)...
+[2025-12-07 18:47:22] ✓ MASTERFILE loaded from Redis. 12500 customers indexed.
+[2025-12-07 18:47:22] ✓ Background metrics updater started
+[2025-12-07 18:47:22] ═══════════════════════════════════════════════
+[2025-12-07 18:47:22]     CAR LOAN FEEDBACK NODE (PATHWAY)          
+[2025-12-07 18:47:22] ═══════════════════════════════════════════════
+[2025-12-07 18:47:22] Feedback Topic: feedback.carLoan
+[2025-12-07 18:47:22] Model Path:     /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json
+[2025-12-07 18:47:22] MASTERFILE:     Redis @ localhost:6379 (db=1)
+[2025-12-07 18:47:22] Log File:       /home/sachit/Documents/VSCProjects/TargettedCalling/carLoanFeedback/feedback_node.log
+[2025-12-07 18:47:22] Metrics:        ENABLED on port 8006
+[2025-12-07 18:47:22] Batch Config:   Update every 20 feedbacks
+[2025-12-07 18:47:22] Auto-save:      Every 30 seconds
+[2025-12-07 18:47:22] Input Format:   'custID | feedback_type' (TP/FP/TN/FN)
+[2025-12-07 18:47:22] Buffer Flush:   ENABLED (flushes before save)
+[2025-12-07 18:47:22] ═══════════════════════════════════════════════
 
-[2025-12-07 18:38:04] ✓ Metrics server initialized on port 8006
-[2025-12-07 18:38:04] ✓ Listening for feedback on 'feedback.carLoan'...
-[2025-12-07 18:38:04] ✓ Expected format: {"feedback_string": "custID | TP/FP/TN/FN"}
+[2025-12-07 18:47:22] ✓ Metrics server initialized on port 8006
+[2025-12-07 18:47:22] ✓ Listening for feedback on 'feedback.carLoan'...
+[2025-12-07 18:47:22] ✓ Expected format: {"feedback_string": "custID | TP/FP/TN/FN"}
 
-[2025-12-07 18:38:04] ✓ Car Loan Feedback Node is running.
+[2025-12-07 18:47:22] ✓ Car Loan Feedback Node is running.
 
-[2025-12-07 18:38:17] 📥 RECEIVED FEEDBACK | Customer: CUST_000012 | Type: FN
-[2025-12-07 18:38:17] Buffer size: 1/20
-[2025-12-07 18:38:18] 📥 RECEIVED FEEDBACK | Customer: CUST_000072 | Type: FN
-[2025-12-07 18:38:18] Buffer size: 2/20
-[2025-12-07 18:38:18] 📥 RECEIVED FEEDBACK | Customer: CUST_000079 | Type: FN
-[2025-12-07 18:38:18] Buffer size: 3/20
-[2025-12-07 18:38:18] 📥 RECEIVED FEEDBACK | Customer: CUST_000068 | Type: FN
-[2025-12-07 18:38:18] Buffer size: 4/20
-[2025-12-07 18:38:18] 📥 RECEIVED FEEDBACK | Customer: CUST_000068 | Type: FN
-[2025-12-07 18:38:18] Buffer size: 5/20
-[2025-12-07 18:38:18] 📥 RECEIVED FEEDBACK | Customer: CUST_000068 | Type: FN
-[2025-12-07 18:38:18] Buffer size: 6/20
-[2025-12-07 18:38:18] 📥 RECEIVED FEEDBACK | Customer: CUST_000078 | Type: FP
-[2025-12-07 18:38:18] Buffer size: 7/20
-[2025-12-07 18:38:18] 📥 RECEIVED FEEDBACK | Customer: CUST_000078 | Type: TN
-[2025-12-07 18:38:19] Buffer size: 8/20
-[2025-12-07 18:38:20] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Type: TN
-[2025-12-07 18:38:20] Buffer size: 9/20
-[2025-12-07 18:38:20] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Type: TN
-[2025-12-07 18:38:20] Buffer size: 10/20
-[2025-12-07 18:38:20] 📥 RECEIVED FEEDBACK | Customer: CUST_000091 | Type: FN
-[2025-12-07 18:38:20] Buffer size: 11/20
-[2025-12-07 18:38:20] 📥 RECEIVED FEEDBACK | Customer: CUST_000091 | Type: FN
-[2025-12-07 18:38:20] Buffer size: 12/20
-[2025-12-07 18:38:20] 📥 RECEIVED FEEDBACK | Customer: CUST_000079 | Type: FN
-[2025-12-07 18:38:20] Buffer size: 13/20
-[2025-12-07 18:38:20] 📥 RECEIVED FEEDBACK | Customer: CUST_000091 | Type: FN
-[2025-12-07 18:38:20] Buffer size: 14/20
-[2025-12-07 18:38:20] 📥 RECEIVED FEEDBACK | Customer: CUST_000079 | Type: FN
-[2025-12-07 18:38:20] Buffer size: 15/20
-[2025-12-07 18:38:20] 📥 RECEIVED FEEDBACK | Customer: CUST_000079 | Type: FN
-[2025-12-07 18:38:20] Buffer size: 16/20
-[2025-12-07 18:38:20] 📥 RECEIVED FEEDBACK | Customer: CUST_000079 | Type: FN
-[2025-12-07 18:38:20] Buffer size: 17/20
-[2025-12-07 18:38:24] 📥 RECEIVED FEEDBACK | Customer: CUST_000146 | Type: FN
-[2025-12-07 18:38:24] Buffer size: 18/20
-[2025-12-07 18:38:24] 📥 RECEIVED FEEDBACK | Customer: CUST_000153 | Type: FN
-[2025-12-07 18:38:24] Buffer size: 19/20
-[2025-12-07 18:38:24] 📥 RECEIVED FEEDBACK | Customer: CUST_000131 | Type: FN
-[2025-12-07 18:38:24] Buffer size: 20/20
-[2025-12-07 18:38:24] 
+[2025-12-07 18:47:32] 📥 RECEIVED FEEDBACK | Customer: CUST_000053 | Type: FN
+[2025-12-07 18:47:32] Buffer size: 1/20
+[2025-12-07 18:47:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000053 | Type: FN
+[2025-12-07 18:47:37] Buffer size: 2/20
+[2025-12-07 18:47:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Type: FN
+[2025-12-07 18:47:37] Buffer size: 3/20
+[2025-12-07 18:47:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000053 | Type: FN
+[2025-12-07 18:47:37] Buffer size: 4/20
+[2025-12-07 18:47:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Type: FN
+[2025-12-07 18:47:37] Buffer size: 5/20
+[2025-12-07 18:47:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000083 | Type: FN
+[2025-12-07 18:47:37] Buffer size: 6/20
+[2025-12-07 18:47:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000090 | Type: FN
+[2025-12-07 18:47:37] Buffer size: 7/20
+[2025-12-07 18:47:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000098 | Type: FN
+[2025-12-07 18:47:37] Buffer size: 8/20
+[2025-12-07 18:47:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Type: FN
+[2025-12-07 18:47:37] Buffer size: 9/20
+[2025-12-07 18:47:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000056 | Type: TN
+[2025-12-07 18:47:37] Buffer size: 10/20
+[2025-12-07 18:47:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000061 | Type: FN
+[2025-12-07 18:47:37] Buffer size: 11/20
+[2025-12-07 18:47:37] 📥 RECEIVED FEEDBACK | Customer: CUST_000126 | Type: TN
+[2025-12-07 18:47:37] Buffer size: 12/20
+[2025-12-07 18:47:38] 📥 RECEIVED FEEDBACK | Customer: CUST_000083 | Type: FN
+[2025-12-07 18:47:38] Buffer size: 13/20
+[2025-12-07 18:47:38] 📥 RECEIVED FEEDBACK | Customer: CUST_000061 | Type: FN
+[2025-12-07 18:47:38] Buffer size: 14/20
+[2025-12-07 18:47:38] 📥 RECEIVED FEEDBACK | Customer: CUST_000099 | Type: FN
+[2025-12-07 18:47:38] Buffer size: 15/20
+[2025-12-07 18:47:43] 📥 RECEIVED FEEDBACK | Customer: CUST_000141 | Type: FN
+[2025-12-07 18:47:43] Buffer size: 16/20
+[2025-12-07 18:47:43] 📥 RECEIVED FEEDBACK | Customer: CUST_000155 | Type: FN
+[2025-12-07 18:47:43] Buffer size: 17/20
+[2025-12-07 18:47:43] 📥 RECEIVED FEEDBACK | Customer: CUST_000126 | Type: TN
+[2025-12-07 18:47:43] Buffer size: 18/20
+[2025-12-07 18:47:43] 📥 RECEIVED FEEDBACK | Customer: CUST_000139 | Type: FN
+[2025-12-07 18:47:43] Buffer size: 19/20
+[2025-12-07 18:47:43] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Type: FN
+[2025-12-07 18:47:43] Buffer size: 20/20
+[2025-12-07 18:47:43] 
 ============================================================
-[2025-12-07 18:38:24] 🔄 Processing batch of 20 feedback points
-[2025-12-07 18:38:24] ============================================================
-[2025-12-07 18:38:24] ✗✓ FN | Customer: CUST_000012 | Cluster: 12 | Score: 5.44 | Predicted: IN | Update #1 | Latency: 108.99ms
-[2025-12-07 18:38:25] ✗✓ FN | Customer: CUST_000072 | Cluster: 3 | Score: -45.58 | Predicted: OUT | Update #2 | Latency: 68.79ms
-[2025-12-07 18:38:25] ✗✓ FN | Customer: CUST_000079 | Cluster: 19 | Score: -2.41 | Predicted: OUT | Update #3 | Latency: 68.68ms
-[2025-12-07 18:38:25] ✗✓ FN | Customer: CUST_000068 | Cluster: 6 | Score: 2.48 | Predicted: IN | Update #4 | Latency: 87.87ms
-[2025-12-07 18:38:25] ✗✓ FN | Customer: CUST_000068 | Cluster: 6 | Score: 3.65 | Predicted: IN | Update #5 | Latency: 78.51ms
-[2025-12-07 18:38:25] ✗✓ FN | Customer: CUST_000068 | Cluster: 6 | Score: 4.46 | Predicted: IN | Update #6 | Latency: 61.80ms
-[2025-12-07 18:38:25] ✓✗ FP | Customer: CUST_000078 | Cluster: 2 | Score: -1.90 | Predicted: IN | Update #7 | Latency: 90.42ms
-[2025-12-07 18:38:25] ✗✗ TN | Customer: CUST_000078 | Cluster: 2 | Score: -1.90 | Predicted: IN | Update #8 | Latency: 74.18ms
-[2025-12-07 18:38:25] ✗✗ TN | Customer: CUST_000113 | Cluster: 19 | Score: 5.40 | Predicted: IN | Update #9 | Latency: 77.22ms
-[2025-12-07 18:38:25] ✗✗ TN | Customer: CUST_000113 | Cluster: 19 | Score: 5.40 | Predicted: IN | Update #10 | Latency: 127.89ms
-[2025-12-07 18:38:26] ✗✓ FN | Customer: CUST_000091 | Cluster: 19 | Score: 0.94 | Predicted: IN | Update #11 | Latency: 78.84ms
-[2025-12-07 18:38:26] ✗✓ FN | Customer: CUST_000091 | Cluster: 19 | Score: 2.98 | Predicted: IN | Update #12 | Latency: 119.45ms
-[2025-12-07 18:38:26] ✗✓ FN | Customer: CUST_000079 | Cluster: 19 | Score: -3.24 | Predicted: OUT | Update #13 | Latency: 71.89ms
-[2025-12-07 18:38:26] ✗✓ FN | Customer: CUST_000091 | Cluster: 19 | Score: 3.99 | Predicted: IN | Update #14 | Latency: 82.27ms
-[2025-12-07 18:38:26] ✗✓ FN | Customer: CUST_000079 | Cluster: 19 | Score: -3.63 | Predicted: OUT | Update #15 | Latency: 79.00ms
-[2025-12-07 18:38:26] ✗✓ FN | Customer: CUST_000079 | Cluster: 19 | Score: -3.63 | Predicted: OUT | Update #16 | Latency: 78.40ms
-[2025-12-07 18:38:26] ✗✓ FN | Customer: CUST_000079 | Cluster: 19 | Score: -3.63 | Predicted: OUT | Update #17 | Latency: 100.66ms
-[2025-12-07 18:38:26] ✗✓ FN | Customer: CUST_000146 | Cluster: 3 | Score: -0.78 | Predicted: OUT | Update #18 | Latency: 92.96ms
-[2025-12-07 18:38:27] ✗✓ FN | Customer: CUST_000153 | Cluster: 14 | Score: 2.95 | Predicted: IN | Update #19 | Latency: 104.94ms
-[2025-12-07 18:38:27] ✗✓ FN | Customer: CUST_000131 | Cluster: 9 | Score: 1.66 | Predicted: IN | Update #20 | Latency: 72.95ms
-[2025-12-07 18:38:27] 
+[2025-12-07 18:47:43] 🔄 Processing batch of 20 feedback points
+[2025-12-07 18:47:43] ============================================================
+[2025-12-07 18:47:43] ✗✓ FN | Customer: CUST_000053 | Cluster: 4 | Score: 6.64 | Predicted: IN | Update #1 | Latency: 93.80ms
+[2025-12-07 18:47:44] ✗✓ FN | Customer: CUST_000053 | Cluster: 4 | Score: 7.12 | Predicted: IN | Update #2 | Latency: 75.81ms
+[2025-12-07 18:47:44] ✗✓ FN | Customer: CUST_000090 | Cluster: 11 | Score: 5.00 | Predicted: IN | Update #3 | Latency: 99.85ms
+[2025-12-07 18:47:44] ✗✓ FN | Customer: CUST_000053 | Cluster: 4 | Score: 7.49 | Predicted: IN | Update #4 | Latency: 74.46ms
+[2025-12-07 18:47:44] ✗✓ FN | Customer: CUST_000099 | Cluster: 13 | Score: 7.43 | Predicted: IN | Update #5 | Latency: 106.19ms
+[2025-12-07 18:47:44] ✗✓ FN | Customer: CUST_000083 | Cluster: 0 | Score: -7.70 | Predicted: OUT | Update #6 | Latency: 78.43ms
+[2025-12-07 18:47:44] ✗✓ FN | Customer: CUST_000090 | Cluster: 11 | Score: 5.55 | Predicted: IN | Update #7 | Latency: 126.04ms
+[2025-12-07 18:47:44] ✗✓ FN | Customer: CUST_000098 | Cluster: 16 | Score: -0.02 | Predicted: IN | Update #8 | Latency: 76.17ms
+[2025-12-07 18:47:44] ✗✓ FN | Customer: CUST_000099 | Cluster: 13 | Score: 7.87 | Predicted: IN | Update #9 | Latency: 80.71ms
+[2025-12-07 18:47:45] ✗✗ TN | Customer: CUST_000056 | Cluster: 14 | Score: 0.44 | Predicted: OUT | Update #10 | Latency: 76.56ms
+[2025-12-07 18:47:45] ✗✓ FN | Customer: CUST_000061 | Cluster: 26 | Score: -4.25 | Predicted: OUT | Update #11 | Latency: 69.78ms
+[2025-12-07 18:47:45] ✗✗ TN | Customer: CUST_000126 | Cluster: 11 | Score: -3.26 | Predicted: OUT | Update #12 | Latency: 99.09ms
+[2025-12-07 18:47:45] ✗✓ FN | Customer: CUST_000083 | Cluster: 0 | Score: -7.70 | Predicted: OUT | Update #13 | Latency: 73.09ms
+[2025-12-07 18:47:45] ✗✓ FN | Customer: CUST_000061 | Cluster: 26 | Score: -4.25 | Predicted: OUT | Update #14 | Latency: 73.22ms
+[2025-12-07 18:47:45] ✗✓ FN | Customer: CUST_000099 | Cluster: 13 | Score: 8.26 | Predicted: IN | Update #15 | Latency: 110.68ms
+[2025-12-07 18:47:45] ✗✓ FN | Customer: CUST_000141 | Cluster: 1 | Score: -5.47 | Predicted: OUT | Update #16 | Latency: 76.43ms
+[2025-12-07 18:47:45] ✗✓ FN | Customer: CUST_000155 | Cluster: 8 | Score: 6.36 | Predicted: IN | Update #17 | Latency: 73.43ms
+[2025-12-07 18:47:45] ✗✗ TN | Customer: CUST_000126 | Cluster: 11 | Score: -3.26 | Predicted: OUT | Update #18 | Latency: 69.40ms
+[2025-12-07 18:47:46] ✗✓ FN | Customer: CUST_000139 | Cluster: 22 | Score: 15.79 | Predicted: IN | Update #19 | Latency: 64.66ms
+[2025-12-07 18:47:46] ✗✓ FN | Customer: CUST_000143 | Cluster: 11 | Score: 6.21 | Predicted: IN | Update #20 | Latency: 100.23ms
+[2025-12-07 18:47:46] 
 💾 Saving model after 20 updates...
-[2025-12-07 18:38:28] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.883s
-[2025-12-07 18:38:28] ✓ Current state: Components=22, TP=0, FP=1, FN=16, TN=3
+[2025-12-07 18:47:46] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.575s
+[2025-12-07 18:47:46] ✓ Current state: Components=31, TP=0, FP=0, FN=17, TN=3
 
-[2025-12-07 18:38:28] 📊 Metric recorded: Save time = 0.883s, Components = 22
-[2025-12-07 18:38:28] ✓ Batch complete: 20 updates, 0 errors
-[2025-12-07 18:38:28] 📥 RECEIVED FEEDBACK | Customer: CUST_000131 | Type: FN
-[2025-12-07 18:38:28] Buffer size: 1/20
-[2025-12-07 18:38:28] 📥 RECEIVED FEEDBACK | Customer: CUST_000163 | Type: FN
-[2025-12-07 18:38:28] Buffer size: 2/20
-[2025-12-07 18:38:28] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Type: FN
-[2025-12-07 18:38:28] Buffer size: 3/20
-[2025-12-07 18:38:28] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Type: FN
-[2025-12-07 18:38:28] Buffer size: 4/20
-[2025-12-07 18:38:28] 📥 RECEIVED FEEDBACK | Customer: CUST_000143 | Type: FN
-[2025-12-07 18:38:28] Buffer size: 5/20
-[2025-12-07 18:38:28] 📥 RECEIVED FEEDBACK | Customer: CUST_000137 | Type: FN
-[2025-12-07 18:38:28] Buffer size: 6/20
-[2025-12-07 18:38:28] 📥 RECEIVED FEEDBACK | Customer: CUST_000139 | Type: FN
-[2025-12-07 18:38:28] Buffer size: 7/20
-[2025-12-07 18:38:28] 📥 RECEIVED FEEDBACK | Customer: CUST_000113 | Type: TN
-[2025-12-07 18:38:28] Buffer size: 8/20
-[2025-12-07 18:38:28] 📥 RECEIVED FEEDBACK | Customer: CUST_000131 | Type: FN
-[2025-12-07 18:38:28] Buffer size: 9/20
-[2025-12-07 18:38:29] 📥 RECEIVED FEEDBACK | Customer: CUST_000117 | Type: TN
-[2025-12-07 18:38:29] Buffer size: 10/20
-[2025-12-07 18:38:29] 📥 RECEIVED FEEDBACK | Customer: CUST_000131 | Type: FN
-[2025-12-07 18:38:29] Buffer size: 11/20
-[2025-12-07 18:38:29] 📥 RECEIVED FEEDBACK | Customer: CUST_000226 | Type: FN
-[2025-12-07 18:38:29] Buffer size: 12/20
-[2025-12-07 18:38:29] 📥 RECEIVED FEEDBACK | Customer: CUST_000220 | Type: TN
-[2025-12-07 18:38:29] Buffer size: 13/20
-[2025-12-07 18:38:29] 📥 RECEIVED FEEDBACK | Customer: CUST_000226 | Type: FN
-[2025-12-07 18:38:29] Buffer size: 14/20
-[2025-12-07 18:38:32] 📥 RECEIVED FEEDBACK | Customer: CUST_000259 | Type: FN
-[2025-12-07 18:38:32] Buffer size: 15/20
-[2025-12-07 18:38:32] 📥 RECEIVED FEEDBACK | Customer: CUST_000279 | Type: FN
-[2025-12-07 18:38:32] Buffer size: 16/20
-[2025-12-07 18:38:32] 📥 RECEIVED FEEDBACK | Customer: CUST_000270 | Type: FN
-[2025-12-07 18:38:32] Buffer size: 17/20
-[2025-12-07 18:38:32] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Type: TN
-[2025-12-07 18:38:32] Buffer size: 18/20
-[2025-12-07 18:38:32] 📥 RECEIVED FEEDBACK | Customer: CUST_000270 | Type: FN
-[2025-12-07 18:38:32] Buffer size: 19/20
-[2025-12-07 18:38:32] 📥 RECEIVED FEEDBACK | Customer: CUST_000307 | Type: FN
-[2025-12-07 18:38:32] Buffer size: 20/20
-[2025-12-07 18:38:32] 
+[2025-12-07 18:47:46] 📊 Metric recorded: Save time = 0.575s, Components = 31
+[2025-12-07 18:47:46] ✓ Batch complete: 20 updates, 0 errors
+[2025-12-07 18:47:46] 📥 RECEIVED FEEDBACK | Customer: CUST_000153 | Type: FN
+[2025-12-07 18:47:47] Buffer size: 1/20
+[2025-12-07 18:47:47] 📥 RECEIVED FEEDBACK | Customer: CUST_000153 | Type: FN
+[2025-12-07 18:47:47] Buffer size: 2/20
+[2025-12-07 18:47:50] 📥 RECEIVED FEEDBACK | Customer: CUST_000164 | Type: TN
+[2025-12-07 18:47:50] Buffer size: 3/20
+[2025-12-07 18:47:50] 📥 RECEIVED FEEDBACK | Customer: CUST_000205 | Type: FN
+[2025-12-07 18:47:50] Buffer size: 4/20
+[2025-12-07 18:47:50] 📥 RECEIVED FEEDBACK | Customer: CUST_000188 | Type: FN
+[2025-12-07 18:47:51] Buffer size: 5/20
+[2025-12-07 18:47:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000202 | Type: FN
+[2025-12-07 18:47:51] Buffer size: 6/20
+[2025-12-07 18:47:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000196 | Type: FN
+[2025-12-07 18:47:51] Buffer size: 7/20
+[2025-12-07 18:47:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000196 | Type: FN
+[2025-12-07 18:47:51] Buffer size: 8/20
+[2025-12-07 18:47:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000205 | Type: FN
+[2025-12-07 18:47:51] Buffer size: 9/20
+[2025-12-07 18:47:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000190 | Type: FN
+[2025-12-07 18:47:51] Buffer size: 10/20
+[2025-12-07 18:47:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000194 | Type: FN
+[2025-12-07 18:47:51] Buffer size: 11/20
+[2025-12-07 18:47:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000188 | Type: FN
+[2025-12-07 18:47:51] Buffer size: 12/20
+[2025-12-07 18:47:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000194 | Type: FN
+[2025-12-07 18:47:51] Buffer size: 13/20
+[2025-12-07 18:47:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000194 | Type: FN
+[2025-12-07 18:47:51] Buffer size: 14/20
+[2025-12-07 18:47:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000159 | Type: TN
+[2025-12-07 18:47:51] Buffer size: 15/20
+[2025-12-07 18:47:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000194 | Type: FN
+[2025-12-07 18:47:51] Buffer size: 16/20
+[2025-12-07 18:47:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000202 | Type: FN
+[2025-12-07 18:47:51] Buffer size: 17/20
+[2025-12-07 18:47:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000162 | Type: FN
+[2025-12-07 18:47:51] Buffer size: 18/20
+[2025-12-07 18:47:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000205 | Type: FN
+[2025-12-07 18:47:51] Buffer size: 19/20
+[2025-12-07 18:47:59] 📥 RECEIVED FEEDBACK | Customer: CUST_000207 | Type: FN
+[2025-12-07 18:47:59] Buffer size: 20/20
+[2025-12-07 18:47:59] 
 ============================================================
-[2025-12-07 18:38:32] 🔄 Processing batch of 20 feedback points
-[2025-12-07 18:38:32] ============================================================
-[2025-12-07 18:38:32] ✗✓ FN | Customer: CUST_000131 | Cluster: 9 | Score: 2.60 | Predicted: IN | Update #21 | Latency: 80.25ms
-[2025-12-07 18:38:32] ✗✓ FN | Customer: CUST_000163 | Cluster: 13 | Score: -2.16 | Predicted: OUT | Update #22 | Latency: 63.01ms
-[2025-12-07 18:38:32] ✗✓ FN | Customer: CUST_000143 | Cluster: 11 | Score: 5.28 | Predicted: IN | Update #23 | Latency: 64.52ms
-[2025-12-07 18:38:33] ✗✓ FN | Customer: CUST_000143 | Cluster: 11 | Score: 5.68 | Predicted: IN | Update #24 | Latency: 76.78ms
-[2025-12-07 18:38:33] ✗✓ FN | Customer: CUST_000143 | Cluster: 11 | Score: 6.00 | Predicted: IN | Update #25 | Latency: 115.27ms
-[2025-12-07 18:38:33] ✗✓ FN | Customer: CUST_000137 | Cluster: 12 | Score: -4.31 | Predicted: OUT | Update #26 | Latency: 64.74ms
-[2025-12-07 18:38:33] ✗✓ FN | Customer: CUST_000139 | Cluster: 6 | Score: -8.04 | Predicted: OUT | Update #27 | Latency: 59.66ms
-[2025-12-07 18:38:33] ✗✗ TN | Customer: CUST_000113 | Cluster: 19 | Score: 5.20 | Predicted: IN | Update #28 | Latency: 65.06ms
-[2025-12-07 18:38:33] ✗✓ FN | Customer: CUST_000131 | Cluster: 9 | Score: 3.22 | Predicted: IN | Update #29 | Latency: 68.88ms
-[2025-12-07 18:38:33] ✗✗ TN | Customer: CUST_000117 | Cluster: 3 | Score: -15.02 | Predicted: OUT | Update #30 | Latency: 58.55ms
-[2025-12-07 18:38:33] ✗✓ FN | Customer: CUST_000131 | Cluster: 9 | Score: 3.68 | Predicted: IN | Update #31 | Latency: 86.48ms
-[2025-12-07 18:38:33] ✗✓ FN | Customer: CUST_000226 | Cluster: 6 | Score: -0.29 | Predicted: IN | Update #32 | Latency: 56.28ms
-[2025-12-07 18:38:33] ✗✗ TN | Customer: CUST_000220 | Cluster: 3 | Score: 4.60 | Predicted: IN | Update #33 | Latency: 57.99ms
-[2025-12-07 18:38:34] ✗✓ FN | Customer: CUST_000226 | Cluster: 6 | Score: 2.40 | Predicted: IN | Update #34 | Latency: 129.13ms
-[2025-12-07 18:38:34] ✗✓ FN | Customer: CUST_000259 | Cluster: 9 | Score: 0.22 | Predicted: IN | Update #35 | Latency: 65.18ms
-[2025-12-07 18:38:34] ✗✓ FN | Customer: CUST_000279 | Cluster: 2 | Score: -0.19 | Predicted: IN | Update #36 | Latency: 71.63ms
-[2025-12-07 18:38:34] ✗✓ FN | Customer: CUST_000270 | Cluster: 17 | Score: 1.46 | Predicted: IN | Update #37 | Latency: 202.75ms
-[2025-12-07 18:38:34] ✗✗ TN | Customer: CUST_000302 | Cluster: 2 | Score: 2.73 | Predicted: IN | Update #38 | Latency: 124.87ms
-[2025-12-07 18:38:34] ✗✓ FN | Customer: CUST_000270 | Cluster: 17 | Score: 2.45 | Predicted: IN | Update #39 | Latency: 86.29ms
-[2025-12-07 18:38:35] ✗✓ FN | Customer: CUST_000307 | Cluster: 16 | Score: 1.03 | Predicted: IN | Update #40 | Latency: 98.73ms
-[2025-12-07 18:38:35] 
+[2025-12-07 18:48:00] 🔄 Processing batch of 20 feedback points
+[2025-12-07 18:48:00] ============================================================
+[2025-12-07 18:48:00] ✗✓ FN | Customer: CUST_000153 | Cluster: 14 | Score: 4.87 | Predicted: IN | Update #21 | Latency: 121.29ms
+[2025-12-07 18:48:00] ✗✓ FN | Customer: CUST_000153 | Cluster: 14 | Score: 5.81 | Predicted: IN | Update #22 | Latency: 83.05ms
+[2025-12-07 18:48:00] ✗✗ TN | Customer: CUST_000164 | Cluster: 3 | Score: -8.13 | Predicted: OUT | Update #23 | Latency: 120.21ms
+[2025-12-07 18:48:00] ✗✓ FN | Customer: CUST_000205 | Cluster: 6 | Score: 4.06 | Predicted: IN | Update #24 | Latency: 84.78ms
+[2025-12-07 18:48:00] ✗✓ FN | Customer: CUST_000188 | Cluster: 14 | Score: -14.17 | Predicted: OUT | Update #25 | Latency: 84.85ms
+[2025-12-07 18:48:00] ✗✓ FN | Customer: CUST_000202 | Cluster: 12 | Score: 4.47 | Predicted: IN | Update #26 | Latency: 116.39ms
+[2025-12-07 18:48:01] ✗✓ FN | Customer: CUST_000196 | Cluster: 14 | Score: 6.71 | Predicted: IN | Update #27 | Latency: 97.33ms
+[2025-12-07 18:48:01] ✗✓ FN | Customer: CUST_000196 | Cluster: 14 | Score: 7.06 | Predicted: IN | Update #28 | Latency: 85.58ms
+[2025-12-07 18:48:01] ✗✓ FN | Customer: CUST_000205 | Cluster: 6 | Score: 5.04 | Predicted: IN | Update #29 | Latency: 109.58ms
+[2025-12-07 18:48:01] ✗✓ FN | Customer: CUST_000190 | Cluster: 8 | Score: -4.88 | Predicted: OUT | Update #30 | Latency: 107.92ms
+[2025-12-07 18:48:01] ✗✓ FN | Customer: CUST_000194 | Cluster: 4 | Score: 4.05 | Predicted: IN | Update #31 | Latency: 111.19ms
+[2025-12-07 18:48:01] ✗✓ FN | Customer: CUST_000188 | Cluster: 14 | Score: -15.70 | Predicted: OUT | Update #32 | Latency: 82.39ms
+[2025-12-07 18:48:01] ✗✓ FN | Customer: CUST_000194 | Cluster: 4 | Score: 5.72 | Predicted: IN | Update #33 | Latency: 83.11ms
+[2025-12-07 18:48:02] ✗✓ FN | Customer: CUST_000194 | Cluster: 4 | Score: 6.59 | Predicted: IN | Update #34 | Latency: 106.18ms
+[2025-12-07 18:48:02] ✗✗ TN | Customer: CUST_000159 | Cluster: 26 | Score: -0.45 | Predicted: OUT | Update #35 | Latency: 88.22ms
+[2025-12-07 18:48:02] ✗✓ FN | Customer: CUST_000194 | Cluster: 4 | Score: 7.15 | Predicted: IN | Update #36 | Latency: 77.40ms
+[2025-12-07 18:48:02] ✗✓ FN | Customer: CUST_000202 | Cluster: 12 | Score: 5.04 | Predicted: IN | Update #37 | Latency: 106.45ms
+[2025-12-07 18:48:02] ✗✓ FN | Customer: CUST_000162 | Cluster: 16 | Score: 4.34 | Predicted: IN | Update #38 | Latency: 126.94ms
+[2025-12-07 18:48:02] ✗✓ FN | Customer: CUST_000205 | Cluster: 6 | Score: 5.68 | Predicted: IN | Update #39 | Latency: 87.72ms
+[2025-12-07 18:48:02] ✗✓ FN | Customer: CUST_000207 | Cluster: 13 | Score: 6.86 | Predicted: IN | Update #40 | Latency: 106.49ms
+[2025-12-07 18:48:02] 
 💾 Saving model after 40 updates...
-[2025-12-07 18:38:35] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.330s
-[2025-12-07 18:38:35] ✓ Current state: Components=24, TP=0, FP=1, FN=32, TN=7
+[2025-12-07 18:48:03] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.361s
+[2025-12-07 18:48:03] ✓ Current state: Components=32, TP=0, FP=0, FN=35, TN=5
 
-[2025-12-07 18:38:35] 📊 Metric recorded: Save time = 0.330s, Components = 24
-[2025-12-07 18:38:35] ✓ Batch complete: 20 updates, 0 errors
-[2025-12-07 18:38:35] 📥 RECEIVED FEEDBACK | Customer: CUST_000279 | Type: FN
-[2025-12-07 18:38:35] Buffer size: 1/20
-[2025-12-07 18:38:35] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Type: TN
-[2025-12-07 18:38:35] Buffer size: 2/20
-[2025-12-07 18:38:35] 📥 RECEIVED FEEDBACK | Customer: CUST_000282 | Type: TN
-[2025-12-07 18:38:35] Buffer size: 3/20
-[2025-12-07 18:38:35] 📥 RECEIVED FEEDBACK | Customer: CUST_000360 | Type: FN
-[2025-12-07 18:38:35] Buffer size: 4/20
-[2025-12-07 18:38:35] 📥 RECEIVED FEEDBACK | Customer: CUST_000307 | Type: FN
-[2025-12-07 18:38:35] Buffer size: 5/20
-[2025-12-07 18:38:36] 📥 RECEIVED FEEDBACK | Customer: CUST_000307 | Type: TP
-[2025-12-07 18:38:36] Buffer size: 6/20
-[2025-12-07 18:38:36] 📥 RECEIVED FEEDBACK | Customer: CUST_000270 | Type: FN
-[2025-12-07 18:38:36] Buffer size: 7/20
-[2025-12-07 18:38:36] 📥 RECEIVED FEEDBACK | Customer: CUST_000302 | Type: FP
-[2025-12-07 18:38:36] Buffer size: 8/20
-[2025-12-07 18:38:36] 📥 RECEIVED FEEDBACK | Customer: CUST_000282 | Type: TN
-[2025-12-07 18:38:36] Buffer size: 9/20
-[2025-12-07 18:38:36] 📥 RECEIVED FEEDBACK | Customer: CUST_000270 | Type: FN
-[2025-12-07 18:38:36] Buffer size: 10/20
-[2025-12-07 18:38:36] 📥 RECEIVED FEEDBACK | Customer: CUST_000282 | Type: TN
-[2025-12-07 18:38:36] Buffer size: 11/20
-[2025-12-07 18:38:38] 📥 RECEIVED FEEDBACK | Customer: CUST_000424 | Type: FN
-[2025-12-07 18:38:38] Buffer size: 12/20
-[2025-12-07 18:38:38] 📥 RECEIVED FEEDBACK | Customer: CUST_000482 | Type: TN
-[2025-12-07 18:38:38] Buffer size: 13/20
-[2025-12-07 18:38:38] 📥 RECEIVED FEEDBACK | Customer: CUST_000449 | Type: FN
-[2025-12-07 18:38:38] Buffer size: 14/20
-[2025-12-07 18:38:38] 📥 RECEIVED FEEDBACK | Customer: CUST_000424 | Type: FN
-[2025-12-07 18:38:38] Buffer size: 15/20
-[2025-12-07 18:38:38] 📥 RECEIVED FEEDBACK | Customer: CUST_000407 | Type: FN
-[2025-12-07 18:38:38] Buffer size: 16/20
-[2025-12-07 18:38:38] 📥 RECEIVED FEEDBACK | Customer: CUST_000490 | Type: TN
-[2025-12-07 18:38:38] Buffer size: 17/20
-[2025-12-07 18:38:38] 📥 RECEIVED FEEDBACK | Customer: CUST_000499 | Type: FN
-[2025-12-07 18:38:38] Buffer size: 18/20
-[2025-12-07 18:38:38] 📥 RECEIVED FEEDBACK | Customer: CUST_000424 | Type: FN
-[2025-12-07 18:38:38] Buffer size: 19/20
-[2025-12-07 18:38:38] 📥 RECEIVED FEEDBACK | Customer: CUST_000360 | Type: FN
-[2025-12-07 18:38:38] Buffer size: 20/20
-[2025-12-07 18:38:38] 
+[2025-12-07 18:48:03] 📊 Metric recorded: Save time = 0.361s, Components = 32
+[2025-12-07 18:48:03] ✓ Batch complete: 20 updates, 0 errors
+[2025-12-07 18:48:03] 📥 RECEIVED FEEDBACK | Customer: CUST_000366 | Type: FN
+[2025-12-07 18:48:03] Buffer size: 1/20
+[2025-12-07 18:48:03] 📥 RECEIVED FEEDBACK | Customer: CUST_000226 | Type: FN
+[2025-12-07 18:48:03] Buffer size: 2/20
+[2025-12-07 18:48:03] 📥 RECEIVED FEEDBACK | Customer: CUST_000318 | Type: FN
+[2025-12-07 18:48:03] Buffer size: 3/20
+[2025-12-07 18:48:03] 📥 RECEIVED FEEDBACK | Customer: CUST_000360 | Type: FN
+[2025-12-07 18:48:04] Buffer size: 4/20
+[2025-12-07 18:48:04] 📥 RECEIVED FEEDBACK | Customer: CUST_000270 | Type: FN
+[2025-12-07 18:48:04] Buffer size: 5/20
+[2025-12-07 18:48:04] 📥 RECEIVED FEEDBACK | Customer: CUST_000270 | Type: FN
+[2025-12-07 18:48:04] Buffer size: 6/20
+[2025-12-07 18:48:04] 📥 RECEIVED FEEDBACK | Customer: CUST_000366 | Type: FN
+[2025-12-07 18:48:04] Buffer size: 7/20
+[2025-12-07 18:48:04] 📥 RECEIVED FEEDBACK | Customer: CUST_000242 | Type: FN
+[2025-12-07 18:48:04] Buffer size: 8/20
+[2025-12-07 18:48:04] 📥 RECEIVED FEEDBACK | Customer: CUST_000208 | Type: FN
+[2025-12-07 18:48:04] Buffer size: 9/20
+[2025-12-07 18:48:04] 📥 RECEIVED FEEDBACK | Customer: CUST_000214 | Type: FN
+[2025-12-07 18:48:04] Buffer size: 10/20
+[2025-12-07 18:48:04] 📥 RECEIVED FEEDBACK | Customer: CUST_000318 | Type: FN
+[2025-12-07 18:48:04] Buffer size: 11/20
+[2025-12-07 18:48:04] 📥 RECEIVED FEEDBACK | Customer: CUST_000318 | Type: FN
+[2025-12-07 18:48:04] Buffer size: 12/20
+[2025-12-07 18:48:04] 📥 RECEIVED FEEDBACK | Customer: CUST_000270 | Type: FN
+[2025-12-07 18:48:04] Buffer size: 13/20
+[2025-12-07 18:48:04] 📥 RECEIVED FEEDBACK | Customer: CUST_000207 | Type: FN
+[2025-12-07 18:48:05] Buffer size: 14/20
+[2025-12-07 18:48:05] 📥 RECEIVED FEEDBACK | Customer: CUST_000226 | Type: FN
+[2025-12-07 18:48:05] Buffer size: 15/20
+[2025-12-07 18:48:05] 📥 RECEIVED FEEDBACK | Customer: CUST_000279 | Type: FN
+[2025-12-07 18:48:05] Buffer size: 16/20
+[2025-12-07 18:48:05] 📥 RECEIVED FEEDBACK | Customer: CUST_000282 | Type: TN
+[2025-12-07 18:48:05] Buffer size: 17/20
+[2025-12-07 18:48:05] 📥 RECEIVED FEEDBACK | Customer: CUST_000226 | Type: FN
+[2025-12-07 18:48:05] Buffer size: 18/20
+[2025-12-07 18:48:05] 📥 RECEIVED FEEDBACK | Customer: CUST_000236 | Type: FN
+[2025-12-07 18:48:05] Buffer size: 19/20
+[2025-12-07 18:48:05] 📥 RECEIVED FEEDBACK | Customer: CUST_000295 | Type: FN
+[2025-12-07 18:48:05] Buffer size: 20/20
+[2025-12-07 18:48:05] 
 ============================================================
-[2025-12-07 18:38:38] 🔄 Processing batch of 20 feedback points
-[2025-12-07 18:38:38] ============================================================
-[2025-12-07 18:38:38] ✗✓ FN | Customer: CUST_000279 | Cluster: 2 | Score: 0.75 | Predicted: IN | Update #41 | Latency: 78.82ms
-[2025-12-07 18:38:39] ✗✗ TN | Customer: CUST_000302 | Cluster: 2 | Score: 2.73 | Predicted: IN | Update #42 | Latency: 78.54ms
-[2025-12-07 18:38:39] ✗✗ TN | Customer: CUST_000282 | Cluster: 3 | Score: 2.41 | Predicted: IN | Update #43 | Latency: 81.93ms
-[2025-12-07 18:38:39] ✗✓ FN | Customer: CUST_000360 | Cluster: 13 | Score: -2.69 | Predicted: OUT | Update #44 | Latency: 72.89ms
-[2025-12-07 18:38:39] ✗✓ FN | Customer: CUST_000307 | Cluster: 16 | Score: 2.48 | Predicted: IN | Update #45 | Latency: 97.56ms
-[2025-12-07 18:38:39] ✓✓ TP | Customer: CUST_000307 | Cluster: 16 | Score: 3.30 | Predicted: IN | Update #46 | Latency: 78.34ms
-[2025-12-07 18:38:39] ✗✓ FN | Customer: CUST_000270 | Cluster: 17 | Score: 3.09 | Predicted: IN | Update #47 | Latency: 137.36ms
-[2025-12-07 18:38:39] ✓✗ FP | Customer: CUST_000302 | Cluster: 2 | Score: 2.73 | Predicted: IN | Update #48 | Latency: 100.24ms
-[2025-12-07 18:38:40] ✗✗ TN | Customer: CUST_000282 | Cluster: 3 | Score: 2.41 | Predicted: IN | Update #49 | Latency: 139.35ms
-[2025-12-07 18:38:40] ✗✓ FN | Customer: CUST_000270 | Cluster: 17 | Score: 3.56 | Predicted: IN | Update #50 | Latency: 120.97ms
-[2025-12-07 18:38:40] ✗✗ TN | Customer: CUST_000282 | Cluster: 3 | Score: 2.41 | Predicted: IN | Update #51 | Latency: 117.35ms
-[2025-12-07 18:38:40] ✗✓ FN | Customer: CUST_000424 | Cluster: 6 | Score: -1.38 | Predicted: OUT | Update #52 | Latency: 86.40ms
-[2025-12-07 18:38:40] ✗✗ TN | Customer: CUST_000482 | Cluster: 15 | Score: -4.50 | Predicted: OUT | Update #53 | Latency: 71.94ms
-[2025-12-07 18:38:40] ✗✓ FN | Customer: CUST_000449 | Cluster: 4 | Score: 4.19 | Predicted: IN | Update #54 | Latency: 91.29ms
-[2025-12-07 18:38:40] ✗✓ FN | Customer: CUST_000424 | Cluster: 6 | Score: -1.38 | Predicted: OUT | Update #55 | Latency: 111.89ms
-[2025-12-07 18:38:41] ✗✓ FN | Customer: CUST_000407 | Cluster: 12 | Score: -2.33 | Predicted: OUT | Update #56 | Latency: 114.55ms
-[2025-12-07 18:38:41] ✗✗ TN | Customer: CUST_000490 | Cluster: 19 | Score: -2.27 | Predicted: OUT | Update #57 | Latency: 148.08ms
-[2025-12-07 18:38:41] ✗✓ FN | Customer: CUST_000499 | Cluster: 18 | Score: 1.54 | Predicted: IN | Update #58 | Latency: 80.29ms
-[2025-12-07 18:38:41] ✗✓ FN | Customer: CUST_000424 | Cluster: 6 | Score: -1.38 | Predicted: OUT | Update #59 | Latency: 85.07ms
-[2025-12-07 18:38:41] ✗✓ FN | Customer: CUST_000360 | Cluster: 13 | Score: -2.69 | Predicted: OUT | Update #60 | Latency: 87.18ms
-[2025-12-07 18:38:41] 
+[2025-12-07 18:48:05] 🔄 Processing batch of 20 feedback points
+[2025-12-07 18:48:05] ============================================================
+[2025-12-07 18:48:05] ✗✓ FN | Customer: CUST_000366 | Cluster: 12 | Score: 1.54 | Predicted: IN | Update #41 | Latency: 114.16ms
+[2025-12-07 18:48:05] ✗✓ FN | Customer: CUST_000226 | Cluster: 6 | Score: 3.16 | Predicted: IN | Update #42 | Latency: 82.71ms
+[2025-12-07 18:48:05] ✗✓ FN | Customer: CUST_000318 | Cluster: 5 | Score: 3.06 | Predicted: IN | Update #43 | Latency: 80.62ms
+[2025-12-07 18:48:06] ✗✓ FN | Customer: CUST_000360 | Cluster: 24 | Score: 14.34 | Predicted: IN | Update #44 | Latency: 106.20ms
+[2025-12-07 18:48:06] ✗✓ FN | Customer: CUST_000270 | Cluster: 17 | Score: 3.94 | Predicted: IN | Update #45 | Latency: 83.10ms
+[2025-12-07 18:48:06] ✗✓ FN | Customer: CUST_000270 | Cluster: 17 | Score: 4.26 | Predicted: IN | Update #46 | Latency: 411.83ms
+[2025-12-07 18:48:06] ✗✓ FN | Customer: CUST_000366 | Cluster: 12 | Score: 3.50 | Predicted: IN | Update #47 | Latency: 111.32ms
+[2025-12-07 18:48:07] ✗✓ FN | Customer: CUST_000242 | Cluster: 26 | Score: -14.30 | Predicted: OUT | Update #48 | Latency: 155.92ms
+[2025-12-07 18:48:07] ✗✓ FN | Customer: CUST_000208 | Cluster: 10 | Score: -4.71 | Predicted: OUT | Update #49 | Latency: 92.36ms
+[2025-12-07 18:48:07] ✗✓ FN | Customer: CUST_000214 | Cluster: 8 | Score: 5.06 | Predicted: IN | Update #50 | Latency: 133.51ms
+[2025-12-07 18:48:07] ✗✓ FN | Customer: CUST_000318 | Cluster: 5 | Score: 4.17 | Predicted: IN | Update #51 | Latency: 118.21ms
+[2025-12-07 18:48:07] ✗✓ FN | Customer: CUST_000318 | Cluster: 5 | Score: 4.93 | Predicted: IN | Update #52 | Latency: 144.74ms
+[2025-12-07 18:48:07] ✗✓ FN | Customer: CUST_000270 | Cluster: 17 | Score: 4.54 | Predicted: IN | Update #53 | Latency: 91.05ms
+[2025-12-07 18:48:08] ✗✓ FN | Customer: CUST_000207 | Cluster: 13 | Score: 7.52 | Predicted: IN | Update #54 | Latency: 175.66ms
+[2025-12-07 18:48:08] ✗✓ FN | Customer: CUST_000226 | Cluster: 6 | Score: 4.19 | Predicted: IN | Update #55 | Latency: 120.57ms
+[2025-12-07 18:48:08] ✗✓ FN | Customer: CUST_000279 | Cluster: 2 | Score: 1.35 | Predicted: IN | Update #56 | Latency: 107.60ms
+[2025-12-07 18:48:08] ✗✗ TN | Customer: CUST_000282 | Cluster: 3 | Score: 2.41 | Predicted: IN | Update #57 | Latency: 94.47ms
+[2025-12-07 18:48:08] ✗✓ FN | Customer: CUST_000226 | Cluster: 6 | Score: 4.90 | Predicted: IN | Update #58 | Latency: 77.47ms
+[2025-12-07 18:48:08] ✗✓ FN | Customer: CUST_000236 | Cluster: 12 | Score: -2.71 | Predicted: OUT | Update #59 | Latency: 74.57ms
+[2025-12-07 18:48:08] ✗✓ FN | Customer: CUST_000295 | Cluster: 18 | Score: 2.73 | Predicted: IN | Update #60 | Latency: 125.44ms
+[2025-12-07 18:48:08] 
 💾 Saving model after 60 updates...
-[2025-12-07 18:38:42] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.935s
-[2025-12-07 18:38:42] ✓ Current state: Components=26, TP=1, FP=2, FN=44, TN=13
+[2025-12-07 18:48:09] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.395s
+[2025-12-07 18:48:09] ✓ Current state: Components=34, TP=0, FP=0, FN=54, TN=6
 
-[2025-12-07 18:38:42] 📊 Metric recorded: Save time = 0.935s, Components = 26
-[2025-12-07 18:38:42] ✓ Batch complete: 20 updates, 0 errors
-[2025-12-07 18:38:42] 📥 RECEIVED FEEDBACK | Customer: CUST_000360 | Type: FN
-[2025-12-07 18:38:42] Buffer size: 1/20
-[2025-12-07 18:38:43] 📥 RECEIVED FEEDBACK | Customer: CUST_000442 | Type: FN
-[2025-12-07 18:38:43] Buffer size: 2/20
-[2025-12-07 18:38:43] 📥 RECEIVED FEEDBACK | Customer: CUST_000442 | Type: FN
-[2025-12-07 18:38:43] Buffer size: 3/20
-[2025-12-07 18:38:43] 📥 RECEIVED FEEDBACK | Customer: CUST_000499 | Type: FN
-[2025-12-07 18:38:43] Buffer size: 4/20
-[2025-12-07 18:38:43] 📥 RECEIVED FEEDBACK | Customer: CUST_000499 | Type: FN
-[2025-12-07 18:38:43] Buffer size: 5/20
-[2025-12-07 18:38:43] 📥 RECEIVED FEEDBACK | Customer: CUST_000449 | Type: FN
-[2025-12-07 18:38:43] Buffer size: 6/20
-[2025-12-07 18:38:43] 📥 RECEIVED FEEDBACK | Customer: CUST_000424 | Type: FN
-[2025-12-07 18:38:43] Buffer size: 7/20
-[2025-12-07 18:38:43] 📥 RECEIVED FEEDBACK | Customer: CUST_000407 | Type: FN
-[2025-12-07 18:38:43] Buffer size: 8/20
-[2025-12-07 18:38:43] 📥 RECEIVED FEEDBACK | Customer: CUST_000424 | Type: FN
-[2025-12-07 18:38:43] Buffer size: 9/20
-[2025-12-07 18:38:43] 📥 RECEIVED FEEDBACK | Customer: CUST_000396 | Type: FN
-[2025-12-07 18:38:43] Buffer size: 10/20
-[2025-12-07 18:38:43] 📥 RECEIVED FEEDBACK | Customer: CUST_000449 | Type: FN
-[2025-12-07 18:38:43] Buffer size: 11/20
-[2025-12-07 18:38:43] 📥 RECEIVED FEEDBACK | Customer: CUST_000442 | Type: FN
-[2025-12-07 18:38:44] Buffer size: 12/20
-[2025-12-07 18:38:47] 📥 RECEIVED FEEDBACK | Customer: CUST_000629 | Type: FN
-[2025-12-07 18:38:47] Buffer size: 13/20
-[2025-12-07 18:38:47] 📥 RECEIVED FEEDBACK | Customer: CUST_000542 | Type: TN
-[2025-12-07 18:38:47] Buffer size: 14/20
-[2025-12-07 18:38:47] 📥 RECEIVED FEEDBACK | Customer: CUST_000573 | Type: FN
-[2025-12-07 18:38:47] Buffer size: 15/20
-[2025-12-07 18:38:47] 📥 RECEIVED FEEDBACK | Customer: CUST_000629 | Type: FN
-[2025-12-07 18:38:47] Buffer size: 16/20
-[2025-12-07 18:38:47] 📥 RECEIVED FEEDBACK | Customer: CUST_000503 | Type: FN
-[2025-12-07 18:38:47] Buffer size: 17/20
-[2025-12-07 18:38:47] 📥 RECEIVED FEEDBACK | Customer: CUST_000631 | Type: FN
-[2025-12-07 18:38:47] Buffer size: 18/20
-[2025-12-07 18:38:47] 📥 RECEIVED FEEDBACK | Customer: CUST_000558 | Type: TN
-[2025-12-07 18:38:47] Buffer size: 19/20
-[2025-12-07 18:38:47] 📥 RECEIVED FEEDBACK | Customer: CUST_000558 | Type: TN
-[2025-12-07 18:38:47] Buffer size: 20/20
-[2025-12-07 18:38:47] 
+[2025-12-07 18:48:09] 📊 Metric recorded: Save time = 0.395s, Components = 34
+[2025-12-07 18:48:09] ✓ Batch complete: 20 updates, 0 errors
+[2025-12-07 18:48:09] 📥 RECEIVED FEEDBACK | Customer: CUST_000237 | Type: FN
+[2025-12-07 18:48:09] Buffer size: 1/20
+[2025-12-07 18:48:09] 📥 RECEIVED FEEDBACK | Customer: CUST_000295 | Type: FN
+[2025-12-07 18:48:09] Buffer size: 2/20
+[2025-12-07 18:48:09] 📥 RECEIVED FEEDBACK | Customer: CUST_000214 | Type: FN
+[2025-12-07 18:48:09] Buffer size: 3/20
+[2025-12-07 18:48:09] 📥 RECEIVED FEEDBACK | Customer: CUST_000282 | Type: TN
+[2025-12-07 18:48:09] Buffer size: 4/20
+[2025-12-07 18:48:09] 📥 RECEIVED FEEDBACK | Customer: CUST_000360 | Type: FN
+[2025-12-07 18:48:10] Buffer size: 5/20
+[2025-12-07 18:48:10] 📥 RECEIVED FEEDBACK | Customer: CUST_000270 | Type: FN
+[2025-12-07 18:48:10] Buffer size: 6/20
+[2025-12-07 18:48:10] 📥 RECEIVED FEEDBACK | Customer: CUST_000214 | Type: FN
+[2025-12-07 18:48:10] Buffer size: 7/20
+[2025-12-07 18:48:10] 📥 RECEIVED FEEDBACK | Customer: CUST_000242 | Type: FN
+[2025-12-07 18:48:10] Buffer size: 8/20
+[2025-12-07 18:48:10] 📥 RECEIVED FEEDBACK | Customer: CUST_000237 | Type: FN
+[2025-12-07 18:48:10] Buffer size: 9/20
+[2025-12-07 18:48:10] 📥 RECEIVED FEEDBACK | Customer: CUST_000242 | Type: FN
+[2025-12-07 18:48:10] Buffer size: 10/20
+[2025-12-07 18:48:10] 📥 RECEIVED FEEDBACK | Customer: CUST_000237 | Type: FN
+[2025-12-07 18:48:10] Buffer size: 11/20
+[2025-12-07 18:48:10] 📥 RECEIVED FEEDBACK | Customer: CUST_000366 | Type: FN
+[2025-12-07 18:48:10] Buffer size: 12/20
+[2025-12-07 18:48:10] 📥 RECEIVED FEEDBACK | Customer: CUST_000242 | Type: FN
+[2025-12-07 18:48:10] Buffer size: 13/20
+[2025-12-07 18:48:10] 📥 RECEIVED FEEDBACK | Customer: CUST_000360 | Type: FN
+[2025-12-07 18:48:10] Buffer size: 14/20
+[2025-12-07 18:48:10] 📥 RECEIVED FEEDBACK | Customer: CUST_000208 | Type: FN
+[2025-12-07 18:48:10] Buffer size: 15/20
+[2025-12-07 18:48:10] 📥 RECEIVED FEEDBACK | Customer: CUST_000282 | Type: TN
+[2025-12-07 18:48:10] Buffer size: 16/20
+[2025-12-07 18:48:10] 📥 RECEIVED FEEDBACK | Customer: CUST_000208 | Type: FN
+[2025-12-07 18:48:10] Buffer size: 17/20
+[2025-12-07 18:48:11] 📥 RECEIVED FEEDBACK | Customer: CUST_000360 | Type: FN
+[2025-12-07 18:48:11] Buffer size: 18/20
+[2025-12-07 18:48:11] 📥 RECEIVED FEEDBACK | Customer: CUST_000226 | Type: FN
+[2025-12-07 18:48:11] Buffer size: 19/20
+[2025-12-07 18:48:11] 📥 RECEIVED FEEDBACK | Customer: CUST_000318 | Type: FN
+[2025-12-07 18:48:11] Buffer size: 20/20
+[2025-12-07 18:48:11] 
 ============================================================
-[2025-12-07 18:38:47] 🔄 Processing batch of 20 feedback points
-[2025-12-07 18:38:47] ============================================================
-[2025-12-07 18:38:47] ✗✓ FN | Customer: CUST_000360 | Cluster: 25 | Score: 14.21 | Predicted: IN | Update #61 | Latency: 56.27ms
-[2025-12-07 18:38:47] ✗✓ FN | Customer: CUST_000442 | Cluster: 18 | Score: 6.41 | Predicted: IN | Update #62 | Latency: 103.69ms
-[2025-12-07 18:38:47] ✗✓ FN | Customer: CUST_000442 | Cluster: 18 | Score: 6.68 | Predicted: IN | Update #63 | Latency: 55.85ms
-[2025-12-07 18:38:47] ✗✓ FN | Customer: CUST_000499 | Cluster: 18 | Score: 3.26 | Predicted: IN | Update #64 | Latency: 70.05ms
-[2025-12-07 18:38:48] ✗✓ FN | Customer: CUST_000499 | Cluster: 18 | Score: 4.50 | Predicted: IN | Update #65 | Latency: 116.10ms
-[2025-12-07 18:38:48] ✗✓ FN | Customer: CUST_000449 | Cluster: 4 | Score: 5.18 | Predicted: IN | Update #66 | Latency: 91.57ms
-[2025-12-07 18:38:48] ✗✓ FN | Customer: CUST_000424 | Cluster: 25 | Score: 14.98 | Predicted: IN | Update #67 | Latency: 124.66ms
-[2025-12-07 18:38:48] ✗✓ FN | Customer: CUST_000407 | Cluster: 24 | Score: 19.70 | Predicted: IN | Update #68 | Latency: 75.32ms
-[2025-12-07 18:38:48] ✗✓ FN | Customer: CUST_000424 | Cluster: 25 | Score: 15.12 | Predicted: IN | Update #69 | Latency: 104.98ms
-[2025-12-07 18:38:48] ✗✓ FN | Customer: CUST_000396 | Cluster: 19 | Score: 3.63 | Predicted: IN | Update #70 | Latency: 89.79ms
-[2025-12-07 18:38:48] ✗✓ FN | Customer: CUST_000449 | Cluster: 4 | Score: 5.83 | Predicted: IN | Update #71 | Latency: 106.54ms
-[2025-12-07 18:38:49] ✗✓ FN | Customer: CUST_000442 | Cluster: 18 | Score: 6.67 | Predicted: IN | Update #72 | Latency: 82.94ms
-[2025-12-07 18:38:49] ✗✓ FN | Customer: CUST_000629 | Cluster: 13 | Score: 1.48 | Predicted: IN | Update #73 | Latency: 87.50ms
-[2025-12-07 18:38:49] ✗✗ TN | Customer: CUST_000542 | Cluster: 15 | Score: -2.29 | Predicted: OUT | Update #74 | Latency: 142.14ms
-[2025-12-07 18:38:49] ✗✓ FN | Customer: CUST_000573 | Cluster: 14 | Score: 5.12 | Predicted: IN | Update #75 | Latency: 88.77ms
-[2025-12-07 18:38:49] ✗✓ FN | Customer: CUST_000629 | Cluster: 13 | Score: 3.78 | Predicted: IN | Update #76 | Latency: 152.76ms
-[2025-12-07 18:38:49] ✗✓ FN | Customer: CUST_000503 | Cluster: 4 | Score: 7.35 | Predicted: IN | Update #77 | Latency: 128.74ms
-[2025-12-07 18:38:50] ✗✓ FN | Customer: CUST_000631 | Cluster: 8 | Score: -2.69 | Predicted: OUT | Update #78 | Latency: 90.30ms
-[2025-12-07 18:38:50] ✗✗ TN | Customer: CUST_000558 | Cluster: 14 | Score: 2.87 | Predicted: IN | Update #79 | Latency: 91.25ms
-[2025-12-07 18:38:50] ✗✗ TN | Customer: CUST_000558 | Cluster: 14 | Score: 2.87 | Predicted: IN | Update #80 | Latency: 91.02ms
-[2025-12-07 18:38:50] 
+[2025-12-07 18:48:11] 🔄 Processing batch of 20 feedback points
+[2025-12-07 18:48:11] ============================================================
+[2025-12-07 18:48:11] ✗✓ FN | Customer: CUST_000237 | Cluster: 12 | Score: 5.48 | Predicted: IN | Update #61 | Latency: 129.33ms
+[2025-12-07 18:48:11] ✗✓ FN | Customer: CUST_000295 | Cluster: 18 | Score: 4.49 | Predicted: IN | Update #62 | Latency: 96.91ms
+[2025-12-07 18:48:11] ✗✓ FN | Customer: CUST_000214 | Cluster: 8 | Score: 5.79 | Predicted: IN | Update #63 | Latency: 130.94ms
+[2025-12-07 18:48:11] ✗✗ TN | Customer: CUST_000282 | Cluster: 3 | Score: 2.41 | Predicted: IN | Update #64 | Latency: 79.78ms
+[2025-12-07 18:48:12] ✗✓ FN | Customer: CUST_000360 | Cluster: 24 | Score: 14.56 | Predicted: IN | Update #65 | Latency: 79.41ms
+[2025-12-07 18:48:12] ✗✓ FN | Customer: CUST_000270 | Cluster: 17 | Score: 4.80 | Predicted: IN | Update #66 | Latency: 143.63ms
+[2025-12-07 18:48:12] ✗✓ FN | Customer: CUST_000214 | Cluster: 8 | Score: 6.30 | Predicted: IN | Update #67 | Latency: 82.44ms
+[2025-12-07 18:48:12] ✗✓ FN | Customer: CUST_000242 | Cluster: 33 | Score: 15.05 | Predicted: IN | Update #68 | Latency: 103.25ms
+[2025-12-07 18:48:12] ✗✓ FN | Customer: CUST_000237 | Cluster: 12 | Score: 5.87 | Predicted: IN | Update #69 | Latency: 92.48ms
+[2025-12-07 18:48:12] ✗✓ FN | Customer: CUST_000242 | Cluster: 33 | Score: 15.22 | Predicted: IN | Update #70 | Latency: 94.37ms
+[2025-12-07 18:48:12] ✗✓ FN | Customer: CUST_000237 | Cluster: 12 | Score: 6.19 | Predicted: IN | Update #71 | Latency: 100.50ms
+[2025-12-07 18:48:13] ✗✓ FN | Customer: CUST_000366 | Cluster: 12 | Score: 4.43 | Predicted: IN | Update #72 | Latency: 101.64ms
+[2025-12-07 18:48:13] ✗✓ FN | Customer: CUST_000242 | Cluster: 33 | Score: 15.38 | Predicted: IN | Update #73 | Latency: 99.26ms
+[2025-12-07 18:48:13] ✗✓ FN | Customer: CUST_000360 | Cluster: 24 | Score: 14.75 | Predicted: IN | Update #74 | Latency: 101.27ms
+[2025-12-07 18:48:13] ✗✓ FN | Customer: CUST_000208 | Cluster: 32 | Score: 19.70 | Predicted: IN | Update #75 | Latency: 99.22ms
+[2025-12-07 18:48:13] ✗✗ TN | Customer: CUST_000282 | Cluster: 3 | Score: 2.41 | Predicted: IN | Update #76 | Latency: 96.22ms
+[2025-12-07 18:48:13] ✗✓ FN | Customer: CUST_000208 | Cluster: 32 | Score: 19.79 | Predicted: IN | Update #77 | Latency: 88.82ms
+[2025-12-07 18:48:14] ✗✓ FN | Customer: CUST_000360 | Cluster: 24 | Score: 14.93 | Predicted: IN | Update #78 | Latency: 89.37ms
+[2025-12-07 18:48:14] ✗✓ FN | Customer: CUST_000226 | Cluster: 6 | Score: 5.44 | Predicted: IN | Update #79 | Latency: 95.25ms
+[2025-12-07 18:48:14] ✗✓ FN | Customer: CUST_000318 | Cluster: 5 | Score: 5.49 | Predicted: IN | Update #80 | Latency: 128.68ms
+[2025-12-07 18:48:14] 
 💾 Saving model after 80 updates...
-[2025-12-07 18:38:50] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.207s
-[2025-12-07 18:38:50] ✓ Current state: Components=26, TP=1, FP=2, FN=61, TN=16
+[2025-12-07 18:48:14] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.084s
+[2025-12-07 18:48:14] ✓ Current state: Components=34, TP=0, FP=0, FN=72, TN=8
 
-[2025-12-07 18:38:50] 📊 Metric recorded: Save time = 0.207s, Components = 26
-[2025-12-07 18:38:50] ✓ Batch complete: 20 updates, 0 errors
-[2025-12-07 18:38:50] 📥 RECEIVED FEEDBACK | Customer: CUST_000629 | Type: FN
-[2025-12-07 18:38:50] Buffer size: 1/20
-[2025-12-07 18:38:50] 📥 RECEIVED FEEDBACK | Customer: CUST_000553 | Type: FN
-[2025-12-07 18:38:50] Buffer size: 2/20
-[2025-12-07 18:38:50] 📥 RECEIVED FEEDBACK | Customer: CUST_000542 | Type: TN
-[2025-12-07 18:38:51] Buffer size: 3/20
-[2025-12-07 18:38:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000570 | Type: TN
-[2025-12-07 18:38:51] Buffer size: 4/20
-[2025-12-07 18:38:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000553 | Type: FN
-[2025-12-07 18:38:51] Buffer size: 5/20
-[2025-12-07 18:38:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000632 | Type: TN
-[2025-12-07 18:38:51] Buffer size: 6/20
-[2025-12-07 18:38:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000629 | Type: FN
-[2025-12-07 18:38:51] Buffer size: 7/20
-[2025-12-07 18:38:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000573 | Type: FN
-[2025-12-07 18:38:51] Buffer size: 8/20
-[2025-12-07 18:38:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000542 | Type: TN
-[2025-12-07 18:38:51] Buffer size: 9/20
-[2025-12-07 18:38:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000553 | Type: FN
-[2025-12-07 18:38:51] Buffer size: 10/20
-[2025-12-07 18:38:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000629 | Type: FN
-[2025-12-07 18:38:51] Buffer size: 11/20
-[2025-12-07 18:38:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000582 | Type: FN
-[2025-12-07 18:38:51] Buffer size: 12/20
-[2025-12-07 18:38:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000613 | Type: FN
-[2025-12-07 18:38:51] Buffer size: 13/20
-[2025-12-07 18:38:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000582 | Type: FN
-[2025-12-07 18:38:51] Buffer size: 14/20
-[2025-12-07 18:38:51] 📥 RECEIVED FEEDBACK | Customer: CUST_000503 | Type: FN
-[2025-12-07 18:38:51] Buffer size: 15/20
-[2025-12-07 18:38:52] 📥 RECEIVED FEEDBACK | Customer: CUST_000616 | Type: FN
-[2025-12-07 18:38:52] Buffer size: 16/20
-[2025-12-07 18:38:52] 📥 RECEIVED FEEDBACK | Customer: CUST_000632 | Type: TN
-[2025-12-07 18:38:52] Buffer size: 17/20
-[2025-12-07 18:38:52] 📥 RECEIVED FEEDBACK | Customer: CUST_000582 | Type: FN
-[2025-12-07 18:38:52] Buffer size: 18/20
-[2025-12-07 18:38:52] 📥 RECEIVED FEEDBACK | Customer: CUST_000558 | Type: TN
-[2025-12-07 18:38:52] Buffer size: 19/20
-[2025-12-07 18:38:52] 📥 RECEIVED FEEDBACK | Customer: CUST_000503 | Type: FN
-[2025-12-07 18:38:52] Buffer size: 20/20
-[2025-12-07 18:38:52] 
+[2025-12-07 18:48:14] 📊 Metric recorded: Save time = 0.084s, Components = 34
+[2025-12-07 18:48:14] ✓ Batch complete: 20 updates, 0 errors
+[2025-12-07 18:48:14] 📥 RECEIVED FEEDBACK | Customer: CUST_000282 | Type: TN
+[2025-12-07 18:48:14] Buffer size: 1/20
+[2025-12-07 18:48:14] 📥 RECEIVED FEEDBACK | Customer: CUST_000270 | Type: FN
+[2025-12-07 18:48:14] Buffer size: 2/20
+[2025-12-07 18:48:14] 📥 RECEIVED FEEDBACK | Customer: CUST_000360 | Type: FN
+[2025-12-07 18:48:14] Buffer size: 3/20
+[2025-12-07 18:48:14] 📥 RECEIVED FEEDBACK | Customer: CUST_000220 | Type: TN
+[2025-12-07 18:48:15] Buffer size: 4/20
+[2025-12-07 18:48:17] 📥 RECEIVED FEEDBACK | Customer: CUST_000597 | Type: FN
+[2025-12-07 18:48:17] Buffer size: 5/20
+[2025-12-07 18:48:17] 📥 RECEIVED FEEDBACK | Customer: CUST_000509 | Type: TN
+[2025-12-07 18:48:17] Buffer size: 6/20
+[2025-12-07 18:48:18] 📥 RECEIVED FEEDBACK | Customer: CUST_000387 | Type: FN
+[2025-12-07 18:48:18] Buffer size: 7/20
+[2025-12-07 18:48:18] 📥 RECEIVED FEEDBACK | Customer: CUST_000366 | Type: FN
+[2025-12-07 18:48:18] Buffer size: 8/20
+[2025-12-07 18:48:18] 📥 RECEIVED FEEDBACK | Customer: CUST_000406 | Type: FN
+[2025-12-07 18:48:18] Buffer size: 9/20
+[2025-12-07 18:48:18] 📥 RECEIVED FEEDBACK | Customer: CUST_000405 | Type: FN
+[2025-12-07 18:48:18] Buffer size: 10/20
+[2025-12-07 18:48:18] 📥 RECEIVED FEEDBACK | Customer: CUST_000449 | Type: FN
+[2025-12-07 18:48:18] Buffer size: 11/20
+[2025-12-07 18:48:18] 📥 RECEIVED FEEDBACK | Customer: CUST_000509 | Type: TN
+[2025-12-07 18:48:18] Buffer size: 12/20
+[2025-12-07 18:48:18] 📥 RECEIVED FEEDBACK | Customer: CUST_000489 | Type: FN
+[2025-12-07 18:48:18] Buffer size: 13/20
+[2025-12-07 18:48:18] 📥 RECEIVED FEEDBACK | Customer: CUST_000385 | Type: FN
+[2025-12-07 18:48:18] Buffer size: 14/20
+[2025-12-07 18:48:18] 📥 RECEIVED FEEDBACK | Customer: CUST_000509 | Type: TN
+[2025-12-07 18:48:18] Buffer size: 15/20
+[2025-12-07 18:48:18] 📥 RECEIVED FEEDBACK | Customer: CUST_000387 | Type: FN
+[2025-12-07 18:48:18] Buffer size: 16/20
+[2025-12-07 18:48:18] 📥 RECEIVED FEEDBACK | Customer: CUST_000489 | Type: FN
+[2025-12-07 18:48:18] Buffer size: 17/20
+[2025-12-07 18:48:18] 📥 RECEIVED FEEDBACK | Customer: CUST_000385 | Type: FN
+[2025-12-07 18:48:18] Buffer size: 18/20
+[2025-12-07 18:48:18] 📥 RECEIVED FEEDBACK | Customer: CUST_000375 | Type: FN
+[2025-12-07 18:48:18] Buffer size: 19/20
+[2025-12-07 18:48:18] 📥 RECEIVED FEEDBACK | Customer: CUST_000523 | Type: TN
+[2025-12-07 18:48:19] Buffer size: 20/20
+[2025-12-07 18:48:19] 
 ============================================================
-[2025-12-07 18:38:52] 🔄 Processing batch of 20 feedback points
-[2025-12-07 18:38:52] ============================================================
-[2025-12-07 18:38:52] ✗✓ FN | Customer: CUST_000629 | Cluster: 13 | Score: 5.09 | Predicted: IN | Update #81 | Latency: 97.38ms
-[2025-12-07 18:38:52] ✗✓ FN | Customer: CUST_000553 | Cluster: 19 | Score: -4.82 | Predicted: OUT | Update #82 | Latency: 100.47ms
-[2025-12-07 18:38:53] ✗✗ TN | Customer: CUST_000542 | Cluster: 15 | Score: -2.29 | Predicted: OUT | Update #83 | Latency: 84.31ms
-[2025-12-07 18:38:53] ✗✗ TN | Customer: CUST_000570 | Cluster: 15 | Score: 1.46 | Predicted: IN | Update #84 | Latency: 84.54ms
-[2025-12-07 18:38:53] ✗✓ FN | Customer: CUST_000553 | Cluster: 19 | Score: -4.82 | Predicted: OUT | Update #85 | Latency: 126.39ms
-[2025-12-07 18:38:53] ✗✗ TN | Customer: CUST_000632 | Cluster: 15 | Score: -1.17 | Predicted: OUT | Update #86 | Latency: 86.33ms
-[2025-12-07 18:38:53] ✗✓ FN | Customer: CUST_000629 | Cluster: 13 | Score: 5.99 | Predicted: IN | Update #87 | Latency: 124.94ms
-[2025-12-07 18:38:53] ✗✓ FN | Customer: CUST_000573 | Cluster: 14 | Score: 5.91 | Predicted: IN | Update #88 | Latency: 89.82ms
-[2025-12-07 18:38:53] ✗✗ TN | Customer: CUST_000542 | Cluster: 15 | Score: -2.29 | Predicted: OUT | Update #89 | Latency: 93.24ms
-[2025-12-07 18:38:54] ✗✓ FN | Customer: CUST_000553 | Cluster: 19 | Score: -4.82 | Predicted: OUT | Update #90 | Latency: 83.64ms
-[2025-12-07 18:38:54] ✗✓ FN | Customer: CUST_000629 | Cluster: 13 | Score: 6.68 | Predicted: IN | Update #91 | Latency: 82.98ms
-[2025-12-07 18:38:54] ✗✓ FN | Customer: CUST_000582 | Cluster: 9 | Score: -2.34 | Predicted: OUT | Update #92 | Latency: 77.64ms
-[2025-12-07 18:38:54] ✗✓ FN | Customer: CUST_000613 | Cluster: 19 | Score: -8.67 | Predicted: OUT | Update #93 | Latency: 97.68ms
-[2025-12-07 18:38:54] ✗✓ FN | Customer: CUST_000582 | Cluster: 9 | Score: -2.34 | Predicted: OUT | Update #94 | Latency: 109.61ms
-[2025-12-07 18:38:54] ✗✓ FN | Customer: CUST_000503 | Cluster: 4 | Score: 7.58 | Predicted: IN | Update #95 | Latency: 97.47ms
-[2025-12-07 18:38:54] ✗✓ FN | Customer: CUST_000616 | Cluster: 13 | Score: 0.63 | Predicted: OUT | Update #96 | Latency: 131.37ms
-[2025-12-07 18:38:55] ✗✗ TN | Customer: CUST_000632 | Cluster: 15 | Score: -1.17 | Predicted: OUT | Update #97 | Latency: 124.62ms
-[2025-12-07 18:38:55] ✗✓ FN | Customer: CUST_000582 | Cluster: 9 | Score: -2.34 | Predicted: OUT | Update #98 | Latency: 145.58ms
-[2025-12-07 18:38:55] ✗✗ TN | Customer: CUST_000558 | Cluster: 14 | Score: 2.65 | Predicted: IN | Update #99 | Latency: 91.94ms
-[2025-12-07 18:38:55] ✗✓ FN | Customer: CUST_000503 | Cluster: 4 | Score: 7.80 | Predicted: IN | Update #100 | Latency: 145.94ms
-[2025-12-07 18:38:55] 
+[2025-12-07 18:48:19] 🔄 Processing batch of 20 feedback points
+[2025-12-07 18:48:19] ============================================================
+[2025-12-07 18:48:19] ✗✗ TN | Customer: CUST_000282 | Cluster: 3 | Score: 2.41 | Predicted: IN | Update #81 | Latency: 77.22ms
+[2025-12-07 18:48:19] ✗✓ FN | Customer: CUST_000270 | Cluster: 17 | Score: 5.03 | Predicted: IN | Update #82 | Latency: 83.20ms
+[2025-12-07 18:48:19] ✗✓ FN | Customer: CUST_000360 | Cluster: 24 | Score: 15.09 | Predicted: IN | Update #83 | Latency: 118.24ms
+[2025-12-07 18:48:19] ✗✗ TN | Customer: CUST_000220 | Cluster: 3 | Score: 4.60 | Predicted: IN | Update #84 | Latency: 83.72ms
+[2025-12-07 18:48:19] ✗✓ FN | Customer: CUST_000597 | Cluster: 26 | Score: -5.46 | Predicted: OUT | Update #85 | Latency: 113.38ms
+[2025-12-07 18:48:19] ✗✗ TN | Customer: CUST_000509 | Cluster: 11 | Score: 3.40 | Predicted: IN | Update #86 | Latency: 109.49ms
+[2025-12-07 18:48:20] ✗✓ FN | Customer: CUST_000387 | Cluster: 6 | Score: -4.40 | Predicted: OUT | Update #87 | Latency: 132.71ms
+[2025-12-07 18:48:20] ✗✓ FN | Customer: CUST_000366 | Cluster: 12 | Score: 5.14 | Predicted: IN | Update #88 | Latency: 81.74ms
+[2025-12-07 18:48:20] ✗✓ FN | Customer: CUST_000406 | Cluster: 9 | Score: -1.92 | Predicted: OUT | Update #89 | Latency: 102.31ms
+[2025-12-07 18:48:20] ✗✓ FN | Customer: CUST_000405 | Cluster: 0 | Score: 6.84 | Predicted: IN | Update #90 | Latency: 93.45ms
+[2025-12-07 18:48:20] ✗✓ FN | Customer: CUST_000449 | Cluster: 4 | Score: 5.41 | Predicted: IN | Update #91 | Latency: 139.74ms
+[2025-12-07 18:48:20] ✗✗ TN | Customer: CUST_000509 | Cluster: 11 | Score: 3.40 | Predicted: IN | Update #92 | Latency: 101.12ms
+[2025-12-07 18:48:20] ✗✓ FN | Customer: CUST_000489 | Cluster: 10 | Score: 5.85 | Predicted: IN | Update #93 | Latency: 75.90ms
+[2025-12-07 18:48:21] ✗✓ FN | Customer: CUST_000385 | Cluster: 16 | Score: 0.71 | Predicted: IN | Update #94 | Latency: 85.48ms
+[2025-12-07 18:48:21] ✗✗ TN | Customer: CUST_000509 | Cluster: 11 | Score: 3.40 | Predicted: IN | Update #95 | Latency: 106.77ms
+[2025-12-07 18:48:21] ✗✓ FN | Customer: CUST_000387 | Cluster: 6 | Score: -4.40 | Predicted: OUT | Update #96 | Latency: 95.21ms
+[2025-12-07 18:48:21] ✗✓ FN | Customer: CUST_000489 | Cluster: 10 | Score: 6.30 | Predicted: IN | Update #97 | Latency: 114.28ms
+[2025-12-07 18:48:21] ✗✓ FN | Customer: CUST_000385 | Cluster: 16 | Score: 2.25 | Predicted: IN | Update #98 | Latency: 126.67ms
+[2025-12-07 18:48:21] ✗✓ FN | Customer: CUST_000375 | Cluster: 10 | Score: -15.49 | Predicted: OUT | Update #99 | Latency: 161.98ms
+[2025-12-07 18:48:22] ✗✗ TN | Customer: CUST_000523 | Cluster: 3 | Score: -22.66 | Predicted: OUT | Update #100 | Latency: 87.64ms
+[2025-12-07 18:48:22] 
 💾 Saving model after 100 updates...
-[2025-12-07 18:38:56] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.745s
-[2025-12-07 18:38:56] ✓ Current state: Components=27, TP=1, FP=2, FN=75, TN=22
+[2025-12-07 18:48:22] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.575s
+[2025-12-07 18:48:22] ✓ Current state: Components=36, TP=0, FP=0, FN=86, TN=14
 
-[2025-12-07 18:38:56] 📊 Metric recorded: Save time = 0.745s, Components = 27
-[2025-12-07 18:38:56] ✓ Batch complete: 20 updates, 0 errors
-[2025-12-07 18:38:56] 📥 RECEIVED FEEDBACK | Customer: CUST_000616 | Type: FN
-[2025-12-07 18:38:56] Buffer size: 1/20
-[2025-12-07 18:38:56] 📥 RECEIVED FEEDBACK | Customer: CUST_000631 | Type: FN
-[2025-12-07 18:38:56] Buffer size: 2/20
-[2025-12-07 18:38:56] 📥 RECEIVED FEEDBACK | Customer: CUST_000660 | Type: FN
-[2025-12-07 18:38:56] Buffer size: 3/20
-[2025-12-07 18:38:56] 📥 RECEIVED FEEDBACK | Customer: CUST_000722 | Type: FN
-[2025-12-07 18:38:56] Buffer size: 4/20
-[2025-12-07 18:38:56] 📥 RECEIVED FEEDBACK | Customer: CUST_000785 | Type: TN
-[2025-12-07 18:38:56] Buffer size: 5/20
-[2025-12-07 18:38:56] 📥 RECEIVED FEEDBACK | Customer: CUST_000689 | Type: FN
-[2025-12-07 18:38:56] Buffer size: 6/20
-[2025-12-07 18:38:57] 📥 RECEIVED FEEDBACK | Customer: CUST_000781 | Type: FN
-[2025-12-07 18:38:57] Buffer size: 7/20
-[2025-12-07 18:38:57] 📥 RECEIVED FEEDBACK | Customer: CUST_000809 | Type: TN
-[2025-12-07 18:38:57] Buffer size: 8/20
-[2025-12-07 18:38:57] 📥 RECEIVED FEEDBACK | Customer: CUST_000693 | Type: FN
-[2025-12-07 18:38:57] Buffer size: 9/20
-[2025-12-07 18:38:57] 📥 RECEIVED FEEDBACK | Customer: CUST_000785 | Type: TN
-[2025-12-07 18:38:57] Buffer size: 10/20
-[2025-12-07 18:38:57] 📥 RECEIVED FEEDBACK | Customer: CUST_000809 | Type: TN
-[2025-12-07 18:38:57] Buffer size: 11/20
-[2025-12-07 18:38:57] 📥 RECEIVED FEEDBACK | Customer: CUST_000785 | Type: TN
-[2025-12-07 18:38:57] Buffer size: 12/20
-[2025-12-07 18:38:57] 📥 RECEIVED FEEDBACK | Customer: CUST_000805 | Type: FN
-[2025-12-07 18:38:57] Buffer size: 13/20
-[2025-12-07 18:38:57] 📥 RECEIVED FEEDBACK | Customer: CUST_000686 | Type: FN
-[2025-12-07 18:38:57] Buffer size: 14/20
-[2025-12-07 18:38:57] 📥 RECEIVED FEEDBACK | Customer: CUST_000805 | Type: FN
-[2025-12-07 18:38:57] Buffer size: 15/20
-[2025-12-07 18:38:57] 📥 RECEIVED FEEDBACK | Customer: CUST_000785 | Type: TN
-[2025-12-07 18:38:57] Buffer size: 16/20
-[2025-12-07 18:38:57] 📥 RECEIVED FEEDBACK | Customer: CUST_000722 | Type: FN
-[2025-12-07 18:38:57] Buffer size: 17/20
-[2025-12-07 18:38:57] 📥 RECEIVED FEEDBACK | Customer: CUST_000817 | Type: TN
-[2025-12-07 18:38:57] Buffer size: 18/20
-[2025-12-07 18:38:57] 📥 RECEIVED FEEDBACK | Customer: CUST_000639 | Type: FN
-[2025-12-07 18:38:57] Buffer size: 19/20
-[2025-12-07 18:38:57] 📥 RECEIVED FEEDBACK | Customer: CUST_000809 | Type: TN
-[2025-12-07 18:38:57] Buffer size: 20/20
-[2025-12-07 18:38:57] 
+[2025-12-07 18:48:22] 📊 Metric recorded: Save time = 0.575s, Components = 36
+[2025-12-07 18:48:22] ✓ Batch complete: 20 updates, 0 errors
+[2025-12-07 18:48:23] 📥 RECEIVED FEEDBACK | Customer: CUST_000455 | Type: FN
+[2025-12-07 18:48:23] Buffer size: 1/20
+[2025-12-07 18:48:23] 📥 RECEIVED FEEDBACK | Customer: CUST_000387 | Type: FN
+[2025-12-07 18:48:23] Buffer size: 2/20
+[2025-12-07 18:48:23] 📥 RECEIVED FEEDBACK | Customer: CUST_000499 | Type: FN
+[2025-12-07 18:48:23] Buffer size: 3/20
+[2025-12-07 18:48:23] 📥 RECEIVED FEEDBACK | Customer: CUST_000407 | Type: FN
+[2025-12-07 18:48:23] Buffer size: 4/20
+[2025-12-07 18:48:23] 📥 RECEIVED FEEDBACK | Customer: CUST_000442 | Type: FN
+[2025-12-07 18:48:23] Buffer size: 5/20
+[2025-12-07 18:48:23] 📥 RECEIVED FEEDBACK | Customer: CUST_000570 | Type: TN
+[2025-12-07 18:48:23] Buffer size: 6/20
+[2025-12-07 18:48:23] 📥 RECEIVED FEEDBACK | Customer: CUST_000407 | Type: FN
+[2025-12-07 18:48:23] Buffer size: 7/20
+[2025-12-07 18:48:23] 📥 RECEIVED FEEDBACK | Customer: CUST_000385 | Type: FN
+[2025-12-07 18:48:23] Buffer size: 8/20
+[2025-12-07 18:48:23] 📥 RECEIVED FEEDBACK | Customer: CUST_000375 | Type: FN
+[2025-12-07 18:48:23] Buffer size: 9/20
+[2025-12-07 18:48:23] 📥 RECEIVED FEEDBACK | Customer: CUST_000476 | Type: TN
+[2025-12-07 18:48:23] Buffer size: 10/20
+[2025-12-07 18:48:23] 📥 RECEIVED FEEDBACK | Customer: CUST_000499 | Type: FN
+[2025-12-07 18:48:23] Buffer size: 11/20
+[2025-12-07 18:48:23] 📥 RECEIVED FEEDBACK | Customer: CUST_000570 | Type: TN
+[2025-12-07 18:48:23] Buffer size: 12/20
+[2025-12-07 18:48:24] 📥 RECEIVED FEEDBACK | Customer: CUST_000455 | Type: FN
+[2025-12-07 18:48:24] Buffer size: 13/20
+[2025-12-07 18:48:24] 📥 RECEIVED FEEDBACK | Customer: CUST_000490 | Type: TN
+[2025-12-07 18:48:24] Buffer size: 14/20
+[2025-12-07 18:48:24] 📥 RECEIVED FEEDBACK | Customer: CUST_000527 | Type: FN
+[2025-12-07 18:48:24] Buffer size: 15/20
+[2025-12-07 18:48:24] 📥 RECEIVED FEEDBACK | Customer: CUST_000449 | Type: FN
+[2025-12-07 18:48:24] Buffer size: 16/20
+[2025-12-07 18:48:24] 📥 RECEIVED FEEDBACK | Customer: CUST_000406 | Type: FN
+[2025-12-07 18:48:24] Buffer size: 17/20
+[2025-12-07 18:48:24] 📥 RECEIVED FEEDBACK | Customer: CUST_000572 | Type: FN
+[2025-12-07 18:48:24] Buffer size: 18/20
+[2025-12-07 18:48:24] 📥 RECEIVED FEEDBACK | Customer: CUST_000482 | Type: TN
+[2025-12-07 18:48:24] Buffer size: 19/20
+[2025-12-07 18:48:24] 📥 RECEIVED FEEDBACK | Customer: CUST_000476 | Type: TN
+[2025-12-07 18:48:24] Buffer size: 20/20
+[2025-12-07 18:48:24] 
 ============================================================
-[2025-12-07 18:38:58] 🔄 Processing batch of 20 feedback points
-[2025-12-07 18:38:58] ============================================================
-[2025-12-07 18:38:58] ✗✓ FN | Customer: CUST_000616 | Cluster: 25 | Score: 8.13 | Predicted: IN | Update #101 | Latency: 83.80ms
-[2025-12-07 18:38:58] ✗✓ FN | Customer: CUST_000631 | Cluster: 25 | Score: 7.96 | Predicted: IN | Update #102 | Latency: 56.74ms
-[2025-12-07 18:38:58] ✗✓ FN | Customer: CUST_000660 | Cluster: 7 | Score: -4.24 | Predicted: OUT | Update #103 | Latency: 53.19ms
-[2025-12-07 18:38:58] ✗✓ FN | Customer: CUST_000722 | Cluster: 16 | Score: 0.01 | Predicted: IN | Update #104 | Latency: 59.87ms
-[2025-12-07 18:38:58] ✗✗ TN | Customer: CUST_000785 | Cluster: 11 | Score: 3.85 | Predicted: IN | Update #105 | Latency: 96.17ms
-[2025-12-07 18:38:58] ✗✓ FN | Customer: CUST_000689 | Cluster: 14 | Score: 6.19 | Predicted: IN | Update #106 | Latency: 76.84ms
-[2025-12-07 18:38:58] ✗✓ FN | Customer: CUST_000781 | Cluster: 4 | Score: 6.12 | Predicted: IN | Update #107 | Latency: 81.94ms
-[2025-12-07 18:38:58] ✗✗ TN | Customer: CUST_000809 | Cluster: 3 | Score: -0.99 | Predicted: OUT | Update #108 | Latency: 76.63ms
-[2025-12-07 18:38:59] ✗✓ FN | Customer: CUST_000693 | Cluster: 26 | Score: -0.56 | Predicted: OUT | Update #109 | Latency: 80.91ms
-[2025-12-07 18:38:59] ✗✗ TN | Customer: CUST_000785 | Cluster: 11 | Score: 3.85 | Predicted: IN | Update #110 | Latency: 115.38ms
-[2025-12-07 18:38:59] ✗✗ TN | Customer: CUST_000809 | Cluster: 3 | Score: -0.99 | Predicted: OUT | Update #111 | Latency: 62.53ms
-[2025-12-07 18:38:59] ✗✗ TN | Customer: CUST_000785 | Cluster: 11 | Score: 3.85 | Predicted: IN | Update #112 | Latency: 61.67ms
-[2025-12-07 18:38:59] ✗✓ FN | Customer: CUST_000805 | Cluster: 14 | Score: 3.13 | Predicted: IN | Update #113 | Latency: 58.46ms
-[2025-12-07 18:38:59] ✗✓ FN | Customer: CUST_000686 | Cluster: 26 | Score: -2.84 | Predicted: OUT | Update #114 | Latency: 78.54ms
-[2025-12-07 18:38:59] ✗✓ FN | Customer: CUST_000805 | Cluster: 14 | Score: 4.92 | Predicted: IN | Update #115 | Latency: 93.85ms
-[2025-12-07 18:38:59] ✗✗ TN | Customer: CUST_000785 | Cluster: 11 | Score: 3.85 | Predicted: IN | Update #116 | Latency: 74.68ms
-[2025-12-07 18:38:59] ✗✓ FN | Customer: CUST_000722 | Cluster: 16 | Score: 1.88 | Predicted: IN | Update #117 | Latency: 82.76ms
-[2025-12-07 18:39:00] ✗✗ TN | Customer: CUST_000817 | Cluster: 15 | Score: -28.34 | Predicted: OUT | Update #118 | Latency: 146.55ms
-[2025-12-07 18:39:00] ✗✓ FN | Customer: CUST_000639 | Cluster: 18 | Score: 2.47 | Predicted: IN | Update #119 | Latency: 94.36ms
-[2025-12-07 18:39:00] ✗✗ TN | Customer: CUST_000809 | Cluster: 3 | Score: -0.99 | Predicted: OUT | Update #120 | Latency: 106.04ms
-[2025-12-07 18:39:00] 
+[2025-12-07 18:48:24] 🔄 Processing batch of 20 feedback points
+[2025-12-07 18:48:24] ============================================================
+[2025-12-07 18:48:24] ✗✓ FN | Customer: CUST_000455 | Cluster: 5 | Score: -3.71 | Predicted: OUT | Update #101 | Latency: 124.29ms
+[2025-12-07 18:48:24] ✗✓ FN | Customer: CUST_000387 | Cluster: 35 | Score: 19.85 | Predicted: IN | Update #102 | Latency: 83.37ms
+[2025-12-07 18:48:25] ✗✓ FN | Customer: CUST_000499 | Cluster: 18 | Score: 4.42 | Predicted: IN | Update #103 | Latency: 124.62ms
+[2025-12-07 18:48:25] ✗✓ FN | Customer: CUST_000407 | Cluster: 23 | Score: 19.79 | Predicted: IN | Update #104 | Latency: 79.38ms
+[2025-12-07 18:48:25] ✗✓ FN | Customer: CUST_000442 | Cluster: 18 | Score: 6.57 | Predicted: IN | Update #105 | Latency: 89.56ms
+[2025-12-07 18:48:25] ✗✗ TN | Customer: CUST_000570 | Cluster: 15 | Score: 1.46 | Predicted: IN | Update #106 | Latency: 96.42ms
+[2025-12-07 18:48:25] ✗✓ FN | Customer: CUST_000407 | Cluster: 23 | Score: 19.88 | Predicted: IN | Update #107 | Latency: 93.34ms
+[2025-12-07 18:48:25] ✗✓ FN | Customer: CUST_000385 | Cluster: 16 | Score: 3.11 | Predicted: IN | Update #108 | Latency: 112.65ms
+[2025-12-07 18:48:26] ✗✓ FN | Customer: CUST_000375 | Cluster: 34 | Score: 8.02 | Predicted: IN | Update #109 | Latency: 131.07ms
+[2025-12-07 18:48:26] ✗✗ TN | Customer: CUST_000476 | Cluster: 26 | Score: 3.76 | Predicted: IN | Update #110 | Latency: 86.56ms
+[2025-12-07 18:48:26] ✗✓ FN | Customer: CUST_000499 | Cluster: 18 | Score: 5.05 | Predicted: IN | Update #111 | Latency: 87.78ms
+[2025-12-07 18:48:26] ✗✗ TN | Customer: CUST_000570 | Cluster: 15 | Score: 1.46 | Predicted: IN | Update #112 | Latency: 117.23ms
+[2025-12-07 18:48:26] ✗✓ FN | Customer: CUST_000455 | Cluster: 5 | Score: -3.71 | Predicted: OUT | Update #113 | Latency: 102.70ms
+[2025-12-07 18:48:26] ✗✗ TN | Customer: CUST_000490 | Cluster: 26 | Score: -3.81 | Predicted: OUT | Update #114 | Latency: 99.73ms
+[2025-12-07 18:48:27] ✗✓ FN | Customer: CUST_000527 | Cluster: 1 | Score: -1.18 | Predicted: OUT | Update #115 | Latency: 177.87ms
+[2025-12-07 18:48:27] ✗✓ FN | Customer: CUST_000449 | Cluster: 4 | Score: 6.16 | Predicted: IN | Update #116 | Latency: 135.11ms
+[2025-12-07 18:48:27] ✗✓ FN | Customer: CUST_000406 | Cluster: 34 | Score: 8.49 | Predicted: IN | Update #117 | Latency: 111.70ms
+[2025-12-07 18:48:27] ✗✓ FN | Customer: CUST_000572 | Cluster: 3 | Score: 1.05 | Predicted: IN | Update #118 | Latency: 96.57ms
+[2025-12-07 18:48:27] ✗✗ TN | Customer: CUST_000482 | Cluster: 15 | Score: -4.50 | Predicted: OUT | Update #119 | Latency: 99.09ms
+[2025-12-07 18:48:27] ✗✗ TN | Customer: CUST_000476 | Cluster: 26 | Score: 3.76 | Predicted: IN | Update #120 | Latency: 90.72ms
+[2025-12-07 18:48:27] 
 💾 Saving model after 120 updates...
-[2025-12-07 18:39:00] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.258s
-[2025-12-07 18:39:00] ✓ Current state: Components=29, TP=1, FP=2, FN=87, TN=30
+[2025-12-07 18:48:28] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.395s
+[2025-12-07 18:48:28] ✓ Current state: Components=37, TP=0, FP=0, FN=100, TN=20
 
-[2025-12-07 18:39:00] 📊 Metric recorded: Save time = 0.258s, Components = 29
-[2025-12-07 18:39:00] ✓ Batch complete: 20 updates, 0 errors
-[2025-12-07 18:39:00] 📥 RECEIVED FEEDBACK | Customer: CUST_000809 | Type: TN
-[2025-12-07 18:39:00] Buffer size: 1/20
-[2025-12-07 18:39:00] 📥 RECEIVED FEEDBACK | Customer: CUST_000722 | Type: FN
-[2025-12-07 18:39:00] Buffer size: 2/20
-[2025-12-07 18:39:01] 📥 RECEIVED FEEDBACK | Customer: CUST_000689 | Type: FN
-[2025-12-07 18:39:01] Buffer size: 3/20
-[2025-12-07 18:39:01] 📥 RECEIVED FEEDBACK | Customer: CUST_000781 | Type: FN
-[2025-12-07 18:39:01] Buffer size: 4/20
-[2025-12-07 18:39:01] 📥 RECEIVED FEEDBACK | Customer: CUST_000639 | Type: FN
-[2025-12-07 18:39:01] Buffer size: 5/20
-[2025-12-07 18:39:01] 📥 RECEIVED FEEDBACK | Customer: CUST_000792 | Type: FN
-[2025-12-07 18:39:01] Buffer size: 6/20
-[2025-12-07 18:39:01] 📥 RECEIVED FEEDBACK | Customer: CUST_000686 | Type: FN
-[2025-12-07 18:39:01] Buffer size: 7/20
-[2025-12-07 18:39:01] 📥 RECEIVED FEEDBACK | Customer: CUST_000825 | Type: FN
-[2025-12-07 18:39:01] Buffer size: 8/20
-[2025-12-07 18:39:01] 📥 RECEIVED FEEDBACK | Customer: CUST_000660 | Type: TP
-[2025-12-07 18:39:01] Buffer size: 9/20
-[2025-12-07 18:39:01] 📥 RECEIVED FEEDBACK | Customer: CUST_000650 | Type: FN
-[2025-12-07 18:39:01] Buffer size: 10/20
-[2025-12-07 18:39:01] 📥 RECEIVED FEEDBACK | Customer: CUST_000781 | Type: FN
-[2025-12-07 18:39:01] Buffer size: 11/20
-[2025-12-07 18:39:01] 📥 RECEIVED FEEDBACK | Customer: CUST_000660 | Type: FN
-[2025-12-07 18:39:01] Buffer size: 12/20
-[2025-12-07 18:39:01] 📥 RECEIVED FEEDBACK | Customer: CUST_000660 | Type: FN
-[2025-12-07 18:39:01] Buffer size: 13/20
-[2025-12-07 18:39:01] 📥 RECEIVED FEEDBACK | Customer: CUST_000660 | Type: TP
-[2025-12-07 18:39:01] Buffer size: 14/20
-[2025-12-07 18:39:01] 📥 RECEIVED FEEDBACK | Customer: CUST_000817 | Type: TN
-[2025-12-07 18:39:01] Buffer size: 15/20
-[2025-12-07 18:39:01] 📥 RECEIVED FEEDBACK | Customer: CUST_000689 | Type: FN
-[2025-12-07 18:39:01] Buffer size: 16/20
-[2025-12-07 18:39:01] 📥 RECEIVED FEEDBACK | Customer: CUST_000722 | Type: FN
-[2025-12-07 18:39:01] Buffer size: 17/20
+[2025-12-07 18:48:28] 📊 Metric recorded: Save time = 0.395s, Components = 37
+[2025-12-07 18:48:28] ✓ Batch complete: 20 updates, 0 errors
+[2025-12-07 18:48:28] 📥 RECEIVED FEEDBACK | Customer: CUST_000572 | Type: FN
+[2025-12-07 18:48:28] Buffer size: 1/20
+[2025-12-07 18:48:28] 📥 RECEIVED FEEDBACK | Customer: CUST_000489 | Type: FN
+[2025-12-07 18:48:28] Buffer size: 2/20
+[2025-12-07 18:48:28] 📥 RECEIVED FEEDBACK | Customer: CUST_000424 | Type: FN
+[2025-12-07 18:48:28] Buffer size: 3/20
+[2025-12-07 18:48:28] 📥 RECEIVED FEEDBACK | Customer: CUST_000482 | Type: TN
+[2025-12-07 18:48:28] Buffer size: 4/20
+[2025-12-07 18:48:28] 📥 RECEIVED FEEDBACK | Customer: CUST_000407 | Type: FN
+[2025-12-07 18:48:28] Buffer size: 5/20
+[2025-12-07 18:48:29] 📥 RECEIVED FEEDBACK | Customer: CUST_000455 | Type: FN
+[2025-12-07 18:48:29] Buffer size: 6/20
+[2025-12-07 18:48:29] 📥 RECEIVED FEEDBACK | Customer: CUST_000476 | Type: TN
+[2025-12-07 18:48:29] Buffer size: 7/20
+[2025-12-07 18:48:29] 📥 RECEIVED FEEDBACK | Customer: CUST_000476 | Type: TN
+[2025-12-07 18:48:29] Buffer size: 8/20
+[2025-12-07 18:48:29] 📥 RECEIVED FEEDBACK | Customer: CUST_000424 | Type: FN
+[2025-12-07 18:48:29] Buffer size: 9/20
+[2025-12-07 18:48:29] 📥 RECEIVED FEEDBACK | Customer: CUST_000499 | Type: FN
+[2025-12-07 18:48:29] Buffer size: 10/20
+[2025-12-07 18:48:29] 📥 RECEIVED FEEDBACK | Customer: CUST_000407 | Type: FN
+[2025-12-07 18:48:29] Buffer size: 11/20
+[2025-12-07 18:48:29] 📥 RECEIVED FEEDBACK | Customer: CUST_000509 | Type: TN
+[2025-12-07 18:48:29] Buffer size: 12/20
+[2025-12-07 18:48:29] 📥 RECEIVED FEEDBACK | Customer: CUST_000387 | Type: FN
+[2025-12-07 18:48:29] Buffer size: 13/20
+[2025-12-07 18:48:29] 📥 RECEIVED FEEDBACK | Customer: CUST_000465 | Type: FN
+[2025-12-07 18:48:29] Buffer size: 14/20
+[2025-12-07 18:48:29] 📥 RECEIVED FEEDBACK | Customer: CUST_000375 | Type: FN
+[2025-12-07 18:48:29] Buffer size: 15/20
+[2025-12-07 18:48:29] 📥 RECEIVED FEEDBACK | Customer: CUST_000449 | Type: FN
+[2025-12-07 18:48:29] Buffer size: 16/20
+[2025-12-07 18:48:29] 📥 RECEIVED FEEDBACK | Customer: CUST_000509 | Type: TN
+[2025-12-07 18:48:29] Buffer size: 17/20
+[2025-12-07 18:48:29] 📥 RECEIVED FEEDBACK | Customer: CUST_000490 | Type: TN
+[2025-12-07 18:48:29] Buffer size: 18/20
+[2025-12-07 18:48:29] 📥 RECEIVED FEEDBACK | Customer: CUST_000476 | Type: TN
+[2025-12-07 18:48:29] Buffer size: 19/20
+[2025-12-07 18:48:30] 📥 RECEIVED FEEDBACK | Customer: CUST_000489 | Type: FN
+[2025-12-07 18:48:30] Buffer size: 20/20
+[2025-12-07 18:48:30] 
+============================================================
+[2025-12-07 18:48:30] 🔄 Processing batch of 20 feedback points
+[2025-12-07 18:48:30] ============================================================
+[2025-12-07 18:48:30] ✗✓ FN | Customer: CUST_000572 | Cluster: 3 | Score: 2.74 | Predicted: IN | Update #121 | Latency: 77.88ms
+[2025-12-07 18:48:30] ✗✓ FN | Customer: CUST_000489 | Cluster: 10 | Score: 6.65 | Predicted: IN | Update #122 | Latency: 75.79ms
+[2025-12-07 18:48:30] ✗✓ FN | Customer: CUST_000424 | Cluster: 24 | Score: 15.01 | Predicted: IN | Update #123 | Latency: 73.76ms
+[2025-12-07 18:48:30] ✗✗ TN | Customer: CUST_000482 | Cluster: 15 | Score: -4.50 | Predicted: OUT | Update #124 | Latency: 82.29ms
+[2025-12-07 18:48:30] ✗✓ FN | Customer: CUST_000407 | Cluster: 23 | Score: 19.97 | Predicted: IN | Update #125 | Latency: 103.67ms
+[2025-12-07 18:48:30] ✗✓ FN | Customer: CUST_000455 | Cluster: 36 | Score: 14.87 | Predicted: IN | Update #126 | Latency: 75.74ms
+[2025-12-07 18:48:31] ✗✗ TN | Customer: CUST_000476 | Cluster: 26 | Score: 3.76 | Predicted: IN | Update #127 | Latency: 70.73ms
+[2025-12-07 18:48:31] ✗✗ TN | Customer: CUST_000476 | Cluster: 26 | Score: 3.76 | Predicted: IN | Update #128 | Latency: 86.97ms
+[2025-12-07 18:48:31] ✗✓ FN | Customer: CUST_000424 | Cluster: 24 | Score: 15.18 | Predicted: IN | Update #129 | Latency: 88.24ms
+[2025-12-07 18:48:31] ✗✓ FN | Customer: CUST_000499 | Cluster: 18 | Score: 5.62 | Predicted: IN | Update #130 | Latency: 119.94ms
+[2025-12-07 18:48:31] ✗✓ FN | Customer: CUST_000407 | Cluster: 23 | Score: 20.06 | Predicted: IN | Update #131 | Latency: 82.49ms
+[2025-12-07 18:48:31] ✗✗ TN | Customer: CUST_000509 | Cluster: 11 | Score: 3.40 | Predicted: IN | Update #132 | Latency: 79.36ms
+[2025-12-07 18:48:31] ✗✓ FN | Customer: CUST_000387 | Cluster: 35 | Score: 19.94 | Predicted: IN | Update #133 | Latency: 81.81ms
+[2025-12-07 18:48:31] ✗✓ FN | Customer: CUST_000465 | Cluster: 13 | Score: -2.26 | Predicted: OUT | Update #134 | Latency: 104.96ms
+[2025-12-07 18:48:32] ✗✓ FN | Customer: CUST_000375 | Cluster: 34 | Score: 8.24 | Predicted: IN | Update #135 | Latency: 106.44ms
+[2025-12-07 18:48:32] ✗✓ FN | Customer: CUST_000449 | Cluster: 4 | Score: 6.70 | Predicted: IN | Update #136 | Latency: 100.02ms
+[2025-12-07 18:48:32] ✗✗ TN | Customer: CUST_000509 | Cluster: 11 | Score: 3.40 | Predicted: IN | Update #137 | Latency: 119.39ms
+[2025-12-07 18:48:32] ✗✗ TN | Customer: CUST_000490 | Cluster: 26 | Score: -3.81 | Predicted: OUT | Update #138 | Latency: 97.64ms
+[2025-12-07 18:48:32] ✗✗ TN | Customer: CUST_000476 | Cluster: 26 | Score: 3.76 | Predicted: IN | Update #139 | Latency: 79.93ms
+[2025-12-07 18:48:32] ✗✓ FN | Customer: CUST_000489 | Cluster: 10 | Score: 6.95 | Predicted: IN | Update #140 | Latency: 79.91ms
+[2025-12-07 18:48:32] 
+💾 Saving model after 140 updates...
+[2025-12-07 18:48:33] ✓ Model saved to /home/sachit/Documents/VSCProjects/TargettedCalling/Persistence/model_car.json in 0.130s
+[2025-12-07 18:48:33] ✓ Current state: Components=37, TP=0, FP=0, FN=113, TN=27
+
+[2025-12-07 18:48:33] 📊 Metric recorded: Save time = 0.130s, Components = 37
+[2025-12-07 18:48:33] ✓ Batch complete: 20 updates, 0 errors
+[2025-12-07 18:48:33] 📥 RECEIVED FEEDBACK | Customer: CUST_000558 | Type: TN
+[2025-12-07 18:48:33] Buffer size: 1/20
+[2025-12-07 18:48:33] 📥 RECEIVED FEEDBACK | Customer: CUST_000424 | Type: FN
+[2025-12-07 18:48:33] Buffer size: 2/20
+[2025-12-07 18:48:33] 📥 RECEIVED FEEDBACK | Customer: CUST_000442 | Type: FN
+[2025-12-07 18:48:33] Buffer size: 3/20
+[2025-12-07 18:48:33] 📥 RECEIVED FEEDBACK | Customer: CUST_000570 | Type: TN
+[2025-12-07 18:48:33] Buffer size: 4/20

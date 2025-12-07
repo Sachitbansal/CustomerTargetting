@@ -196,3 +196,13 @@
 [ClusterAgg] CUST CUST_000307 → CL 16 | score=1.039 | 1/5
 [ClusterAgg] 📝 Cached prediction for CUST_000302 in Redis
 [ClusterAgg] CUST CUST_000302 → CL 2 | score=0.352 | 2/5
+[ClusterAgg] === Cluster Aggregator Started ===
+[ClusterAgg] Listening on topic: leads.callCarLoan
+[ClusterAgg] Publishing batches to: reports.cluster.ready
+[ClusterAgg] K_BATCH = 5
+[ClusterAgg] Cache: Redis @ localhost:6379 (key: prediction_cache)
+
+[ClusterAgg] 📝 Cached prediction for CUST_000527 in Redis
+[ClusterAgg] CUST CUST_000527 → CL 1 | score=3.127 | 1/5
+[ClusterAgg] 📝 Cached prediction for CUST_000527 in Redis
+[ClusterAgg] CUST CUST_000527 → CL 1 | score=3.127 | 2/5
