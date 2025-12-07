@@ -13,3 +13,13 @@
 [Consolidator] 📝 Generating PDF → /home/sachit/Documents/VSCProjects/TargettedCalling/report_gen/output_reports/cluster_3_20251207_073835.pdf
 [Consolidator] ✅ PDF generated successfully
 [Consolidator] ✅ Complete report generated at /home/sachit/Documents/VSCProjects/TargettedCalling/report_gen/output_reports/cluster_3_20251207_073835.pdf
+[Consolidator] Connecting to Redis at localhost:6379 (db=1)...
+[Consolidator] Loaded MASTERFILE from Redis with 12500 rows.
+[Consolidator] 🚀 Cluster Consolidator (Step-2) started...
+[Consolidator] Listening on → reports.cluster.ready
+[Consolidator] Using OpenAI model: gpt-4o
+[Consolidator] Connecting to Redis at localhost:6379 (db=1)...
+[Consolidator] Loaded MASTERFILE from Redis with 12500 rows.
+[Consolidator] 🚀 Cluster Consolidator (Step-2) started...
+[Consolidator] Listening on → reports.cluster.ready
+[Consolidator] Using OpenAI model: gpt-4o

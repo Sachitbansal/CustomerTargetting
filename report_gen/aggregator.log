@@ -54,3 +54,41 @@
 
 [ClusterAgg] 📝 Cached prediction for CUST_001074 in Redis
 [ClusterAgg] CUST CUST_001074 → CL 3 | score=-15.938 | 1/5
+[ClusterAgg] === Cluster Aggregator Started ===
+[ClusterAgg] Listening on topic: leads.callCarLoan
+[ClusterAgg] Publishing batches to: reports.cluster.ready
+[ClusterAgg] K_BATCH = 5
+[ClusterAgg] Cache: Redis @ localhost:6379 (key: prediction_cache)
+
+[ClusterAgg] 📝 Cached prediction for CUST_000272 in Redis
+[ClusterAgg] CUST CUST_000272 → CL 7 | score=-5.976 | 1/5
+[ClusterAgg] 📝 Cached prediction for CUST_000349 in Redis
+[ClusterAgg] CUST CUST_000349 → CL 4 | score=-8.427 | 1/5
+[ClusterAgg] 📝 Cached prediction for CUST_000489 in Redis
+[ClusterAgg] CUST CUST_000489 → CL 10 | score=-3.130 | 1/5
+[ClusterAgg] 📝 Cached prediction for CUST_000769 in Redis
+[ClusterAgg] CUST CUST_000769 → CL 3 | score=-11.706 | 1/5
+[ClusterAgg] 📝 Cached prediction for CUST_000770 in Redis
+[ClusterAgg] CUST CUST_000770 → CL 10 | score=-10.128 | 2/5
+[ClusterAgg] 📝 Cached prediction for CUST_001229 in Redis
+[ClusterAgg] CUST CUST_001229 → CL 10 | score=-0.801 | 3/5
+[ClusterAgg] === Cluster Aggregator Started ===
+[ClusterAgg] Listening on topic: leads.callCarLoan
+[ClusterAgg] Publishing batches to: reports.cluster.ready
+[ClusterAgg] K_BATCH = 5
+[ClusterAgg] Cache: Redis @ localhost:6379 (key: prediction_cache)
+
+[ClusterAgg] 📝 Cached prediction for CUST_000196 in Redis
+[ClusterAgg] CUST CUST_000196 → CL 17 | score=-15.605 | 1/5
+[ClusterAgg] 📝 Cached prediction for CUST_000196 in Redis
+[ClusterAgg] CUST CUST_000196 → CL 17 | score=-15.605 | 2/5
+[ClusterAgg] 📝 Cached prediction for CUST_000447 in Redis
+[ClusterAgg] CUST CUST_000447 → CL 17 | score=-4.769 | 3/5
+[ClusterAgg] 📝 Cached prediction for CUST_000770 in Redis
+[ClusterAgg] CUST CUST_000770 → CL 3 | score=-4.155 | 1/5
+[ClusterAgg] 📝 Cached prediction for CUST_000770 in Redis
+[ClusterAgg] CUST CUST_000770 → CL 3 | score=-4.155 | 2/5
+[ClusterAgg] 📝 Cached prediction for CUST_001074 in Redis
+[ClusterAgg] CUST CUST_001074 → CL 10 | score=-25.904 | 1/5
+[ClusterAgg] 📝 Cached prediction for CUST_001074 in Redis
+[ClusterAgg] CUST CUST_001074 → CL 10 | score=-25.904 | 2/5

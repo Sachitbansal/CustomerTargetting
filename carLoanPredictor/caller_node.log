@@ -1,0 +1,236 @@
+[CallerNode] ═══════════════════════════════════════════════
+[CallerNode]    ENHANCED CAR LOAN TESTER WITH VAPI CALLING  
+[CallerNode] ═══════════════════════════════════════════════
+[CallerNode] Input Topic:    leads.callCarLoan
+[CallerNode] Output Topic:   feedback.carLoan
+[CallerNode] Masterfile:     /home/sachit/Documents/VSCProjects/TargettedCalling/MASTERFILE.csv
+[CallerNode] Log File:       /home/sachit/Documents/VSCProjects/TargettedCalling/carLoanPredictor/caller_node.log
+[CallerNode] Transcripts:    /home/sachit/Documents/VSCProjects/TargettedCalling/carLoanPredictor/call_transcripts.json
+[CallerNode] ═══════════════════════════════════════════════
+
+[CallerNode] ✔ Loaded 12500 customer records from MASTERFILE
+[CallerNode] ✔ Loaded 57 loan offers
+[CallerNode] ✔ Calling agent worker thread started
+
+[CallerNode] 
+🎯 Calling Agent Worker Started
+[CallerNode]    Processing ONE call at a time - queue updates in background
+
+[CallerNode] ✔ LISTENING TO: leads.callCarLoan
+[CallerNode] ✔ Listening for car loan predictions...
+
+[CallerNode] ✔ FILTERING: Only customers with predicted_eligible=True
+[CallerNode] ✔ STREAMING TO: feedback.carLoan
+[CallerNode] ✔ Streaming feedback to 'feedback.carLoan'...
+
+[CallerNode] 
+✔ Enhanced Tester Node is running.
+
+[CallerNode] ============================================================
+[CallerNode] PIPELINE FLOW:
+[CallerNode]   1. Listen to predictions on: leads.callCarLoan
+[CallerNode]   2. Filter ONLY positive predictions (predicted_eligible=True)
+[CallerNode]   3. Fetch customer details from: /home/sachit/Documents/VSCProjects/TargettedCalling/MASTERFILE.csv
+[CallerNode]   4. Add customer to call queue
+[CallerNode]   5. Calling agent processes queue in background
+[CallerNode]   6. Make VAPI call and collect transcript
+[CallerNode]   7. Stream feedback to: feedback.carLoan
+[CallerNode]   8. Save transcripts to: /home/sachit/Documents/VSCProjects/TargettedCalling/carLoanPredictor/call_transcripts.json
+[CallerNode] ============================================================
+
+[CallerNode] ➕ Added customer CUST_000196 to call queue (Queue size: 1)
+[CallerNode] 📥 Picked customer CUST_000196 from TOP of queue
+[CallerNode]    Current queue size: 0
+[CallerNode] 🔒 Starting call - no other calls until this completes
+
+[CallerNode] 
+======================================================================
+[CallerNode] 📞 Processing Customer CUST_000196
+[CallerNode] ======================================================================
+[CallerNode]   👤 Name: None
+[CallerNode]   📱 Phone: +919064370831 (hardcoded for testing)
+[CallerNode]   💼 Loan Purpose: None
+[CallerNode]   💰 Annual Income: $0
+[CallerNode]   ⭐ Credit Score: None
+[CallerNode] 
+  🔍 Finding matching loans...
+[CallerNode]   ✔ Found 3 matching loans
+[CallerNode]      1. Electric Vehicle Loan - 4.8% APR
+[CallerNode]      2. Luxury Auto Loan - 5.0% APR
+[CallerNode]      3. New Auto Loan - 5.5% APR
+[CallerNode] 
+  📝 Generating call script...
+[CallerNode]   🤖 Creating VAPI assistant...
+[CallerNode]   ✔ Assistant created successfully
+[CallerNode] 
+  📱 Initiating call to +919064370831...
+[CallerNode]   ✔ Call initiated successfully
+[CallerNode]   ✔ Call ID: 019af832-6800-744b-82e0-8774b7e625d3
+[CallerNode]   ✔ Status: queued
+[CallerNode] 
+  📄 Fetching call transcript...
+[CallerNode]   ⏳ Waiting for call to complete (polling every 5 seconds)...
+[CallerNode]      Call status: ringing
+[CallerNode]      Call status: ringing
+[CallerNode] ➕ Added customer CUST_000675 to call queue (Queue size: 1)
+[CallerNode]      Call status: ringing
+[CallerNode]      Call status: in-progress
+[CallerNode]      Call status: in-progress
+[CallerNode]      Call status: in-progress
+[CallerNode] ➕ Added customer CUST_001229 to call queue (Queue size: 2)
+[CallerNode]      Call status: in-progress
+[CallerNode]      Call status: in-progress
+[CallerNode]      Call status: in-progress
+[CallerNode]      Call status: ended
+[CallerNode]   ✔ Call ended with status: ended
+[CallerNode]   📄 Extracting transcript from completed call...
+[CallerNode]   ✔ Transcript retrieved (105 chars)
+[CallerNode]   ✔ Transcript saved (105 chars)
+[CallerNode] ======================================================================
+
+[CallerNode] ✅ Call completed for customer CUST_000196 | Decision: 1
+[CallerNode] 🔓 Customer removed from queue
+[CallerNode]    Remaining in queue: 2
+[CallerNode] ⏳ Waiting 5 seconds before next call...
+
+[CallerNode] 📥 Picked customer CUST_000675 from TOP of queue
+[CallerNode]    Current queue size: 1
+[CallerNode] 🔒 Starting call - no other calls until this completes
+
+[CallerNode] 
+======================================================================
+[CallerNode] 📞 Processing Customer CUST_000675
+[CallerNode] ======================================================================
+[CallerNode]   👤 Name: None
+[CallerNode]   📱 Phone: +919064370831 (hardcoded for testing)
+[CallerNode]   💼 Loan Purpose: None
+[CallerNode]   💰 Annual Income: $0
+[CallerNode]   ⭐ Credit Score: None
+[CallerNode] 
+  🔍 Finding matching loans...
+[CallerNode]   ✔ Found 3 matching loans
+[CallerNode]      1. Electric Vehicle Loan - 4.8% APR
+[CallerNode]      2. Luxury Auto Loan - 5.0% APR
+[CallerNode]      3. New Auto Loan - 5.5% APR
+[CallerNode] 
+  📝 Generating call script...
+[CallerNode]   🤖 Creating VAPI assistant...
+[CallerNode]   ✔ Assistant created successfully
+[CallerNode] 
+  📱 Initiating call to +919064370831...
+[CallerNode]   ✔ Call initiated successfully
+[CallerNode]   ✔ Call ID: 019af833-70a8-7aa8-9f0d-965215501812
+[CallerNode]   ✔ Status: queued
+[CallerNode] 
+  📄 Fetching call transcript...
+[CallerNode]   ⏳ Waiting for call to complete (polling every 5 seconds)...
+[CallerNode]      Call status: queued
+[CallerNode]      Call status: ringing
+[CallerNode]      Call status: in-progress
+[CallerNode]      Call status: in-progress
+[CallerNode]      Call status: in-progress
+[CallerNode]      Call status: in-progress
+[CallerNode]      Call status: in-progress
+[CallerNode]      Call status: in-progress
+[CallerNode]      Call status: in-progress
+[CallerNode]      Call status: in-progress
+[CallerNode]      Call status: in-progress
+[CallerNode]      Call status: in-progress
+[CallerNode]      Call status: in-progress
+[CallerNode]      Call status: in-progress
+[CallerNode]      Call status: in-progress
+[CallerNode]      Call status: in-progress
+[CallerNode]      Call status: ended
+[CallerNode]   ✔ Call ended with status: ended
+[CallerNode]   📄 Extracting transcript from completed call...
+[CallerNode]   ✔ Transcript retrieved (1173 chars)
+[CallerNode]   ✔ Transcript saved (1173 chars)
+[CallerNode] ======================================================================
+
+[CallerNode] ✅ Call completed for customer CUST_000675 | Decision: 1
+[CallerNode] 🔓 Customer removed from queue
+[CallerNode]    Remaining in queue: 1
+[CallerNode] ⏳ Waiting 5 seconds before next call...
+
+[CallerNode] 📥 Picked customer CUST_001229 from TOP of queue
+[CallerNode]    Current queue size: 0
+[CallerNode] 🔒 Starting call - no other calls until this completes
+
+[CallerNode] 
+======================================================================
+[CallerNode] 📞 Processing Customer CUST_001229
+[CallerNode] ======================================================================
+[CallerNode]   👤 Name: None
+[CallerNode]   📱 Phone: +919064370831 (hardcoded for testing)
+[CallerNode]   💼 Loan Purpose: None
+[CallerNode]   💰 Annual Income: $0
+[CallerNode]   ⭐ Credit Score: None
+[CallerNode] 
+  🔍 Finding matching loans...
+[CallerNode]   ✔ Found 3 matching loans
+[CallerNode]      1. Electric Vehicle Loan - 4.8% APR
+[CallerNode]      2. Luxury Auto Loan - 5.0% APR
+[CallerNode]      3. New Auto Loan - 5.5% APR
+[CallerNode] 
+  📝 Generating call script...
+[CallerNode]   🤖 Creating VAPI assistant...
+[CallerNode]   ✔ Assistant created successfully
+[CallerNode] 
+  📱 Initiating call to +919064370831...
+[CallerNode]   ✔ Call initiated successfully
+[CallerNode]   ✔ Call ID: 019af835-21d3-777b-9dfc-566043f30f1a
+[CallerNode]   ✔ Status: queued
+[CallerNode] 
+  📄 Fetching call transcript...
+[CallerNode]   ⏳ Waiting for call to complete (polling every 5 seconds)...
+[CallerNode]      Call status: queued
+[CallerNode]      Call status: ringing
+[CallerNode]      Call status: ringing
+[CallerNode]      Call status: ringing
+[CallerNode]      Call status: ringing
+[CallerNode]      Call status: ringing
+[CallerNode]      Call status: ringing
+[CallerNode]      Call status: ended
+[CallerNode]   ✔ Call ended with status: ended
+[CallerNode]   📄 Extracting transcript from completed call...
+[CallerNode]   ⚠ Transcript is empty
+[CallerNode]   ✔ Transcript saved (24 chars)
+[CallerNode] ======================================================================
+
+[CallerNode] ✅ Call completed for customer CUST_001229 | Decision: 1
+[CallerNode] 🔓 Customer removed from queue
+[CallerNode]    Remaining in queue: 0
+[CallerNode]    Queue empty - waiting for new customers...
+
+[CallerNode] ═══════════════════════════════════════════════
+[CallerNode]    ENHANCED CAR LOAN TESTER WITH VAPI CALLING  
+[CallerNode] ═══════════════════════════════════════════════
+[CallerNode] Input Topic:    leads.callCarLoan
+[CallerNode] Output Topic:   feedback.carLoan
+[CallerNode] Data Source:    Redis @ localhost:6379 (db=1)
+[CallerNode] Log File:       /home/sachit/Documents/VSCProjects/TargettedCalling/carLoanPredictor/caller_node.log
+[CallerNode] Transcripts:    /home/sachit/Documents/VSCProjects/TargettedCalling/carLoanPredictor/call_transcripts.json
+[CallerNode] ═══════════════════════════════════════════════
+
+[CallerNode] ✔ Loaded 12500 customer records from Redis (masterfile:data)
+[CallerNode] ✔ Loaded 57 loan offers from Redis (loan_offers:data)
+[CallerNode] ✔ Calling agent worker thread started
+
+[CallerNode] 
+🎯 Calling Agent Worker Started
+[CallerNode]    Processing ONE call at a time - queue updates in background
+
+[CallerNode] ✔ LISTENING TO: leads.callCarLoan
+[CallerNode] ✔ Listening for car loan predictions...
+
+[CallerNode] ✔ FILTERING: Only customers with predicted_eligible=True
+[CallerNode] ✔ STREAMING TO: feedback.carLoan
+[CallerNode] ✔ Streaming feedback to 'feedback.carLoan'...
+
+[CallerNode] 
+✔ Enhanced Tester Node is running.
+
+[CallerNode] ============================================================
+[CallerNode] PIPELINE FLOW:
+[CallerNode]   1. Listen to predictions on: leads.callCarLoan
+[CallerNode]   2. Filter ONLY positive predictions (predicted_eligible=True)
